@@ -20,6 +20,13 @@
 // Section : Constants and Macros
 // =============================================================================
 
+# define V3_SIZE 3
+# define V4_SIZE 4
+
+# define M2_SIZE 2
+# define M3_SIZE 3
+# define M4_SIZE 4
+
 # define EPSILON 0.00001f
 
 // =============================================================================
@@ -79,6 +86,8 @@ bool	equalf(const float a, const float b);
 // Section : Vector
 // =============================================================================
 
+void	vec_print(void *v, int size);
+
 // --- Addition ---
 t_vec3	vec3_add(const t_vec3 *a, const t_vec3 *b);
 t_vec4	vec4_add(const t_vec4 *a, const t_vec4 *b);
@@ -129,8 +138,8 @@ float	mat4_det(t_mat4 *a);
 t_mat4	mat4_inv(t_mat4 *a);
 
 // --- Minor ---
-float	mat3_minor(const t_mat3 *m, const row, const col);
-float	mat4_minor(const t_mat4 *m, const row, const col);
+float	mat3_minor(const t_mat3 *m, const int row, int const col);
+float	mat4_minor(const t_mat4 *m, const int row, int const col);
 
 // --- Cofactor ---
 float	mat4_cofactor(t_mat4 *a, short row, short col);
