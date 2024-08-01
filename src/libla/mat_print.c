@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:58:32 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 12:59:07 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/01 15:20:59 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	mat_print(void *m, int size)
 			if (size == 3)
 				printf("%0.1f\t", ((t_mat3 *)m)->data[i][j]);
 			if (size == 4)
-				printf("%0.1f\t", ((t_mat3 *)m)->data[i][j]);
+				printf("%0.1f\t", ((t_mat4 *)m)->data[i][j]);
 			j++;
 		}
 		printf("\n");
