@@ -43,3 +43,7 @@ typedef struct s_mat2
 }	t_mat2;
 
 bool	equalf(float a, float b);
+
+void	mat_print(void *m, int size);
+t_mat3	mat4_submatrix(const t_mat4 *m, int row, int col);
+t_mat2	mat3_submatrix(const t_mat3 *m, int row, int col);
