@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBLA_H
+# define LIBLA_H
+
 #include <stdbool.h>
 #include <math.h>
 #define EPSILON 0.00001f
@@ -67,3 +70,5 @@ float	vec4_magnitude(const t_vec4 *v);
 t_vec4	vec4_mul(const t_vec4 *v, const float scalar);
 t_vec4	vec4_normalize(const t_vec4 *v);
 t_vec4	vec4_sub(const t_vec4 *a, const t_vec4 *b);
+
+#endif
