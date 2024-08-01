@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec4_sub.c                                         :+:      :+:    :+:   */
+/*   equalf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 10:08:08 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 10:08:08 by dcortes          ###   ########.fr       */
+/*   Created: 2024/07/31 15:38:47 by achappui          #+#    #+#             */
+/*   Updated: 2024/07/31 15:38:47 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_vec4	vec4_sub(t_vec4 *a, t_vec4 *b)
+t_vec4	vec4_sub(const t_vec4 *a, const t_vec4 *b)
 {
-	t_vec4	diff;
+	t_vec4	res;
 
-	diff.data[X] = a->data[X] - b->data[X];
-	diff.data[Y] = a->data[Y] - b->data[Y];
-	diff.data[Z] = a->data[Z] - b->data[Z];
-	diff.data[W] = a->data[W] - b->data[W];
-	return (diff);
+	res.data[X] = a->data[X] - b->data[X];
+	res.data[Y] = a->data[Y] - b->data[Y];
+	res.data[Z] = a->data[Z] - b->data[Z];
+	res.data[W] = a->data[W] - b->data[W];
+	return (res);
 }

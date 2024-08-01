@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec4_magnitude.c                                   :+:      :+:    :+:   */
+/*   vec4_dot_product.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 10:08:02 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 10:08:02 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/01 15:41:53 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/01 15:41:53 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-float	vec4_magnitude(t_vec4 *v)
+float	vec4_dot_product(const t_vec4 *v1, const t_vec4 *v2)
 {
-	return (sqrt(v->data[X] * v->data[X] + \
-			v->data[Y] * v->data[Y] + \
-			v->data[Z] * v->data[Z] + \
-			v->data[W] * v->data[W]));
+	return (v1->data[X] * v2->data[X] + \
+			v1->data[Y] * v2->data[Y] + \
+			v1->data[Z] * v2->data[Z]);
 }

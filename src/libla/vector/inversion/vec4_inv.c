@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   equalf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 09:55:14 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 09:55:14 by dcortes          ###   ########.fr       */
+/*   Created: 2024/07/31 15:38:47 by achappui          #+#    #+#             */
+/*   Updated: 2024/07/31 15:38:47 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-bool	equalf(const float a, const float b)
+t_vec4	vec4_inv(const t_vec4 *v)
 {
-	return (fabs(a - b) < EPSILON);
+	t_vec4	res;
+
+	res.data[X] = -v->data[X];
+	res.data[Y] = -v->data[Y];
+	res.data[Z] = -v->data[Z];
+	res.data[X] = -v->data[W];
+	return (res);
 }

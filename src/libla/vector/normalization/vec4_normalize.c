@@ -3,16 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   equalf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 09:55:14 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 09:55:14 by dcortes          ###   ########.fr       */
+/*   Created: 2024/07/31 15:38:47 by achappui          #+#    #+#             */
+/*   Updated: 2024/07/31 15:38:47 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libla.h"
+#include	"libla.h"
 
-bool	equalf(const float a, const float b)
+t_vec4	vec4_normalize(const t_vec4 *v)
 {
-	return (fabs(a - b) < EPSILON);
+	t_vec4	res;
+	float	magnitude;
+	
+	magnitude = vec4_magnitude(v);
+	res.data[X] = v->data[X] / magnitude;
+	res.data[Y] = v->data[Y] / magnitude;
+	res.data[Z] = v->data[Z] / magnitude;
+	res.data[W] = v->data[W] / magnitude;
+	return (res);
 }

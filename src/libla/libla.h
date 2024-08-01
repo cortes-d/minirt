@@ -47,3 +47,23 @@ bool	equalf(float a, float b);
 void	mat_print(void *m, int size);
 t_mat3	mat4_submatrix(const t_mat4 *m, int row, int col);
 t_mat2	mat3_submatrix(const t_mat3 *m, int row, int col);
+
+bool	equalf(const float a, const float b);
+float	mat2_det(t_mat2 *a);
+float	mat3_det(t_mat3 *a);
+float	mat4_det(t_mat4 *a);
+t_mat4	mat4_mat4_mul(const t_mat4 *a, const t_mat4 *b);
+t_mat4	mat4_transpose(t_mat4 *a);
+t_vec4	mat4_vec4_mul(const t_mat4 *a, const t_vec4 *b);
+t_mat4	mat4_inv(t_mat4 *a);
+t_mat4	mat4_div(t_mat4 *a, float scalar);
+t_mat4	mat4_mul(t_mat4 *a, float scalar);
+float	mat4_cofactor(t_mat4 *a, short row, short col);
+
+t_vec4	vec4_add(const t_vec4 *a, const t_vec4 *b);
+t_vec4	vec4_div(const t_vec4 *v, const float scalar);
+t_vec4	vec4_inv(const t_vec4 *v);
+float	vec4_magnitude(const t_vec4 *v);
+t_vec4	vec4_mul(const t_vec4 *v, const float scalar);
+t_vec4	vec4_normalize(const t_vec4 *v);
+t_vec4	vec4_sub(const t_vec4 *a, const t_vec4 *b);
