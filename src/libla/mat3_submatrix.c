@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 11:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 13:06:35 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/01 15:03:37 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ t_mat2	mat3_submatrix(const t_mat3 m, int row, int col)
 			while (j < 3)
 			{
 				if (j != col)
-				{
-					submatrix.data[sub_i][sub_j] = m.data[i][j];
-					sub_j++;
-				}
+					submatrix.data[sub_i][sub_j++] = m.data[i][j];
 				j++;
 			}
 			sub_i++;
