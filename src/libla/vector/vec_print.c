@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mat_print.c                                        :+:      :+:    :+:   */
+/*   vec_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 12:58:32 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 22:51:19 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/01 23:35:18 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/01 23:35:19 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libla.h"
 
-void	mat_print(void *m, int size)
+void	vec_print(void *v, int size)
 {
 	int		i;
-	int		j;
 
 	i = 0;
 	while (i < size)
 	{
-		j = 0;
-		while (j < size)
-		{
-			if (size == M2_SIZE)
-				printf("%6.1f\t", ((t_mat2 *)m)->data[i][j]);
-			if (size == M3_SIZE)
-				printf("%6.1f\t", ((t_mat3 *)m)->data[i][j]);
-			if (size == M4_SIZE)
-				printf("%6.1f\t", ((t_mat4 *)m)->data[i][j]);
-			j++;
-		}
-		printf("\n");
+		if (size == V3_SIZE)
+			printf("%6.1f\n", ((t_vec3 *)v)->data[i]);
+		if (size == V4_SIZE)
+			printf("%6.1f\n", ((t_vec4 *)v)->data[i]);
 		i++;
 	}
 }
