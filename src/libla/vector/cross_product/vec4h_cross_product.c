@@ -12,7 +12,7 @@
 
 #include "libla.h"
 
-t_vec4	vec4_cross_product(const t_vec4 *v1, const t_vec4 *v2)
+t_vec4	vec4h_cross_product(const t_vec4 *v1, const t_vec4 *v2)
 {
 	t_vec4	res;
 
