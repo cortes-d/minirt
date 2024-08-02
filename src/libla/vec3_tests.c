@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 10:11:42 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 11:14:28 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 11:36:23 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,21 @@ void	vec3_mul_test()
 		ft_printf("vec3_mul_test: OK\n");
 	else
 		ft_printf("vec3_mul_test: KO\n");
+}
+
+void	vec3_hadamard_product_test()
+{
+	t_vec3	v_test1;
+	t_vec3	v_test2;
+	t_vec3	v_expected;
+	t_vec3	res;
+
+	v_test1 = test_vec3(2, 2, 5);
+	v_test2 = test_vec3(-2, 3, -2);
+	v_expected = test_vec3(-4, 6, -10);
+	res = vec3_hadamard_product(&v_test1, &v_test2);
+	if (vec3_equal(&res, v_expected))
+		ft_printf("vec3_hadamard_product: OK\n");
+	else
+		ft_printf("vec3_hadamard_product: KO\n");
 }
