@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   test_vector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 13:15:20 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 13:15:24 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/02 14:58:48 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/02 14:59:25 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libla/libla.h"
-#include "../libft/libft.h"
+#include "libla.h"
+#include "libft.h"
 
 t_vec4	test_vec4(float x, float y, float z, float w)
 {
@@ -284,24 +284,4 @@ void	vec3_hadamard_product_test()
 		ft_printf("vec3_hadamard_product: OK\n");
 	else
 		ft_printf("vec3_hadamard_product: KO\n");
-}
-
-int	main(void)
-{
-	vec4_div_test();
-	vec4_add_test();
-	vec4_cross_product_test();
-	vec4_mul_test();
-	vec4_normalize_test();
-	vec4_magnitude_test();
-	vec4_inv_test();
-	vec4_equal_test();
-	vec4_dot_product_test();
-	vec4_sub_test();
-	ft_printf("\n\n");
-	vec3_equal_test();
-	vec3_sub_test();
-	vec3_mul_test();
-	vec3_hadamard_product_test();
-	vec3_add_test();
 }
