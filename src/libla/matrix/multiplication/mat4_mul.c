@@ -12,7 +12,7 @@
 
 #include "libla.h"
 
-t_mat4	mat4_mul(const t_mat4 *a, float scalar)
+t_mat4	mat4_mul(const t_mat4 *a, double scalar)
 {
 	t_mat4	res;
 	short	r;
