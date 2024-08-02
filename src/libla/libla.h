@@ -88,6 +88,10 @@ bool	equalf(const float a, const float b);
 
 void	vec_print(void *v, int size);
 
+// --- Equality ---
+bool	vec3_equal(t_vec3 *v1, t_vec3 *v2);
+bool	vec4_equal(t_vec4 *v1, t_vec4 *v2);
+
 // --- Addition ---
 t_vec3	vec3_add(const t_vec3 *a, const t_vec3 *b);
 t_vec4	vec4_add(const t_vec4 *a, const t_vec4 *b);
@@ -114,7 +118,7 @@ float	vec4_magnitude(const t_vec4 *v);
 t_vec4	vec4_normalize(const t_vec4 *v);
 
 // --- Dot Product ---
-t_vec4	vec4_cross_product(const t_vec4 *v1, const t_vec4 *v2);
+float	vec4_dot_product(const t_vec4 *v1, const t_vec4 *v2);
 
 // --- Cross Product ---
 t_vec4	vec4_cross_product(const t_vec4 *v1, const t_vec4 *v2);
@@ -125,14 +129,17 @@ t_vec4	vec4_cross_product(const t_vec4 *v1, const t_vec4 *v2);
 
 void	mat_print(void *m, int size);
 
+// --- Equality ---
+bool	mat4_equal(t_mat4 *a, t_mat4 *b);
+
 // --- Submatrix ---
 t_mat3	mat4_submatrix(const t_mat4 *m, int row, int col);
 t_mat2	mat3_submatrix(const t_mat3 *m, int row, int col);
 
 // --- Determinant ---
-float	mat2_det(t_mat2 *a);
-float	mat3_det(t_mat3 *a);
-float	mat4_det(t_mat4 *a);
+float	mat2_det(const t_mat2 *a);
+float	mat3_det(const t_mat3 *a);
+float	mat4_det(const t_mat4 *a);
 
 // --- Inversion ---
 t_mat4	mat4_inv(t_mat4 *a);
