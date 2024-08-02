@@ -6,17 +6,17 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:58:32 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 14:05:32 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libla.h"
 
-void	mat_print(const void *m, short size)
+void	mat_print(const void *m, unsigned short size)
 {
-	short	i;
-	short	j;
+	unsigned short	i;
+	unsigned short	j;
 
 	i = 0;
 	while (i < size)

@@ -27,7 +27,7 @@
 # define M3_SIZE 3
 # define M4_SIZE 4
 
-# define EPSILON 0.00001f
+# define EPSILON 0.001f
 
 // =============================================================================
 // Section : Type Definitions
@@ -86,7 +86,7 @@ bool	equalf(double a, double b);
 // Section : Vector
 // =============================================================================
 
-void	vec_print(const void *v, short size);
+void	vec_print(const void *v, unsigned short size);
 
 // --- Equality ---
 bool	vec3_equal(const t_vec3 *v1, const t_vec3 *v2);
@@ -127,7 +127,7 @@ t_vec4	vec4h_cross_product(const t_vec4 *v1, const t_vec4 *v2);
 // Section : Matrix
 // =============================================================================
 
-void	mat_print(const void *m, short size);
+void	mat_print(const void *m, unsigned short size);
 
 // --- Equality ---
 bool	mat4_equal(const t_mat4 *a, const t_mat4 *b);
@@ -135,8 +135,8 @@ bool	mat3_equal(const t_mat3 *a, const t_mat3 *b);
 bool	mat2_equal(const t_mat2 *a, const t_mat2 *b);
 
 // --- Submatrix ---
-t_mat3	mat4_submatrix(const t_mat4 *m, short row, short col);
-t_mat2	mat3_submatrix(const t_mat3 *m, short row, short col);
+t_mat3	mat4_submatrix(const t_mat4 *m, unsigned short row, unsigned short col);
+t_mat2	mat3_submatrix(const t_mat3 *m, unsigned short row, unsigned short col);
 
 // --- Determinant ---
 double	mat2_det(const t_mat2 *a);
@@ -147,12 +147,12 @@ double	mat4_det(const t_mat4 *a);
 t_mat4	mat4_inv(const t_mat4 *a);
 
 // --- Minor ---
-double	mat3_minor(const t_mat3 *m, short row, short col);
-double	mat4_minor(const t_mat4 *m, short row, short col);
+double	mat3_minor(const t_mat3 *m, unsigned short row, unsigned short col);
+double	mat4_minor(const t_mat4 *m, unsigned short row, unsigned short col);
 
 // --- Cofactor ---
-double	mat4_cofactor(const t_mat4 *a, short row, short col);
-double	mat3_cofactor(const t_mat3 *a, short row, short col);
+double	mat4_cofactor(const t_mat4 *a, unsigned short row, unsigned short col);
+double	mat3_cofactor(const t_mat3 *a, unsigned short row, unsigned short col);
 
 // --- Multiplication ---
 t_mat4	mat4_mul(const t_mat4 *a, double scalar);

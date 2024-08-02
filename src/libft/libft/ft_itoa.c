@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 10:27:03 by achappui          #+#    #+#             */
-/*   Updated: 2023/11/23 10:12:16 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_itoa(int n)
 {
 	long long	tab;
-	short		i;
+	unsigned short		i;
 
 	tab = n;
 	i = 1;

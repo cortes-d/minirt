@@ -23,8 +23,8 @@ double	mat3_det(const t_mat3 *m)
 double	mat3_det(const t_mat3 *a)
 {
 	t_mat2	submatrix;
-	short	i;
-	short	sign;
+	unsigned short	i;
+	unsigned short	sign;
 	double	det;
 
 	sign = 1;

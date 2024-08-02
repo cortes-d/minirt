@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 15:20:24 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 15:21:15 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:17:50 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,6 @@ void	vec4_magnitude_test()
 	v_test = test_vec4(1, -2, 3, 3.31662479036);
 	v_expected = 5;
 	res = vec4_magnitude(&v_test);
-	printf("%f\n", res);
 	if (equalf(res, v_expected))
 		ft_printf("vec4_magnitude_test: OK\n");
 	else

@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:07:54 by achappui          #+#    #+#             */
-/*   Updated: 2023/11/10 15:46:12 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_print_uint(unsigned long long n, const char *base, char blen, \
 					t_options *o)
 {
 	char	tab[MAX_OCTAL_LLLEN];
-	short	i;
+	unsigned short	i;
 
 	i = sizeof(tab);
 	if (o->spe == 'p')

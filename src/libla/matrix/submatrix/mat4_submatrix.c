@@ -6,20 +6,20 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 11:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 12:40:30 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libla.h"
 
-t_mat3	mat4_submatrix(const t_mat4 *m, short row, short col)
+t_mat3	mat4_submatrix(const t_mat4 *m, unsigned short row, unsigned short col)
 {
 	t_mat3	submatrix;
-	short	i;
-	short	j;
-	short	sub_i;
-	short	sub_j;
+	unsigned short	i;
+	unsigned short	j;
+	unsigned short	sub_i;
+	unsigned short	sub_j;
 
 	i = 0;
 	sub_i = 0;

@@ -6,14 +6,14 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 23:35:18 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 12:39:05 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libla.h"
 
-void	vec_print(const void *v, short size)
+void	vec_print(const void *v, unsigned short size)
 {
 	int		i;
 

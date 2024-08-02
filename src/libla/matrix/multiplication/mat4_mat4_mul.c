@@ -14,9 +14,9 @@
 
 t_mat4	mat4_mat4_mul(const t_mat4 *a, const t_mat4 *b)
 {
-	t_mat4	res;
-	short	r;
-	short	c;
+	t_mat4			res;
+	unsigned short	r;
+	unsigned short	c;
 
 	r = 0;
 	while (r < 4)

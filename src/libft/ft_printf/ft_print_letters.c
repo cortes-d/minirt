@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 11:57:05 by achappui          #+#    #+#             */
-/*   Updated: 2023/11/10 15:45:55 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putchars(int n, char c)
 {
 	char	buffer[BUFFER_SIZE];
-	short	i;
+	unsigned short	i;
 
 	if (n <= 0)
 		return (0);

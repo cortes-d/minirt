@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 14:58:24 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 15:22:28 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:17:25 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,31 +134,26 @@ int	main(void)
 	t_vec4	test_vector_multiplication;
 
 	test_det = mat4_det(&matrix_a);
-	printf("%.8F\n", test_det);
 	if (equalf(test_det, matrix_a_det))
 		printf("det: OK\n");
 	else
 		printf("det: KO\n");
 	test_transpo = mat4_transpose(&matrix_a);
-	mat_print(&test_transpo, 4);
 	if (mat4_equal(&matrix_a_transpo, &test_transpo))
 		printf("Transpo: OK\n");
 	else
 		printf("Transpo: KO\n");
 	test_inversion = mat4_inv(&matrix_a);
-	mat_print(&test_inversion, 4);
 	if (mat4_equal(&matrix_a_inverse, &test_inversion))
 		printf("inversion: OK\n");
 	else
 		printf("inversion: KO\n");
 	test_matrix_multiplication = mat4_mat4_mul(&matrix_a, &matrix_b);
-	mat_print(&test_matrix_multiplication, 4);
 	if (mat4_equal(&matrix_a_times_matrix_b, &test_matrix_multiplication))
 		printf("matrix_multiplication: OK\n");
 	else
 		printf("matrix_multiplication: KO\n");
 	test_vector_multiplication = mat4_vec4_mul(&matrix_a, &vec_test);
-	vec_print(&test_vector_multiplication, 4);
 	if (vec4_equal(&vec_mul_result, &test_vector_multiplication))
 		printf("vector_multiplication: OK\n");
 	else
@@ -174,7 +169,6 @@ int	main(void)
 	vec4_equal_test();
 	vec4_dot_product_test();
 	vec4_sub_test();
-	ft_printf("\n\n");
 	vec3_equal_test();
 	vec3_sub_test();
 	vec3_mul_test();

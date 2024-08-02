@@ -24,8 +24,8 @@ double	mat4_det(const t_mat4 *m)
 double	mat4_det(const t_mat4 *a)
 {
 	t_mat3	submatrix;
-	short	i;
-	short	sign;
+	unsigned short	i;
+	unsigned short	sign;
 	double	det;
 
 	sign = 1;

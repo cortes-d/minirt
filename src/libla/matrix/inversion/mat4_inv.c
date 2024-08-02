@@ -15,8 +15,8 @@
 t_mat4	mat4_inv(const t_mat4 *a)
 {
 	t_mat4	res;
-	short	r;
-	short	c;
+	unsigned short	r;
+	unsigned short	c;
 
 	r = -1;
 	while (++r < 4)

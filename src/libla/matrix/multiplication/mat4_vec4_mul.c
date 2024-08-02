@@ -15,7 +15,7 @@
 t_vec4	mat4_vec4_mul(const t_mat4 *a, const t_vec4 *b)
 {
 	t_vec4	res;
-	short	r;
+	unsigned short	r;
 
 	r = 0;
 	while (r < 4)

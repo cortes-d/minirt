@@ -6,20 +6,20 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 11:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 15:14:21 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libla.h"
 
-t_mat2	mat3_submatrix(const t_mat3 *m, short row, short col)
+t_mat2	mat3_submatrix(const t_mat3 *m, unsigned short row, unsigned short col)
 {
 	t_mat2	submatrix;
-	short	i;
-	short	j;
-	short	sub_i;
-	short	sub_j;
+	unsigned short	i;
+	unsigned short	j;
+	unsigned short	sub_i;
+	unsigned short	sub_j;
 
 	i = 0;
 	sub_i = 0;
@@ -31,8 +31,6 @@ t_mat2	mat3_submatrix(const t_mat3 *m, short row, short col)
 			sub_j = 0;
 			while (j < 3)
 			{
-				// printf("subi %i, subj %i \n", sub_i, sub_j);
-				// getchar();
 				if (j != col)
 					submatrix.data[sub_i][sub_j++] = m->data[i][j];
 				j++;
