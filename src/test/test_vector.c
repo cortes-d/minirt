@@ -5,15 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
+<<<<<<< HEAD
 /*   Created: 2024/08/02 14:58:48 by dcortes           #+#    #+#             */
 /*   Updated: 2024/08/02 14:59:25 by dcortes          ###   ########.fr       */
+=======
+/*   Created: 2024/08/02 13:15:20 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/02 14:40:51 by achappui         ###   ########.fr       */
+>>>>>>> 5772f6116a219d6f9d99bb5531819f25c23af86b
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 #include "libft.h"
 
-t_vec4	test_vec4(float x, float y, float z, float w)
+t_vec4	test_vec4(double x, double y, double z, double w)
 {
 	t_vec4	vector;
 
@@ -62,7 +67,7 @@ void	vec4_cross_product_test()
 void	vec4_div_test()
 {
 	t_vec4	v_test1;
-	float	scalar;
+	double	scalar;
 	t_vec4	v_expected;
 	t_vec4	res;
 
@@ -79,7 +84,7 @@ void	vec4_div_test()
 void	vec4_mul_test()
 {
 	t_vec4	v_test1;
-	float	scalar;
+	double	scalar;
 	t_vec4	v_expected;
 	t_vec4	res;
 
@@ -114,8 +119,8 @@ void	vec4_dot_product_test()
 {
 	t_vec4	v_test1;
 	t_vec4	v_test2;
-	float	v_expected;
-	float	res;
+	double	v_expected;
+	double	res;
 
 	v_test1 = test_vec4(1, 2, 3, 6);
 	v_test2 = test_vec4(-2, 1, -2, 3);
@@ -162,8 +167,8 @@ void	vec4_inv_test()
 void	vec4_magnitude_test()
 {
 	t_vec4	v_test;
-	float	v_expected;
-	float	res;
+	double	v_expected;
+	double	res;
 
 	v_test = test_vec4(1, -2, 3, 3.31662479036);
 	v_expected = 5;
@@ -191,7 +196,7 @@ void	vec4_normalize_test()
 		ft_printf("vec4_normalize_test: KO\n");
 }
 
-t_vec3	test_vec3(float x, float y, float z)
+t_vec3	test_vec3(double x, double y, double z)
 {
 	t_vec3	vector;
 
@@ -255,7 +260,7 @@ void	vec3_add_test()
 void	vec3_mul_test()
 {
 	t_vec3	v_test1;
-	float	scalar;
+	double	scalar;
 	t_vec3	v_expected;
 	t_vec3	res;
 

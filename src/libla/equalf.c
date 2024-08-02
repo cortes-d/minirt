@@ -12,7 +12,7 @@
 
 #include "libla.h"
 
-bool	equalf(float a, float b)
+bool	equalf(double a, double b)
 {
 	return (fabs(a - b) < EPSILON);
 }

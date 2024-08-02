@@ -24,10 +24,10 @@ t_mat4	mat4_transpose(const t_mat4 *a)
 		c = 0;
 		while (c < 4)
 		{
-			res.data[0][r] = a->data[r][c];
-			res.data[1][r] = a->data[r][c];
-			res.data[2][r] = a->data[r][c];
-			res.data[3][r] = a->data[r][c];
+			res.data[c][r] = a->data[r][c];
+			res.data[c][r] = a->data[r][c];
+			res.data[c][r] = a->data[r][c];
+			res.data[c][r] = a->data[r][c];
 			c++;
 		}
 		r++;
