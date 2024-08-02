@@ -16,11 +16,9 @@ t_vec4	vec4h_cross_product(const t_vec4 *v1, const t_vec4 *v2)
 {
 	t_vec4	res;
 
-	res.data[X] = \
-	v1->data[Y] * v2->data[Z] + v1->data[Z] * v2->data[Y];
-	res.data[Y] = \
-	v1->data[Z] * v2->data[X] + v1->data[X] * v2->data[Z];
-	res.data[Z] = \
-	v1->data[X] * v2->data[Y] + v1->data[Y] * v2->data[X];
+	res.data[X] = v1->data[Y] * v2->data[Z] - v1->data[Z] * v2->data[Y];
+	res.data[Y] = v1->data[Z] * v2->data[X] - v1->data[X] * v2->data[Z];
+	res.data[Z] = v1->data[X] * v2->data[Y] - v1->data[Y] * v2->data[X];
+	res.data[W] = 0;
 	return (res);
 }

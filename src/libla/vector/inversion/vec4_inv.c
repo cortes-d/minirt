@@ -19,6 +19,6 @@ t_vec4	vec4_inv(const t_vec4 *v)
 	res.data[X] = -v->data[X];
 	res.data[Y] = -v->data[Y];
 	res.data[Z] = -v->data[Z];
-	res.data[X] = -v->data[W];
+	res.data[W] = -v->data[W];
 	return (res);
 }
