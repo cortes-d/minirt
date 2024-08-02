@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   vec_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 23:35:18 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 23:35:19 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/02 12:39:05 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libla.h"
 
-void	vec_print(void *v, int size)
+void	vec_print(const void *v, short size)
 {
 	int		i;
 

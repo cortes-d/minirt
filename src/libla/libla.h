@@ -80,17 +80,17 @@ typedef struct s_mat2
 // Section : General
 // =============================================================================
 
-bool	equalf(const float a, const float b);
+bool	equalf(float a, float b);
 
 // =============================================================================
 // Section : Vector
 // =============================================================================
 
-void	vec_print(void *v, int size);
+void	vec_print(const void *v, short size);
 
 // --- Equality ---
-bool	vec3_equal(t_vec3 *v1, t_vec3 *v2);
-bool	vec4_equal(t_vec4 *v1, t_vec4 *v2);
+bool	vec3_equal(const t_vec3 *v1, const t_vec3 *v2);
+bool	vec4_equal(const t_vec4 *v1, const t_vec4 *v2);
 
 // --- Addition ---
 t_vec3	vec3_add(const t_vec3 *a, const t_vec3 *b);
@@ -102,11 +102,11 @@ t_vec4	vec4_sub(const t_vec4 *a, const t_vec4 *b);
 
 // --- Multiplication ---
 t_vec3	vec3_hadamard_product(const t_vec3 *v1, const t_vec3 *v2);
-t_vec3	vec3_mul(const t_vec3 *v, const float scalar);
-t_vec4	vec4_mul(const t_vec4 *v, const float scalar);
+t_vec3	vec3_mul(const t_vec3 *v, float scalar);
+t_vec4	vec4_mul(const t_vec4 *v, float scalar);
 
 // --- Division ---
-t_vec4	vec4_div(const t_vec4 *v, const float scalar);
+t_vec4	vec4_div(const t_vec4 *v, float scalar);
 
 // --- Inversion ---
 t_vec4	vec4_inv(const t_vec4 *v);
@@ -121,20 +121,22 @@ t_vec4	vec4_normalize(const t_vec4 *v);
 float	vec4_dot_product(const t_vec4 *v1, const t_vec4 *v2);
 
 // --- Cross Product ---
-t_vec4	vec4_cross_product(const t_vec4 *v1, const t_vec4 *v2);
+t_vec4	vec4h_cross_product(const t_vec4 *v1, const t_vec4 *v2);
 
 // =============================================================================
 // Section : Matrix
 // =============================================================================
 
-void	mat_print(void *m, int size);
+void	mat_print(const void *m, short size);
 
 // --- Equality ---
-bool	mat4_equal(t_mat4 *a, t_mat4 *b);
+bool	mat4_equal(const t_mat4 *a, const t_mat4 *b);
+bool	mat3_equal(const t_mat3 *a, const t_mat3 *b);
+bool	mat2_equal(const t_mat2 *a, const t_mat2 *b);
 
 // --- Submatrix ---
-t_mat3	mat4_submatrix(const t_mat4 *m, int row, int col);
-t_mat2	mat3_submatrix(const t_mat3 *m, int row, int col);
+t_mat3	mat4_submatrix(const t_mat4 *m, short row, short col);
+t_mat2	mat3_submatrix(const t_mat3 *m, short row, short col);
 
 // --- Determinant ---
 float	mat2_det(const t_mat2 *a);
@@ -142,24 +144,25 @@ float	mat3_det(const t_mat3 *a);
 float	mat4_det(const t_mat4 *a);
 
 // --- Inversion ---
-t_mat4	mat4_inv(t_mat4 *a);
+t_mat4	mat4_inv(const t_mat4 *a);
 
 // --- Minor ---
-float	mat3_minor(const t_mat3 *m, const int row, int const col);
-float	mat4_minor(const t_mat4 *m, const int row, int const col);
+float	mat3_minor(const t_mat3 *m, short row, short col);
+float	mat4_minor(const t_mat4 *m, short row, short col);
 
 // --- Cofactor ---
-float	mat4_cofactor(t_mat4 *a, short row, short col);
+float	mat4_cofactor(const t_mat4 *a, short row, short col);
+float	mat3_cofactor(const t_mat3 *a, short row, short col);
 
 // --- Multiplication ---
-t_mat4	mat4_mul(t_mat4 *a, float scalar);
+t_mat4	mat4_mul(const t_mat4 *a, float scalar);
 t_mat4	mat4_mat4_mul(const t_mat4 *a, const t_mat4 *b);
 t_vec4	mat4_vec4_mul(const t_mat4 *a, const t_vec4 *b);
 
 // --- Division ---
-t_mat4	mat4_div(t_mat4 *a, float scalar);
+t_mat4	mat4_div(const t_mat4 *a, float scalar);
 
 // --- Transpose ---
-t_mat4	mat4_transpose(t_mat4 *a);
+t_mat4	mat4_transpose(const t_mat4 *a);
 
 #endif

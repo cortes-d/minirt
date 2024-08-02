@@ -12,7 +12,7 @@
 
 #include "libla.h"
 
-t_vec4	vec4_mul(const t_vec4 *v, const float scalar)
+t_vec4	vec4_mul(const t_vec4 *v, float scalar)
 {
 	t_vec4	res;
 

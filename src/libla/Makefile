@@ -53,6 +53,8 @@ SRC = 	equalf.c \
 		$(DIR_VECTOR_CROSS_PRODUCT)/vec4h_cross_product.c \
 		$(DIR_MATRIX)/mat_print.c \
 		$(DIR_MATRIX_EQUALITY)/mat4_equal.c \
+		$(DIR_MATRIX_EQUALITY)/mat3_equal.c \
+		$(DIR_MATRIX_EQUALITY)/mat2_equal.c \
 		$(DIR_MATRIX_SUBMATRIX)/mat3_submatrix.c \
 		$(DIR_MATRIX_SUBMATRIX)/mat4_submatrix.c \
 		$(DIR_MATRIX_DETERMINANT)/mat2_det.c \
@@ -62,6 +64,7 @@ SRC = 	equalf.c \
 		$(DIR_MATRIX_MINOR)/mat3_minor.c \
 		$(DIR_MATRIX_MINOR)/mat4_minor.c \
 		$(DIR_MATRIX_COFACTOR)/mat4_cofactor.c \
+		$(DIR_MATRIX_COFACTOR)/mat3_cofactor.c \
 		$(DIR_MATRIX_MULTIPLICATION)/mat4_mul.c \
 		$(DIR_MATRIX_MULTIPLICATION)/mat4_mat4_mul.c \
 		$(DIR_MATRIX_MULTIPLICATION)/mat4_vec4_mul.c \

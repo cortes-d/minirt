@@ -12,7 +12,7 @@
 
 #include "libla.h"
 
-t_mat4	mat4_inv(t_mat4 *a)
+t_mat4	mat4_inv(const t_mat4 *a)
 {
 	t_mat4	res;
 	short	r;
@@ -20,6 +20,7 @@ t_mat4	mat4_inv(t_mat4 *a)
 	float	det;
 
 	r = -1;
+	det = 0;
 	while (++r < 4)
 	{
 		c = -1;

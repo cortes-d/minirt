@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   mat_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 12:58:32 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 22:51:19 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/02 12:40:59 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libla.h"
 
-void	mat_print(void *m, int size)
+void	mat_print(const void *m, short size)
 {
-	int		i;
-	int		j;
+	short	i;
+	short	j;
 
 	i = 0;
 	while (i < size)

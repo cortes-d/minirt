@@ -6,13 +6,13 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 08:36:51 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 08:50:54 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 12:34:49 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-bool	mat4_equal(t_mat4 *a, t_mat4 *b)
+bool	mat4_equal(const t_mat4 *a, const t_mat4 *b)
 {
 	short	r;
 	short	c;

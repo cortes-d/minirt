@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   mat3_submatrix.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 11:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 15:50:44 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/02 12:40:20 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libla.h"
 
-t_mat2	mat3_submatrix(const t_mat3 *m, int row, int col)
+t_mat2	mat3_submatrix(const t_mat3 *m, short row, short col)
 {
 	t_mat2	submatrix;
-	int		i;
-	int		j;
-	int		sub_i;
-	int		sub_j;
+	short	i;
+	short	j;
+	short	sub_i;
+	short	sub_j;
 
 	i = 0;
 	sub_i = 0;

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec3_equal.c                                       :+:      :+:    :+:   */
+/*   mat3_equal.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 08:36:51 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 12:36:20 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/02 12:26:29 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/02 12:34:43 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-bool	vec3_equal(const t_vec3 *v1, const t_vec3 *v2)
+bool	mat3_equal(const t_mat3 *a, const t_mat3 *b)
 {
 	short	r;
+	short	c;
 
 	r = 0;
 	while (r < 3)
 	{
-		if (!equalf(v1->data[r], v2->data[r]))
-			return (0);
+		c = 0;
+		while (++c < 3)
+		{
+			if (!equalf(a->data[r][c], b->data[r][c]))
+				return (0);
+			c++;
+		}
 		r++;
 	}
 	return (1);

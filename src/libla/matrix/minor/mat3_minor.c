@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   mat3_minor.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 16:04:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/01 23:11:43 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/02 12:39:57 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-float	mat3_minor(const t_mat3 *m, const int row, int const col)
+float	mat3_minor(const t_mat3 *m, short row, short col)
 {
 	t_mat2	submatrix;
 

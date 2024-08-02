@@ -6,13 +6,13 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 08:36:51 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 08:59:53 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 12:36:26 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-bool	vec4_equal(t_vec4 *v1, t_vec4 *v2)
+bool	vec4_equal(const t_vec4 *v1, const t_vec4 *v2)
 {
 	short	r;
 
