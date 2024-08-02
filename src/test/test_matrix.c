@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 13:19:14 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 14:59:06 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 15:22:27 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,19 +135,8 @@ int	main()
 	t_mat4	test_matrix_multiplication;
 	t_vec4	test_vector_multiplication;
 
-	t_mat3	tester;
-	t_mat2	tester2;
-
-	tester = mat4_submatrix(&matrix_a, 0, 1);
-	mat_print(&tester, 3);
-	tester2 = mat3_submatrix(&tester, 0, 0);
-	///mat_print(&tester2, 2);
-	printf("yo\n");
-	getchar();
 	test_det = mat4_det(&matrix_a);
-	printf("yo\n");
-	getchar();
-	printf("%F\n", test_det);
+	printf("%.8F\n", test_det);
 	if (equalf(test_det, matrix_a_det))
 		printf("det: OK\n");
 	else

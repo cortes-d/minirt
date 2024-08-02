@@ -3,15 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_vector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-<<<<<<< HEAD
-/*   Created: 2024/08/02 14:58:48 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 14:59:25 by dcortes          ###   ########.fr       */
-=======
-/*   Created: 2024/08/02 13:15:20 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 14:40:51 by achappui         ###   ########.fr       */
->>>>>>> 5772f6116a219d6f9d99bb5531819f25c23af86b
+/*   Created: 2024/08/02 15:20:24 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/02 15:21:15 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +51,6 @@ void	vec4_cross_product_test()
 	v_test1 = test_vec4(1, 2, 3, 0);
 	v_test2 = test_vec4(-2, 1, -2, 0);
 	v_expected = test_vec4(-7, -4, 5, 0);
-	vec_print(&res, 4);
 	res = vec4h_cross_product(&v_test1, &v_test2);
 	if (vec4_equal(&res, &v_expected))
 		ft_printf("vec4_cross_product_test: OK\n");
@@ -189,7 +183,6 @@ void	vec4_normalize_test()
 	v_test = test_vec4(1, -2, 3, 3.31662479036);
 	v_expected = test_vec4(0.2, -0.4, 0.6, 0.66332495807);
 	res = vec4_normalize(&v_test);
-	vec_print(&res, 4);
 	if (vec4_equal(&res, &v_expected))
 		ft_printf("vec4_normalize_test: OK\n");
 	else

@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 11:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 14:40:24 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/02 15:14:21 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ t_mat2	mat3_submatrix(const t_mat3 *m, short row, short col)
 			sub_j = 0;
 			while (j < 3)
 			{
+				// printf("subi %i, subj %i \n", sub_i, sub_j);
+				// getchar();
 				if (j != col)
 					submatrix.data[sub_i][sub_j++] = m->data[i][j];
 				j++;
