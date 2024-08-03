@@ -61,6 +61,11 @@ typedef struct s_vec3
 }	t_vec3;
 
 // --- Structure : Matrix ---
+typedef struct s_row4
+{
+	double data[4]
+}	t_row4;
+
 typedef struct s_mat4
 {
 	float	data[4][4];
@@ -128,6 +133,13 @@ t_vec4	vec4h_cross_product(const t_vec4 *v1, const t_vec4 *v2);
 // =============================================================================
 
 void	mat_print(const void *m, unsigned short size);
+t_row4	row4(double a, double b, double c, double d);
+t_mat4	mat4(t_row4 a, t_row4 b, t_row4 c, t_row4 d);
+
+// --- Identity ---
+t_mat2	mat2_identity();
+t_mat3	mat3_identity();
+t_mat4	mat4_identity();
 
 // --- Equality ---
 bool	mat4_equal(const t_mat4 *a, const t_mat4 *b);
@@ -164,10 +176,5 @@ t_mat4	mat4_div(const t_mat4 *a, float scalar);
 
 // --- Transpose ---
 t_mat4	mat4_transpose(const t_mat4 *a);
-
-// --- Identity ---
-t_mat2	mat2_identity();
-t_mat3	mat3_identity();
-t_mat4	mat4_identity();
 
 #endif
