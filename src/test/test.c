@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 14:58:24 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/03 07:09:25 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/03 07:36:04 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ int	main(void)
 	float	test_det;
 	t_mat4	test_matrix_multiplication;
 	t_vec4	test_vector_multiplication;
+	t_mat4	test_mat_mul;
 
 	test_det = mat4_det(&matrix_a);
 	if (equalf(test_det, matrix_a_det))
@@ -158,6 +159,8 @@ int	main(void)
 		printf("vector_multiplication: OK\n");
 	else
 		printf("vector_multiplication: KO\n");
+	test_mat_mul = mat4_mul(&matrix_a, 0);
+	mat_print(&test_mat_mul, 4);
 
 	vec4_div_test();
 	vec4_add_test();

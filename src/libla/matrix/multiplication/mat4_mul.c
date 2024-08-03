@@ -14,7 +14,7 @@
 
 t_mat4	mat4_mul(const t_mat4 *a, float scalar)
 {
-	t_mat4	res;
+	t_mat4			res;
 	unsigned short	r;
 	unsigned short	c;
 
