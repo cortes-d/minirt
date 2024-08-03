@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 14:58:24 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/03 07:36:04 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/03 07:46:40 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,16 @@ int	main(void)
 		printf("vector_multiplication: KO\n");
 	test_mat_mul = mat4_mul(&matrix_a, 0);
 	mat_print(&test_mat_mul, 4);
+
+	t_mat4	mat4_test_identity;
+	mat4_test_identity = mat4_identity();
+	mat_print(&mat4_test_identity, 4);
+	t_mat3	mat3_test_identity;
+	mat3_test_identity = mat3_identity();
+	mat_print(&mat3_test_identity, 3);
+	t_mat2	mat2_test_identity;
+	mat2_test_identity = mat2_identity();
+	mat_print(&mat2_test_identity, 2);
 
 	vec4_div_test();
 	vec4_add_test();

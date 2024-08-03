@@ -20,6 +20,7 @@ DIR_VECTOR_DOT_PRODUCT = $(DIR_VECTOR)/dot_product
 DIR_VECTOR_CROSS_PRODUCT = $(DIR_VECTOR)/cross_product
 
 # --- Matrix directories ---
+DIR_MATRIX_IDENTITY = $(DIR_MATRIX)/identity
 DIR_MATRIX_EQUALITY = $(DIR_MATRIX)/equality
 DIR_MATRIX_SUBMATRIX = $(DIR_MATRIX)/submatrix
 DIR_MATRIX_DETERMINANT = $(DIR_MATRIX)/determinant
@@ -52,6 +53,9 @@ SRC = 	equalf.c \
 		$(DIR_VECTOR_DOT_PRODUCT)/vec4_dot_product.c \
 		$(DIR_VECTOR_CROSS_PRODUCT)/vec4h_cross_product.c \
 		$(DIR_MATRIX)/mat_print.c \
+		$(DIR_MATRIX_IDENTITY)/mat4_identity.c \
+		$(DIR_MATRIX_IDENTITY)/mat3_identity.c \
+		$(DIR_MATRIX_IDENTITY)/mat2_identity.c \
 		$(DIR_MATRIX_EQUALITY)/mat4_equal.c \
 		$(DIR_MATRIX_EQUALITY)/mat3_equal.c \
 		$(DIR_MATRIX_EQUALITY)/mat2_equal.c \

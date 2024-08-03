@@ -165,4 +165,9 @@ t_mat4	mat4_div(const t_mat4 *a, float scalar);
 // --- Transpose ---
 t_mat4	mat4_transpose(const t_mat4 *a);
 
+// --- Identity ---
+t_mat2	mat2_identity();
+t_mat3	mat3_identity();
+t_mat4	mat4_identity();
+
 #endif
