@@ -63,7 +63,7 @@ typedef struct s_vec3
 // --- Structure : Matrix ---
 typedef struct s_row4
 {
-	double data[4]
+	double data[4];
 }	t_row4;
 
 typedef struct s_mat4
