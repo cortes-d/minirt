@@ -12,7 +12,7 @@
 
 #include "libla.h"
 
-double	mat3_cofactor(const t_mat3 *m, unsigned short row, unsigned short col)
+float	mat3_cofactor(const t_mat3 *m, unsigned short row, unsigned short col)
 {
 	if ((row + col) % 2 == 1)
 		return (-mat3_minor(m, row, col));

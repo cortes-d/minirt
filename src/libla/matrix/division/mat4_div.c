@@ -12,7 +12,7 @@
 
 #include "libla.h"
 
-t_mat4	mat4_div(const t_mat4 *m, double scalar)
+t_mat4	mat4_div(const t_mat4 *m, float scalar)
 {
 	t_mat4	res;
 	unsigned short	r;

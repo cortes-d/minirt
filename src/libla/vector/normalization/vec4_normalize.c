@@ -15,7 +15,7 @@
 t_vec4	vec4_normalize(const t_vec4 *v)
 {
 	t_vec4	res;
-	double	magnitude;
+	float	magnitude;
 	
 	magnitude = vec4_magnitude(v);
 	res.data[X] = v->data[X] / magnitude;

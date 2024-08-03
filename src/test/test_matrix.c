@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 13:19:14 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 15:22:27 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/03 07:09:25 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	main()
     matrix_a_times_matrix_b.data[3][2] = 29.6892F;
     matrix_a_times_matrix_b.data[3][3] = -48.9F;
 
-	double	matrix_a_det;
+	float	matrix_a_det;
 
 	matrix_a_det = 582.3434582399991F;
 
@@ -131,7 +131,7 @@ int	main()
 
 	t_mat4	test_transpo;
 	t_mat4	test_inversion;
-	double	test_det;
+	float	test_det;
 	t_mat4	test_matrix_multiplication;
 	t_vec4	test_vector_multiplication;
 

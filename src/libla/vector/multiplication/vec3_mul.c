@@ -12,7 +12,7 @@
 
 #include "libla.h"
 
-t_vec3	vec3_mul(const t_vec3 *v, double scalar)
+t_vec3	vec3_mul(const t_vec3 *v, float scalar)
 {
 	t_vec3	res;
 

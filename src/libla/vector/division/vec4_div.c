@@ -12,7 +12,7 @@
 
 #include	"libla.h"
 
-t_vec4	vec4_div(const t_vec4 *v, double scalar)
+t_vec4	vec4_div(const t_vec4 *v, float scalar)
 {
 	t_vec4	res;
 

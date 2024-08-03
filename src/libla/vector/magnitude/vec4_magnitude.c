@@ -12,7 +12,7 @@
 
 #include	"libla.h"
 
-double    vec4_magnitude(const t_vec4 *v)
+float    vec4_magnitude(const t_vec4 *v)
 {
       return(sqrt(v->data[X] * v->data[X] + \
                   v->data[Y] * v->data[Y] + \

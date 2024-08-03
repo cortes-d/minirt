@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 23:35:18 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/03 07:10:29 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	vec_print(const void *v, unsigned short size)
 	while (i < size)
 	{
 		if (size == V3_SIZE)
-			printf("%6.1f\n", ((t_vec3 *)v)->data[i]);
+			printf("%6.2f\n", ((t_vec3 *)v)->data[i]);
 		if (size == V4_SIZE)
-			printf("%6.1f\n", ((t_vec4 *)v)->data[i]);
+			printf("%6.2f\n", ((t_vec4 *)v)->data[i]);
 		i++;
 	}
 }
