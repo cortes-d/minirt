@@ -37,6 +37,7 @@ DIR_MATRIX_TRANSPOSE = $(DIR_MATRIX)/transpose
 
 SRC = 	equalf.c \
 		$(DIR_VECTOR)/vec_print.c \
+		$(DIR_VECTOR)/vec4.c \
 		$(DIR_VECTOR_EQUALITY)/vec3_equal.c \
 		$(DIR_VECTOR_EQUALITY)/vec4_equal.c \
 		$(DIR_VECTOR_ADDITION)/vec3_add.c \
@@ -53,6 +54,8 @@ SRC = 	equalf.c \
 		$(DIR_VECTOR_DOT_PRODUCT)/vec4_dot_product.c \
 		$(DIR_VECTOR_CROSS_PRODUCT)/vec4h_cross_product.c \
 		$(DIR_MATRIX)/mat_print.c \
+		$(DIR_MATRIX)/row4.c \
+		$(DIR_MATRIX)/mat4.c \
 		$(DIR_MATRIX_IDENTITY)/mat4_identity.c \
 		$(DIR_MATRIX_IDENTITY)/mat3_identity.c \
 		$(DIR_MATRIX_IDENTITY)/mat2_identity.c \
