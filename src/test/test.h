@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: damian-cortes <damian-cortes@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 15:02:59 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 15:05:33 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/04 11:09:53 by damian-cort      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ void	vec3_add_test();
 void	vec3_mul_test();
 void	vec3_hadamard_product_test();
 
+void	test_mat_determinant(void);
+void	test_mat_identity(void);
+void	test_mat_inversion(void);
+void	test_mat_multiplication(void);
+void	test_mat_transposition(void);
 void	test_mat_submatrix(void);
 
 #endif

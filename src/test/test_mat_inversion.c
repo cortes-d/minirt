@@ -6,9 +6,11 @@
 /*   By: damian-cortes <damian-cortes@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 12:47:58 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/03 12:49:54 by damian-cort      ###   ########.fr       */
+/*   Updated: 2024/08/04 11:07:54 by damian-cort      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "test.h"
 
 void	test_mat_inversion(void)
 {

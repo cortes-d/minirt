@@ -6,13 +6,13 @@
 /*   By: damian-cortes <damian-cortes@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 11:53:52 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/03 11:54:42 by damian-cort      ###   ########.fr       */
+/*   Updated: 2024/08/04 11:12:14 by damian-cort      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_row4	row4(double a, double b, double c, double d)
+t_row4	row4(float a, float b, float c, float d)
 {
 	t_row4	row;
 
