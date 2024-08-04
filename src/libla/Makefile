@@ -80,7 +80,9 @@ SRC = 	equalf.c \
 		$(DIR_MATRIX_TRANSPOSE)/mat4_transpose.c \
 		$(DIR_MATRIX_TRANSFORMATION)/mat4_translation.c \
 		$(DIR_MATRIX_TRANSFORMATION)/mat4_scaling.c \
-		$(DIR_MATRIX_TRANSFORMATION)/mat4_rotation_x.c
+		$(DIR_MATRIX_TRANSFORMATION)/mat4_rotation_x.c \
+		$(DIR_MATRIX_TRANSFORMATION)/mat4_rotation_y.c \
+		$(DIR_MATRIX_TRANSFORMATION)/mat4_rotation_z.c
 
 # =============================================================================
 # Section : Object files
