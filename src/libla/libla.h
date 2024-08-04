@@ -178,4 +178,7 @@ t_mat4	mat4_div(const t_mat4 *a, float scalar);
 // --- Transpose ---
 t_mat4	mat4_transpose(const t_mat4 *a);
 
+// --- Transformation ---
+t_mat4	mat4_translation(float x, float y, float z);
+
 #endif

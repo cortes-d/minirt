@@ -30,6 +30,7 @@ DIR_MATRIX_COFACTOR = $(DIR_MATRIX)/cofactor
 DIR_MATRIX_MULTIPLICATION = $(DIR_MATRIX)/multiplication
 DIR_MATRIX_DIVISION = $(DIR_MATRIX)/division
 DIR_MATRIX_TRANSPOSE = $(DIR_MATRIX)/transpose
+DIR_MATRIX_TRANSFORMATION = $(DIR_MATRIX)/transformation
 
 # =============================================================================
 # Section : Source files
@@ -77,6 +78,7 @@ SRC = 	equalf.c \
 		$(DIR_MATRIX_MULTIPLICATION)/mat4_vec4_mul.c \
 		$(DIR_MATRIX_DIVISION)/mat4_div.c \
 		$(DIR_MATRIX_TRANSPOSE)/mat4_transpose.c \
+		$(DIR_MATRIX_TRANSFORMATION)/mat4_translation.c
 
 # =============================================================================
 # Section : Object files
