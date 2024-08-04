@@ -181,5 +181,6 @@ t_mat4	mat4_transpose(const t_mat4 *a);
 // --- Transformation ---
 t_mat4	mat4_translation(float x, float y, float z);
 t_mat4	mat4_scaling(float x, float y, float z);
+t_mat4  mat4_rotation_x(float r);
 
 #endif
