@@ -92,7 +92,9 @@ bool	equalf(float a, float b);
 // =============================================================================
 
 void	vec_print(const void *v, unsigned short size);
-t_vec4  vec4(float a, float b, float c, float d);
+t_vec4	vec4(float a, float b, float c, float d);
+t_vec4	vec4_point(float x, float y, float z);
+t_vec4	vec4_vector(float x, float y, float z);
 
 // --- Equality ---
 bool	vec3_equal(const t_vec3 *v1, const t_vec3 *v2);
@@ -138,9 +140,9 @@ t_row4	row4(float a, float b, float c, float d);
 t_mat4	mat4(t_row4 a, t_row4 b, t_row4 c, t_row4 d);
 
 // --- Identity ---
-t_mat2	mat2_identity();
-t_mat3	mat3_identity();
-t_mat4	mat4_identity();
+t_mat2	mat2_identity(void);
+t_mat3	mat3_identity(void);
+t_mat4	mat4_identity(void);
 
 // --- Equality ---
 bool	mat4_equal(const t_mat4 *a, const t_mat4 *b);

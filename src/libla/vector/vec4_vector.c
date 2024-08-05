@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec4.c                                             :+:      :+:    :+:   */
+/*   vec4_vector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 12:16:31 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/05 09:40:51 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/05 09:44:04 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/05 09:44:17 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_vec4  vec4(float a, float b, float c, float d)
+t_vec4	vec4_vector(float x, float y, float z)
 {
-	t_vec4	v;
-
-	v.data[0] = a;
-	v.data[1] = b;
-	v.data[2] = c;
-	v.data[3] = d;
-	return (v);
+	return (vec4(x, y, x, 0));
 }
