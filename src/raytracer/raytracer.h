@@ -6,13 +6,19 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 15:49:55 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/05 15:58:59 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RAYTRACER_H
 # define RAYTRACER_H
 # include "libla.h"
+
+// =============================================================================
+// Section : Constants and Macros
+// =============================================================================
+
+# define COLOR_DEFAULT 0.8
 
 // =============================================================================
 // Section : Type Definitions
@@ -75,10 +81,13 @@ t_vec4		vector(float x, float y, float z);
 
 // --- Ray ---
 t_vec4		position(t_ray ray, float t);
-t_vec4		position(const t_ray *ray, float t);
 
 // --- Color ---
 t_vec3		color(float r, float g, float b);
+
+// --- Material ---
+t_material	material(t_vec3 color, float ambient, \
+				float diffuse, float specular);
 
 // --- Primitive ---
 t_object	sphere(t_vec4 p_origin, float radius);
