@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 09:42:20 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 14:33:37 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/05 15:29:42 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_vec3	point(float r, float g, float b)
+t_vec3	color(float r, float g, float b)
 {
 	return (vec3(r, g, b));
 }
