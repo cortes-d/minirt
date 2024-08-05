@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 16:47:56 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/05 16:59:38 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,20 +85,24 @@ typedef struct s_sphere
 // Section : Functions
 // =============================================================================
 
-t_vec4		point(float x, float y, float z);
-t_vec4		vector(float x, float y, float z);
+t_vec4				point(float x, float y, float z);
+t_vec4				vector(float x, float y, float z);
 
 // --- Ray ---
-t_vec4		position(t_ray ray, float t);
+t_vec4				position(t_ray ray, float t);
+
+// --- Intersection ---
+t_intersection_pair	intersect(t_ray ray, t_object object);
+t_intersection		intersection(float t, t_object object);
 
 // --- Color ---
-t_vec3		color(float r, float g, float b);
+t_vec3				color(float r, float g, float b);
 
 // --- Material ---
-t_material	material(t_vec3 color, float ambient, \
-				float diffuse, float specular);
+t_material			material(t_vec3 color, float ambient, \
+						float diffuse, float specular);
 
 // --- Primitive ---
-t_object	sphere(t_vec4 p_origin, float radius);
+t_object			sphere(t_vec4 p_origin, float radius);
 
 #endif
