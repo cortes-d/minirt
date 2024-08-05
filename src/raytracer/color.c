@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec4_point.c                                       :+:      :+:    :+:   */
+/*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 09:42:20 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 09:43:45 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/05 14:33:37 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_vec4	vec4_point(float x, float y, float z)
+t_vec3	point(float r, float g, float b)
 {
-	return (vec4(x, y, x, 1));
+	return (vec3(r, g, b));
 }

@@ -93,8 +93,7 @@ bool	equalf(float a, float b);
 
 void	vec_print(const void *v, unsigned short size);
 t_vec4	vec4(float a, float b, float c, float d);
-t_vec4	vec4_point(float x, float y, float z);
-t_vec4	vec4_vector(float x, float y, float z);
+t_vec3  vec3(float a, float b, float c);
 
 // --- Equality ---
 bool	vec3_equal(const t_vec3 *v1, const t_vec3 *v2);

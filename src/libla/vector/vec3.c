@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raytracer.h                                        :+:      :+:    :+:   */
+/*   vec3.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 14:34:05 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/03 12:16:31 by damian-cort       #+#    #+#             */
+/*   Updated: 2024/08/05 14:33:35 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RAYTRACER_H
-# define RAYTRACER_H
-# include "libla.h"
+#include "libla.h"
 
-typedef struct s_ray
+t_vec3  vec3(float a, float b, float c)
 {
-	t_vec4	p_origin;
-	t_vec4	v_direction;
-}	t_ray;
+	t_vec3	v;
 
-
-
-t_vec3	point(float r, float g, float b);
-t_vec4	vector(float x, float y, float z);
-t_vec3	point(float r, float g, float b);
-
-#endif
+	v.data[0] = a;
+	v.data[1] = b;
+	v.data[2] = c;
+	return (v);
+}
