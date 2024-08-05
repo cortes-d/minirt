@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_mat_transposition.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: damian-cortes <damian-cortes@student.42    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 12:41:45 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/03 12:46:25 by damian-cort      ###   ########.fr       */
+/*   Updated: 2024/08/05 15:30:06 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	test_mat_transposition(void)
 		row4(-5.67F, 8.90F, 3.21F, -8.76F), \
 		row4(2.45F, -7.34F, 5.43F, 1.98F));
 	printf("--- testing matrix transposition ---\n");
-	m_test_transposition = mat4_transpose(&m);
-	if (mat4_equal(&m_test_transposition, &m_transposition))
+	m_test_transposition = mat4_transpose(m);
+	if (mat4_equal(m_test_transposition, m_transposition))
 		printf("transposition: OK\n");
 	else
 		printf("transposition: KO\n");

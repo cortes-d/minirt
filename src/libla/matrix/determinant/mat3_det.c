@@ -12,31 +12,10 @@
 
 #include "libla.h"
 
-float	mat3_det(const t_mat3 *m)
+float	mat3_det(const t_mat3 m)
 {
-	return (m->data[0][0] * mat3_cofactor(m, 0, 0) + \
-			m->data[0][1] * mat3_cofactor(m, 0, 1) + \
-			m->data[0][2] * mat3_cofactor(m, 0, 2));
+	return (m.data[0][0] * mat3_cofactor(m, 0, 0) + \
+			m.data[0][1] * mat3_cofactor(m, 0, 1) + \
+			m.data[0][2] * mat3_cofactor(m, 0, 2));
 }
 
-/*
-float	mat3_det(const t_mat3 *a)
-{
-	t_mat2	submatrix;
-	unsigned short	i;
-	unsigned short	sign;
-	float	det;
-
-	sign = 1;
-	i = 0;
-	det = 0;
-	while (i < 3)
-	{
-		submatrix = mat3_submatrix(a, i, 0);
-		det += a->data[i][0] * sign * mat2_det(&submatrix);
-		sign *= -1;
-		i++;
-	}
-	return (det);
-}
-*/

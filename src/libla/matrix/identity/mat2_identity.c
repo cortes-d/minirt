@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mat2_identity.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 07:43:18 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/05 09:45:04 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/05 15:16:01 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ t_mat2	mat2_identity(void)
 	unsigned short	c;
 
 	r = 0;
-	while (r < 2)
+	while (r < M2_SIZE)
 	{
 		c = 0;
-		while (c < 2)
+		while (c < M2_SIZE)
 		{
 			if (r == c)
 				identity_matrix.data[r][c] = 1;

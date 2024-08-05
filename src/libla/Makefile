@@ -8,6 +8,7 @@ DIR_VECTOR = vector
 DIR_MATRIX = matrix
 
 # --- Vector directories ---
+DIR_VECTOR_PRINTER = $(DIR_VECTOR)/printer
 DIR_VECTOR_EQUALITY = $(DIR_VECTOR)/equality
 DIR_VECTOR_ADDITION = $(DIR_VECTOR)/addition
 DIR_VECTOR_SUBTRACTION = $(DIR_VECTOR)/subtraction
@@ -20,6 +21,7 @@ DIR_VECTOR_DOT_PRODUCT = $(DIR_VECTOR)/dot_product
 DIR_VECTOR_CROSS_PRODUCT = $(DIR_VECTOR)/cross_product
 
 # --- Matrix directories ---
+DIR_MATRIX_PRINTER = $(DIR_MATRIX)/printer
 DIR_MATRIX_IDENTITY = $(DIR_MATRIX)/identity
 DIR_MATRIX_EQUALITY = $(DIR_MATRIX)/equality
 DIR_MATRIX_SUBMATRIX = $(DIR_MATRIX)/submatrix
@@ -37,10 +39,9 @@ DIR_MATRIX_TRANSFORMATION = $(DIR_MATRIX)/transformation
 # =============================================================================
 
 SRC = 	equalf.c \
-		$(DIR_VECTOR)/vec_print.c \
+		$(DIR_VECTOR_PRINTER)/vec3_print.c \
+		$(DIR_VECTOR_PRINTER)/vec4_print.c \
 		$(DIR_VECTOR)/vec4.c \
-		$(DIR_VECTOR)/vec4_point.c \
-		$(DIR_VECTOR)/vec4_vector.c \
 		$(DIR_VECTOR_EQUALITY)/vec3_equal.c \
 		$(DIR_VECTOR_EQUALITY)/vec4_equal.c \
 		$(DIR_VECTOR_ADDITION)/vec3_add.c \
@@ -56,7 +57,9 @@ SRC = 	equalf.c \
 		$(DIR_VECTOR_NORMALIZATION)/vec4_normalize.c \
 		$(DIR_VECTOR_DOT_PRODUCT)/vec4_dot_product.c \
 		$(DIR_VECTOR_CROSS_PRODUCT)/vec4h_cross_product.c \
-		$(DIR_MATRIX)/mat_print.c \
+		$(DIR_MATRIX_PRINTER)/mat4_print.c \
+		$(DIR_MATRIX_PRINTER)/mat3_print.c \
+		$(DIR_MATRIX_PRINTER)/mat2_print.c \
 		$(DIR_MATRIX)/row4.c \
 		$(DIR_MATRIX)/mat4.c \
 		$(DIR_MATRIX_IDENTITY)/mat4_identity.c \

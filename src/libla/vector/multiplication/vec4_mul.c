@@ -12,13 +12,13 @@
 
 #include "libla.h"
 
-t_vec4	vec4_mul(const t_vec4 *v, float scalar)
+t_vec4	vec4_mul(t_vec4 v, float scalar)
 {
 	t_vec4	res;
 
-	res.data[X] = v->data[X] * scalar;
-	res.data[Y] = v->data[Y] * scalar;
-	res.data[Z] = v->data[Z] * scalar;
-	res.data[W] = v->data[W] * scalar;
+	res.data[X] = v.data[X] * scalar;
+	res.data[Y] = v.data[Y] * scalar;
+	res.data[Z] = v.data[Z] * scalar;
+	res.data[W] = v.data[W] * scalar;
 	return (res);
 }

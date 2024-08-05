@@ -12,15 +12,15 @@
 
 #include	"libla.h"
 
-t_vec4	vec4_normalize(const t_vec4 *v)
+t_vec4	vec4_normalize(t_vec4 v)
 {
 	t_vec4	res;
 	float	magnitude;
 	
 	magnitude = vec4_magnitude(v);
-	res.data[X] = v->data[X] / magnitude;
-	res.data[Y] = v->data[Y] / magnitude;
-	res.data[Z] = v->data[Z] / magnitude;
-	res.data[W] = v->data[W] / magnitude;
+	res.data[X] = v.data[X] / magnitude;
+	res.data[Y] = v.data[Y] / magnitude;
+	res.data[Z] = v.data[Z] / magnitude;
+	res.data[W] = v.data[W] / magnitude;
 	return (res);
 }

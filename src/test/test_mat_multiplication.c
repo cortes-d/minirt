@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_mat_multiplication.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: damian-cortes <damian-cortes@student.42    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 10:51:15 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/04 11:06:45 by damian-cort      ###   ########.fr       */
+/*   Updated: 2024/08/05 15:31:54 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	test_mat_multiplication(void)
 		row4(-46.1606F, 72.3468F, 16.7754F, -50.4407F), \
 		row4(47.1984F, -92.2074F, 29.6892F, -48.9F));
 	printf("--- testing matrix multiplication ---\n");
-	m_test_mult_a_b = mat4_mat4_mul(&m_a, &m_b);
-	if (mat4_equal(&m_test_mult_a_b, &m_mult_a_b))
+	m_test_mult_a_b = mat4_mat4_mul(m_a, m_b);
+	if (mat4_equal(m_test_mult_a_b, m_mult_a_b))
 		printf("matrix multiplication: OK\n");
 	else
 		printf("matrix multiplication: KO\n");
@@ -48,13 +48,13 @@ void	test_mat_multiplication(void)
 	v = vec4(7.15, 8.13, 9.52, 1.45);
 	v_multiplication = vec4(36.1708, 102.3633, 13.6584, -94.104);
 	printf("--- testing matrix-vector multiplication ---\n");
-	v_test_multiplication = mat4_vec4_mul(&m_a, &v);
-	if (vec4_equal(&v_test_multiplication, &v_multiplication))
+	v_test_multiplication = mat4_vec4_mul(m_a, v);
+	if (vec4_equal(v_test_multiplication, v_multiplication))
 		printf("vector_multiplication: OK\n");
 	else
 		printf("vector_multiplication: KO\n");
 
 	printf("--- testing matrix-scalar multiplication ---\n");
-	m_test_mult_a_scalar = mat4_mul(&m_a, 0);
-	mat_print(&m_test_mult_a_scalar, 4);
+	m_test_mult_a_scalar = mat4_mul(m_a, 0);
+	mat4_print(m_test_mult_a_scalar);
 }

@@ -12,13 +12,13 @@
 
 #include "libla.h"
 
-t_vec4	vec4_inv(const t_vec4 *v)
+t_vec4	vec4_inv(t_vec4 v)
 {
 	t_vec4	res;
 
-	res.data[X] = -v->data[X];
-	res.data[Y] = -v->data[Y];
-	res.data[Z] = -v->data[Z];
-	res.data[W] = -v->data[W];
+	res.data[X] = -v.data[X];
+	res.data[Y] = -v.data[Y];
+	res.data[Z] = -v.data[Z];
+	res.data[W] = -v.data[W];
 	return (res);
 }

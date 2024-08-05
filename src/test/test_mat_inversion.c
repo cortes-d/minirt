@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_mat_inversion.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: damian-cortes <damian-cortes@student.42    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 12:47:58 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/04 11:07:54 by damian-cort      ###   ########.fr       */
+/*   Updated: 2024/08/05 15:31:33 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ void	test_mat_inversion(void)
 		row4(-5.67F, 8.90F, 3.21F, -8.76F), \
 		row4(2.45F, -7.34F, 5.43F, 1.98F));
 	printf("--- testing matrix inversion ---\n");
-	m_test_inverse = mat4_transpose(&m);
-	if (mat4_equal(&m_test_inverse, &m_inverse))
+	m_test_inverse = mat4_transpose(m);
+	if (mat4_equal(m_test_inverse, m_inverse))
 		printf("inversion: OK\n");
 	else
 		printf("inversion: KO\n");
 }
 
-	test_inversion = mat4_inv(&matrix_a);
-	if (mat4_equal(&matrix_a_inverse, &test_inversion))
-		printf("inversion: OK\n");
-	else
-		printf("inversion: KO\n");
+	// test_inversion = mat4_inv(m);
+	// if (mat4_equal(&matrix_a_inverse, &test_inversion))
+	// 	printf("inversion: OK\n");
+	// else
+	// 	printf("inversion: KO\n");

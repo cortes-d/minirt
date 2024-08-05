@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mat3_identity.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 07:42:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/05 09:45:33 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/05 15:15:53 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ t_mat3	mat3_identity(void)
 	unsigned short	c;
 
 	r = 0;
-	while (r < 3)
+	while (r < M3_SIZE)
 	{
 		c = 0;
-		while (c < 3)
+		while (c < M3_SIZE)
 		{
 			if (r == c)
 				identity_matrix.data[r][c] = 1;

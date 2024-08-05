@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec3.c                                             :+:      :+:    :+:   */
+/*   vec3_print.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 12:16:31 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/05 15:01:13 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/01 23:35:18 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/05 15:22:31 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_vec3  vec3(float a, float b, float c)
+void	vec3_print(t_vec3 v)
 {
-	t_vec3	v;
+	int		i;
 
-	v.data[0] = a;
-	v.data[1] = b;
-	v.data[2] = c;
-	return (v);
+	i = 0;
+	while (i < V3_SIZE)
+	{
+		printf("%6.2f\n", v.data[i]);
+		i++;
+	}
 }

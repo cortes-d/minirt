@@ -12,12 +12,12 @@
 
 #include "libla.h"
 
-t_vec3	vec3_mul(const t_vec3 *v, float scalar)
+t_vec3	vec3_mul(t_vec3 v, float scalar)
 {
 	t_vec3	res;
 
-	res.data[R] = v->data[R] * scalar;
-	res.data[G] = v->data[G] * scalar;
-	res.data[B] = v->data[B] * scalar;
+	res.data[R] = v.data[R] * scalar;
+	res.data[G] = v.data[G] * scalar;
+	res.data[B] = v.data[B] * scalar;
 	return (res);
 }

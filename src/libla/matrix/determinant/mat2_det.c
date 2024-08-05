@@ -12,8 +12,8 @@
 
 #include "libla.h"
 
-float	mat2_det(const t_mat2 *a)
+float	mat2_det(const t_mat2 a)
 {
-	return (a->data[0][0] * a->data[1][1] - \
-			a->data[0][1] * a->data[1][0]);
+	return (a.data[0][0] * a.data[1][1] - \
+			a.data[0][1] * a.data[1][0]);
 }

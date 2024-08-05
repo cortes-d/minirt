@@ -30,7 +30,12 @@ RM = rm -f
 
 SRC_MAIN = minirt.c
 SRC_TEST = test.c \
+		   test_mat_determinant.c \
+		   test_mat_identity.c \
+		   test_mat_inversion.c \
+		   test_mat_multiplication.c \
 		   test_mat_submatrix.c \
+		   test_mat_transposition.c \
 		   test_vector.c
 SRC_MAIN := $(addprefix $(DIR_SRC)/, $(SRC_MAIN))
 SRC_TEST := $(addprefix $(DIR_TEST)/, $(SRC_TEST))

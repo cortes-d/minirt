@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_mat_determinant.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: damian-cortes <damian-cortes@student.42    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 12:32:01 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/03 12:42:17 by damian-cort      ###   ########.fr       */
+/*   Updated: 2024/08/05 15:29:39 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	test_mat_determinant(void)
 		row4(6.78F, -9.01F, 3.21F, 5.43F), \
 		row4(-4.56F, 2.34F, -8.76F, 1.98F));
 	m_det = 582.3434582399991F;
-	test_det = mat4_det(&m);
+	test_det = mat4_det(m);
 	printf("--- testing matrix determinant ---\n");
 	if (equalf(test_det, m_det))
 		printf("det: OK\n");
