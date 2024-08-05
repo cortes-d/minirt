@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 15:58:59 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/05 16:47:56 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 // Section : Constants and Macros
 // =============================================================================
 
-# define COLOR_DEFAULT 0.8
-
 // =============================================================================
 // Section : Type Definitions
 // =============================================================================
@@ -28,7 +26,6 @@
 typedef enum e_object_type
 {
 	SPHERE,
-	CUBE,
 	PLANE,
 	CYLINDER
 }	t_object_type;
@@ -58,12 +55,24 @@ typedef struct s_object
 	union
 	{
 		t_sphere	sphere;
-		//t_cube		cube;
 		//t_plane		plane;
 		//t_cylinder	cylinder;
 	}	u_object;
 
 }	t_object;
+
+// --- Structure : Intersection ---
+typedef struct s_intersection_pair
+{
+	int		count;
+	float	t[2];
+}	t_intersection_pair;
+
+typedef struct s_intersection
+{
+	float		t;
+	t_object	object;
+}	t_intersection;
 
 // --- Structure : Sphere ---
 typedef struct s_sphere
@@ -76,7 +85,7 @@ typedef struct s_sphere
 // Section : Functions
 // =============================================================================
 
-t_vec4		point(float r, float g, float b);
+t_vec4		point(float x, float y, float z);
 t_vec4		vector(float x, float y, float z);
 
 // --- Ray ---
