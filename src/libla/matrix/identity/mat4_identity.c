@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   mat4_identity.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 07:37:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/03 07:42:07 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/05 09:45:24 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_mat4	mat4_identity()
+t_mat4	mat4_identity(void)
 {
 	t_mat4			identity_matrix;
 	unsigned short	r;

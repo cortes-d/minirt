@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   mat2_identity.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 07:43:18 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/03 07:43:20 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/05 09:45:04 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_mat2	mat2_identity()
+t_mat2	mat2_identity(void)
 {
 	t_mat2			identity_matrix;
 	unsigned short	r;

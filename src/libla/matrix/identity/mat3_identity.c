@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   mat3_identity.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 07:42:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/03 07:42:51 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/05 09:45:33 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_mat3	mat3_identity()
+t_mat3	mat3_identity(void)
 {
 	t_mat3			identity_matrix;
 	unsigned short	r;
