@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:26:33 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/06 11:43:13 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/06 16:52:19 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ my_camera = camera(126, 20, 1.25, view_transform(point(2,2,2), vector(1,-2,7), v
 t_camera	camera(unsigned int hsize, unsigned int vsize, float field_of_view, t_mat4 transform)
 {
 	t_camera	camera;
-	float		pixel_size;
 	float		aspect;
 	float		half_view;
 

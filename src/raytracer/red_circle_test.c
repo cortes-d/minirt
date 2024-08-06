@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   red_circle_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:33:05 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/06 16:20:59 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/06 17:16:14 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 #include "libft.h"
+#include "libla.h"
 #include "mlx.h"
 #include "graphic.h"
 
@@ -59,11 +60,17 @@ int	main()
 	img.img = mlx_new_image(mlx_ptr, WIDTH, HEIGHT);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 	y = 0;
+	// write_pixel(&img, 10, 10, vec3(255, 0, 0));
+	// write_pixel(&img, 11, 10, vec3(255, 0, 0));
+	// write_pixel(&img, 10, 11, vec3(255, 0, 0));
+	// write_pixel(&img, 11, 11, vec3(255, 0, 0));
 	while (y < HEIGHT)
 	{
 		x = 0;
 		while (x < WIDTH)
 		{
+			vec4_print(ray_for_pixel_test(x, y).p_origin);
+			vec4_print(ray_for_pixel_test(x, y).v_direction);
 			intersection_pair = intersect(ray_for_pixel_test(x, y), my_sphere);
 			intersec = (t_intersection *)malloc(sizeof(t_intersection));
 			if (intersec == NULL)
@@ -78,11 +85,18 @@ int	main()
 				*intersec = intersection(intersection_pair.t[1], my_sphere);
 				intersections(&intersections_list, intersec);
 			}
+			intersec = NULL;
 			intersec = hit(intersections_list);
 			if (intersec)
+			{
+				//printf("GORRIGLE\n");
 				write_pixel(&img, x, y, intersec->object.material.color);
+			}
 			else
+			{
+				printf("GORRIGLE\n");
 				write_pixel(&img, x, y, vec3(0, 0, 0));
+			}
 			ft_lstclear(&intersections_list, &free);
 			intersections_list = NULL;
 			x++;

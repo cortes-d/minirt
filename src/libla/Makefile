@@ -41,6 +41,7 @@ DIR_MATRIX_TRANSFORMATION = $(DIR_MATRIX)/transformation
 SRC = 	equalf.c \
 		$(DIR_VECTOR_PRINTER)/vec3_print.c \
 		$(DIR_VECTOR_PRINTER)/vec4_print.c \
+		$(DIR_VECTOR)/vec3.c \
 		$(DIR_VECTOR)/vec4.c \
 		$(DIR_VECTOR_EQUALITY)/vec3_equal.c \
 		$(DIR_VECTOR_EQUALITY)/vec4_equal.c \

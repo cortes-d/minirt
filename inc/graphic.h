@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 08:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/06 16:00:45 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/06 17:04:04 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@
 typedef struct	s_image {
 	void			*img;
 	char			*addr;
-	unsigned int	bits_per_pixel;
-	unsigned int	line_length;
-	unsigned int	endian;
+	int				bits_per_pixel;
+	int				line_length;
+	int				endian;
 }				t_image;
 
 // =============================================================================
 // Section : Functions
 // =============================================================================
 
-void	write_pixel(t_image *image, unsigned int x, unsigned int y, t_vec3 v_color);
+void	write_pixel(t_image *image, int x, int y, t_vec3 v_color);
 
 #endif
