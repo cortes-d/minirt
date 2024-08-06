@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/06 11:47:24 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/06 12:56:29 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ t_material			material(t_vec3 color, float ambient, \
 						float diffuse, float specular);
 
 // --- Primitive ---
-t_object			sphere(t_vec4 p_origin, float radius);
+t_object			sphere(void);
+//t_object			sphere(t_vec4 p_origin, float radius);
 
 #endif
