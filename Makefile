@@ -15,6 +15,15 @@ COLOR_RESET = \033[0m
 DIR_INC = inc
 DIR_SRC = src
 DIR_TEST = $(DIR_SRC)/test
+DIR_GRAPHIC = $(DIR_SRC)/graphic
+
+DIR_RAYTRACER = $(DIR_SRC)/raytracer
+DIR_RAYTRACER_CAMERA = $(DIR_RAYTRACER)/camera
+DIR_RAYTRACER_INTERSECTION = $(DIR_RAYTRACER)/intersection
+DIR_RAYTRACER_MATERIAL = $(DIR_RAYTRACER)/material
+DIR_RAYTRACER_PRIMITIVE = $(DIR_RAYTRACER)/primitive
+DIR_RAYTRACER_RAY = $(DIR_RAYTRACER)/ray
+DIR_RAYTRACER_TRANSFORMATION = $(DIR_RAYTRACER)/transformation
 
 # =============================================================================
 # Section : Compiler and flags
@@ -28,7 +37,25 @@ RM = rm -f
 # Section : Source files
 # =============================================================================
 
-SRC_MAIN = minirt.c
+SRC_MAIN = 						minirt.c
+SRC_GRAPHIC =					$(DIR_GRAPHIC)/write_pixel.c
+SRC_RAYTRACER =					$(DIR_RAYTRACER)/point.c \
+								$(DIR_RAYTRACER)/vector.c \
+								$(DIR_RAYTRACER)/red_circle_test.c \
+								$(DIR_RAYTRACER_CAMERA)/camera.c \
+								$(DIR_RAYTRACER_CAMERA)/view_transform.c \
+								$(DIR_RAYTRACER_INTERSECTION)/intersect.c \
+								$(DIR_RAYTRACER_INTERSECTION)/intersection.c \
+								$(DIR_RAYTRACER_INTERSECTION)/hit.c \
+								$(DIR_RAYTRACER_INTERSECTION)/intersect.c \
+								$(DIR_RAYTRACER_MATERIAL)/color.c \
+								$(DIR_RAYTRACER_MATERIAL)/material.c \
+								$(DIR_RAYTRACER_PRIMITIVE)/sphere.c \
+								$(DIR_RAYTRACER_RAY)/ray.c \
+								$(DIR_RAYTRACER_RAY)/ray_for_pixel.c \
+								$(DIR_RAYTRACER_RAY)/position.c \
+								$(DIR_RAYTRACER_TRANSFORMATION)/transform.c \
+								$(DIR_RAYTRACER_TRANSFORMATION)/set_transform.c
 SRC_TEST = test.c \
 		   test_mat_determinant.c \
 		   test_mat_identity.c \
@@ -41,7 +68,7 @@ SRC_MAIN := $(addprefix $(DIR_SRC)/, $(SRC_MAIN))
 SRC_TEST := $(addprefix $(DIR_TEST)/, $(SRC_TEST))
 
 # --- Combine all source files ---
-SRC = $(SRC_MAIN)
+SRC = $(SRC_MAIN) $(SRC_GRAPHIC) $(SRC_RAYTRACER)
 SRC_TEST_ALL = $(SRC_TEST)
 
 # =============================================================================

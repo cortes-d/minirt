@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   point.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 09:42:20 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 14:31:37 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/06 16:40:20 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 t_vec4	point(float x, float y, float z)
 {
-	return (vec4(x, y, x, 1));
+	return (vec4(x, y, z, 1));
 }

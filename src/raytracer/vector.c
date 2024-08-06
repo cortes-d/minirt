@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 09:44:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 14:31:47 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/06 16:40:41 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 t_vec4	vector(float x, float y, float z)
 {
-	return (vec4(x, y, x, 0));
+	return (vec4(x, y, z, 0));
 }

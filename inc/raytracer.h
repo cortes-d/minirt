@@ -6,12 +6,13 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/06 12:56:29 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/06 16:42:38 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RAYTRACER_H
 # define RAYTRACER_H
+# include "libft.h"
 # include "libla.h"
 
 // =============================================================================
@@ -49,6 +50,13 @@ typedef struct s_material
 	float	specular;
 }	t_material;
 
+// --- Structure : Sphere ---
+typedef struct s_sphere
+{
+	t_vec4	p_origin;
+	float	radius;
+}	t_sphere;
+
 // --- Structure : Object ---
 typedef struct s_object
 {
@@ -76,13 +84,6 @@ typedef struct s_intersection
 	float		t;
 	t_object	object;
 }	t_intersection;
-
-// --- Structure : Sphere ---
-typedef struct s_sphere
-{
-	t_vec4	p_origin;
-	float	radius;
-}	t_sphere;
 
 // --- Structure : Camera ---
 typedef struct s_camera

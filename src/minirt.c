@@ -6,11 +6,11 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 15:07:39 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/06 08:59:25 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/06 16:35:49 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(void)
+/*int	main(void)
 {
 	return (0);
-}
+}*/
