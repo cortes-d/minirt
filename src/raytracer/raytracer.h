@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/06 10:32:51 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:14:04 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,13 @@ t_vec4				position(t_ray ray, float t);
 // --- Intersection ---
 t_intersection_pair	intersect(t_ray ray, t_object object);
 t_intersection		intersection(float t, t_object object);
+void				intersections(t_list **intersections, \
+						t_intersection *intersection);
+t_intersection		*hit(t_list *intersections);
+
+// --- Transformation ---
+t_ray				transform(t_ray ray, t_mat4 transformation);
+void				set_transform(t_object *object, t_mat4 transformation);
 
 // --- Color ---
 t_vec3				color(float r, float g, float b);

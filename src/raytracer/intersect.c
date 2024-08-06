@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 16:14:28 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/06 09:51:32 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/06 11:15:55 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,15 @@ t_intersection_pair	intersect(t_ray ray, t_object object)
 	float				b;
 	float				c;
 	float				discriminant;
+	t_ray				ray_transformed;
 
+	ray_transformed = transform(ray, mat4_inv(object.transform));
 	pair.count = 0;
 	if (object.type == SPHERE)
 	{
-		object_to_ray = vec4_sub(ray.p_origin, point(0, 0, 0));
-		a = vec4_dot_product(ray.v_direction, ray.v_direction);
-		b = 2 * vec4_dot_product(ray.v_direction, object_to_ray);
+		object_to_ray = vec4_sub(ray_transformed.p_origin, point(0, 0, 0));
+		a = vec4_dot_product(ray_transformed.v_direction, ray_transformed.v_direction);
+		b = 2 * vec4_dot_product(ray_transformed.v_direction, object_to_ray);
 		c = vec4_dot_product(object_to_ray, object_to_ray) - 1;
 		discriminant = (b * b) - 4 * a * c;
 		if (discriminant >= 0)
