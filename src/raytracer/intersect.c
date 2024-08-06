@@ -6,12 +6,18 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 16:14:28 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 16:51:36 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/06 09:51:32 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
+/*
+ * Finds the intersection(s) between a ray and an object.
+ * The intersection is a t-value 
+ * that represents a position parameter on the ray vector.
+ * There can be 0, 1 or 2 intersections.
+ */
 t_intersection_pair	intersect(t_ray ray, t_object object)
 {
 	t_intersection_pair	pair;
@@ -35,7 +41,7 @@ t_intersection_pair	intersect(t_ray ray, t_object object)
 			if (discriminant == 0)
 				pair.count = 1;
 			pair.t[0] = (-b - sqrt(discriminant)) / (2 * a);
-			pair.t[1] = (-b + sqrt(discriminant)) / (2 * a);	
+			pair.t[1] = (-b + sqrt(discriminant)) / (2 * a);
 		}
 	}
 	return (pair);
