@@ -6,12 +6,14 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 08:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/06 15:30:45 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/06 16:00:45 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GRAPHIC_H
 # define GRAPHIC_H
+
+# include "libla.h"
 
 // =============================================================================
 // Section : Type Definitions
