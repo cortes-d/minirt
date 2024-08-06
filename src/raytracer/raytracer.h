@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 16:59:38 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/06 10:28:01 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,17 @@ typedef struct s_sphere
 	t_vec4	p_origin;
 	float	radius;
 }	t_sphere;
+
+// --- Structure : Camera ---
+typedef struct s_camera
+{
+	t_mat4			view_transform;
+	unsigned int	hsize;
+	unsigned int	vsize;
+	float			half_width;
+	float			half_height;
+	float			pixel_size;
+}	t_camera;
 
 // =============================================================================
 // Section : Functions
