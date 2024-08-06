@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 16:53:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/06 09:51:14 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/06 10:04:32 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_intersection	intersection(float t, t_object object)
 }
 
 /*
- * Adds an intersection to the list of intersections.
+ * Aggregates an intersection to a list of intersections.
  */
 void	intersections(t_list **intersections, t_intersection *intersection)
 {
