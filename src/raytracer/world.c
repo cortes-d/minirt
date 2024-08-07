@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   material.c                                         :+:      :+:    :+:   */
+/*   world.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 15:51:28 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/07 15:38:58 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/07 15:22:35 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/07 15:31:52 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-t_material	material(t_vec3 color, float ambient, float diffuse, float specular, float shininess)
+t_world	world()
 {
-	t_material	material;
+	t_world	new_world;
 
-	material.color = color;
-	material.ambient = ambient;
-	material.diffuse = diffuse;
-	material.specular = specular;
-	material.shininess = shininess;
-	return (material);
+	new_world.lights_nb = 0;
+	new_world.objects_nb = 0;
+	new_world.lights = NULL;
+	new_world.objects = NULL;
+	return (new_world);
 }

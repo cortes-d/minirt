@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/07 13:55:42 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/07 15:45:20 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_material
 	float	ambient;
 	float	diffuse;
 	float	specular;
+	float	shininess;
 }	t_material;
 
 // --- Structure : Sphere ---
@@ -96,6 +97,23 @@ typedef struct s_camera
 	float			pixel_size;
 }	t_camera;
 
+// --- Structure : Point_light ---
+typedef struct s_point_light
+{
+	t_vec4	p_origin;
+	t_vec3	color;
+}	t_point_light;
+
+// --- Structure : World ---
+typedef struct s_world
+{
+	unsigned int	lights_nb;
+	t_point_light	*lights;
+	unsigned int	objects_nb;
+	t_object		*objects;
+}	t_world;
+
+
 // =============================================================================
 // Section : Functions
 // =============================================================================
@@ -104,6 +122,9 @@ t_vec4				point(float x, float y, float z);
 t_vec4				vector(float x, float y, float z);
 t_vec4   			normal_at_sphere(t_object object, t_vec4 world_point);
 t_vec4				reflect_vector(t_vec4 in, t_vec4 normal);
+t_vec3				lighting(t_material material, t_point_light light, \
+						t_vec4 intersection_point, t_vec4 eyev, t_vec4 normalv);
+t_world				world();
 
 // --- Ray ---
 t_ray				ray(t_vec4 p_origin, t_vec4 v_direction);
@@ -125,7 +146,7 @@ t_vec3				color(float r, float g, float b);
 
 // --- Material ---
 t_material			material(t_vec3 color, float ambient, \
-						float diffuse, float specular);
+						float diffuse, float specular, float shininess);
 
 // --- Primitive ---
 t_object			sphere(void);
