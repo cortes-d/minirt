@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:33:05 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/07 09:43:35 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/07 09:55:16 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ t_ray	ray_for_pixel_test(unsigned int px, unsigned int py)
 	world_x = PIXEL_SIZE * HALF_WIDTH - (px + 0.5) * PIXEL_SIZE;
 	world_y = PIXEL_SIZE * HALF_HEIGHT - (py + 0.5) * PIXEL_SIZE;
 	origin = point(world_x, world_y, CANVA_Z_POS);
-	//printf("Worldx %.2f Worldy %.2f\n", world_x, world_y);
 	return (ray(origin, vector(0, 0, -1)));
 }
 
@@ -63,13 +62,15 @@ int	main()
 		while (x < WIDTH)
 		{
 			intersection_pair = intersect(ray_for_pixel_test(x, y), my_sphere);
-			printf("intersection %f  %f\n", intersection_pair.t[0], intersection_pair.t[0]);
-			intersec = (t_intersection *)malloc(sizeof(t_intersection));
-			if (intersec == NULL)
-				return (printf("ERROR\n"));
-			*intersec = intersection(intersection_pair.t[0], my_sphere);
-			intersections(&intersections_list, intersec);
-			if (intersection_pair.t[0] != intersection_pair.t[1])
+			if (intersection_pair.count == 1)
+			{
+				intersec = (t_intersection *)malloc(sizeof(t_intersection));
+				if (intersec == NULL)
+					return (printf("ERROR\n"));
+				*intersec = intersection(intersection_pair.t[0], my_sphere);
+				intersections(&intersections_list, intersec);
+			}
+			if (intersection_pair.count == 2)
 			{
 				intersec = (t_intersection *)malloc(sizeof(t_intersection));
 				if (intersec == NULL)
@@ -80,15 +81,9 @@ int	main()
 			intersec = NULL;
 			intersec = hit(intersections_list);
 			if (intersec)
-			{
-				//printf("GORRIGLE\n");
 				write_pixel(&img, x, y, intersec->object.material.color);
-			}
 			else
-			{
-				//printf("GORRIGLE\n");
 				write_pixel(&img, x, y, vec3(0, 0, 0));
-			}
 			ft_lstclear(&intersections_list, &free);
 			intersections_list = NULL;
 			x++;
