@@ -3,6 +3,8 @@
 
 # Build artifacts
 **/*.o
+**/*.a
+**/*.d
 
 # User specific
 .vscode/
