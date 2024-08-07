@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/06 16:42:38 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/07 13:55:42 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ typedef struct s_camera
 
 t_vec4				point(float x, float y, float z);
 t_vec4				vector(float x, float y, float z);
+t_vec4   			normal_at_sphere(t_object object, t_vec4 world_point);
+t_vec4				reflect_vector(t_vec4 in, t_vec4 normal);
 
 // --- Ray ---
 t_ray				ray(t_vec4 p_origin, t_vec4 v_direction);
