@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 12:33:05 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/07 13:05:44 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:46:14 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(void)
 
 	// sphere
 	my_sphere = sphere();
-	my_sphere.material.color = vec3(255, 0, 0);
+	my_sphere.material = material_from_color(255, 0, 0);
 
 	// intersections
 	intersections_list = NULL;

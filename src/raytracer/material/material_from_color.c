@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.c                                           :+:      :+:    :+:   */
+/*   material_from_color.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 15:07:39 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 11:46:32 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/08 10:58:33 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/08 11:41:18 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*int	main(void)
+#include "raytracer.h"
+
+t_material	material_from_color(float r, float g, float b)
 {
-	return (0);
-}*/
+	t_material	m;
+
+	m = material();
+	material_set_color(&m, r, g, b);
+	return (m);
+}

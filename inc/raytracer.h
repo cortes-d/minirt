@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 10:36:15 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:49:15 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,8 +138,8 @@ void				set_transform(t_object *object, t_mat4 transformation);
 t_vec3				color(float r, float g, float b);
 
 // --- Material ---
-t_material			material(t_vec3 color, float ambient, \
-						float diffuse, float specular, float shininess);
+t_material			material(void);
+t_material			material_from_color(float r, float g, float b);
 
 // --- Light ---
 t_light_point		light_point(t_vec4 position, t_vec3 color);
