@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   world.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 15:22:35 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/07 15:31:52 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/08 10:00:11 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-t_world	world()
+t_world	world(void)
 {
 	t_world	new_world;
 

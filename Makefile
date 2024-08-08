@@ -21,7 +21,7 @@ DIR_RAYTRACER = $(DIR_SRC)/raytracer
 DIR_RAYTRACER_CAMERA = $(DIR_RAYTRACER)/camera
 DIR_RAYTRACER_INTERSECTION = $(DIR_RAYTRACER)/intersection
 DIR_RAYTRACER_MATERIAL = $(DIR_RAYTRACER)/material
-DIR_RAYTRACER_PRIMITIVE = $(DIR_RAYTRACER)/primitive
+DIR_RAYTRACER_GEOMETRY = $(DIR_RAYTRACER)/geometry
 DIR_RAYTRACER_RAY = $(DIR_RAYTRACER)/ray
 DIR_RAYTRACER_TRANSFORMATION = $(DIR_RAYTRACER)/transformation
 
@@ -39,9 +39,7 @@ RM = rm -f
 
 SRC_MAIN = 						minirt.c
 SRC_GRAPHIC =					$(DIR_GRAPHIC)/write_pixel.c
-SRC_RAYTRACER =					$(DIR_RAYTRACER)/point.c \
-								$(DIR_RAYTRACER)/vector.c \
-								$(DIR_RAYTRACER)/red_circle_test.c \
+SRC_RAYTRACER =					$(DIR_RAYTRACER)/red_circle_test.c \
 								$(DIR_RAYTRACER_CAMERA)/camera.c \
 								$(DIR_RAYTRACER_CAMERA)/view_transform.c \
 								$(DIR_RAYTRACER_INTERSECTION)/intersect.c \
@@ -49,7 +47,9 @@ SRC_RAYTRACER =					$(DIR_RAYTRACER)/point.c \
 								$(DIR_RAYTRACER_INTERSECTION)/hit.c \
 								$(DIR_RAYTRACER_MATERIAL)/color.c \
 								$(DIR_RAYTRACER_MATERIAL)/material.c \
-								$(DIR_RAYTRACER_PRIMITIVE)/sphere.c \
+								$(DIR_RAYTRACER_GEOMETRY)/point.c \
+								$(DIR_RAYTRACER_GEOMETRY)/vector.c \
+								$(DIR_RAYTRACER_GEOMETRY)/sphere.c \
 								$(DIR_RAYTRACER_RAY)/ray.c \
 								$(DIR_RAYTRACER_RAY)/ray_for_pixel.c \
 								$(DIR_RAYTRACER_RAY)/position.c \

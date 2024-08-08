@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   normal_at_sphere.c                                 :+:      :+:    :+:   */
+/*   normal_at.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 13:39:54 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/07 14:14:15 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/08 09:57:30 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-t_vec4    normal_at_sphere(t_object object, t_vec4 world_point)
+t_vec4    normal_at(t_object object, t_vec4 world_point)
+{
+	if (object.type == SPHERE)
+		normal_at_sphere(object, world_point);
+}
+
+static t_vec4    normal_at_sphere(t_object object, t_vec4 world_point)
 {
 	t_vec4	object_point;
 	t_vec4	normal;

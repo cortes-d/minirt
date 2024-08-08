@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/07 15:45:20 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/08 10:00:45 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,14 +118,6 @@ typedef struct s_world
 // Section : Functions
 // =============================================================================
 
-t_vec4				point(float x, float y, float z);
-t_vec4				vector(float x, float y, float z);
-t_vec4   			normal_at_sphere(t_object object, t_vec4 world_point);
-t_vec4				reflect_vector(t_vec4 in, t_vec4 normal);
-t_vec3				lighting(t_material material, t_point_light light, \
-						t_vec4 intersection_point, t_vec4 eyev, t_vec4 normalv);
-t_world				world();
-
 // --- Ray ---
 t_ray				ray(t_vec4 p_origin, t_vec4 v_direction);
 t_vec4				position(t_ray ray, float t);
@@ -148,8 +140,18 @@ t_vec3				color(float r, float g, float b);
 t_material			material(t_vec3 color, float ambient, \
 						float diffuse, float specular, float shininess);
 
-// --- Primitive ---
+// --- Light ---
+t_vec3				lighting(t_material material, t_point_light light, \
+						t_vec4 intersection_point, t_vec4 eyev, t_vec4 normalv);
+t_vec4				normal_at(t_object object, t_vec4 world_point);
+t_vec4				reflect(t_vec4 in, t_vec4 normal);
+
+// --- Geometry ---
+t_vec4				point(float x, float y, float z);
+t_vec4				vector(float x, float y, float z);
 t_object			sphere(void);
-//t_object			sphere(t_vec4 p_origin, float radius);
+
+// --- World ---
+t_world				world(void);
 
 #endif

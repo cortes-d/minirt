@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lighting.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 14:02:26 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/07 15:40:09 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/08 09:57:04 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_vec3	lighting(t_material material, t_point_light light, \
 	else
 	{
 		diffuse = vec3_mul(effective_color, material.diffuse * light_dot_normal);
-		reflectv = reflect_vector(vec4_inv(lightv), normalv);
+		reflectv = reflect(vec4_inv(lightv), normalv);
 		reflect_dot_eye = vec4_dot_product(reflectv, eyev);
 		if (reflect_dot_eye <= 0)
 			specular = vec3(0, 0, 0);
