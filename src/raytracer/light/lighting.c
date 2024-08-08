@@ -6,13 +6,13 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 14:02:26 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/08 09:57:04 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/08 10:06:29 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-t_vec3	lighting(t_material material, t_point_light light, \
+t_vec3	lighting(t_material material, t_light_point light, \
 		t_vec4 intersection_point, t_vec4 eyev, t_vec4 normalv)
 {
 	t_vec3	effective_color;
