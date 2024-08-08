@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 10:14:28 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/08 10:36:15 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ t_material			material(t_vec3 color, float ambient, \
 						float diffuse, float specular, float shininess);
 
 // --- Light ---
+t_light_point		light_point(t_vec4 position, t_vec3 color);
 t_vec3				lighting(t_material material, t_light_point light, \
 						t_vec4 intersection_point, t_vec4 eyev, t_vec4 normalv);
 t_vec4				normal_at(t_object object, t_vec4 world_point);
