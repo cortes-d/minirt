@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 10:06:20 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/08 10:14:28 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_object
 {
 	t_object_type	type;
 	t_mat4			transform;
+	t_mat4			transform_inverse;
 	t_material		material;
 	union
 	{
