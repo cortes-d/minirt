@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 15:18:08 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/08 15:28:20 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,9 +116,9 @@ typedef struct s_shading
 // --- Structure : World ---
 typedef struct s_world
 {
-	unsigned int	lights_nb;
+	unsigned int	lights_count;
 	t_light_point	*lights;
-	unsigned int	objects_nb;
+	unsigned int	objects_count;
 	t_object		*objects;
 }	t_world;
 
