@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 11:49:15 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/08 15:17:31 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,12 +98,20 @@ typedef struct s_camera
 	float			pixel_size;
 }	t_camera;
 
+// === Lighting ===
 // --- Structure : Point light ---
 typedef struct s_light_point
 {
 	t_vec4	p_origin;
 	t_vec3	color;
 }	t_light_point;
+
+// --- Structure : Shading ---
+typedef struct s_shading
+{
+	t_vec4	eyev;
+	t_vec4	normalv;
+}	t_shading;
 
 // --- Structure : World ---
 typedef struct s_world
@@ -144,7 +152,7 @@ t_material			material_from_color(float r, float g, float b);
 // --- Light ---
 t_light_point		light_point(t_vec4 position, t_vec3 color);
 t_vec3				lighting(t_material material, t_light_point light, \
-						t_vec4 intersection_point, t_vec4 eyev, t_vec4 normalv);
+						t_vec4 intersection_point, t_shading shading)
 t_vec4				normal_at(t_object object, t_vec4 world_point);
 t_vec4				reflect(t_vec4 in, t_vec4 normal);
 
