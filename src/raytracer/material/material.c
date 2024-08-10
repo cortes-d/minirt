@@ -24,7 +24,7 @@ t_material	material(void)
 {
 	t_material	material;
 
-	material.color = color(DEFAULT_COLOR_R, DEFAULT_COLOR_G, DEFAULT_COLOR_B);
+	material.color = color_rgb(DEFAULT_COLOR_R, DEFAULT_COLOR_G, DEFAULT_COLOR_B);
 	material.ambient = DEFAULT_AMBIENT;
 	material.diffuse = DEFAULT_DIFFUSE;
 	material.specular = DEFAULT_SPECULAR;

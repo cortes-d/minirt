@@ -52,7 +52,7 @@ int	main(void)
 
 	// mlx
 	mlx_ptr = mlx_init();
-	mlx_win = mlx_new_window(mlx_ptr, WIDTH, HEIGHT, "RED_CIRCLE_TEST");
+	mlx_win = mlx_new_window(mlx_ptr, WIDTH, HEIGHT, "TEST_RED_CIRCLE");
 	img.img = mlx_new_image(mlx_ptr, WIDTH, HEIGHT);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 

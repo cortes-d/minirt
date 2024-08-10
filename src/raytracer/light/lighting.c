@@ -5,12 +5,56 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 14:02:26 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/08 15:15:30 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/10 14:08:04 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/10 14:13:22 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
+
+static t_vec3	lighting_ambient(t_material material, t_light_point light)
+{
+	return (vec3_mul(vec3_hadamard_product(material.color, light.color), \
+		material.ambient));
+}
+
+static t_vec3	lighting_diffuse(t_material material, t_light_point light, \
+	t_vec4 lightv, t_vec4 normalv)
+{
+	float	light_dot_normal;
+
+	/*printf("Diffuse - Material Diffuse: %f\n", material.diffuse);
+    printf("Diffuse - Light Color: (%f, %f, %f)\n", light.color.data[0], light.color.data[1], light.color.data[2]);
+    printf("Diffuse - Light Vector: (%f, %f, %f, %f)\n", lightv.data[0], lightv.data[1], lightv.data[2], lightv.data[3]);*/
+    //printf("Diffuse - Normal Vector: (%f, %f, %f, %f)\n", normalv.data[0], normalv.data[1], normalv.data[2], normalv.data[3]);
+
+	light_dot_normal = vec4_dot_product(lightv, normalv);
+	if (light_dot_normal < 0)
+		return (color_rgb(0, 0, 0));
+	return (vec3_mul(vec3_hadamard_product(material.color, light.color), \
+		material.diffuse * light_dot_normal));
+}
+
+static t_vec3	lighting_specular(t_material material, t_light_point light, \
+	t_vec4 lightv, t_shading shading)
+{
+	t_vec4	reflectv;
+	float	reflect_dot_eye;
+	float	factor;
+
+	/*printf("Specular - Material Specular: %f\n", material.specular);
+    printf("Specular - Light Color: (%f, %f, %f)\n", light.color.data[0], light.color.data[1], light.color.data[2]);
+    printf("Specular - Light Vector: (%f, %f, %f, %f)\n", lightv.data[0], lightv.data[1], lightv.data[2], lightv.data[3]);*/
+    //printf("Specular - Shading Normal Vector: (%f, %f, %f, %f)\n", shading.normalv.data[0], shading.normalv.data[1], shading.normalv.data[2], shading.normalv.data[3]);
+    //printf("Specular - Shading Eye Vector: (%f, %f, %f, %f)\n", shading.eyev.data[0], shading.eyev.data[1], shading.eyev.data[2], shading.eyev.data[3]);
+
+	reflectv = reflect(vec4_inv(lightv), shading.normalv);
+	reflect_dot_eye = vec4_dot_product(reflectv, shading.eyev);
+	if (reflect_dot_eye <= 0)
+		return (color_rgb(0, 0, 0));
+	factor = pow(reflect_dot_eye, material.shininess);
+	return (vec3_mul(light.color, material.specular * factor));
+}
 
 t_vec3	lighting(t_material material, t_light_point light, \
 	t_vec4 intersection_point, t_shading shading)
@@ -27,38 +71,6 @@ t_vec3	lighting(t_material material, t_light_point light, \
 	return (vec3_add(ambient, vec3_add(diffuse, specular)));
 }
 
-static t_vec3	lighting_ambient(t_material material, t_light_point light)
-{
-	return (vec3_mul(vec3_hadamard_product(material.color, light.color), \
-		material.ambient));
-}
-
-static t_vec3	lighting_diffuse(t_material material, t_light_point light, \
-	t_vec4 lightv, t_vec4 normalv)
-{
-	float	light_dot_normal;
-
-	light_dot_normal = vec4_dot_product(lightv, normalv);
-	if (light_dot_normal < 0)
-		return (color(0, 0, 0));
-	return (vec3_mul(vec3_hadamard_product(material.color, light.color), \
-		material.diffuse * light_dot_normal));
-}
-
-static t_vec3	lighting_specular(t_material material, t_light_point light, \
-	t_vec4 lightv, t_shading shading)
-{
-	t_vec4	reflectv;
-	float	reflect_dot_eye;
-	float	factor;
-
-	reflectv = reflect(vec4_inv(lightv), shading.normalv);
-	reflect_dot_eye = vec4_dot_product(reflectv, shading.eyev);
-	if (reflect_dot_eye <= 0)
-		return (color(0, 0, 0));
-	factor = pow(reflect_dot_eye, material.shininess);
-	return (vec3_mul(light.color, material.specular * factor));
-}
 
 /*t_vec3	lighting(t_material material, t_light_point light, \
 		t_vec4 intersection_point, t_vec4 eyev, t_vec4 normalv)

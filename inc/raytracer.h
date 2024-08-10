@@ -143,7 +143,7 @@ t_ray				transform(t_ray ray, t_mat4 transformation);
 void				set_transform(t_object *object, t_mat4 transformation);
 
 // --- Color ---
-t_vec3				color(float r, float g, float b);
+t_vec3				color_rgb(float r, float g, float b);
 
 // --- Material ---
 t_material			material(void);

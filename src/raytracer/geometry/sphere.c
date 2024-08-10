@@ -19,6 +19,7 @@ t_object	sphere(void)
 	object.type = SPHERE;
 	object.material = material();
 	object.transform = mat4_identity();
+	object.transform_inverse = mat4_inv(object.transform);
 	object.u_object.sphere.p_origin = point(0, 0, 0);
 	object.u_object.sphere.radius = 1;
 	return (object);

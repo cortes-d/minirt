@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 16:14:28 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 14:23:12 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/10 13:39:02 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/10 13:39:41 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ static t_intersection_pair	intersect_sphere(t_ray ray, t_object object)
 
 t_intersection_pair	intersect(t_ray ray, t_object object)
 {
-	if (object.type == SPHERE)
-		intersect_sphere(ray, object);
+	//if (object.type == SPHERE)
+	return (intersect_sphere(ray, object));
 }

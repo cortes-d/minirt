@@ -12,7 +12,7 @@
 
 #include "libla.h"
 
-t_vec3	color(float r, float g, float b)
+t_vec3	color_rgb(float r, float g, float b)
 {
 	return (vec3(r, g, b));
 }
