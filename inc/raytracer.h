@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 13:28:44 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 15:28:20 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/10 22:18:09 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,8 @@ t_ray				transform(t_ray ray, t_mat4 transformation);
 void				set_transform(t_object *object, t_mat4 transformation);
 
 // --- Color ---
-t_vec3				color_rgb(float r, float g, float b);
+t_vec3				color_rgb_f(float r, float g, float b);
+t_vec3				color_rgb_i(int r, int g, int b);
 
 // --- Material ---
 t_material			material(void);

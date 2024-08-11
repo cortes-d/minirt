@@ -50,7 +50,7 @@ int	main(void)
 	// sphere
 	my_sphere = sphere();
 	my_sphere.material = material();
-	my_sphere.material.color = color_rgb(1, 0.2, 1);
+	my_sphere.material.color = color_rgb_f(1, 0.2, 1);
 
 	// light
 	light = light_point(point(-10, 10, -10), color_rgb(1, 1, 1));

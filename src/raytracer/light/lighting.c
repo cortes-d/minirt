@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/10 14:08:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/10 14:13:22 by dcortes          ###   ########.ch       */
+/*   Created: 2024/08/10 22:20:37 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/10 22:20:37 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static t_vec3	lighting_diffuse(t_material material, t_light_point light, \
 
 	light_dot_normal = vec4_dot_product(lightv, normalv);
 	if (light_dot_normal < 0)
-		return (color_rgb(0, 0, 0));
+		return (color_rgb_f(0, 0, 0));
 	return (vec3_mul(vec3_hadamard_product(material.color, light.color), \
 		material.diffuse * light_dot_normal));
 }
@@ -51,7 +51,7 @@ static t_vec3	lighting_specular(t_material material, t_light_point light, \
 	reflectv = reflect(vec4_inv(lightv), shading.normalv);
 	reflect_dot_eye = vec4_dot_product(reflectv, shading.eyev);
 	if (reflect_dot_eye <= 0)
-		return (color_rgb(0, 0, 0));
+		return (color_rgb_f(0, 0, 0));
 	factor = pow(reflect_dot_eye, material.shininess);
 	return (vec3_mul(light.color, material.specular * factor));
 }

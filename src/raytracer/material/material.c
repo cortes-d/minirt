@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 15:51:28 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 11:48:57 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/10 22:20:57 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/10 22:20:57 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_material	material(void)
 {
 	t_material	material;
 
-	material.color = color_rgb(DEFAULT_COLOR_R, DEFAULT_COLOR_G, DEFAULT_COLOR_B);
+	material.color = color_rgb_f(DEFAULT_COLOR_R, DEFAULT_COLOR_G, DEFAULT_COLOR_B);
 	material.ambient = DEFAULT_AMBIENT;
 	material.diffuse = DEFAULT_DIFFUSE;
 	material.specular = DEFAULT_SPECULAR;

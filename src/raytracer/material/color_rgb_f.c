@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.c                                            :+:      :+:    :+:   */
+/*   color_rgb_f.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 09:42:20 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 15:29:42 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/10 21:58:13 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/10 21:58:13 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_vec3	color_rgb(float r, float g, float b)
+t_vec3	color_rgb_f(float r, float g, float b)
 {
 	return (vec3(r, g, b));
 }
