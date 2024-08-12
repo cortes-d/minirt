@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:11:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 11:00:11 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 11:17:28 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ t_vec3	str_to_vec3(const char *str)
 	b = str_to_float(split[1]);
 	c = str_to_float(split[2]);
 	free(split);
-	return (vector(a, b, c));
+	return (vec3(a, b, c));
 }
