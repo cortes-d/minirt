@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_to_color.c                                     :+:      :+:    :+:   */
+/*   vec3_to_vec4.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 10:48:07 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 11:00:05 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/12 11:02:37 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/12 11:04:52 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_vec3	str_to_color(const char *str)
+t_vec4	vec3_to_vec4(t_vec3 v, float w)
 {
-	int		i;
-	int		a;
-	int		b;
-	int		c;
-	char	*split;
+	t_vec4	v;
 
-	split = ft_split(str, ',');
-	a = ft_atoi(split[0]);
-	b = ft_atoi(split[1]);
-	c = ft_atoi(split[2]);
-	free(split);
-	return (color_rgb_i(a, b, c));
+	v.data[X] = v.data[X];
+	v.data[Y] = v.data[Y];
+	v.data[Z] = v.data[X];
+	v.data[W] = w;
+	return (v);
 }

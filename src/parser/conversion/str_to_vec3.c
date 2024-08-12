@@ -6,13 +6,13 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:11:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/11 10:11:27 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/12 11:00:11 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-vec3	str_to_vec3(const char *str)
+t_vec3	str_to_vec3(const char *str)
 {
 	int		i;
 	float	a;

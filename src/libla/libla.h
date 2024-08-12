@@ -21,6 +21,9 @@
 // Section : Constants and Macros
 // =============================================================================
 
+# define W_POINT 1
+# define W_VECTOR 0
+
 # define V3_SIZE 3
 # define V4_SIZE 4
 
@@ -94,6 +97,9 @@ bool	equalf(float a, float b);
 
 t_vec4	vec4(float a, float b, float c, float d);
 t_vec3  vec3(float a, float b, float c);
+
+// --- Conversion ---
+t_vec4	vec3_to_vec4(t_vec3 v, float w);
 
 // --- Printer ---
 void	vec4_print(t_vec4 v);

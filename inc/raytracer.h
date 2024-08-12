@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 09:55:28 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 10:59:33 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,7 @@ t_vec3				color_rgb_i(int r, int g, int b);
 // --- Material ---
 t_material			material(void);
 t_material			material_from_color(float r, float g, float b);
+void				set_object_color(t_object *object, t_vec3 color);
 
 // --- Light ---
 t_light_point		light_point(t_vec4 position, t_vec3 color);
@@ -163,6 +164,7 @@ t_vec4				reflect(t_vec4 in, t_vec4 normal);
 t_vec4				point(float x, float y, float z);
 t_vec4				vector(float x, float y, float z);
 t_object			sphere(void);
+t_object			sphere_from_params(t_vec4 p_origin, float radius);
 
 // --- World ---
 t_world				world(void);

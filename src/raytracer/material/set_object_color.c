@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_to_color.c                                     :+:      :+:    :+:   */
+/*   set_object_color.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 10:48:07 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 11:00:05 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/12 10:56:50 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/12 10:59:07 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libla.h"
+#include "raytracer.h"
 
-t_vec3	str_to_color(const char *str)
+void	set_object_color(t_object *object, t_vec3 color)
 {
-	int		i;
-	int		a;
-	int		b;
-	int		c;
-	char	*split;
-
-	split = ft_split(str, ',');
-	a = ft_atoi(split[0]);
-	b = ft_atoi(split[1]);
-	c = ft_atoi(split[2]);
-	free(split);
-	return (color_rgb_i(a, b, c));
+	object->material = material_from_color(\
+		color.data[R], \
+		color.data[G], \
+		color.data[B]);
 }
