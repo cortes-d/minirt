@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cylinder.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/12 11:37:01 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/12 11:45:16 by dcortes          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "raytracer.h"
+
+t_object	cylinder(void)
+{
+	t_object	object;
+
+	object.type = CYLINDER;
+	object.material = material();
+	object.transform = mat4_identity();
+	object.transform_inverse = mat4_inv(object.transform);
+	object.u_object.cylinder.p_origin = point(0, 0, 0);
+    object.u_object.cylinder.v_axis = vector(0, 1, 0);
+    object.u_object.cylinder.height = 1;
+    object.u_object.cylinder.diameter = 1;
+	return (object);
+}

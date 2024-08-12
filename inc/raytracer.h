@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 10:59:33 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 11:43:35 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,22 @@ typedef struct s_sphere
 	float	radius;
 }	t_sphere;
 
+// --- Structure : Cylinder ---
+typedef struct s_cylinder
+{
+	t_vec4	p_origin;
+	t_vec4	v_axis;
+	float	height;
+	float	diameter;
+}	t_cylinder;
+
+// --- Structure : Plane ---
+typedef struct s_plane
+{
+	t_vec4	p_point;
+	t_vec4	v_normal;
+}	t_plane;
+
 // --- Structure : Object ---
 typedef struct s_object
 {
@@ -68,8 +84,8 @@ typedef struct s_object
 	union
 	{
 		t_sphere	sphere;
-		//t_plane		plane;
-		//t_cylinder	cylinder;
+		t_cylinder	cylinder;
+		t_plane		plane;
 	}	u_object;
 
 }	t_object;
