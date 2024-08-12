@@ -6,11 +6,11 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:48:07 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 11:00:05 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 11:21:58 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libla.h"
+#include "raytracer.h"
 
 t_vec3	str_to_color(const char *str)
 {

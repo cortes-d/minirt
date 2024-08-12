@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:40:12 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/11 11:40:12 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/12 11:12:31 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	cylinder_from_tokens(t_list *tokens)
 {
 	t_list	*current;
 	t_token	*params[COUNT_PARAMS_CYLINDER];
-	vec3	cylinder_center;
-	vec3	cylinder_axis;
+	t_vec3	cylinder_center;
+	t_vec3	cylinder_axis;
 	float	cylinder_diameter;
 	float   cylinder_height;
-	color	cylinder_color;
+	t_vec3	cylinder_color;
 
 	if (!tokens)
 		return ;

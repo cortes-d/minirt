@@ -6,11 +6,11 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:11:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 11:17:28 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 11:22:10 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libla.h"
+#include "raytracer.h"
 
 t_vec3	str_to_vec3(const char *str)
 {
