@@ -50,7 +50,8 @@ SRC_RAYTRACER =					$(DIR_RAYTRACER)/test_phong.c \
 								$(DIR_RAYTRACER_INTERSECTION)/intersect.c \
 								$(DIR_RAYTRACER_INTERSECTION)/intersection.c \
 								$(DIR_RAYTRACER_INTERSECTION)/hit.c \
-								$(DIR_RAYTRACER_MATERIAL)/color.c \
+								$(DIR_RAYTRACER_MATERIAL)/color_rgb_i.c \
+								$(DIR_RAYTRACER_MATERIAL)/color_rgb_f.c \
 								$(DIR_RAYTRACER_MATERIAL)/material.c \
 								$(DIR_RAYTRACER_GEOMETRY)/point.c \
 								$(DIR_RAYTRACER_GEOMETRY)/vector.c \
