@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:56:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/02/23 17:29:53 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/12 12:53:28 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int		ft_printf(const char *format, ...);
 
 char	*get_next_line(int fd);
 
+float	ft_strtof(const char *str, char **endptr);
+int		ft_strequiv(const char *s1, const char *s2);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);

@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   float_within_range.c                               :+:      :+:    :+:   */
+/*   str_to_float_check.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 13:28:55 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 13:31:11 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/11 10:35:45 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/12 13:39:25 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "raytracer.h"
 
-int	float_within_range(float x, \
-	float min_inclusive, float max_inclusive)
+int	str_to_float_check(const char *str)
 {
-	return (x >= min_inclusive && x <= max_inclusive);
+	if (str_float_check(&str) == ERROR)
+		return (ERROR);
+	if (*str != '\0')
+		return (ERROR);
 }

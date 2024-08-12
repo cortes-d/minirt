@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_to_vec3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:11:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 11:22:10 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 12:07:26 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,8 @@
 
 t_vec3	str_to_vec3(const char *str)
 {
-	int		i;
-	float	a;
-	float	b;
-	float	c;
-	char	*split;
-
-	split = ft_split(str, ',');
-	a = str_to_float(split[0]);
-	b = str_to_float(split[1]);
-	c = str_to_float(split[2]);
-	free(split);
-	return (vec3(a, b, c));
+	return (vec3(\
+			str_to_float(elem_at_index_n(str, 0)), \
+			str_to_float(elem_at_index_n(str, 1)), \
+			str_to_float(elem_at_index_n(str, 2))));
 }
