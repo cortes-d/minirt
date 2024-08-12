@@ -58,6 +58,7 @@ SRC_RAYTRACER =					$(DIR_RAYTRACER)/test_phong.c \
 								$(DIR_RAYTRACER_GEOMETRY)/sphere.c \
 								$(DIR_RAYTRACER_RAY)/ray.c \
 								$(DIR_RAYTRACER_RAY)/ray_for_pixel.c \
+								$(DIR_RAYTRACER_RAY)/ray_transform.c \
 								$(DIR_RAYTRACER_RAY)/position.c \
 								$(DIR_RAYTRACER_TRANSFORMATION)/transform.c \
 								$(DIR_RAYTRACER_TRANSFORMATION)/set_transform.c

@@ -40,6 +40,7 @@ int	main(void)
 	t_vec3				color;
 	t_vec4				pt;
 	t_shading			shading;
+	t_ray				r;
 
 	// mlx
 	mlx_ptr = mlx_init();
@@ -51,6 +52,9 @@ int	main(void)
 	my_sphere = sphere();
 	my_sphere.material = material();
 	my_sphere.material.color = color_rgb_f(1, 0.2, 1);
+
+	// transformation
+	set_transform(&my_sphere, mat4_scaling(.7, .8, 1));
 
 	// light
 	light = light_point(point(-10, 10, -10), color_rgb_f(1, 1, 1));
@@ -64,9 +68,12 @@ int	main(void)
 		x = 0;
 		while (x < WIDTH)
 		{
-			t_ray ray = ray_for_pixel_test(x, y);
-			ray.v_direction = vec4_normalize(ray.v_direction); // Normalize the ray direction
-			intersection_pair = intersect(ray, my_sphere);
+			r = ray_for_pixel_test(x, y);
+			// Transform ray
+			r = ray_transform(r, my_sphere);
+			
+			r.v_direction = vec4_normalize(r.v_direction); // Normalize the ray direction
+			intersection_pair = intersect(r, my_sphere);
 			if (intersection_pair.count == 1 || intersection_pair.count == 2)
 			{
 				intersec1 = (t_intersection *)malloc(sizeof(t_intersection));
@@ -84,9 +91,9 @@ int	main(void)
 			hitting = hit(intersections_list);
 			if (hitting)
 			{
-				pt = position(ray, hitting->t);
+				pt = position(r, hitting->t);
 				shading.normalv = normal_at(hitting->object, pt);
-				shading.eyev = vec4_inv(ray.v_direction);
+				shading.eyev = vec4_inv(r.v_direction);
 				color = lighting(hitting->object.material, light, pt, shading);
 				write_pixel(&img, x, y, color);
 				//printf("Hit at (%u, %u): color = (%f, %f, %f)\n", x, y, color.data[R], color.data[G], color.data[B]);

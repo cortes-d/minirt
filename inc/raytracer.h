@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/10 22:18:09 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/12 09:27:33 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,7 @@ typedef struct s_world
 // --- Ray ---
 t_ray				ray(t_vec4 p_origin, t_vec4 v_direction);
 t_vec4				position(t_ray ray, float t);
+t_ray				ray_transform(t_ray r, const t_object object);
 
 // --- Intersection ---
 t_intersection_pair	intersect(t_ray ray, t_object object);
