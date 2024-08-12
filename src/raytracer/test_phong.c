@@ -74,9 +74,6 @@ int	main(void)
 		while (x < WIDTH)
 		{
 			r = ray_for_pixel_test(x, y);
-			// Transform ray
-			r = ray_transform(r, my_sphere);
-			
 			r.v_direction = vec4_normalize(r.v_direction); // Normalize the ray direction
 			intersection_pair = intersect(r, my_sphere);
 			if (intersection_pair.count == 1 || intersection_pair.count == 2)

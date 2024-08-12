@@ -6,10 +6,11 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:20:37 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/10 22:20:37 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/12 14:29:48 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "raytracer.h"
 
 static t_vec3	lighting_ambient(t_material material, t_light_point light)
@@ -63,12 +64,17 @@ t_vec3	lighting(t_material material, t_light_point light, \
 	t_vec3	ambient;
 	t_vec3	diffuse;
 	t_vec3	specular;
+	t_vec3	color;
 
 	lightv = vec4_normalize(vec4_sub(light.p_origin, intersection_point));
 	ambient = lighting_ambient(material, light);
 	diffuse = lighting_diffuse(material, light, lightv, shading.normalv);
 	specular = lighting_specular(material, light, lightv, shading);
-	return (vec3_add(ambient, vec3_add(diffuse, specular)));
+	color = vec3_add(ambient, vec3_add(diffuse, specular));
+	color.data[X] = ft_clamp(color.data[X], 1);
+	color.data[Y] = ft_clamp(color.data[Y], 1);
+	color.data[Z] = ft_clamp(color.data[Z], 1);
+	return (color);
 }
 
 

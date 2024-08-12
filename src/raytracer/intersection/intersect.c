@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 13:39:02 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/10 13:39:41 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/12 14:18:37 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static t_intersection_pair	intersect_sphere(t_ray ray, t_object object)
 	float				discriminant;
 	t_ray				ray_transformed;
 
-	ray_transformed = transform(ray, mat4_inv(object.transform));
+	ray_transformed = ray_transform(ray, mat4_inv(object.transform));
 	pair.count = 0;
 	object_to_ray = vec4_sub(ray_transformed.p_origin, point(0, 0, 0));
 	a = vec4_dot_product(ray_transformed.v_direction, ray_transformed.v_direction);
@@ -46,8 +46,24 @@ static t_intersection_pair	intersect_sphere(t_ray ray, t_object object)
 	return (pair);
 }
 
+/*static	t_intersection_pair	intersect_cylinder(t_ray ray, t_object object)
+{
+	(void)ray;
+	(void)object;
+}
+
+static	t_intersection_pair	intersect_plane(t_ray ray, t_object object)
+{
+	(void)ray;
+	(void)object;
+}*/
+
 t_intersection_pair	intersect(t_ray ray, t_object object)
 {
 	//if (object.type == SPHERE)
-	return (intersect_sphere(ray, object));
+		return (intersect_sphere(ray, object));
+	/*else if (object.type == CYLINDER)
+		return (intersect_cylinder(ray, object));
+	else
+		return (intersect_plane(ray, object));*/
 }

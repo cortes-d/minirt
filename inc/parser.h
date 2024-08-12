@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:28:15 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 11:00:37 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 13:31:08 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ typedef struct s_token
 // --- Tokenization ---
 t_token		*token(char *chunk);
 t_list		*tokenize_line(const char *line);
+
+// --- Check ---
+int		int_within_range(int x, \
+			int min_inclusive, int max_inclusive);
+int		float_within_range(float x, \
+			float min_inclusive, float max_inclusive);
 
 // --- Object creation from tokens ---
 void		object_from_tokens(t_list *tokens);
