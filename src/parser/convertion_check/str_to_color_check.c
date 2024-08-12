@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:48:07 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 13:57:37 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/12 14:13:29 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ int	str_to_color_check(const char *str)
 		return (ERROR);
 	if (*str != '\0')
 		return (ERROR);
+	return (0);
 }

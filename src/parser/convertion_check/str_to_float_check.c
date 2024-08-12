@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:35:45 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 13:39:25 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/12 14:13:25 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ int	str_to_float_check(const char *str)
 		return (ERROR);
 	if (*str != '\0')
 		return (ERROR);
+	return (0);
 }
