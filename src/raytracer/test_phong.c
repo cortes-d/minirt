@@ -4,6 +4,8 @@
 #include "mlx.h"
 #include "graphic.h"
 
+#include <math.h>
+
 # define WIDTH			500
 # define HEIGHT			500
 # define HALF_WIDTH		250
@@ -54,7 +56,10 @@ int	main(void)
 	my_sphere.material.color = color_rgb_f(1, 0.2, 1);
 
 	// transformation
-	set_transform(&my_sphere, mat4_scaling(.7, .8, 1));
+	
+	set_transform(&my_sphere, mat4_scaling(.4, .8, 1));
+	add_transform(&my_sphere, mat4_rotation_z(M_PI/8));
+	add_transform(&my_sphere, mat4_translation(.15, 0, 1));
 
 	// light
 	light = light_point(point(-10, 10, -10), color_rgb_f(1, 1, 1));

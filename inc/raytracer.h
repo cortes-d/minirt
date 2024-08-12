@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 09:27:33 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 09:55:28 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ t_intersection		*hit(t_list *intersections);
 // --- Transformation ---
 t_ray				transform(t_ray ray, t_mat4 transformation);
 void				set_transform(t_object *object, t_mat4 transformation);
+void				add_transform(t_object *object, t_mat4 transformation);
 
 // --- Color ---
 t_vec3				color_rgb_f(float r, float g, float b);

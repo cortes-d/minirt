@@ -61,7 +61,8 @@ SRC_RAYTRACER =					$(DIR_RAYTRACER)/test_phong.c \
 								$(DIR_RAYTRACER_RAY)/ray_transform.c \
 								$(DIR_RAYTRACER_RAY)/position.c \
 								$(DIR_RAYTRACER_TRANSFORMATION)/transform.c \
-								$(DIR_RAYTRACER_TRANSFORMATION)/set_transform.c
+								$(DIR_RAYTRACER_TRANSFORMATION)/set_transform.c \
+								$(DIR_RAYTRACER_TRANSFORMATION)/add_transform.c
 SRC_TEST = test.c \
 		   test_mat_determinant.c \
 		   test_mat_identity.c \
