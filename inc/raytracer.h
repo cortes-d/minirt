@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 11:43:35 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 13:10:09 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,6 +181,11 @@ t_vec4				point(float x, float y, float z);
 t_vec4				vector(float x, float y, float z);
 t_object			sphere(void);
 t_object			sphere_from_params(t_vec4 p_origin, float radius);
+t_object			cylinder(void);
+t_object			cylinder_from_params(t_vec4 p_origin, \
+						t_vec4 v_axis, float diameter, float height);
+t_object			plane(void);
+t_object			plane_from_params(t_vec4 p_point, t_vec4 v_normal);
 
 // --- World ---
 t_world				world(void);
