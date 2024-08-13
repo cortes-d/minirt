@@ -130,6 +130,7 @@ t_vec4	vec4_inv(t_vec4 v);
 
 // --- Magnitude ---
 float	vec4_magnitude(t_vec4 v);
+float   vec3_magnitude(t_vec3 v);
 
 // --- Normalization ---
 t_vec4	vec4_normalize(t_vec4 v);

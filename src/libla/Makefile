@@ -55,6 +55,7 @@ SRC = 	equalf.c \
 		$(DIR_VECTOR_DIVISION)/vec4_div.c \
 		$(DIR_VECTOR_INVERSION)/vec4_inv.c \
 		$(DIR_VECTOR_MAGNITUDE)/vec4_magnitude.c \
+		$(DIR_VECTOR_MAGNITUDE)/vec3_magnitude.c \
 		$(DIR_VECTOR_NORMALIZATION)/vec4_normalize.c \
 		$(DIR_VECTOR_DOT_PRODUCT)/vec4_dot_product.c \
 		$(DIR_VECTOR_CROSS_PRODUCT)/vec4h_cross_product.c \
