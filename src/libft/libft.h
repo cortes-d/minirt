@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:56:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/12 14:28:31 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/13 15:23:14 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		ft_printf(const char *format, ...);
 
 char	*get_next_line(int fd);
 
+int		ft_array2d_size(const void **array2d);
 float	ft_strtof(const char *str, char **endptr);
 int		ft_strequiv(const char *s1, const char *s2);
 int		ft_isalpha(int c);
