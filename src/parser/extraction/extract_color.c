@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   elem_at_index_n.c                                  :+:      :+:    :+:   */
+/*   str_to_color.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 11:56:58 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/12 12:05:16 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/11 10:48:07 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/12 12:07:23 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "parser.h"
 
-const char	*elem_at_index_n(const char *str, unsigned int n)
+t_vec3	extract_color(const char *str)
 {
-	unsigned int	comma_count;
-	unsigned int	i;
-
-	comma_count = 0;
-	while (n != comma_count && str[i] != '\0')
-	{
-		if (str[i] == ',')
-			comma_count++;
-		i++;
-	}
-	if (comma_count > 0)
-		return (str + i + 1);
-	return (str);
+	return (color_rgb_i(\
+			ft_atoi(elem_at_index_n(str, 0)), \
+			ft_atoi(elem_at_index_n(str, 1)), \
+			ft_atoi(elem_at_index_n(str, 2))));
 }

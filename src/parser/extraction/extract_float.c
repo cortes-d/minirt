@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_to_vec3.c                                      :+:      :+:    :+:   */
+/*   str_to_float.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 10:11:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 12:07:26 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/11 10:35:45 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/12 12:53:32 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "parser.h"
 
-t_vec3	str_to_vec3(const char *str)
+float	extract_float(const char *str)
 {
-	return (vec3(\
-			str_to_float(elem_at_index_n(str, 0)), \
-			str_to_float(elem_at_index_n(str, 1)), \
-			str_to_float(elem_at_index_n(str, 2))));
+	return (ft_strtof(str, NULL));
 }
