@@ -6,11 +6,22 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 13:39:02 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 14:18:37 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/13 13:59:27 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
+#define NO_INTERSECTION -1
+
+static t_intersection_pair	init_intersection_pair(void)
+{
+	t_intersection_pair	pair;
+
+	pair.count = 0;
+	pair.t[0] = NO_INTERSECTION;
+	pair.t[1] = NO_INTERSECTION;
+	return (pair);
+}
 
 /*
  * Finds the intersection(s) between a ray and an object.
@@ -26,13 +37,12 @@ static t_intersection_pair	intersect_sphere(t_ray ray, t_object object)
 	float				b;
 	float				c;
 	float				discriminant;
-	t_ray				ray_transformed;
 
-	ray_transformed = ray_transform(ray, mat4_inv(object.transform));
-	pair.count = 0;
-	object_to_ray = vec4_sub(ray_transformed.p_origin, point(0, 0, 0));
-	a = vec4_dot_product(ray_transformed.v_direction, ray_transformed.v_direction);
-	b = 2 * vec4_dot_product(ray_transformed.v_direction, object_to_ray);
+	(void)object;
+	pair = init_intersection_pair();
+	object_to_ray = vec4_sub(ray.p_origin, point(0, 0, 0));
+	a = vec4_dot_product(ray.v_direction, ray.v_direction);
+	b = 2 * vec4_dot_product(ray.v_direction, object_to_ray);
 	c = vec4_dot_product(object_to_ray, object_to_ray) - 1;
 	discriminant = (b * b) - 4 * a * c;
 	if (discriminant >= 0)
@@ -46,24 +56,56 @@ static t_intersection_pair	intersect_sphere(t_ray ray, t_object object)
 	return (pair);
 }
 
-/*static	t_intersection_pair	intersect_cylinder(t_ray ray, t_object object)
+static	t_intersection_pair	intersect_cylinder(t_ray ray, t_object object)
 {
-	(void)ray;
+	float				a;
+	float				b;
+	float				c;
+	float				discriminant;
+	t_intersection_pair	pair;
+
 	(void)object;
+	pair = init_intersection_pair();
+	a = ray.v_direction.data[X] * ray.v_direction.data[X] + \
+		ray.v_direction.data[Z] * ray.v_direction.data[Z];
+	if (equalf(a, 0))
+		return (pair);
+	b = 2 * ray.p_origin.data[X] * ray.v_direction.data[X] + \
+		2 * ray.p_origin.data[Z] * ray.v_direction.data[Z];
+	c = ray.p_origin.data[X] * ray.p_origin.data[X] + \
+		ray.p_origin.data[Z] * ray.p_origin.data[Z] - 1;
+	discriminant = b * b - 4 * a * c;
+	if (discriminant < 0)
+		return (pair);
+	pair.t[0] = (-b - sqrt(discriminant) / (2 * a));
+	pair.t[1] = (-b + sqrt(discriminant) / (2 * a));
+	return (pair);
 }
+
 
 static	t_intersection_pair	intersect_plane(t_ray ray, t_object object)
 {
-	(void)ray;
+	t_intersection_pair	pair;
+
 	(void)object;
-}*/
+	pair = init_intersection_pair();
+	if (fabs(ray.v_direction.data[Y]) < EPSILON)
+		return (pair);
+	pair.t[0] = -ray.p_origin.data[Y] / ray.v_direction.data[Y];
+	pair.t[1] = pair.t[0];
+	return (pair);
+}
 
 t_intersection_pair	intersect(t_ray ray, t_object object)
 {
-	//if (object.type == SPHERE)
-		return (intersect_sphere(ray, object));
-	/*else if (object.type == CYLINDER)
+	t_ray				ray_transformed;
+
+	ray_transformed = ray_transform(ray, mat4_inv(object.transform));
+
+	if (object.type == SPHERE)
+		return (intersect_sphere(ray_transformed, object));
+	else if (object.type == CYLINDER)
 		return (intersect_cylinder(ray, object));
 	else
-		return (intersect_plane(ray, object));*/
+		return (intersect_plane(ray, object));
 }
