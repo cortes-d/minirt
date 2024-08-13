@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   light_from_tokens.c                                :+:      :+:    :+:   */
+/*   create_point_light.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 10:40:48 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/13 16:06:56 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-void	light_from_tokens(t_object light, t_list *tokens)
+int	create_point_light(char **tokens, t_list **lights)
 {
-	t_list	*current;
-	t_token	*params[COUNT_PARAMS_LIGHT];
+	t_point_light	*new_point_light;
+	t_list			*new_node;
 
-
-	if (!tokens)
-		return ;
-	if (ft_lstsize(tokens) != COUNT_PARAMS_LIGHT + 1)
-		return ;
-	params_from_tokens(tokens, params, COUNT_PARAMS_LIGHT);
-	light.light_point = str_to_vec3(params[0]->chunk);
-	light.light_brightness = str_to_float(params[1]->chunk);
-	/*
-	 * At this stage we have all the required parameters to create the light
-	 * We need to implement the function to create the light
-	 */
+	new_point_light = (t_point_light *)malloc(sizeof(t_point_light));
+	if (new_point_light == NULL)
+		return (ERROR);
+	new_node = ft_lstnew(new_point_light);
+	if (new_node == NULL)
+	{
+		free(new_point_light);
+		return (ERROR);
+	}
+	*new_point_light = \
+	point_light_from_param(\
+	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \
+	extract_float(tokens[2]), \
+	extract_color(tokens[3]));
+	ft_lstadd_back(lights, new_node);
+	return (0);
 }
