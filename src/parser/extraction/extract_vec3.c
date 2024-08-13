@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_to_color.c                                     :+:      :+:    :+:   */
+/*   str_to_vec3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 10:48:07 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 12:07:23 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/11 10:11:22 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/12 12:07:26 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "parser.h"
 
-t_vec3	str_to_color(const char *str)
+t_vec3	extract_vec3(const char *str)
 {
-	return (color_rgb_i(\
-			ft_atoi(elem_at_index_n(str, 0)), \
-			ft_atoi(elem_at_index_n(str, 1)), \
-			ft_atoi(elem_at_index_n(str, 2))));
+	return (vec3(\
+			str_to_float(elem_at_index_n(str, 0)), \
+			str_to_float(elem_at_index_n(str, 1)), \
+			str_to_float(elem_at_index_n(str, 2))));
 }

@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_to_float.c                                     :+:      :+:    :+:   */
+/*   elem_at_index_n.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 10:35:45 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 12:53:32 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/12 11:56:58 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/12 12:05:16 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "parser.h"
 
-float	str_to_float(const char *str)
+const char	*elem_at_index_n(const char *str, unsigned int n)
 {
-	return (ft_strtof(str, NULL));
+	unsigned int	comma_count;
+	unsigned int	i;
+
+	comma_count = 0;
+	while (n != comma_count && str[i] != '\0')
+	{
+		if (str[i] == ',')
+			comma_count++;
+		i++;
+	}
+	if (comma_count > 0)
+		return (str + i + 1);
+	return (str);
 }
