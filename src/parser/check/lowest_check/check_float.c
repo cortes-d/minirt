@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"raytracer.h"
-#define		MAX_DIGITS	7
+#include "parser.h"
 
-int	str_float_check(const char **str)
+int	check_float(const char **str)
 {
 	unsigned int	digit_number;
 

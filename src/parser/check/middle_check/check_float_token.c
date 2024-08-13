@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_to_vec3_check.c                                :+:      :+:    :+:   */
+/*   str_to_float_check.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 10:11:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 14:13:18 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/11 10:35:45 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/12 14:13:25 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "parser.h"
 
-int	str_to_vec3_check(const char *str)
+int	check_float_token(const char *str)
 {
-	if (str_float_check(&str) == ERROR)
-		return (ERROR);
-	if (*str != ',')
-		return (ERROR);
-	str++;
-	if (str_float_check(&str) == ERROR)
-		return (ERROR);
-	if (*str != ',')
-		return (ERROR);
-	str++;
 	if (str_float_check(&str) == ERROR)
 		return (ERROR);
 	if (*str != '\0')

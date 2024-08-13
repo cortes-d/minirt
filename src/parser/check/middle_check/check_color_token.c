@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_uchar_check.c                                  :+:      :+:    :+:   */
+/*   str_to_color_check.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 13:39:54 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/12 13:58:47 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/11 10:48:07 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/12 14:13:29 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "parser.h"
 
-int	str_uchar_check(const char **str)
+int	check_color_token(const char *str)
 {
-	unsigned int	size_test;
-
-	if (!((**str >= '0' && **str <= '9') || **str == '+'))
+	if (str_uchar_check(&str) == ERROR)
 		return (ERROR);
-	(*str)++;
-	if (!(**str >= '0' && **str <= '9'))
+	if (*str != ',')
 		return (ERROR);
-	while (**str == '0' && *(*str + 1) == '0')
-		(*str)++;
-	size_test = 0;
-	while (**str >= '0' && **str <= '9')
-	{
-		size_test *= 10;
-		size_test += **str - 48;
-		if (size_test > 255)
-			return (ERROR);
-		(*str)++;
-	}
+	str++;
+	if (str_uchar_check(&str) == ERROR)
+		return (ERROR);
+	if (*str != ',')
+		return (ERROR);
+	str++;
+	if (str_uchar_check(&str) == ERROR)
+		return (ERROR);
+	if (*str != '\0')
+		return (ERROR);
 	return (0);
 }
