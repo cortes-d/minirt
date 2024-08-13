@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:28:15 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 13:31:08 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/12 14:38:27 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define COUNT_PARAMS_LIGHT 2
 # define COUNT_PARAMS_SPHERE 3
 # define COUNT_PARAMS_PLANE 3
-# define COUNT_PARAMS_CYLINDER 5
+# define COUNT_PARAMS_CYLINDER 4
 
 // =============================================================================
 // Section : Type Definitions

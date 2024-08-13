@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 14:04:10 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/13 15:57:40 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ typedef struct s_cylinder
 	t_vec4	v_axis;
 	float	height;
 	float	diameter;
+	float	minimum;
+	float	maximum;
 }	t_cylinder;
 
 // --- Structure : Plane ---
@@ -138,7 +140,6 @@ typedef struct s_world
 	t_object		*objects;
 }	t_world;
 
-
 // =============================================================================
 // Section : Functions
 // =============================================================================
@@ -148,8 +149,9 @@ t_ray				ray(t_vec4 p_origin, t_vec4 v_direction);
 t_vec4				position(t_ray ray, float t);
 
 // --- Intersection ---
-t_intersection_pair	intersect(t_ray ray, t_object object);
-t_intersection		intersection(float t, t_object object);
+void				intersect(t_ray ray, t_object object, \
+						t_list **list_intersections);
+t_intersection		*intersection(float t, t_object object);
 void				intersections(t_list **intersections, \
 						t_intersection *intersection);
 t_intersection		*hit(t_list *intersections);

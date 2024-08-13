@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:37:01 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 12:54:04 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/13 14:28:01 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ t_object	cylinder(void)
 	object.u_object.cylinder.v_axis = vector(0, 1, 0);
 	object.u_object.cylinder.height = 1;
 	object.u_object.cylinder.diameter = 1;
+	object.u_object.cylinder.minimum = __FLT_MIN__;
+	object.u_object.cylinder.maximum = __FLT_MAX__;
 	return (object);
 }

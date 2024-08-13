@@ -16,6 +16,7 @@ DIR_INC = inc
 DIR_SRC = src
 DIR_TEST = $(DIR_SRC)/test
 DIR_GRAPHIC = $(DIR_SRC)/graphic
+DIR_UTIL = $(DIR_SRC)/util
 
 DIR_RAYTRACER = $(DIR_SRC)/raytracer
 DIR_RAYTRACER_CAMERA = $(DIR_RAYTRACER)/camera
@@ -64,6 +65,8 @@ SRC_RAYTRACER =					$(DIR_RAYTRACER)/test_phong.c \
 								$(DIR_RAYTRACER_TRANSFORMATION)/ray_transform.c \
 								$(DIR_RAYTRACER_TRANSFORMATION)/set_transform.c \
 								$(DIR_RAYTRACER_TRANSFORMATION)/add_transform.c
+SRC_UTIL = 						$(DIR_UTIL)/clamp.c \
+								$(DIR_UTIL)/swap.c
 SRC_TEST = test.c \
 		   test_mat_determinant.c \
 		   test_mat_identity.c \
@@ -76,7 +79,7 @@ SRC_MAIN := $(addprefix $(DIR_SRC)/, $(SRC_MAIN))
 SRC_TEST := $(addprefix $(DIR_TEST)/, $(SRC_TEST))
 
 # --- Combine all source files ---
-SRC = $(SRC_MAIN) $(SRC_GRAPHIC) $(SRC_RAYTRACER)
+SRC = $(SRC_MAIN) $(SRC_GRAPHIC) $(SRC_RAYTRACER) $(SRC_UTIL)
 SRC_TEST_ALL = $(SRC_TEST)
 
 # =============================================================================

@@ -6,7 +6,13 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 16:10:19 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/08 16:10:19 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/13 11:42:04 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "raytracer.h"
+
+t_world	default_world(void)
+{
+	
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersection.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 16:53:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/07 09:52:05 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/13 15:22:16 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 /*
  * Associates one intersection (t-value) to the object being intersected.
  */
-t_intersection	intersection(float t, t_object object)
+t_intersection	*intersection(float t, t_object object)
 {
-	t_intersection	intersection;
+	t_intersection	*intersection;
 
-	intersection.t = t;
-	intersection.object = object;
+	intersection = malloc(sizeof(t_intersection));
+	intersection->t = t;
+	intersection->object = object;
 	return (intersection);
 }
 

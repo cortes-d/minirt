@@ -28,9 +28,9 @@ t_ray	ray_for_pixel_test(unsigned int px, unsigned int py)
 int	main(void)
 {
 	t_object			my_sphere;
-	t_intersection_pair	intersection_pair;
-	t_intersection		*intersec1;
-	t_intersection		*intersec2;
+	//t_intersection_pair	intersection_pair;
+	//t_intersection		*intersec1;
+	//t_intersection		*intersec2;
 	t_intersection		*hitting;
 	t_list				*intersections_list;
 	unsigned int		x;
@@ -52,14 +52,16 @@ int	main(void)
 
 	// sphere
 	my_sphere = sphere();
+	//my_sphere = plane();
+	//my_sphere = cylinder();
 	my_sphere.material = material();
 	my_sphere.material.color = color_rgb_f(1, 0.2, 1);
 
 	// transformation
 	
-	set_transform(&my_sphere, mat4_scaling(.4, .8, 1));
-	add_transform(&my_sphere, mat4_rotation_z(M_PI/8));
-	add_transform(&my_sphere, mat4_translation(.15, 0, 1));
+	set_transform(&my_sphere, mat4_scaling(.1, .1, .1));
+	//add_transform(&my_sphere, mat4_rotation_z(M_PI/8));
+	//add_transform(&my_sphere, mat4_translation(.15, 0, 1));
 
 	// light
 	light = light_point(point(-10, 10, -10), color_rgb_f(1, 1, 1));
@@ -75,8 +77,8 @@ int	main(void)
 		{
 			r = ray_for_pixel_test(x, y);
 			r.v_direction = vec4_normalize(r.v_direction); // Normalize the ray direction
-			intersection_pair = intersect(r, my_sphere);
-			if (intersection_pair.count == 1 || intersection_pair.count == 2)
+			intersect(r, my_sphere, &intersections_list);
+			/*if (intersection_pair.count == 1 || intersection_pair.count == 2)
 			{
 				intersec1 = (t_intersection *)malloc(sizeof(t_intersection));
 				intersec2 = (t_intersection *)malloc(sizeof(t_intersection));
@@ -89,7 +91,7 @@ int	main(void)
 				*intersec2 = intersection(intersection_pair.t[1], my_sphere);
 				intersections(&intersections_list, intersec1);
 				intersections(&intersections_list, intersec2);
-			}
+			}*/
 			hitting = hit(intersections_list);
 			if (hitting)
 			{
