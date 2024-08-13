@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 13:39:02 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/13 13:59:27 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/13 14:17:52 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ static	t_intersection_pair	intersect_cylinder(t_ray ray, t_object object)
 	discriminant = b * b - 4 * a * c;
 	if (discriminant < 0)
 		return (pair);
+	pair.count = 2;
 	pair.t[0] = (-b - sqrt(discriminant) / (2 * a));
 	pair.t[1] = (-b + sqrt(discriminant) / (2 * a));
 	return (pair);
@@ -91,6 +92,7 @@ static	t_intersection_pair	intersect_plane(t_ray ray, t_object object)
 	pair = init_intersection_pair();
 	if (fabs(ray.v_direction.data[Y]) < EPSILON)
 		return (pair);
+	pair.count = 1;
 	pair.t[0] = -ray.p_origin.data[Y] / ray.v_direction.data[Y];
 	pair.t[1] = pair.t[0];
 	return (pair);
