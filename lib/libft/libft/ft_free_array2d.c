@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   world.c                                            :+:      :+:    :+:   */
+/*   ft_free_array2d.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/07 15:22:35 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/08 15:28:38 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/14 14:13:13 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "libft.h"
 
-t_world	world(void)
+void	ft_free_array2d(void **array_2d)
 {
-	t_world	new_world;
+	unsigned int	i;
 
-	new_world.lights_count = 0;
-	new_world.objects_count = 0;
-	new_world.lights = NULL;
-	new_world.objects = NULL;
-	return (new_world);
+	i = 0;
+	while (array_2d[i] != NULL)
+	{
+		free(array_2d[i]);
+		i++;
+	}
+	free(array_2d);
 }

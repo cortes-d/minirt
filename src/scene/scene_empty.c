@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_scene_data.c                                  :+:      :+:    :+:   */
+/*   scene_empty.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/13 14:02:16 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/11 10:48:07 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/14 14:14:54 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "scene.h"
 
-void	free_scene_data(t_scene_data *scene_data)
+t_scene	scene_empty()
 {
-	ft_lstclear(scene_data->objects, &free);
-	ft_lstclear(scene_data->light, &free);
-	ft_lstclear(scene_data->ambient_light, &free);
-	ft_lstclear(scene_data->camera, &free);
+	t_scene	new_empty_scene;
+
+	new_empty_scene.camera = NULL;
+	new_empty_scene.ambient_light = NULL;
+	new_empty_scene.light = NULL;
+	new_empty_scene.objects = NULL;
+	return (new_empty_scene);
 }

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_array_2d.c                                    :+:      :+:    :+:   */
+/*   scene_data_empty.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 07:30:06 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 14:15:30 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-void	free_array2d(void **array_2d)
+t_scene_data	scene_data_empty()
 {
+	t_scene_data	new_empty_scene_data;
 	unsigned int	i;
 
+	new_empty_scene_data.objects = NULL;
+	new_empty_scene_data.light = NULL;
+	new_empty_scene_data.ambient_light = NULL;
+	new_empty_scene_data.camera = NULL;
 	i = 0;
-	while (array_2d[i] != NULL)
+	while (i < UPPERCASE_NB)
 	{
-		free(array_2d[i]);
+		new_empty_scene_data.uppercase_check[i] = 0;
 		i++;
 	}
-	free(array_2d);
 }

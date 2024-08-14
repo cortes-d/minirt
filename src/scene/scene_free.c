@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   empty_scene_data.c                                 :+:      :+:    :+:   */
+/*   scene_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/13 14:00:19 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 14:15:08 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "scene.h"
 
-t_scene_data	empty_scene_data()
+void	scene_free(t_scene *scene)
 {
-	t_scene_data	new_empty_scene_data;
 	unsigned int	i;
 
-	new_empty_scene_data.objects = NULL;
-	new_empty_scene_data.light = NULL;
-	new_empty_scene_data.ambient_light = NULL;
-	new_empty_scene_data.camera = NULL;
-	i = 0;
-	while (i < UPPERCASE_NB)
-	{
-		new_empty_scene_data.uppercase_check[i] = 0;
-		i++;
-	}
+	if (scene->camera)
+		free(scene->camera);
+	if (scene->ambient_light)
+		free(scene->ambient_light);
+	if (scene->light)
+		free(scene->light);
+	if (scene->objects)
+		free_array_2d(scene->objects);
 }
