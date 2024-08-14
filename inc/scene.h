@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 15:01:21 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 15:03:27 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_scene
 	t_camera		*camera;
 	t_light_ambient	*light_ambient;
 	t_light_point	*light_point;
-	t_object		*objects;
+	t_object		**objects;
 }	t_scene;
 
 // ·············································································
