@@ -14,18 +14,14 @@ COLOR_RESET = \033[0m
 
 DIR_INC = inc
 DIR_SRC = src
-DIR_TEST = $(DIR_SRC)/test
-DIR_GRAPHIC = $(DIR_SRC)/graphic
-DIR_UTIL = $(DIR_SRC)/util
+DIR_LIB = lib
 
+DIR_GRAPHIC = $(DIR_SRC)/graphic
+DIR_PARSER = $(DIR_SRC)/parser
 DIR_RAYTRACER = $(DIR_SRC)/raytracer
-DIR_RAYTRACER_CAMERA = $(DIR_RAYTRACER)/camera
-DIR_RAYTRACER_LIGHT = $(DIR_RAYTRACER)/light
-DIR_RAYTRACER_INTERSECTION = $(DIR_RAYTRACER)/intersection
-DIR_RAYTRACER_MATERIAL = $(DIR_RAYTRACER)/material
-DIR_RAYTRACER_GEOMETRY = $(DIR_RAYTRACER)/geometry
-DIR_RAYTRACER_RAY = $(DIR_RAYTRACER)/ray
-DIR_RAYTRACER_TRANSFORMATION = $(DIR_RAYTRACER)/transformation
+DIR_SCENE = $(DIR_SRC)/raytracer
+DIR_UTIL = $(DIR_SRC)/util
+DIR_TEST = $(DIR_SRC)/test
 
 # =============================================================================
 # Section : Compiler and flags
@@ -40,51 +36,77 @@ RM = rm -f
 # =============================================================================
 
 SRC_MAIN = 						minirt.c
-SRC_GRAPHIC =					$(DIR_GRAPHIC)/write_pixel.c
-SRC_RAYTRACER =					$(DIR_RAYTRACER_CAMERA)/camera.c \
-								$(DIR_RAYTRACER_CAMERA)/view_transform.c \
-								$(DIR_RAYTRACER_LIGHT)/light_point.c \
-								$(DIR_RAYTRACER_LIGHT)/lighting.c \
-								$(DIR_RAYTRACER_LIGHT)/normal_at.c \
-								$(DIR_RAYTRACER_LIGHT)/reflect.c \
-								$(DIR_RAYTRACER_INTERSECTION)/intersect.c \
-								$(DIR_RAYTRACER_INTERSECTION)/intersect_sphere.c \
-								$(DIR_RAYTRACER_INTERSECTION)/intersect_cylinder.c \
-								$(DIR_RAYTRACER_INTERSECTION)/intersect_plane.c \
-								$(DIR_RAYTRACER_INTERSECTION)/intersection_pair_init.c \
-								$(DIR_RAYTRACER_INTERSECTION)/intersection_create.c \
-								$(DIR_RAYTRACER_INTERSECTION)/intersection_add_to_list.c \
-								$(DIR_RAYTRACER_INTERSECTION)/hit.c \
-								$(DIR_RAYTRACER_MATERIAL)/color_rgb_i.c \
-								$(DIR_RAYTRACER_MATERIAL)/color_rgb_f.c \
-								$(DIR_RAYTRACER_MATERIAL)/material.c \
-								$(DIR_RAYTRACER_GEOMETRY)/point.c \
-								$(DIR_RAYTRACER_GEOMETRY)/vector.c \
-								$(DIR_RAYTRACER_GEOMETRY)/sphere.c \
-								$(DIR_RAYTRACER_GEOMETRY)/cylinder.c \
-								$(DIR_RAYTRACER_GEOMETRY)/plane.c \
-								$(DIR_RAYTRACER_RAY)/ray.c \
-								$(DIR_RAYTRACER_RAY)/ray_for_pixel.c \
-								$(DIR_RAYTRACER_RAY)/position.c \
-								$(DIR_RAYTRACER_TRANSFORMATION)/ray_transform.c \
-								$(DIR_RAYTRACER_TRANSFORMATION)/set_transform.c \
-								$(DIR_RAYTRACER_TRANSFORMATION)/add_transform.c
-SRC_UTIL = 						$(DIR_UTIL)/clamp.c \
-								$(DIR_UTIL)/swap.c
-SRC_TEST = 	test_libla/test_mat_determinant.c \
-		   	test_libla/test_mat_identity.c \
-		   	test_libla/test_mat_inversion.c \
-		  	test_libla/test_mat_multiplication.c \
-		  	test_libla/test_mat_submatrix.c \
-			test_libla/test_mat_transposition.c \
-		   	test_libla/test_vector.c \
-		   	test_raytracer/test_raytracer_phong.c
+
+SRC_GRAPHIC =					write_pixel.c
+
+SRC_RAYTRACER =					intersection/intersect.c \
+								intersection/intersect_sphere.c \
+								intersection/intersect_cylinder.c \
+								intersection/intersect_plane.c \
+								intersection/intersection_pair_init.c \
+								intersection/intersection_create.c \
+								intersection/intersection_add_to_list.c \
+								intersection/hit.c \
+								light/lighting.c \
+								light/normal_at.c \
+								light/reflect.c \
+								ray/ray.c \
+								ray/ray_for_pixel.c \
+								ray/position.c \
+								ray/ray_transform.c \
+
+SRC_SCENE =						scene_empty.c \
+								scene_free.c \
+								camera/camera.c \
+								camera/view_transform.c \
+								light/light_point.c \
+								material/material.c \
+								material/material_from_color.c \
+								material/set_object_color.c \
+								primitive/sphere.c \
+								primitive/sphere_from_params.c \
+								primitive/cylinder.c \
+								primitive/cylinder_from_params.c \
+								primitive/plane.c \
+								primitive/plane_from_params.c \
+								primitive/transformation/add_transform.c \
+								primitive/transformation/set_transform.c
+
+SRC_UTIL = 						clamp.c \
+								swap.c
+
+SRC_TEST = 						test_libla/test_mat_determinant.c \
+		   						test_libla/test_mat_identity.c \
+		   						test_libla/test_mat_inversion.c \
+		  						test_libla/test_mat_multiplication.c \
+		  						test_libla/test_mat_submatrix.c \
+								test_libla/test_mat_transposition.c \
+		   						test_libla/test_vector.c \
+		   						test_raytracer/test_raytracer_phong.c
+
+# ·············································································
+# Sub-section : Add directories as prefix
+# ·············································································
+
 SRC_MAIN := $(addprefix $(DIR_SRC)/, $(SRC_MAIN))
+SRC_GRAPHIC := $(addprefix $(DIR_GRAPHIC)/, $(SRC_GRAPHIC))
+SRC_RAYTRACER := $(addprefix $(DIR_RAYTRACER)/, $(SRC_RAYTRACER))
+SRC_SCENE := $(addprefix $(DIR_SCENE)/, $(SRC_SCENE))
+SRC_UTIL := $(addprefix $(DIR_UTIL)/, $(SRC_UTIL))
 SRC_TEST := $(addprefix $(DIR_TEST)/, $(SRC_TEST))
 
-# --- Combine all source files ---
-SRC = $(SRC_MAIN) $(SRC_GRAPHIC) $(SRC_RAYTRACER) $(SRC_UTIL)
-SRC_TEST_ALL = $(SRC) $(SRC_TEST)
+# ·············································································
+# Sub-section : Combine all source files
+# ·············································································
+
+SRC = 							$(SRC_MAIN) \
+								$(SRC_GRAPHIC) \
+								$(SRC_RAYTRACER) \
+								$(SRC_SCENE) \
+								$(SRC_UTIL)
+
+SRC_TEST_ALL = 					$(SRC) \
+								$(SRC_TEST)
 
 # =============================================================================
 # Section : Object files
@@ -98,19 +120,19 @@ OBJ_TEST = $(SRC_TEST_ALL:.c=.o)
 # =============================================================================
 
 # --- libft ---
-LIBFT_DIR = $(DIR_SRC)/libft
+LIBFT_DIR = $(DIR_LIB)/libft
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
 LIBFT_INC = -I $(LIBFT_DIR)
 LIBFT_LINK = -L$(LIBFT_DIR) -lft
 
 # --- libla ---
-LIBLA_DIR = $(DIR_SRC)/libla
+LIBLA_DIR = $(DIR_LIB)/libla
 LIBLA_LIB = $(LIBLA_DIR)/libla.a
 LIBLA_INC = -I $(LIBLA_DIR)
 LIBLA_LINK = -L$(LIBLA_DIR) -lla
 
 # --- mlx ---
-MLX_DIR = $(DIR_SRC)/minilibx_opengl
+MLX_DIR = $(DIR_LIB)/minilibx_opengl
 MLX_LIB = $(MLX_DIR)/libmlx.a
 MLX_INC = -I $(MLX_DIR)
 MLX_LINK = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
