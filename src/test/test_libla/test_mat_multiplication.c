@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   test_mat_multiplication.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 10:51:15 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/05 15:31:54 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 10:00:29 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "test_libla.h"
 
 void	test_mat_multiplication(void)
 {

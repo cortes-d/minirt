@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   test_mat_inversion.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 12:47:58 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/05 15:31:33 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 10:00:27 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "test_libla.h"
 
 void	test_mat_inversion(void)
 {

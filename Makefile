@@ -41,8 +41,7 @@ RM = rm -f
 
 SRC_MAIN = 						minirt.c
 SRC_GRAPHIC =					$(DIR_GRAPHIC)/write_pixel.c
-SRC_RAYTRACER =					$(DIR_RAYTRACER)/test_phong.c \
-								$(DIR_RAYTRACER_CAMERA)/camera.c \
+SRC_RAYTRACER =					$(DIR_RAYTRACER_CAMERA)/camera.c \
 								$(DIR_RAYTRACER_CAMERA)/view_transform.c \
 								$(DIR_RAYTRACER_LIGHT)/light_point.c \
 								$(DIR_RAYTRACER_LIGHT)/lighting.c \
@@ -67,20 +66,20 @@ SRC_RAYTRACER =					$(DIR_RAYTRACER)/test_phong.c \
 								$(DIR_RAYTRACER_TRANSFORMATION)/add_transform.c
 SRC_UTIL = 						$(DIR_UTIL)/clamp.c \
 								$(DIR_UTIL)/swap.c
-SRC_TEST = test.c \
-		   test_mat_determinant.c \
-		   test_mat_identity.c \
-		   test_mat_inversion.c \
-		   test_mat_multiplication.c \
-		   test_mat_submatrix.c \
-		   test_mat_transposition.c \
-		   test_vector.c
+SRC_TEST = 	test_libla/test_mat_determinant.c \
+		   	test_libla/test_mat_identity.c \
+		   	test_libla/test_mat_inversion.c \
+		  	test_libla/test_mat_multiplication.c \
+		  	test_libla/test_mat_submatrix.c \
+			test_libla/test_mat_transposition.c \
+		   	test_libla/test_vector.c \
+		   	test_raytracer/test_raytracer_phong.c
 SRC_MAIN := $(addprefix $(DIR_SRC)/, $(SRC_MAIN))
 SRC_TEST := $(addprefix $(DIR_TEST)/, $(SRC_TEST))
 
 # --- Combine all source files ---
 SRC = $(SRC_MAIN) $(SRC_GRAPHIC) $(SRC_RAYTRACER) $(SRC_UTIL)
-SRC_TEST_ALL = $(SRC_TEST)
+SRC_TEST_ALL = $(SRC) $(SRC_TEST)
 
 # =============================================================================
 # Section : Object files

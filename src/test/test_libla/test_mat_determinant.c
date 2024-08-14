@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   test_mat_determinant.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 12:32:01 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/05 15:29:39 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 10:00:21 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "test_libla.h"
 
 void	test_mat_determinant(void)
 {
