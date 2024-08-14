@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 14:15:42 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 14:19:53 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	scene_data_free(t_scene_data *scene_data)
 {
 	ft_lstclear(scene_data->objects, &free);
-	ft_lstclear(scene_data->light, &free);
-	ft_lstclear(scene_data->ambient_light, &free);
-	ft_lstclear(scene_data->camera, &free);
+	ft_lstclear(scene_data->lights, &free);
+	ft_lstclear(scene_data->ambient_lights, &free);
+	ft_lstclear(scene_data->cameras, &free);
 }
