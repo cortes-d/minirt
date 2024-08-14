@@ -19,7 +19,7 @@ DIR_LIB = lib
 DIR_GRAPHIC = $(DIR_SRC)/graphic
 DIR_PARSER = $(DIR_SRC)/parser
 DIR_RAYTRACER = $(DIR_SRC)/raytracer
-DIR_SCENE = $(DIR_SRC)/raytracer
+DIR_SCENE = $(DIR_SRC)/scene
 DIR_UTIL = $(DIR_SRC)/util
 DIR_TEST = $(DIR_SRC)/test
 
@@ -53,7 +53,7 @@ SRC_RAYTRACER =					intersection/intersect.c \
 								ray/ray.c \
 								ray/ray_for_pixel.c \
 								ray/position.c \
-								ray/ray_transform.c \
+								ray/ray_transform.c
 
 SRC_SCENE =						scene_empty.c \
 								scene_free.c \

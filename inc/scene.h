@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 15:47:10 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 15:53:47 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,6 @@
 // Section : Type Definitions
 // =============================================================================
 
-// --- Structure : Scene ---
-typedef struct s_scene
-{
-	t_camera		*camera;
-	t_light_ambient	*light_ambient;
-	t_light_point	*light_point;
-	t_object		**objects;
-}	t_scene;
-
-// ·············································································
-// Sub-section : Camera
-// ·············································································
-
-typedef struct s_camera
-{
-	t_mat4			transform;
-	unsigned int	hsize;
-	unsigned int	vsize;
-	float			half_width;
-	float			half_height;
-	float			pixel_size;
-}	t_camera;
-
 // ·············································································
 // Sub-section : Forward declarations
 // ·············································································
@@ -63,7 +40,10 @@ typedef struct s_plane			t_plane;
 typedef struct s_material		t_material;
 
 typedef struct s_light_point	t_light_point;
-typedef struct s_world			t_world;
+
+typedef struct s_camera			t_camera;
+
+typedef struct s_scene			t_scene;
 
 // ·············································································
 // Sub-section : Primitive
@@ -148,6 +128,33 @@ typedef struct s_light_ambient
 	t_vec3	color;
 }	t_light_ambient;
 
+// ·············································································
+// Sub-section : Camera
+// ·············································································
+
+typedef struct s_camera
+{
+	t_mat4			transform;
+	unsigned int	hsize;
+	unsigned int	vsize;
+	float			half_width;
+	float			half_height;
+	float			pixel_size;
+}	t_camera;
+
+// ·············································································
+// Sub-section : Scene
+// ·············································································
+
+// --- Structure : Scene ---
+typedef struct s_scene
+{
+	t_camera		*camera;
+	t_light_ambient	*light_ambient;
+	t_light_point	*light_point;
+	t_object		**objects;
+}	t_scene;
+
 // =============================================================================
 // Section : Functions
 // =============================================================================
@@ -170,6 +177,6 @@ t_object			plane(void);
 t_object			plane_from_params(t_vec4 p_point, t_vec4 v_normal);
 
 // --- World ---
-t_world				world(void);
+t_scene				scene(void);
 
 #endif
