@@ -99,10 +99,17 @@ bool	equalf(float a, float b);
 // Section : Vector
 // =============================================================================
 
+// --- Base vector types ---
 t_vec4	vec4(float a, float b, float c, float d);
 t_vec3	vec3(float a, float b, float c);
+
+// --- Specialized vector types ---
 t_vec4	point(float x, float y, float z);
 t_vec4	vector(float x, float y, float z);
+
+// --- Specialized vector types : color ---
+t_vec3	color_rgb_f(float r, float g, float b);
+t_vec3	color_rgb_i(int r, int g, int b);
 
 // --- Conversion ---
 t_vec4	vec3_to_vec4(t_vec3 v, float w);

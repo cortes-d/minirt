@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 14:29:11 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 14:35:06 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,10 +116,6 @@ typedef struct s_world
 // =============================================================================
 // Section : Functions
 // =============================================================================
-
-// --- Color ---
-t_vec3				color_rgb_f(float r, float g, float b);
-t_vec3				color_rgb_i(int r, int g, int b);
 
 // --- Material ---
 t_material			material(void);
