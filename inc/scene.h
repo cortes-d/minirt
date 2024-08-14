@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 15:53:47 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 16:06:38 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,5 +178,7 @@ t_object			plane_from_params(t_vec4 p_point, t_vec4 v_normal);
 
 // --- World ---
 t_scene				scene(void);
+t_scene				scene_empty(void);
+void				scene_free(t_scene *scene);
 
 #endif
