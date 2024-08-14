@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 14:35:06 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 15:01:21 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,29 @@
 // =============================================================================
 // Section : Type Definitions
 // =============================================================================
+
+// --- Structure : Scene ---
+typedef struct s_scene
+{
+	t_camera		*camera;
+	t_light_ambient	*light_ambient;
+	t_light_point	*light_point;
+	t_object		*objects;
+}	t_scene;
+
+// ·············································································
+// Sub-section : Camera
+// ·············································································
+
+typedef struct s_camera
+{
+	t_mat4			transform;
+	unsigned int	hsize;
+	unsigned int	vsize;
+	float			half_width;
+	float			half_height;
+	float			pixel_size;
+}	t_camera;
 
 // ·············································································
 // Sub-section : Primitive
@@ -97,21 +120,21 @@ typedef struct s_material
 // Sub-section : Light
 // ·············································································
 
-// --- Structure : Point light ---
+// --- Structure : Light point ---
 typedef struct s_light_point
 {
 	t_vec4	p_origin;
+	float	brightness;
 	t_vec3	color;
 }	t_light_point;
 
-// --- Structure : World ---
-typedef struct s_world
+// --- Structure : Light ambient ---
+typedef struct s_light_ambient
 {
-	unsigned int	lights_count;
-	t_light_point	*lights;
-	unsigned int	objects_count;
-	t_object		*objects;
-}	t_world;
+	t_vec4	p_origin;
+	float	lightning_ratio;
+	t_vec3	color;
+}	t_light_ambient;
 
 // =============================================================================
 // Section : Functions
