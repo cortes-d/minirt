@@ -41,6 +41,19 @@
 // Section : Type Definitions
 // =============================================================================
 
+// ·············································································
+// Sub-section : Forward declarations
+// ·············································································
+
+typedef struct s_vec4	t_vec4;
+typedef struct s_vec3	t_vec3;
+
+typedef struct s_row4	t_row4;
+
+typedef struct s_mat4	t_mat4;
+typedef struct s_mat3	t_mat3;
+typedef struct s_mat2	t_mat2;
+
 // --- Enum ---
 enum	e_vec3_index
 {
