@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_to_float_check.c                               :+:      :+:    :+:   */
+/*   check_float_token.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:35:45 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 14:13:25 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 09:23:44 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	check_float_token(const char *str)
 {
-	if (str_float_check(&str) == ERROR)
+	if (check_float(&str) == ERROR)
 		return (ERROR);
 	if (*str != '\0')
 		return (ERROR);
