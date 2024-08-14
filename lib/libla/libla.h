@@ -13,6 +13,10 @@
 #ifndef LIBLA_H
 # define LIBLA_H
 
+// =============================================================================
+// Section : Includes
+// =============================================================================
+
 # include <stdbool.h>
 # include <math.h>
 # include <stdio.h>
@@ -96,7 +100,9 @@ bool	equalf(float a, float b);
 // =============================================================================
 
 t_vec4	vec4(float a, float b, float c, float d);
-t_vec3  vec3(float a, float b, float c);
+t_vec3	vec3(float a, float b, float c);
+t_vec4	point(float x, float y, float z);
+t_vec4	vector(float x, float y, float z);
 
 // --- Conversion ---
 t_vec4	vec3_to_vec4(t_vec3 v, float w);
@@ -130,7 +136,7 @@ t_vec4	vec4_inv(t_vec4 v);
 
 // --- Magnitude ---
 float	vec4_magnitude(t_vec4 v);
-float   vec3_magnitude(t_vec3 v);
+float	vec3_magnitude(t_vec3 v);
 
 // --- Normalization ---
 t_vec4	vec4_normalize(t_vec4 v);

@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 14:05:43 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 14:29:11 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,9 +133,7 @@ t_vec3				lighting(t_material material, t_light_point light, \
 t_vec4				normal_at(t_object object, t_vec4 world_point);
 t_vec4				reflect(t_vec4 in, t_vec4 normal);
 
-// --- Geometry ---
-t_vec4				point(float x, float y, float z);
-t_vec4				vector(float x, float y, float z);
+// --- Primitive ---
 t_object			sphere(void);
 t_object			sphere_from_params(t_vec4 p_origin, float radius);
 t_object			cylinder(void);
