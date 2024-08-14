@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_float.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/12 13:36:28 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/14 09:20:50 by achappui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "parser.h"
+
+int	check_float(const char **str)
+{
+	unsigned int	digit_number;
+
+	if (!((**str >= '0' && **str <= '9') || **str == '+' || **str == '-'))
+		return (ERROR);
+	(*str)++;
+	if (!((**str >= '0' && **str <= '9') || **str == '.'))
+		return (ERROR);
+	while (**str == '0' && *(*str + 1) == '0')
+		(*str)++;
+	digit_number = 0;
+	while (**str >= '0' && **str <= '9')
+	{
+		if (++digit_number > MAX_FLOAT_DIGIT)
+			return (ERROR);
+		(*str)++;
+	}
+	if (**str != '.')
+		return (0);
+	while (**str >= '0' && **str <= '9')
+	{
+		if (++digit_number > MAX_FLOAT_DIGIT)
+			return (ERROR);
+		(*str)++;
+	}
+	return (0);
+}

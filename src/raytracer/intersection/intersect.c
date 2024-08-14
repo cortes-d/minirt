@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   intersect.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/10 13:39:02 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/14 10:27:19 by dcortes          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "raytracer.h"
+#include "util.h"
+
+void	intersect(t_ray ray, t_object object, \
+	t_list **list_intersections)
+{
+	t_ray				ray_transformed;
+
+	ray_transformed = ray_transform(ray, mat4_inv(object.transform));
+	if (object.type == SPHERE)
+		return (intersect_sphere(ray_transformed, object, list_intersections));
+	else if (object.type == CYLINDER)
+		return (intersect_cylinder(ray, object, list_intersections));
+	else
+		return (intersect_plane(ray, object, list_intersections));
+}
