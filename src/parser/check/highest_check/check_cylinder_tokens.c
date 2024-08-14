@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:43:49 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/13 15:03:38 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 10:19:13 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_cylinder_tokens(char **tokens)
 		return (ERROR);
 	if (check_vec3_token(tokens[2]) == ERROR)
 		return (ERROR);
-	vec_3_test.data = extract_vec3(tokens[2]);
+	vec_3_test = extract_vec3(tokens[2]);
 	if (!equalf(vec3_magnitude(vec_3_test), 1))
 		return (ERROR);
 	if (!(vec_3_test.data[X] >= -1 && vec_3_test.data[X] <= 1) || \

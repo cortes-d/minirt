@@ -21,11 +21,11 @@ int	scene_data_to_scene(t_scene_data *scene_data, t_scene *scene)
 		current = current->next;
 		i++;
 	}
-	scene->camera = scene_data->camera->content;
-	scene_data->camera->content = NULL;
-	scene->ambient_light = scene_data->ambient_light->content;
-	scene_data->ambient_light->content = NULL;
-	scene->light = scene_data->light->content;
-	scene_data->light->content = NULL;
+	scene->camera = scene_data->cameras->content;
+	scene_data->cameras->content = NULL;
+	scene->ambient_light = scene_data->ambient_lights->content;
+	scene_data->ambient_lights->content = NULL;
+	scene->light = scene_data->lights->content;
+	scene_data->lights->content = NULL;
 	return (0);
 }

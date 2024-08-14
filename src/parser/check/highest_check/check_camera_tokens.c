@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:30:44 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/13 14:57:44 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 10:19:28 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_camera_tokens(char **tokens)
 		return (ERROR);
 	if (check_vec3_token(tokens[2]) == ERROR)
 		return (ERROR);
-	vec_3_test.data = extract_vec3(tokens[2]);
+	vec_3_test = extract_vec3(tokens[2]);
 	if (!equalf(vec3_magnitude(vec_3_test), 1))
 		return (ERROR);
 	if (!(vec_3_test.data[X] >= -1 && vec_3_test.data[X] <= 1) || \
