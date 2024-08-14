@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_libla.c                                       :+:      :+:    :+:   */
+/*   test_vec3_sub.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:22:21 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:27:14 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/02 15:20:24 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/14 16:14:03 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libla.h"
 
-int	main(void)
+void	test_vec3_sub()
 {
-	char	c;
+	t_vec3	v_test1;
+	t_vec3	v_test2;
+	t_vec3	v_expected;
+	t_vec3	res;
 
-	printf("TYPE A NUMBER:\n##1## test_matrix\n##2## test_vector\n");
-	c = getchar();
-	if (c == '1')
-		test_matrix();
-	else if (c == '2')
-		test_vector();
-	return (0);
+	v_test1 = vec3(1, 2, 3);
+	v_test2 = vec3(-2, 1, -2);
+	v_expected = vec3(3, 1, 5);
+	res = vec3_sub(v_test1, v_test2);
+	if (vec3_equal(res, v_expected))
+		ft_printf("vec3_sub: OK\n");
+	else
+		ft_printf("vec3_sub: KO\n");
 }

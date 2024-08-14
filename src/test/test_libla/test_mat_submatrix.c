@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   test_mat_submatrix.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 22:43:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 15:40:10 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 16:02:54 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libla.h"
+#include "test_libla.h"
 
 void	test_mat_submatrix(void)
 {

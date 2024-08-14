@@ -1,31 +1,18 @@
-#include "raytracer.h"
-#include "libft.h"
-#include "libla.h"
-#include "mlx.h"
-#include "graphic.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_raytracer_phong.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/14 16:28:57 by achappui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <math.h>
+#include "test_raytracer.h"
 
-# define WIDTH			500
-# define HEIGHT			500
-# define HALF_WIDTH		250
-# define HALF_HEIGHT	250
-# define PIXEL_SIZE		1.25 / 250
-# define CANVA_Z_POS	5
-
-t_ray	ray_for_pixel_test(unsigned int px, unsigned int py)
-{
-	t_vec4	origin;
-	float	world_x;
-	float	world_y;
-
-	world_x = PIXEL_SIZE * HALF_WIDTH - (px + 0.5) * PIXEL_SIZE;
-	world_y = PIXEL_SIZE * HALF_HEIGHT - (py + 0.5) * PIXEL_SIZE;
-	origin = point(world_x, world_y, CANVA_Z_POS);
-	return (ray(origin, vector(0, 0, -1)));
-}
-
-int	main(void)
+int	test_raytracer_phong(void)
 {
 	t_object			my_sphere;
 	//t_intersection_pair	intersection_pair;
@@ -75,7 +62,7 @@ int	main(void)
 		x = 0;
 		while (x < WIDTH)
 		{
-			r = ray_for_pixel_test(x, y);
+			r = test_ray_for_pixel(x, y);
 			r.v_direction = vec4_normalize(r.v_direction); // Normalize the ray direction
 			intersect(r, my_sphere, &intersections_list);
 			/*if (intersection_pair.count == 1 || intersection_pair.count == 2)

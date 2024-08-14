@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_libla.c                                       :+:      :+:    :+:   */
+/*   test_vec4_inv.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:22:21 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:27:14 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/02 15:20:24 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/14 16:13:02 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libla.h"
 
-int	main(void)
+void	test_vec4_inv()
 {
-	char	c;
+	t_vec4	v_test;
+	t_vec4	v_expected;
+	t_vec4	res;
 
-	printf("TYPE A NUMBER:\n##1## test_matrix\n##2## test_vector\n");
-	c = getchar();
-	if (c == '1')
-		test_matrix();
-	else if (c == '2')
-		test_vector();
-	return (0);
+	v_test = vec4(1, -2, 3, 7);
+	v_expected = vec4(-1, 2, -3, -7);
+	res = vec4_inv(v_test);
+	if (vec4_equal(res, v_expected))
+		ft_printf("vec4_inv: OK\n");
+	else
+		ft_printf("vec4_inv: KO\n");
 }

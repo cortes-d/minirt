@@ -1,5 +1,7 @@
 NAME = minirt
-TEST_NAME = test_minirt
+TEST_RAYTRACER_NAME = test_raytracer
+TEST_LIBLA_NAME = test_libla
+TEST_PARSING_NAME = test_parsing
 
 # =============================================================================
 # Section : ANSI color codes
@@ -21,7 +23,9 @@ DIR_PARSER = $(DIR_SRC)/parser
 DIR_RAYTRACER = $(DIR_SRC)/raytracer
 DIR_SCENE = $(DIR_SRC)/scene
 DIR_UTIL = $(DIR_SRC)/util
-DIR_TEST = $(DIR_SRC)/test
+DIR_TEST_RAYTRACER = $(DIR_SRC)/test/test_raytracer
+DIR_TEST_LIBLA = $(DIR_SRC)/test/test_libla
+DIR_TEST_PARSING = $(DIR_SRC)/test/test_parsing
 
 # =============================================================================
 # Section : Compiler and flags
@@ -75,14 +79,37 @@ SRC_SCENE =						scene_empty.c \
 SRC_UTIL = 						clamp.c \
 								swap.c
 
-SRC_TEST = 						test_libla/test_mat_determinant.c \
-		   						test_libla/test_mat_identity.c \
-		   						test_libla/test_mat_inversion.c \
-		  						test_libla/test_mat_multiplication.c \
-		  						test_libla/test_mat_submatrix.c \
-								test_libla/test_mat_transposition.c \
-		   						test_libla/test_vector.c \
-		   						test_raytracer/test_raytracer_phong.c
+SRC_TEST_RAYTRACER = 			test_raytracer.c \
+								test_ray_for_pixel.c \
+								test_raytracer_phong.c \
+								test_raytracer_red_circle.c
+
+SRC_TEST_LIBLA = 				test_libla.c \
+								test_mat_determinant.c \
+		   						test_mat_identity.c \
+		   						test_mat_inversion.c \
+		  						test_mat_multiplication.c \
+		  						test_mat_submatrix.c \
+								test_mat_transposition.c \
+		   						test_vec3_add.c \
+								test_vec3_equal.c \
+								test_vec3_hadamard_product.c \
+								test_vec3_mul.c \
+								test_vec3_sub.c \
+								test_vec4_add.c \
+								test_vec4_cross_product.c \
+								test_vec4_div.c \
+								test_vec4_dot_product.c \
+								test_vec4_equal.c \
+								test_vec4_inv.c \
+								test_vec4_magnitude.c \
+								test_vec4_mul.c \
+								test_vec4_normalize.c \
+								test_vec4_sub.c
+
+SRC_TEST_PARSING =				test_parsing.c \
+								test_print_scene.c
+								
 
 # ·············································································
 # Sub-section : Add directories as prefix
@@ -93,7 +120,9 @@ SRC_GRAPHIC := $(addprefix $(DIR_GRAPHIC)/, $(SRC_GRAPHIC))
 SRC_RAYTRACER := $(addprefix $(DIR_RAYTRACER)/, $(SRC_RAYTRACER))
 SRC_SCENE := $(addprefix $(DIR_SCENE)/, $(SRC_SCENE))
 SRC_UTIL := $(addprefix $(DIR_UTIL)/, $(SRC_UTIL))
-SRC_TEST := $(addprefix $(DIR_TEST)/, $(SRC_TEST))
+SRC_TEST_RAYTRACER := $(addprefix $(DIR_TEST_RAYTRACER)/, $(SRC_TEST_RAYTRACER))
+SRC_TEST_LIBLA := $(addprefix $(DIR_TEST_LIBLA)/, $(SRC_TEST_LIBLA))
+SRC_TEST_PARSING := $(addprefix $(DIR_TEST_PARSING)/, $(SRC_TEST_PARSING))
 
 # ·············································································
 # Sub-section : Combine all source files
@@ -106,14 +135,18 @@ SRC = 							$(SRC_MAIN) \
 								$(SRC_UTIL)
 
 SRC_TEST_ALL = 					$(SRC) \
-								$(SRC_TEST)
+								$(SRC_TEST_RAYTRACER) \
+								$(SRC_TEST_LIBLA) \
+								$(SRC_TEST_PARSING)
 
 # =============================================================================
 # Section : Object files
 # =============================================================================
 
 OBJ = $(SRC:.c=.o)
-OBJ_TEST = $(SRC_TEST_ALL:.c=.o)
+OBJ_TEST_RAYTRACER = $(SRC_TEST_ALL:.c=.o)
+OBJ_TEST_LIBLA = $(SRC_TEST_ALL:.c=.o)
+OBJ_TEST_PARSING = $(SRC_TEST_ALL:.c=.o)
 
 # =============================================================================
 # Section : Libraries
@@ -198,13 +231,25 @@ fclean: clean
 re: fclean all
 
 # --- Rule to compile the tests ---
-test: $(LIB) $(TEST_NAME)
+test: $(LIB) $(TEST_LIBLA_NAME) $(TEST_RAYTRACER_NAME) $(TEST_PARSING_NAME)
 
-# --- Build the test executable ---
-$(TEST_NAME): $(OBJ_TEST)
-	@echo "$(COLOR_GREEN)Compiling $(TEST_NAME)...$(COLOR_RESET)"
-	$(CC) $(CFLAGS) $(OBJ_TEST) $(LIB_LINK) -o $(TEST_NAME)
-	@echo "$(COLOR_GREEN)Compilation of $(TEST_NAME) completed successfully.$(COLOR_RESET)"
+# --- Build the test_raytracer executable ---
+$(TEST_RAYTRACER_NAME): $(OBJ_TEST_RAYTRACER)
+	@echo "$(COLOR_GREEN)Compiling $(TEST_RAYTRACER_NAME)...$(COLOR_RESET)"
+	$(CC) $(CFLAGS) $(OBJ_TEST_RAYTRACER) $(LIB_LINK) -o $(TEST_RAYTRACER_NAME)
+	@echo "$(COLOR_GREEN)Compilation of $(TEST_RAYTRACER_NAME) completed successfully.$(COLOR_RESET)"
+
+# --- Build the test_libla executable ---
+$(TEST_LIBLA_NAME): $(OBJ_TEST_LIBLA)
+	@echo "$(COLOR_GREEN)Compiling $(TEST_LIBLA_NAME)...$(COLOR_RESET)"
+	$(CC) $(CFLAGS) $(OBJ_TEST_LIBLA) $(LIB_LINK) -o $(TEST_LIBLA_NAME)
+	@echo "$(COLOR_GREEN)Compilation of $(TEST_LIBLA_NAME) completed successfully.$(COLOR_RESET)"
+
+# --- Build the test_parsing executable ---
+$(TEST_PARSING_NAME): $(OBJ_TEST_PARSING)
+	@echo "$(COLOR_GREEN)Compiling $(TEST_PARSING_NAME)...$(COLOR_RESET)"
+	$(CC) $(CFLAGS) $(OBJ_TEST_PARSING) $(LIB_LINK) -o $(TEST_PARSING_NAME)
+	@echo "$(COLOR_GREEN)Compilation of $(TEST_PARSING_NAME) completed successfully.$(COLOR_RESET)"
 
 # --- Mark rules as phony (not file names) ---
 .PHONY: all clean fclean re test

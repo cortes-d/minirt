@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_libla.c                                       :+:      :+:    :+:   */
+/*   test_vec4_dot_product.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:22:21 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:27:14 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/02 15:20:24 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/14 16:12:31 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libla.h"
 
-int	main(void)
+void	test_vec4_dot_product()
 {
-	char	c;
+	t_vec4	v_test1;
+	t_vec4	v_test2;
+	float	v_expected;
+	float	res;
 
-	printf("TYPE A NUMBER:\n##1## test_matrix\n##2## test_vector\n");
-	c = getchar();
-	if (c == '1')
-		test_matrix();
-	else if (c == '2')
-		test_vector();
-	return (0);
+	v_test1 = vec4(1, 2, 3, 6);
+	v_test2 = vec4(-2, 1, -2, 3);
+	v_expected = 12;
+	res = vec4_dot_product(v_test1, v_test2);
+	if (equalf(res, v_expected))
+		ft_printf("vec4_dot_product: OK\n");
+	else
+		ft_printf("vec4_dot_product: KO\n");
 }

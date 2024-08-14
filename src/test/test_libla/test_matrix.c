@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_libla.c                                       :+:      :+:    :+:   */
+/*   test_matrix.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:22:21 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:27:14 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/14 16:26:23 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/14 16:26:59 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_libla.h"
 
-int	main(void)
+int	test_matrix()
 {
-	char	c;
-
-	printf("TYPE A NUMBER:\n##1## test_matrix\n##2## test_vector\n");
-	c = getchar();
-	if (c == '1')
-		test_matrix();
-	else if (c == '2')
-		test_vector();
+	test_mat_determinant();
+	test_mat_identity();
+	test_mat_inversion();
+	test_mat_multiplication();
+	test_mat_submatrix();
+	test_mat_transposition();
 	return (0);
 }

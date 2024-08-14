@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_libla.c                                       :+:      :+:    :+:   */
+/*   test_ray_for_pixel.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:22:21 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:27:14 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/14 16:20:31 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/14 16:21:31 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_libla.h"
+#include "test_raytracer.h"
 
-int	main(void)
+t_ray	test_ray_for_pixel(unsigned int px, unsigned int py)
 {
-	char	c;
+	t_vec4	origin;
+	float	world_x;
+	float	world_y;
 
-	printf("TYPE A NUMBER:\n##1## test_matrix\n##2## test_vector\n");
-	c = getchar();
-	if (c == '1')
-		test_matrix();
-	else if (c == '2')
-		test_vector();
-	return (0);
+	world_x = PIXEL_SIZE * HALF_WIDTH - (px + 0.5) * PIXEL_SIZE;
+	world_y = PIXEL_SIZE * HALF_HEIGHT - (py + 0.5) * PIXEL_SIZE;
+	origin = point(world_x, world_y, CANVA_Z_POS);
+	return (ray(origin, vector(0, 0, -1)));
 }
