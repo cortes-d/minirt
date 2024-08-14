@@ -64,11 +64,10 @@ SRC =	equalf.c \
 		$(DIR_MATRIX)/submatrix/mat4_submatrix.c \
 		$(DIR_MATRIX)/transformation/mat4_rotation_x.c \
 		$(DIR_MATRIX)/transformation/mat4_rotation_y.c \
-		$(DIR_MATRIX)/transformation/mat4_rotation_z.c
+		$(DIR_MATRIX)/transformation/mat4_rotation_z.c \
 		$(DIR_MATRIX)/transformation/mat4_scaling.c \
 		$(DIR_MATRIX)/transformation/mat4_translation.c \
 		$(DIR_MATRIX)/transpose/mat4_transpose.c
-
 
 # =============================================================================
 # Section : Object files
