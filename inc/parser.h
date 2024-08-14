@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:28:15 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 15:47:01 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 16:29:52 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 // Sub-section : Forward declarations
 // ·············································································
 
-typedef struct	s_scene_data;
+typedef struct s_scene_data	t_scene_data;
 
 // --- Scene ---
 typedef struct s_scene_data
