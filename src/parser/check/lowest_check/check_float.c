@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_float_check.c                                  :+:      :+:    :+:   */
+/*   check_float.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:36:28 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/12 14:15:37 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 09:20:50 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_float(const char **str)
 	digit_number = 0;
 	while (**str >= '0' && **str <= '9')
 	{
-		if (++digit_number > MAX_DIGITS)
+		if (++digit_number > MAX_FLOAT_DIGIT)
 			return (ERROR);
 		(*str)++;
 	}
@@ -34,7 +34,7 @@ int	check_float(const char **str)
 		return (0);
 	while (**str >= '0' && **str <= '9')
 	{
-		if (++digit_number > MAX_DIGITS)
+		if (++digit_number > MAX_FLOAT_DIGIT)
 			return (ERROR);
 		(*str)++;
 	}

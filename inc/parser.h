@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:28:15 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 14:38:27 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 09:21:22 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,51 +20,73 @@
 // Section : Constants and Macros
 // =============================================================================
 
-// --- Number of parameters required to create the object ---
-# define COUNT_PARAMS_CAMERA 3
-# define COUNT_PARAMS_AMBIENT 2
-# define COUNT_PARAMS_LIGHT 2
-# define COUNT_PARAMS_SPHERE 3
-# define COUNT_PARAMS_PLANE 3
-# define COUNT_PARAMS_CYLINDER 4
+# define ERROR	-1
+# define MAX_FLOAT_DIGIT	7
 
 // =============================================================================
 // Section : Type Definitions
 // =============================================================================
 
-// --- Structure : Token ---
-typedef struct s_token
+typedef struct s_scene_data
 {
-	char	*chunk;
-}	t_token;
+	t_list		*objects;
+	t_list		*lights;
+	t_list		*cameras;
+	t_list		*ambient_lights;
+}	t_scene_data;
 
 // =============================================================================
 // Section : Functions
 // =============================================================================
 
-// --- Tokenization ---
-t_token		*token(char *chunk);
-t_list		*tokenize_line(const char *line);
-
 // --- Check ---
-int		int_within_range(int x, \
-			int min_inclusive, int max_inclusive);
-int		float_within_range(float x, \
-			float min_inclusive, float max_inclusive);
+int	check_main_arguments(char **argv, int argc);
 
-// --- Object creation from tokens ---
-void		object_from_tokens(t_list *tokens);
-void		params_from_tokens(t_list *tokens, t_token **params, int count);
-void		camera_from_tokens(t_list *tokens);
-void		light_from_tokens(t_list *tokens);
-void		ambient_from_tokens(t_list *tokens);
-void		sphere_from_tokens(t_list *tokens);
-void		cylinder_from_tokens(t_list *tokens);
-void		plane_from_tokens(t_list *tokens);
+// --- Highest check ---
+int check_ambient_light_tokens(char **tokens);
+int check_camera_tokens(char **tokens);
+int check_cylinder_tokens(char **tokens);
+int check_plane_tokens(char **tokens);
+int check_point_light_tokens(char **tokens);
+int check_sphere_tokens(char **tokens);
 
-// --- Conversion utils ---
-float		str_to_float(const char *str);
-t_vec3		str_to_vec3(const char *str);
-t_vec3		str_to_color(const char *str);
+// --- Middle check ---
+int check_color_token(const char *str);
+int check_float_token(const char *str);
+int check_vec3_token(const char *str);
+
+// --- Lowest check ---
+int check_float(const char **str);
+int check_uchar(const char **str);
+
+// --- Creation ---
+int create_ambient_light(char **tokens, t_ambient_light **ambient_lights);
+int create_camera(char **tokens, t_camera **cameras);
+int create_cylinder(char **tokens, t_list **objects);
+int create_plane(char **tokens, t_list **objects);
+int create_point_light(char **tokens, t_list **lights);
+int create_sphere(char **tokens, t_list **objects);
+
+// --- Extraction ---
+t_vec3  extract_color(const char *str);
+float   extract_float(const char *str);
+t_vec3  extract_vec3(const char *str);
+
+// --- Utility ---
+const char  *elem_at_index_n(const char *str, unsigned int n);
+
+// --- Parsing logic ---
+int parse_line(t_scene_data *scene_data, const char *line);
+int parse_scene(char *file_name, t_scene *scene);
+int parsing_loop(t_scene_data *scene_data, int fd);
+int scene_data_to_scene(t_scene_data *scene_data, t_scene *scene);
+int type_interpreter(char **tokens, t_scene_data *scene_data);
+
+// --- Utility ---
+t_scene_data    empty_scene_data();
+t_scene 		empty_scene();
+void			free_array2d(void **array_2d);
+void    		free_scene_data(t_scene_data *scene_data);
+void    		free_scene(t_scene *scene);
 
 #endif
