@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 14:35:06 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 15:32:21 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,22 @@
 // =============================================================================
 // Section : Type Definitions
 // =============================================================================
+
+// ·············································································
+// Sub-section : Forward declarations
+// ·············································································
+
+typedef struct s_object			t_object;
+typedef enum e_object_type		t_object_type;
+
+typedef struct s_sphere			t_sphere;
+typedef struct s_cylinder		t_cylinder;
+typedef struct s_plane			t_plane;
+
+typedef struct s_material		t_material;
+
+typedef struct s_light_point	t_light_point;
+typedef struct s_world			t_world;
 
 // ·············································································
 // Sub-section : Primitive
@@ -63,6 +79,16 @@ typedef enum e_object_type
 	CYLINDER
 }	t_object_type;
 
+// --- Structure : Material ---
+typedef struct s_material
+{
+	t_vec3	color;
+	float	ambient;
+	float	diffuse;
+	float	specular;
+	float	shininess;
+}	t_material;
+
 // --- Structure : Object ---
 typedef struct s_object
 {
@@ -78,20 +104,6 @@ typedef struct s_object
 	}	u_object;
 
 }	t_object;
-
-// ·············································································
-// Sub-section : Material
-// ·············································································
-
-// --- Structure : Material ---
-typedef struct s_material
-{
-	t_vec3	color;
-	float	ambient;
-	float	diffuse;
-	float	specular;
-	float	shininess;
-}	t_material;
 
 // ·············································································
 // Sub-section : Light
@@ -124,10 +136,6 @@ void				set_object_color(t_object *object, t_vec3 color);
 
 // --- Light ---
 t_light_point		light_point(t_vec4 position, t_vec3 color);
-t_vec3				lighting(t_material material, t_light_point light, \
-						t_vec4 intersection_point, t_shading shading);
-t_vec4				normal_at(t_object object, t_vec4 world_point);
-t_vec4				reflect(t_vec4 in, t_vec4 normal);
 
 // --- Primitive ---
 t_object			sphere(void);

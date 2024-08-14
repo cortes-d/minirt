@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 14:16:07 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 15:39:34 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,17 @@
 // =============================================================================
 // Section : Type Definitions
 // =============================================================================
+
+// ·············································································
+// Sub-section : Forward declarations
+// ·············································································
+
+typedef struct s_ray				t_ray;
+
+typedef struct s_intersection_pair	t_intersection_pair;
+typedef struct s_intersection		t_intersection;
+
+typedef struct s_shading			t_shading;
 
 // ·············································································
 // Sub-section : Ray
@@ -95,5 +106,11 @@ t_intersection		*hit(t_list *intersections);
 t_ray				ray_transform(t_ray ray, t_mat4 transformation);
 void				set_transform(t_object *object, t_mat4 transformation);
 void				add_transform(t_object *object, t_mat4 transformation);
+
+// --- Light ---
+t_vec3				lighting(t_material material, t_light_point light, \
+						t_vec4 intersection_point, t_shading shading);
+t_vec4				normal_at(t_object object, t_vec4 world_point);
+t_vec4				reflect(t_vec4 in, t_vec4 normal);
 
 #endif
