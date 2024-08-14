@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   token.c                                            :+:      :+:    :+:   */
+/*   free_scene_data.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 10:12:18 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/11 10:12:18 by dcortes          ###   ########.ch       */
+/*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/13 14:02:16 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-t_token	*token(char *chunk)
+void	free_scene_data(t_scene_data *scene_data)
 {
-	t_token	*token;
-
-	token = malloc(sizeof(t_token));
-	if (!token)
-		return (NULL);
-	token->type = NONE;
-	token->chunk = chunk;
-	return (token);
+	ft_lstclear(scene_data->objects, &free);
+	ft_lstclear(scene_data->light, &free);
+	ft_lstclear(scene_data->ambient_light, &free);
+	ft_lstclear(scene_data->camera, &free);
 }

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_loop.c                                     :+:      :+:    :+:   */
+/*   parse_scene.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 10:09:36 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/12 10:44:39 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/14 07:31:47 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-/*
-1. liste de token split par space :eyes: fonction split
-2. Get le type verifier si c'est un objet unique, ensuite creer le bon objet
-3. interpreter les elements dans le bon ordre en remplissant l'objet
-4. ajouter a la liste chainee d'objets
-5. 
-*/
-
-void	parsing_loop(t_list *object_list, int fd)
+int	parse_scene(char *file_name, t_scene *scene)
 {
-	char	*line;
+	t_scene_data	scene_data;
+	int				fd;
 
-	line = get_next_line(fd);
-	if (errno != 0)
-		EXIT_ERROR();
-	while (line)
+	scene_data = empty_scene_data();
+	fd = open(file_name, O_RDONLY);
+	if (fd == -1)
+		return (ERROR);
+	if (parsing_loop(&scene_data, fd) == ERROR)
 	{
-		parse_line();
-		line = get_next_line(fd);
-		if (errno != 0)
-			EXIT_ERROR();
+		if (close(fd) == -1)
+			return (ERROR);
+		return (ERROR);
 	}
+	if (close(fd) == -1)
+		return (ERROR);
+	if (scene_data_to_scene(&scene_data, scene) == ERROR)
+		return (ERROR);
+	free_scene_data(&scene_data);
+	return (0);
 }
