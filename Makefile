@@ -48,7 +48,12 @@ SRC_RAYTRACER =					$(DIR_RAYTRACER_CAMERA)/camera.c \
 								$(DIR_RAYTRACER_LIGHT)/normal_at.c \
 								$(DIR_RAYTRACER_LIGHT)/reflect.c \
 								$(DIR_RAYTRACER_INTERSECTION)/intersect.c \
-								$(DIR_RAYTRACER_INTERSECTION)/intersection.c \
+								$(DIR_RAYTRACER_INTERSECTION)/intersect_sphere.c \
+								$(DIR_RAYTRACER_INTERSECTION)/intersect_cylinder.c \
+								$(DIR_RAYTRACER_INTERSECTION)/intersect_plane.c \
+								$(DIR_RAYTRACER_INTERSECTION)/intersection_pair_init.c \
+								$(DIR_RAYTRACER_INTERSECTION)/intersection_create.c \
+								$(DIR_RAYTRACER_INTERSECTION)/intersection_add_to_list.c \
 								$(DIR_RAYTRACER_INTERSECTION)/hit.c \
 								$(DIR_RAYTRACER_MATERIAL)/color_rgb_i.c \
 								$(DIR_RAYTRACER_MATERIAL)/color_rgb_f.c \

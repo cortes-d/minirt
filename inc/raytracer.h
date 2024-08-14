@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/13 15:57:40 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/14 10:27:56 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,9 +150,16 @@ t_vec4				position(t_ray ray, float t);
 
 // --- Intersection ---
 void				intersect(t_ray ray, t_object object, \
-						t_list **list_intersections);
-t_intersection		*intersection(float t, t_object object);
-void				intersections(t_list **intersections, \
+						t_list **intersections);
+void				intersect_sphere(t_ray ray, t_object object, \
+						t_list **intersections);
+void				intersect_cylinder(t_ray ray, t_object object, \
+						t_list **intersections);
+void				intersect_plane(t_ray ray, t_object object, \
+						t_list **intersections);
+t_intersection_pair	init_intersection_pair(void);
+t_intersection		*intersection_create(float t, t_object object);
+void				intersection_add_to_list(t_list **intersections, \
 						t_intersection *intersection);
 t_intersection		*hit(t_list *intersections);
 
