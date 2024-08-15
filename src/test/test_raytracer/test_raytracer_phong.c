@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer_phong.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:28:57 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 08:59:35 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	test_raytracer_phong(void)
 {
-	t_object			my_sphere;
+	t_object			my_object;
 	//t_intersection_pair	intersection_pair;
 	//t_intersection		*intersec1;
 	//t_intersection		*intersec2;
@@ -37,18 +37,17 @@ int	test_raytracer_phong(void)
 	img.img = mlx_new_image(mlx_ptr, WIDTH, HEIGHT);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 
-	// sphere
-	my_sphere = sphere();
-	//my_sphere = plane();
-	//my_sphere = cylinder();
-	my_sphere.material = material();
-	my_sphere.material.color = color_rgb_f(1, 0.2, 1);
+	// objct
+	//my_object = sphere();
+	//my_object = plane();
+	my_object = cylinder();
+	my_object.material = material();
+	my_object.material.color = color_rgb_f(1, 0.2, 1);
 
 	// transformation
-	
-	set_transform(&my_sphere, mat4_scaling(.1, .1, .1));
-	//add_transform(&my_sphere, mat4_rotation_z(M_PI/8));
-	//add_transform(&my_sphere, mat4_translation(.15, 0, 1));
+	set_transform(&my_object, mat4_scaling(.1, .1, .1));
+	//add_transform(&my_object, mat4_rotation_z(M_PI/8));
+	//add_transform(&my_object, mat4_translation(.15, 0, 1));
 
 	// light
 	light = light_point(point(-10, 10, -10), color_rgb_f(1, 1, 1));
@@ -64,21 +63,7 @@ int	test_raytracer_phong(void)
 		{
 			r = test_ray_for_pixel(x, y);
 			r.v_direction = vec4_normalize(r.v_direction); // Normalize the ray direction
-			intersect(r, my_sphere, &intersections_list);
-			/*if (intersection_pair.count == 1 || intersection_pair.count == 2)
-			{
-				intersec1 = (t_intersection *)malloc(sizeof(t_intersection));
-				intersec2 = (t_intersection *)malloc(sizeof(t_intersection));
-				if (intersec1 == NULL || intersec2 == NULL)
-				{
-					printf("Memory allocation error\n");
-					return (1);
-				}
-				*intersec1 = intersection(intersection_pair.t[0], my_sphere);
-				*intersec2 = intersection(intersection_pair.t[1], my_sphere);
-				intersections(&intersections_list, intersec1);
-				intersections(&intersections_list, intersec2);
-			}*/
+			intersect(r, my_object, &intersections_list);
 			hitting = hit(intersections_list);
 			if (hitting)
 			{

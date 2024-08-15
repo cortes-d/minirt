@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer_red_circle.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 14:20:57 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 16:21:55 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 09:02:07 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 int	test_raytracer_red_circle(void)
 {
 	t_object			my_sphere;
-	t_intersection_pair	intersection_pair;
-	t_intersection		*intersec1;
-	t_intersection		*intersec2;
 	t_intersection		*hitting;
 	t_list				*intersections_list;
 	unsigned int		x;
@@ -38,27 +35,13 @@ int	test_raytracer_red_circle(void)
 
 	// intersections
 	intersections_list = NULL;
-	
 	y = 0;
 	while (y < HEIGHT)
 	{
 		x = 0;
 		while (x < WIDTH)
 		{
-			intersection_pair = intersect(test_ray_for_pixel(x, y), my_sphere);
-			if (intersection_pair.count == 1 || intersection_pair.count == 2)
-			{
-				intersec1 = (t_intersection *)malloc(sizeof(t_intersection));
-				intersec2 = (t_intersection *)malloc(sizeof(t_intersection));
-				if (intersec1 == NULL)
-					return (printf("ERROR\n"));
-				if (intersec2 == NULL)
-					return (printf("ERROR\n"));
-				*intersec1 = intersection(intersection_pair.t[0], my_sphere);
-				*intersec2 = intersection(intersection_pair.t[1], my_sphere);
-				intersections(&intersections_list, intersec1);
-				intersections(&intersections_list, intersec2);
-			}
+			intersect(test_ray_for_pixel(x, y), my_sphere, &intersections_list);
 			hitting = NULL;
 			hitting = hit(intersections_list);
 			if (hitting)
