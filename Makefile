@@ -85,6 +85,8 @@ SRC_TEST_RAYTRACER = 			test_raytracer.c \
 								test_raytracer_red_circle.c
 
 SRC_TEST_LIBLA = 				test_libla.c \
+								test_matrix.c \
+								test_vector.c \
 								test_mat_determinant.c \
 		   						test_mat_identity.c \
 		   						test_mat_inversion.c \
@@ -144,9 +146,9 @@ SRC_TEST_ALL = 					$(SRC) \
 # =============================================================================
 
 OBJ = $(SRC:.c=.o)
-OBJ_TEST_RAYTRACER = $(SRC_TEST_ALL:.c=.o)
-OBJ_TEST_LIBLA = $(SRC_TEST_ALL:.c=.o)
-OBJ_TEST_PARSING = $(SRC_TEST_ALL:.c=.o)
+OBJ_TEST_RAYTRACER = $(SRC_TEST_RAYTRACER:.c=.o)
+OBJ_TEST_LIBLA = $(SRC_TEST_LIBLA:.c=.o)
+OBJ_TEST_PARSING = $(SRC_TEST_PARSING:.c=.o)
 
 # =============================================================================
 # Section : Libraries
