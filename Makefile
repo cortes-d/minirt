@@ -47,6 +47,7 @@ SRC_RAYTRACER =					intersection/intersect.c \
 								intersection/intersect_sphere.c \
 								intersection/intersect_cylinder.c \
 								intersection/intersect_plane.c \
+								intersection/intersect_scene.c \
 								intersection/intersection_pair_init.c \
 								intersection/intersection_create.c \
 								intersection/intersection_add_to_list.c \
@@ -60,6 +61,7 @@ SRC_RAYTRACER =					intersection/intersect.c \
 								ray/ray_transform.c
 
 SRC_SCENE =						scene_empty.c \
+								scene_default.c \
 								scene_free.c \
 								camera/camera.c \
 								camera/view_transform.c \
@@ -113,6 +115,7 @@ SRC_TEST_RAYTRACER = 			test_raytracer.c \
 								test_ray_for_pixel.c \
 								test_raytracer_phong.c \
 								test_raytracer_red_circle.c \
+								test_raytracer_scene.c \
 								test_raytracer_color_axe.c
 
 SRC_TEST_LIBLA = 				test_libla.c \

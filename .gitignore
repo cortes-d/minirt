@@ -3,6 +3,9 @@
 
 # Build artifacts
 minirt
+test_libla
+test_raytracer
+test_parser
 **/*.o
 **/*.a
 **/*.d

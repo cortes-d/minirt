@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/15 11:54:22 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/15 13:45:34 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	test_raytracer_color_axe(void)
 	//my_object = plane();
 	// my_object = cylinder();
 	// my_object.material = material();
-	my_object.material.color = color_rgb_f(1, 0.2, 1);
+	my_object.material.color = color_rgb_f(0, 0.8, 0.8);
 
 	// transformation
 	//set_transform(&my_object, mat4_scaling(.1, .1, .1));

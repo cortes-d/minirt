@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:05:00 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/15 11:42:15 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 16:16:28 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 // =============================================================================
 // Section : Includes
 // =============================================================================
-#include "raytracer.h"
-#include "libft.h"
-#include "libla.h"
-#include "mlx.h"
-#include "graphic.h"
-#include <math.h>
+# include "raytracer.h"
+# include "scene.h"
+# include "libft.h"
+# include "libla.h"
+# include "mlx.h"
+# include "graphic.h"
+# include <math.h>
 
 // =============================================================================
 // Section : Constants and Macros
@@ -46,5 +47,6 @@ int		test_raytracer_phong(void);
 int		test_raytracer_red_circle(void);
 t_ray	test_ray_for_pixel(unsigned int px, unsigned int py);
 int		test_raytracer_color_axe(void);
+int		test_raytracer_scene(void);
 
 #endif

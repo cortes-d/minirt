@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/15 13:32:13 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/15 14:09:24 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,29 @@ int	test_raytracer_phong(void)
 	// object
 	//my_object = sphere();
 	//my_object = plane();
-	my_object = cylinder();
+
+	
+	/*my_object = cylinder();
 	my_object.material = material();
-	my_object.material.color = color_rgb_f(1, 0.2, 1);
+	my_object.material.color = color_rgb_f(0, 0.8, 0.8);
 	my_object.u_object.cylinder.maximum = 0.5;
-	my_object.u_object.cylinder.minimum = -0.5;
+	my_object.u_object.cylinder.minimum = -0.5;*/
+
+	
 	// transformation
 	//set_transform(&my_object, mat4_scaling(.1, .1, .1));
 	//add_transform(&my_object, mat4_rotation_z(M_PI/8));
 	//add_transform(&my_object, mat4_translation(.15, 0, 1));
 
-	add_transform(&my_object, mat4_scaling(0.25, 1, 0.25)); // Scale the cylinder
-	add_transform(&my_object, mat4_rotation_x(M_PI / 4)); // Rotate around the X-axis
-	add_transform(&my_object, mat4_rotation_y(M_PI / 6)); // Rotate around the Y-axis
-	add_transform(&my_object, mat4_translation(0.5, 0, 1)); // Translate to a new position*/
+	//add_transform(&my_object, mat4_scaling(0.25, 1, 0.25)); // Scale the cylinder
+	//add_transform(&my_object, mat4_rotation_x(M_PI / 4)); // Rotate around the X-axis
+	//add_transform(&my_object, mat4_rotation_y(M_PI / 6)); // Rotate around the Y-axis
+	//add_transform(&my_object, mat4_translation(0.5, 0, 1)); // Translate to a new position*/
+
+    my_object = plane();
+	set_transform(&my_object, mat4_translation(0, -1, 0)); // Position the plane below the camera
+    //set_transform(&my_object, mat4_rotation_z(M_PI / 2));
+
 	// light
 	light = light_point(point(-20, 10, -10), color_rgb_f(1, 1, 1));
 

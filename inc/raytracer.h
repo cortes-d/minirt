@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 15:39:34 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/15 16:20:56 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,12 @@ typedef struct s_shading
 // --- Ray ---
 t_ray				ray(t_vec4 p_origin, t_vec4 v_direction);
 t_vec4				position(t_ray ray, float t);
+t_ray				ray_transform(t_ray ray, t_mat4 transformation);
 
 // --- Intersection ---
 void				intersect(t_ray ray, t_object object, \
+						t_list **intersections);
+void				intersect_scene(t_ray ray, t_scene scene, \
 						t_list **intersections);
 void				intersect_sphere(t_ray ray, t_object object, \
 						t_list **intersections);
@@ -101,11 +104,6 @@ t_intersection		*intersection_create(float t, t_object object);
 void				intersection_add_to_list(t_list **intersections, \
 						t_intersection *intersection);
 t_intersection		*hit(t_list *intersections);
-
-// --- Transformation ---
-t_ray				ray_transform(t_ray ray, t_mat4 transformation);
-void				set_transform(t_object *object, t_mat4 transformation);
-void				add_transform(t_object *object, t_mat4 transformation);
 
 // --- Light ---
 t_vec3				lighting(t_material material, t_light_point light, \
