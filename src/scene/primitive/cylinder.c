@@ -6,11 +6,11 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:37:01 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/13 14:28:01 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/15 08:54:55 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "scene.h"
 
 t_object	cylinder(void)
 {
@@ -26,5 +26,6 @@ t_object	cylinder(void)
 	object.u_object.cylinder.diameter = 1;
 	object.u_object.cylinder.minimum = __FLT_MIN__;
 	object.u_object.cylinder.maximum = __FLT_MAX__;
+	object.u_object.cylinder.closed = 1;
 	return (object);
 }

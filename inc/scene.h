@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 16:06:38 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/15 08:54:36 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct s_cylinder
 	float	diameter;
 	float	minimum;
 	float	maximum;
+	int		closed;
 }	t_cylinder;
 
 // --- Structure : Plane ---

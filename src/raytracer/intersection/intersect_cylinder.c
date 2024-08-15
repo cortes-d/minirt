@@ -6,14 +6,55 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:12:47 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 14:49:55 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/15 11:22:44 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "util.h"
 #include "raytracer.h"
 
-void	intersect_cylinder(t_ray ray, t_object object, \
+static int	check_cap(t_ray ray, float t)
+{
+	float	x;
+	float	z;
+
+	x = ray.p_origin.data[X] + t * ray.v_direction.data[X];
+	z = ray.p_origin.data[Z] + t * ray.v_direction.data[Z];
+	return ((x * x + z * z) <= 1);
+}
+/*
+static void	intersect_caps(t_object object, t_ray ray, t_list **intersections)
+{
+	float	t;
+
+	if (!object.u_object.cylinder.closed || equalf(ray.v_direction.data[Y], 0))
+		return ;
+	t = (object.u_object.cylinder.minimum - ray.p_origin.data[Y]) \
+		/ ray.v_direction.data[Y];
+	if (check_cap(ray, t))
+		intersection_add_to_list(intersections, intersection_create(t, object));
+	t = (object.u_object.cylinder.maximum - ray.p_origin.data[Y]) \
+		/ ray.v_direction.data[Y];
+	if (check_cap(ray, t))
+		intersection_add_to_list(intersections, intersection_create(t, object));
+}*/
+
+static void intersect_caps(t_object object, t_ray ray, t_list **intersections) {
+    float t;
+    if (!object.u_object.cylinder.closed || equalf(ray.v_direction.data[Y], 0))
+        return;
+    // Bottom cap
+    t = (object.u_object.cylinder.minimum - ray.p_origin.data[Y]) / ray.v_direction.data[Y];
+    if (check_cap(ray, t) && t >= 0)
+        intersection_add_to_list(intersections, intersection_create(t, object));
+    // Top cap
+    t = (object.u_object.cylinder.maximum - ray.p_origin.data[Y]) / ray.v_direction.data[Y];
+    if (check_cap(ray, t) && t >= 0)
+        intersection_add_to_list(intersections, intersection_create(t, object));
+}
+
+
+/*void	intersect_cylinder(t_ray ray, t_object object, \
 	t_list **intersections)
 {
 	float				a;
@@ -38,8 +79,8 @@ void	intersect_cylinder(t_ray ray, t_object object, \
 	if (discriminant < 0)
 		return ;
 	pair.count = 2;
-	pair.t[0] = (-b - sqrt(discriminant) / (2 * a));
-	pair.t[1] = (-b + sqrt(discriminant) / (2 * a));
+	pair.t[0] = (-b - sqrt(discriminant)) / (2 * a);
+	pair.t[1] = (-b + sqrt(discriminant)) / (2 * a);
 	if (pair.t[0] > pair.t[1])
 		swap(&pair.t[0], &pair.t[1]);
 	y0 = ray.p_origin.data[Y] + pair.t[0] * ray.v_direction.data[Y];
@@ -51,5 +92,38 @@ void	intersect_cylinder(t_ray ray, t_object object, \
 	if (object.u_object.cylinder.minimum < y1 && \
 		y1 < object.u_object.cylinder.maximum)
 		intersection_add_to_list(intersections, \
-			intersection_create(pair.t[0], object));
+			intersection_create(pair.t[1], object));
+	intersect_caps(object, ray, intersections);
+}
+*/
+
+
+void intersect_cylinder(t_ray ray, t_object object, t_list **intersections) {
+    float a, b, c, discriminant;
+    t_intersection_pair pair;
+    float y0, y1;
+    pair = init_intersection_pair();
+    a = ray.v_direction.data[X] * ray.v_direction.data[X] + ray.v_direction.data[Z] * ray.v_direction.data[Z];
+    if (equalf(a, 0))
+        return;
+    b = 2 * ray.p_origin.data[X] * ray.v_direction.data[X] + 2 * ray.p_origin.data[Z] * ray.v_direction.data[Z];
+    c = ray.p_origin.data[X] * ray.p_origin.data[X] + ray.p_origin.data[Z] * ray.p_origin.data[Z] - 1;
+    discriminant = b * b - 4 * a * c;
+    if (discriminant < 0)
+        return;
+    pair.count = 2;
+    pair.t[0] = (-b - sqrt(discriminant)) / (2 * a);
+    pair.t[1] = (-b + sqrt(discriminant)) / (2 * a);
+    if (pair.t[0] > pair.t[1])
+        swap(&pair.t[0], &pair.t[1]);
+    y0 = ray.p_origin.data[Y] + pair.t[0] * ray.v_direction.data[Y];
+    y1 = ray.p_origin.data[Y] + pair.t[1] * ray.v_direction.data[Y];
+    // Debug prints
+    printf("pair.t[0]: %f, pair.t[1]: %f\n", pair.t[0], pair.t[1]);
+    printf("y0: %f, y1: %f\n", y0, y1);
+    if (object.u_object.cylinder.minimum < y0 && y0 < object.u_object.cylinder.maximum)
+        intersection_add_to_list(intersections, intersection_create(pair.t[0], object));
+    if (object.u_object.cylinder.minimum < y1 && y1 < object.u_object.cylinder.maximum)
+        intersection_add_to_list(intersections, intersection_create(pair.t[1], object));
+    intersect_caps(object, ray, intersections);
 }

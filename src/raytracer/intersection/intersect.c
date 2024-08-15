@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 13:39:02 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 10:27:19 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/15 11:08:21 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	intersect(t_ray ray, t_object object, \
 	if (object.type == SPHERE)
 		return (intersect_sphere(ray_transformed, object, list_intersections));
 	else if (object.type == CYLINDER)
-		return (intersect_cylinder(ray, object, list_intersections));
+		return (intersect_cylinder(ray_transformed, object, list_intersections));
 	else
-		return (intersect_plane(ray, object, list_intersections));
+		return (intersect_plane(ray_transformed, object, list_intersections));
 }
