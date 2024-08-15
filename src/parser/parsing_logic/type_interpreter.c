@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_interpreter.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:25:31 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 07:29:06 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 09:43:19 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@ int	type_interpreter(char **tokens, t_scene_data *scene_data)
 	{
 		if (ft_lstsize(scene_data->ambient_lights) > 0) //this if allows us to check if UPPERCASE object are unique
 			return (ERROR);
-		if (check_ambient_light_tokens(tokens) == ERROR)
+		if (check_light_ambient_tokens(tokens) == ERROR)
 			return (ERROR);
-		if (create_ambient_light(tokens, &scene_data->ambient_lights) == ERROR)
+		if (create_light_ambient(tokens, &scene_data->ambient_lights) == ERROR)
 			return (ERROR);
 	}
 	else if (ft_strequiv(tokens[0], "L") && tokens[0][1] == '\0')
 	{
 		if (ft_lstsize(scene_data->lights) > 0) //this if allows us to check if UPPERCASE object are unique
 			return (ERROR);
-		if (check_point_light_tokens(tokens) == ERROR)
+		if (check_light_point_tokens(tokens) == ERROR)
 			return (ERROR);
-		if (create_point_light(tokens, &scene_data->lights) == ERROR)
+		if (create_light_point(tokens, &scene_data->lights) == ERROR)
 			return (ERROR);
 	}
 	else if (ft_strequiv(tokens[0], "C") && tokens[0][1] == '\0')

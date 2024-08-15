@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_cylinder_tokens.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:43:49 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 10:19:13 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 09:44:58 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_cylinder_tokens(char **tokens)
 
 	if (tokens == NULL)
 		return (ERROR);
-	if (array_2d_size(tokens) != 6)
+	if (ft_array2d_size((const void **)tokens) != 6)
 		return (ERROR);
 	if (check_vec3_token(tokens[1]) == ERROR)
 		return (ERROR);

@@ -76,6 +76,36 @@ SRC_SCENE =						scene_empty.c \
 								primitive/transformation/add_transform.c \
 								primitive/transformation/set_transform.c
 
+SRC_PARSER =					check/highest_check/check_light_ambient_tokens.c \
+								check/highest_check/check_camera_tokens.c \
+								check/highest_check/check_cylinder_tokens.c \
+								check/highest_check/check_plane_tokens.c \
+								check/highest_check/check_light_point_tokens.c \
+								check/highest_check/check_sphere_tokens.c \
+								check/lowest_check/check_float.c \
+								check/lowest_check/check_uchar.c \
+								check/middle_check/check_color_token.c \
+								check/middle_check/check_float_token.c \
+								check/middle_check/check_vec3_token.c \
+								check/check_main_arguments.c \
+								creation/create_camera.c \
+								creation/create_cylinder.c \
+								creation/create_light_ambient.c \
+								creation/create_light_point.c \
+								creation/create_plane.c \
+								creation/create_sphere.c \
+								extraction/utility/elem_at_index_n.c \
+								extraction/extract_color.c \
+								extraction/extract_float.c \
+								extraction/extract_vec3.c \
+								parsing_logic/utility/scene_data_empty.c \
+								parsing_logic/utility/scene_data_free.c \
+								parsing_logic/parse_line.c \
+								parsing_logic/parse_scene.c \
+								parsing_logic/parsing_loop.c \
+								parsing_logic/scene_data_to_scene.c \
+								parsing_logic/type_interpreter.c
+
 SRC_UTIL = 						clamp.c \
 								swap.c
 
@@ -121,6 +151,7 @@ SRC_MAIN := $(addprefix $(DIR_SRC)/, $(SRC_MAIN))
 SRC_GRAPHIC := $(addprefix $(DIR_GRAPHIC)/, $(SRC_GRAPHIC))
 SRC_RAYTRACER := $(addprefix $(DIR_RAYTRACER)/, $(SRC_RAYTRACER))
 SRC_SCENE := $(addprefix $(DIR_SCENE)/, $(SRC_SCENE))
+SRC_PARSER := $(addprefix $(DIR_PARSER)/, $(SRC_PARSER))
 SRC_UTIL := $(addprefix $(DIR_UTIL)/, $(SRC_UTIL))
 SRC_TEST_RAYTRACER := $(addprefix $(DIR_TEST_RAYTRACER)/, $(SRC_TEST_RAYTRACER))
 SRC_TEST_LIBLA := $(addprefix $(DIR_TEST_LIBLA)/, $(SRC_TEST_LIBLA))
@@ -134,6 +165,7 @@ SRC = 							$(SRC_MAIN) \
 								$(SRC_GRAPHIC) \
 								$(SRC_RAYTRACER) \
 								$(SRC_SCENE) \
+								$(SRC_PARSER) \
 								$(SRC_UTIL)
 
 SRC_TEST_ALL = 					$(SRC) \

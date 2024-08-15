@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_camera_tokens.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:30:44 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 10:19:28 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 09:44:56 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_camera_tokens(char **tokens)
 
 	if (tokens == NULL)
 		return (ERROR);
-	if (array_2d_size(tokens) != 4)
+	if (ft_array2d_size((const void **)tokens) != 4)
 		return (ERROR);
 	if (check_vec3_token(tokens[1]) == ERROR)
 		return (ERROR);
