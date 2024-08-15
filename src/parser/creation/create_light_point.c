@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   create_point_light.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/13 16:06:56 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 09:23:25 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	create_point_light(char **tokens, t_list **lights)
+int	create_light_point(char **tokens, t_list **lights)
 {
-	t_point_light	*new_point_light;
+	t_light_point	*new_light_point;
 	t_list			*new_node;
 
-	new_point_light = (t_point_light *)malloc(sizeof(t_point_light));
-	if (new_point_light == NULL)
+	new_light_point = (t_light_point *)malloc(sizeof(t_light_point));
+	if (new_light_point == NULL)
 		return (ERROR);
-	new_node = ft_lstnew(new_point_light);
+	new_node = ft_lstnew(new_light_point);
 	if (new_node == NULL)
 	{
-		free(new_point_light);
+		free(new_light_point);
 		return (ERROR);
 	}
-	*new_point_light = \
+	*new_light_point = \
 	point_light_from_param(\
 	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \
 	extract_float(tokens[2]), \
