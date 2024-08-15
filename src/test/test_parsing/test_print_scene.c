@@ -6,13 +6,13 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:31:12 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:36:11 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 09:17:38 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_parser.h"
 
-void	print_scene(t_scene *scene)
+void	test_print_scene(t_scene *scene)
 {
 	unsigned int	i;
 

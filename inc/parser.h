@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:28:15 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 16:29:52 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/15 09:19:00 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int				check_uchar(const char **str);
 
 // --- Creation ---
 int				create_ambient_light(char **tokens, \
-					t_ambient_light **ambient_lights);
+					t_light_ambient **ambient_lights);
 int				create_camera(char **tokens, t_camera **cameras);
 int				create_cylinder(char **tokens, t_list **objects);
 int				create_plane(char **tokens, t_list **objects);

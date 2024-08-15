@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_cylinder.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:40:12 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/13 16:06:54 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 09:21:21 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	create_cylinder(char **tokens, t_list **objects)
 {
-	t_point_light	*new_cylinder;
-	t_list			*new_node;
+	t_object	*new_cylinder;
+	t_list		*new_node;
 
 	new_cylinder = (t_object *)malloc(sizeof(t_object));
 	if (new_cylinder == NULL)

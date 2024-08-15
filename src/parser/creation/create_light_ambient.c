@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_ambient_light.c                             :+:      :+:    :+:   */
+/*   create_light_ambient.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:43:39 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/13 16:06:47 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 09:22:20 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	create_ambient_light(char **tokens, t_ambient_light **ambient_lights)
+int	create_light_ambient(char **tokens, t_light_ambient **ambient_lights)
 {
-	t_point_light	*new_ambient_light;
+	t_light_ambient	*new_light_ambient;
 	t_list			*new_node;
 
-	new_ambient_light = (t_point_light *)malloc(sizeof(t_point_light));
-	if (new_ambient_light == NULL)
+	new_light_ambient = (t_light_ambient *)malloc(sizeof(t_light_ambient));
+	if (new_light_ambient == NULL)
 		return (ERROR);
-	new_node = ft_lstnew(new_ambient_light);
+	new_node = ft_lstnew(new_light_ambient);
 	if (new_node == NULL)
 	{
-		free(new_ambient_light);
+		free(new_light_ambient);
 		return (ERROR);
 	}
-	*new_ambient_light = \
+	*new_light_ambient = \
 	ambient_light_from_param(\
 	extract_float(tokens[1]), \
 	extract_color(tokens[2]));

@@ -146,9 +146,9 @@ SRC_TEST_ALL = 					$(SRC) \
 # =============================================================================
 
 OBJ = $(SRC:.c=.o)
-OBJ_TEST_RAYTRACER = $(SRC_TEST_RAYTRACER:.c=.o)
-OBJ_TEST_LIBLA = $(SRC_TEST_LIBLA:.c=.o)
-OBJ_TEST_PARSING = $(SRC_TEST_PARSING:.c=.o)
+OBJ_TEST_RAYTRACER = $(SRC_TEST_ALL:.c=.o)
+OBJ_TEST_LIBLA = $(SRC_TEST_ALL:.c=.o)
+OBJ_TEST_PARSING = $(SRC_TEST_ALL:.c=.o)
 
 # =============================================================================
 # Section : Libraries

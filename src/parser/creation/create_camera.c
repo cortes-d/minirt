@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_camera.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:45:53 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/13 16:06:52 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/15 09:21:12 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	create_camera(char **tokens, t_camera **cameras)
 {
-	t_point_light	*new_camera;
-	t_list			*new_node;
+	t_camera	*new_camera;
+	t_list		*new_node;
 
 	new_camera = (t_object *)malloc(sizeof(t_object));
 	if (new_camera == NULL)
