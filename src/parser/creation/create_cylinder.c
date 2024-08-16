@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:40:12 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 15:54:47 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:50:39 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	create_cylinder(char **tokens, t_list **objects)
 	vec3_to_vec4(extract_vec3(tokens[2]), W_VECTOR), \
 	extract_float(tokens[3]), \
 	extract_float(tokens[4]));
-	set_object_color(&new_cylinder, extract_color(tokens[5]));
+	set_object_color(new_cylinder, extract_color(tokens[5]));
 	ft_lstadd_back(objects, new_node);
 	return (0);
 }

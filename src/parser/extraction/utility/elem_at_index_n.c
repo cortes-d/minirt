@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   elem_at_index_n.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:56:58 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/12 12:05:16 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:51:04 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ const char	*elem_at_index_n(const char *str, unsigned int n)
 	unsigned int	i;
 
 	comma_count = 0;
+	i = 0;
 	while (n != comma_count && str[i] != '\0')
 	{
 		if (str[i] == ',')

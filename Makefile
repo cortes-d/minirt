@@ -1,7 +1,7 @@
 NAME = minirt
 TEST_RAYTRACER_NAME = test_raytracer
 TEST_LIBLA_NAME = test_libla
-TEST_PARSER_NAME = test_PARSER
+TEST_PARSER_NAME = test_parser
 
 # =============================================================================
 # Section : ANSI color codes
@@ -115,7 +115,7 @@ SRC_PARSER =					check/highest_check/check_light_ambient_tokens.c \
 SRC_UTIL = 						clamp.c \
 								swap.c
 
-SRC_TEST_RAYTRACER = 			test_raytracer.c \
+SRC_TEST_RAYTRACER =			test_raytracer.c \
 								test_ray_for_pixel.c \
 								test_raytracer_phong.c \
 								test_raytracer_red_circle.c \
@@ -273,7 +273,7 @@ fclean: clean
 re: fclean all
 
 # --- Rule to compile the tests ---
-test: $(LIB) $(TEST_LIBLA_NAME) $(TEST_RAYTRACER_NAME) $(TEST_PARSER_NAME)
+test: $(LIB) $(TEST_LIBLA_NAME) $(TEST_PARSER_NAME) $(TEST_RAYTRACER_NAME)
 
 # --- Build the test_raytracer executable ---
 $(TEST_RAYTRACER_NAME): $(OBJ) $(OBJ_TEST_RAYTRACER)

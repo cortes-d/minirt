@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_line.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:06:06 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 07:30:53 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:53:11 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int	parse_line(t_scene_data *scene_data, const char *line)
 		return (ERROR);
 	else if (*tokens == NULL)
 	{
-		free_array2d(tokens);
+		ft_free_array2d((void **)tokens);
 		return (0);
 	}
 	if (type_interpreter(tokens, scene_data) == ERROR)
 		return (ERROR);
-	free_array2d(tokens);
+	ft_free_array2d((void **)tokens);
 	return (0);
 }
