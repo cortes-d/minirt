@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 15:38:10 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:17:34 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ typedef struct s_intersection
 // 	t_vec4	normalv;
 // }	t_shading;
 
-// --- Structure : Prepare_computation ---
-typedef struct s_prepare_computation
+// --- Structure : Computation ---
+typedef struct s_computation
 {
 	t_vec4			eyev;
 	t_vec4			normalv;
@@ -88,7 +88,7 @@ typedef struct s_prepare_computation
 	t_vec4			lightv;
 	float			lightv_dot_normalv;
 	float			reflectv_dot_eyev;
-}	t_prepare_computation;
+}	t_computation;
 
 // =============================================================================
 // Section : Functions
@@ -117,9 +117,9 @@ void				intersection_add_to_list(t_list **intersections, \
 t_intersection		*hit(t_list *intersections);
 
 // --- Light ---
-t_prepare_computation	prepare_computation(t_intersection intersection, \
+t_computation		prepare_computation(t_intersection intersection, \
 						t_ray ray, t_light_point lp);
-t_vec3					lighting(t_prepare_computation	pc, \
+t_vec3				lighting(t_computation	c, \
 						t_light_point lp, t_light_ambient la, t_material m);
 // t_vec3				lighting(t_material material, t_light_point light, \
 // 						t_vec4 intersection_point, t_shading shading);

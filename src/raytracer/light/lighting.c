@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lighting.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:20:37 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 12:06:23 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:18:00 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@
 
 }*/
 
-t_vec3	lighting(t_prepare_computation	pc, t_light_point lp, t_light_ambient la, t_material m)
+t_vec3	lighting(t_computation	c, t_light_point lp, t_light_ambient la, t_material m)
 {
 	t_vec3	ambient;
 	t_vec3	diffuse;
@@ -127,17 +127,17 @@ t_vec3	lighting(t_prepare_computation	pc, t_light_point lp, t_light_ambient la, 
 
 	ambient = vec3_mul(vec3_hadamard_product(m.color, \
 	vec3_mul(la.color, la.ratio)), m.ambient);
-	if (pc.lightv_dot_normalv < 0)
+	if (c.lightv_dot_normalv < 0)
 		diffuse = color_rgb_f(0, 0, 0);
 	else
 		diffuse = vec3_mul(\
 		vec3_hadamard_product(m.color, vec3_mul(lp.color, lp.ratio)), \
-		m.diffuse * pc.lightv_dot_normalv);
-	if (pc.reflectv_dot_eyev <= 0)
+		m.diffuse * c.lightv_dot_normalv);
+	if (c.reflectv_dot_eyev <= 0)
 		specular = color_rgb_f(0, 0, 0);
 	else
 		specular = vec3_mul(\
-		lp.color, m.specular * pow(pc.reflectv_dot_eyev, m.shininess));
+		lp.color, m.specular * pow(c.reflectv_dot_eyev, m.shininess));
 	color = vec3_add(ambient, vec3_add(diffuse, specular));
 	color.data[X] = clamp(color.data[X], 1);
 	color.data[Y] = clamp(color.data[Y], 1);

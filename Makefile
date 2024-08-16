@@ -117,7 +117,8 @@ SRC_TEST_RAYTRACER = 			test_raytracer.c \
 								test_ray_for_pixel.c \
 								test_raytracer_phong.c \
 								test_raytracer_red_circle.c \
-								test_raytracer_color_axe.c
+								test_raytracer_color_axe.c \
+								test_raytracer_scene.c
 
 SRC_TEST_LIBLA = 				test_libla.c \
 								test_matrix.c \
