@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   test_print_scene.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:31:12 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:04:51 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/16 16:44:39 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/16 16:44:53 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_parser.h"
-/*
+
 void	test_print_scene(t_scene *scene)
 {
 	unsigned int	i;
@@ -19,12 +19,12 @@ void	test_print_scene(t_scene *scene)
 	if (scene->camera)
 		printf("C\n");
 	if (scene->light_ambient)
-		printf("A %f %.0f,%.0f,%.0f\n", scene->light_ambient->lightning_ratio, \
+		printf("A %f %.0f,%.0f,%.0f\n", scene->light_ambient->ratio, \
 		scene->light_ambient->color.data[R], scene->light_ambient->color.data[G], scene->light_ambient->color.data[B]);
 	if (scene->light_point)
 		printf("L %.0f,%.0f,%.0f %f %.0f,%.0f,%.0f\n", \
 		scene->light_point->p_origin.data[X], scene->light_point->p_origin.data[Y], scene->light_point->p_origin.data[Z], \
-		scene->light_point->brightness, \
+		scene->light_point->ratio, \
 		scene->light_point->color.data[R], scene->light_point->color.data[G], scene->light_point->color.data[B]);
 	if (scene->objects)
 	{
@@ -58,4 +58,3 @@ void	test_print_scene(t_scene *scene)
 		}
 	}
 }
-*/

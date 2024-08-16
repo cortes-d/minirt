@@ -65,6 +65,8 @@ SRC_SCENE =						scene_empty.c \
 								scene_default.c \
 								scene_free.c \
 								camera/camera.c \
+								camera/camera_default.c \
+								camera/camera_computation.c \
 								camera/view_transform.c \
 								light/light_point.c \
 								light/light_ambient.c \
@@ -171,6 +173,7 @@ SRC = 							$(SRC_MAIN) \
 								$(SRC_GRAPHIC) \
 								$(SRC_RAYTRACER) \
 								$(SRC_SCENE) \
+								$(SRC_PARSER) \
 								$(SRC_UTIL)
 
 SRC_TEST_ALL = 					$(SRC) \

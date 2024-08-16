@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_parser.c                                      :+:      :+:    :+:   */
+/*   ft_deg_to_rad.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 14:56:59 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 15:52:26 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/16 16:38:41 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/16 16:40:46 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_parser.h"
+#include "math.h"
 
-int	main(void)
+float	ft_deg_to_rad(float deg)
 {
-	t_scene	scene;
-
-	scene = scene_empty();
-	if (parse_scene("test_scene.rt", &scene) == ERROR)
-	{
-		printf("ERROR something went wrong\n");
-		return (ERROR);
-	}
-	test_print_scene(&scene);
-	return (0);
+	return (deg * M_PI / 180);
 }
-

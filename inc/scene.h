@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 15:39:30 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:46:19 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 
 # include "libla.h"
 # include "libft.h"
+# include "math.h"
 
 // =============================================================================
 // Section : Constants and Macros
 // =============================================================================
 
-# define CAMERA_HSIZE 500
-# define CAMERA_VSIZE 500
+# define CAMERA_HSIZE	500
+# define CAMERA_VSIZE	500
+# define UP_VECTOR_X	0
+# define UP_VECTOR_Y	1
+# define UP_VECTOR_Z	0
 
 // =============================================================================
 // Section : Type Definitions
@@ -136,7 +140,10 @@ typedef struct s_light_ambient
 
 typedef struct s_camera
 {
-	t_mat4			transform;
+	t_vec4			p_origin;
+	t_vec4			v_orientation;
+	float			h_fov;
+	t_mat4			view_transform;
 	unsigned int	hsize;
 	unsigned int	vsize;
 	float			half_width;
@@ -160,6 +167,13 @@ typedef struct s_scene
 // =============================================================================
 // Section : Functions
 // =============================================================================
+
+// --- Camera ---
+t_camera	camera_default(void);
+t_camera	camera(t_vec4 p_origin, t_vec4 v_orientation, float h_fov);
+void		camera_computation(t_camera *camera);
+t_mat4		view_transform(t_vec4 p_origin, t_vec4 forward, t_vec4 up);
+
 
 // --- Material ---
 t_material			material_default(void);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_scene.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 10:09:36 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 07:31:47 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 15:53:21 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	parse_scene(char *file_name, t_scene *scene)
 	t_scene_data	scene_data;
 	int				fd;
 
-	scene_data = empty_scene_data();
+	scene_data = scene_data_empty();
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 		return (ERROR);

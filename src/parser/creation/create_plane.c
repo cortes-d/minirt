@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:40:49 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 09:21:42 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 15:56:25 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	create_plane(char **tokens, t_list **objects)
 		return (ERROR);
 	}
 	*new_plane = \
-	plane_from_params(\
+	plane(\
 	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \
 	vec3_to_vec4(extract_vec3(tokens[2]), W_VECTOR));
 	set_object_color(&new_plane, extract_color(tokens[3]));

@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:56:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 14:13:52 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:41:00 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <math.h>
 
 typedef struct s_list
 {
@@ -23,6 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+float	ft_deg_to_rad(float deg);
 void	ft_free_array2d(void **array_2d);
 int		ft_array2d_size(const void **array2d);
 float	ft_strtof(const char *str, char **endptr);

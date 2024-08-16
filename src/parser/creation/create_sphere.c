@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_sphere.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 07:35:19 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 07:35:23 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 15:56:31 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	create_sphere(char **tokens, t_list **objects)
 		return (ERROR);
 	}
 	*new_sphere = \
-	sphere_from_params(\
+	sphere(\
 	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \
 	extract_float(tokens[2]));
 	set_object_color(&new_sphere, extract_color(tokens[3]));

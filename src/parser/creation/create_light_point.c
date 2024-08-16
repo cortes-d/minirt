@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_point_light.c                               :+:      :+:    :+:   */
+/*   create_light_point.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 09:23:25 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 15:56:20 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	create_light_point(char **tokens, t_list **lights)
 		return (ERROR);
 	}
 	*new_light_point = \
-	point_light_from_param(\
+	light_point(\
 	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \
 	extract_float(tokens[2]), \
 	extract_color(tokens[3]));

@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:28:15 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 09:19:00 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:48:35 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ typedef struct s_scene_data
 int				check_main_arguments(char **argv, int argc);
 
 // --- Highest check ---
-int				check_ambient_light_tokens(char **tokens);
+int				check_light_ambient_tokens(char **tokens);
 int				check_camera_tokens(char **tokens);
 int				check_cylinder_tokens(char **tokens);
 int				check_plane_tokens(char **tokens);
-int				check_point_light_tokens(char **tokens);
+int				check_light_point_tokens(char **tokens);
 int				check_sphere_tokens(char **tokens);
 
 // --- Middle check ---
@@ -73,12 +73,11 @@ int				check_float(const char **str);
 int				check_uchar(const char **str);
 
 // --- Creation ---
-int				create_ambient_light(char **tokens, \
-					t_light_ambient **ambient_lights);
-int				create_camera(char **tokens, t_camera **cameras);
+int				create_light_ambient(char **tokens, t_list **ambient_lights);
+int				create_camera(char **tokens, t_list **cameras);
 int				create_cylinder(char **tokens, t_list **objects);
 int				create_plane(char **tokens, t_list **objects);
-int				create_point_light(char **tokens, t_list **lights);
+int				create_light_point(char **tokens, t_list **lights);
 int				create_sphere(char **tokens, t_list **objects);
 
 // --- Extraction ---
@@ -97,10 +96,7 @@ int				scene_data_to_scene(t_scene_data *scene_data, t_scene *scene);
 int				type_interpreter(char **tokens, t_scene_data *scene_data);
 
 // --- Utility ---
-t_scene_data	empty_scene_data(void);
-t_scene			empty_scene(void);
-void			free_array2d(void **array_2d);
-void			free_scene_data(t_scene_data *scene_data);
-void			free_scene(t_scene *scene);
+t_scene_data	scene_data_empty(void);
+void			scene_data_free(t_scene_data *scene_data);
 
 #endif

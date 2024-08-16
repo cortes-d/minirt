@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   view_transform.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:25:26 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/06 11:32:51 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:41:27 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
