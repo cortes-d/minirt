@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sphere_from_params.c                               :+:      :+:    :+:   */
+/*   light_ambient.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 10:49:17 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 11:08:59 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/08 10:32:27 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/16 12:09:14 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-t_object	sphere_from_params(t_vec4 p_origin, float radius)
+t_light_ambient	light_ambient(float ratio, t_vec3 color)
 {
-	t_object	s;
+	t_light_ambient	new_light_ambient;
 
-	s = sphere();
-	add_transform(&s, mat4_translation(\
-		p_origin.data[X], \
-		p_origin.data[Y], \
-		p_origin.data[Z]));
-	add_transform(&s, mat4_scaling(radius, radius, radius));
-	return (s);
+	new_light_ambient.ratio = ratio;
+	new_light_ambient.color = color;
+	return (new_light_ambient);
 }

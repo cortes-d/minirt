@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   light_point.c                                      :+:      :+:    :+:   */
+/*   plane_default.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/08 10:32:27 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 12:09:15 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/12 11:45:31 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/15 14:37:04 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-t_light_point	light_point(t_vec4 position, float ratio, t_vec3 color)
+t_object	plane_default(void)
 {
-	t_light_point	new_light_point;
+	t_object	object;
 
-	new_light_point.p_origin = position;
-	new_light_point.ratio = ratio;
-	new_light_point.color = color;
-	return (new_light_point);
+	object.type = PLANE;
+	object.material = material_default();
+	object.transform = mat4_identity();
+	object.transform_inverse = mat4_inv(object.transform);
+	object.u_object.plane.p_point = point(0, 0, 0);
+	object.u_object.plane.v_normal = vector(0, 1, 0);
+	return (object);
 }
-

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   material.c                                         :+:      :+:    :+:   */
+/*   material_default.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:20:57 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/10 22:20:57 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/16 12:04:51 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #define DEFAULT_SPECULAR 0.9
 #define DEFAULT_SHININESS 200.0
 
-t_material	material(void)
+t_material	material_default(void)
 {
 	t_material	material;
 

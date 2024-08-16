@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer_color_axe.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/15 13:45:34 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/16 15:25:31 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ int	test_raytracer_color_axe(void)
 	void				*mlx_ptr;
 	void				*mlx_win;
 	t_image				img;
-	t_light_point		light;
+	//t_light_point		light;
 	t_vec3				color;
 	t_vec4				pt;
-	t_shading			shading;
 	t_ray				r;
 
 	// mlx
@@ -38,11 +37,11 @@ int	test_raytracer_color_axe(void)
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 
 	// objct
-	my_object = sphere();
+	my_object = sphere_default();
 	//my_object = plane();
 	// my_object = cylinder();
 	// my_object.material = material();
-	my_object.material.color = color_rgb_f(0, 0.8, 0.8);
+	my_object.material.color = color_rgb_f(1, 0.2, 1);
 
 	// transformation
 	//set_transform(&my_object, mat4_scaling(.1, .1, .1));
@@ -50,7 +49,7 @@ int	test_raytracer_color_axe(void)
 	//add_transform(&my_object, mat4_translation(.15, 0, 1));
 
 	// light
-	light = light_point(point(-10, 10, -10), color_rgb_f(2, 2, 2));
+	//light = light_point(point(-10, 10, -10), 1, color_rgb_f(2, 2, 2));
 
 	// intersections
 	intersections_list = NULL;
@@ -68,10 +67,6 @@ int	test_raytracer_color_axe(void)
 			if (hitting)
 			{
 				pt = position(r, hitting->t);
-				shading.normalv = normal_at(hitting->object, pt);
-				shading.eyev = vec4_inv(r.v_direction);
-				color = lighting(hitting->object.material, light, pt, shading);
-
 				// Conversion de la position du point en couleur RGB en fonction des axes
 				float red = fabsf(pt.data[X]); 
 				float green = fabsf(pt.data[Y]);

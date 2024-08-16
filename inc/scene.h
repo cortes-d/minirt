@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 16:20:51 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/16 15:39:30 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SCENE_H
 
 # include "libla.h"
+# include "libft.h"
 
 // =============================================================================
 // Section : Constants and Macros
@@ -117,7 +118,7 @@ typedef struct s_object
 typedef struct s_light_point
 {
 	t_vec4	p_origin;
-	float	brightness;
+	float	ratio;
 	t_vec3	color;
 }	t_light_point;
 
@@ -125,7 +126,7 @@ typedef struct s_light_point
 typedef struct s_light_ambient
 {
 	t_vec4	p_origin;
-	float	lightning_ratio;
+	float	ratio;
 	t_vec3	color;
 }	t_light_ambient;
 
@@ -161,28 +162,28 @@ typedef struct s_scene
 // =============================================================================
 
 // --- Material ---
-t_material			material(void);
+t_material			material_default(void);
 t_material			material_from_color(float r, float g, float b);
 void				set_object_color(t_object *object, t_vec3 color);
 
 // --- Light ---
-t_light_point		light_point(t_vec4 position, t_vec3 color);
+t_light_point		light_point(t_vec4 position, float ratio, t_vec3 color);
+t_light_ambient		light_ambient(float ratio, t_vec3 color);
 
 // --- Primitive ---
-t_object			sphere(void);
-t_object			sphere_from_params(t_vec4 p_origin, float radius);
-t_object			cylinder(void);
-t_object			cylinder_from_params(t_vec4 p_origin, \
-						t_vec4 v_axis, float diameter, float height);
-t_object			plane(void);
-t_object			plane_from_params(t_vec4 p_point, t_vec4 v_normal);
+t_object			cylinder_default(void);
+t_object			plane_default(void);
+t_object			sphere_default(void);
+t_object			cylinder(t_vec4 p_origin, \
+					t_vec4 v_axis, float diameter, float height);
+t_object			plane(t_vec4 p_point, t_vec4 v_normal);
+t_object			sphere(t_vec4 p_origin, float radius);
 
 // --- Transformation ---
 void				set_transform(t_object *object, t_mat4 transformation);
 void				add_transform(t_object *object, t_mat4 transformation);
 
 // --- Scene ---
-t_scene				scene(void);
 t_scene				scene_empty(void);
 t_scene				scene_default(void);
 void				scene_free(t_scene *scene);

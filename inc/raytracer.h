@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 16:20:56 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/16 15:38:10 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,23 @@ typedef struct s_intersection
 // Sub-section : Light
 // ·············································································
 
-// --- Structure : Shading ---
-typedef struct s_shading
+// // --- Structure : Shading ---
+// typedef struct s_shading
+// {
+// 	t_vec4	eyev;
+// 	t_vec4	normalv;
+// }	t_shading;
+
+// --- Structure : Prepare_computation ---
+typedef struct s_prepare_computation
 {
-	t_vec4	eyev;
-	t_vec4	normalv;
-}	t_shading;
+	t_vec4			eyev;
+	t_vec4			normalv;
+	t_vec4			reflectv;
+	t_vec4			lightv;
+	float			lightv_dot_normalv;
+	float			reflectv_dot_eyev;
+}	t_prepare_computation;
 
 // =============================================================================
 // Section : Functions
@@ -106,8 +117,12 @@ void				intersection_add_to_list(t_list **intersections, \
 t_intersection		*hit(t_list *intersections);
 
 // --- Light ---
-t_vec3				lighting(t_material material, t_light_point light, \
-						t_vec4 intersection_point, t_shading shading);
+t_prepare_computation	prepare_computation(t_intersection intersection, \
+						t_ray ray, t_light_point lp);
+t_vec3					lighting(t_prepare_computation	pc, \
+						t_light_point lp, t_light_ambient la, t_material m);
+// t_vec3				lighting(t_material material, t_light_point light, \
+// 						t_vec4 intersection_point, t_shading shading);
 t_vec4				normal_at(t_object object, t_vec4 world_point);
 t_vec4				reflect(t_vec4 in, t_vec4 normal);
 

@@ -3,24 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   plane.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 11:45:31 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/12 12:59:44 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/12 13:03:06 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/15 14:38:15 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-t_object	plane(void)
+t_object	plane(t_vec4 p_point, t_vec4 v_normal)
 {
-	t_object	object;
+	t_object	p;
+	float		theta_x;
+	float		theta_y;
+	float		theta_z;
 
-	object.type = PLANE;
-	object.material = material();
-	object.transform = mat4_identity();
-	object.transform_inverse = mat4_inv(object.transform);
-	object.u_object.plane.p_point = point(0, 0, 0);
-	object.u_object.plane.v_normal = vector(0, 1, 0);
-	return (object);
+	theta_x = atan2(v_normal.data[Z], v_normal.data[Y]);
+	theta_y = atan2(v_normal.data[X], v_normal.data[Z]);
+	theta_z = atan2(v_normal.data[Y], v_normal.data[X]);
+	p = plane_default();
+	add_transform(&p, mat4_rotation_x(theta_x));
+	add_transform(&p, mat4_rotation_y(theta_y));
+	add_transform(&p, mat4_rotation_z(theta_z));
+	add_transform(&p, mat4_translation(\
+		p_point.data[X], \
+		p_point.data[Y], \
+		p_point.data[Z]));
+	return (p);
 }

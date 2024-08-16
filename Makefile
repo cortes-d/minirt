@@ -52,6 +52,7 @@ SRC_RAYTRACER =					intersection/intersect.c \
 								intersection/intersection_create.c \
 								intersection/intersection_add_to_list.c \
 								intersection/hit.c \
+								light/prepare_computation.c \
 								light/lighting.c \
 								light/normal_at.c \
 								light/reflect.c \
@@ -66,15 +67,16 @@ SRC_SCENE =						scene_empty.c \
 								camera/camera.c \
 								camera/view_transform.c \
 								light/light_point.c \
-								material/material.c \
+								light/light_ambient.c \
+								material/material_default.c \
 								material/material_from_color.c \
 								material/set_object_color.c \
 								primitive/sphere.c \
-								primitive/sphere_from_params.c \
+								primitive/sphere_default.c \
 								primitive/cylinder.c \
-								primitive/cylinder_from_params.c \
+								primitive/cylinder_default.c \
 								primitive/plane.c \
-								primitive/plane_from_params.c \
+								primitive/plane_default.c \
 								primitive/transformation/add_transform.c \
 								primitive/transformation/set_transform.c
 
@@ -115,7 +117,6 @@ SRC_TEST_RAYTRACER = 			test_raytracer.c \
 								test_ray_for_pixel.c \
 								test_raytracer_phong.c \
 								test_raytracer_red_circle.c \
-								test_raytracer_scene.c \
 								test_raytracer_color_axe.c
 
 SRC_TEST_LIBLA = 				test_libla.c \

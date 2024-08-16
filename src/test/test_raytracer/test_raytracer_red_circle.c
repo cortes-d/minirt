@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer_red_circle.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 14:20:57 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 09:02:07 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/16 15:34:27 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	test_raytracer_red_circle(void)
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 
 	// sphere
-	my_sphere = sphere();
-	my_sphere.material = material_from_color(255, 0, 0);
+	my_sphere = sphere_default();
+	set_object_color(&my_sphere, color_rgb_f(1, 0, 0));
 
 	// intersections
 	intersections_list = NULL;
