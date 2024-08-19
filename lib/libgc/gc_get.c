@@ -6,15 +6,15 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:41:19 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/19 12:27:37 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/19 16:02:16 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libgc.h"
 
-t_list	**gc_get(void)
+t_gc	**gc_get(void)
 {
-	static t_list	*gc;
+	static t_gc	*gc;
 
 	return (&gc);
 }
