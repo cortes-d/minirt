@@ -1,18 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clamp.c                                            :+:      :+:    :+:   */
+/*   exit_program.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 14:23:35 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 15:14:00 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/20 14:45:23 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/20 14:59:40 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-float	clamp(float input, float max_value)
-{
-	if (input > max_value)
-		return (max_value);
-	return (input);
-}
+#include "memory.h"
+

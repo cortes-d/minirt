@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clamp.c                                            :+:      :+:    :+:   */
+/*   free_memory.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 14:23:35 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 15:14:00 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/20 15:01:41 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/20 15:07:30 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-float	clamp(float input, float max_value)
+#include "memory.h"
+
+void	free_memory()
 {
-	if (input > max_value)
-		return (max_value);
-	return (input);
+	gc_get();
 }

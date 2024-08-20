@@ -206,6 +206,12 @@ LIBLA_LIB = $(LIBLA_DIR)/libla.a
 LIBLA_INC = -I $(LIBLA_DIR)
 LIBLA_LINK = -L$(LIBLA_DIR) -lla
 
+# --- libgc ---
+LIBGC_DIR = $(DIR_LIB)/libgc
+LIBGC_LIB = $(LIBGC_DIR)/libgc.a
+LIBGC_INC = -I $(LIBGC_DIR)
+LIBGC_LINK = -L$(LIBGC_DIR) -lgc
+
 # --- mlx ---
 MLX_LIB = $(MLX_DIR)/libmlx.a
 MLX_INC = -I $(MLX_DIR)
@@ -218,10 +224,10 @@ else
 endif
 
 # --- Combine all library settings ---
-LIB = $(LIBFT_LIB) $(LIBLA_LIB) $(MLX_LIB)
-LIB_INC = $(LIBFT_INC) $(LIBLA_INC) $(MLX_INC)
-LIB_LINK = $(LIBFT_LINK) $(LIBLA_LINK) $(MLX_LINK)
-LIB_DIR = $(LIBFT_DIR) $(LIBLA_DIR) $(MLX_DIR)
+LIB = $(LIBFT_LIB) $(LIBLA_LIB) $(LIBGC_LIB) $(MLX_LIB)
+LIB_INC = $(LIBFT_INC) $(LIBLA_INC) $(LIBGC_INC) $(MLX_INC)
+LIB_LINK = $(LIBFT_LINK) $(LIBLA_LINK) $(LIBGC_LINK) $(MLX_LINK)
+LIB_DIR = $(LIBFT_DIR) $(LIBLA_DIR) $(LIBGC_DIR) $(MLX_DIR)
 
 # =============================================================================
 # Section : Targets
@@ -243,6 +249,9 @@ $(LIBFT_LIB):
 $(LIBLA_LIB):
 	@echo "$(COLOR_GREEN)Compiling libla...$(COLOR_RESET)"
 	@make -C $(LIBLA_DIR)
+$(LIBGC_LIB):
+	@echo "$(COLOR_GREEN)Compiling libgc...$(COLOR_RESET)"
+	@make -C $(LIBGC_DIR)
 $(MLX_LIB):
 	@echo "$(COLOR_GREEN)Compiling MLX...$(COLOR_RESET)"
 	@make -C $(MLX_DIR)
