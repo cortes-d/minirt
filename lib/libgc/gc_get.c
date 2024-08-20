@@ -6,11 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:41:19 by dcortes           #+#    #+#             */
-<<<<<<< Updated upstream
 /*   Updated: 2024/08/20 11:30:16 by achappui         ###   ########.fr       */
-=======
-/*   Updated: 2024/08/19 16:51:33 by dcortes          ###   ########.fr       */
->>>>>>> Stashed changes
 /*                                                                            */
 /* ************************************************************************** */
 
