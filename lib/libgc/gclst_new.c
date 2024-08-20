@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gc_sweep.c                                         :+:      :+:    :+:   */
+/*   gclst_new.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 10:41:14 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 12:21:26 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/20 11:18:04 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/20 14:08:39 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gc.h"
 
-void	gc_sweep(void)
+t_gclst	*gclst_new(void *content, unsigned short dimension)
 {
-	gclst_clear(gc_get());
+	t_gclst	*new_node;
+
+	new_node = (t_gclst *)malloc(sizeof(t_gclst));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->next = NULL;
+	new_node->content = content;
+	new_node->dimension = dimension;
+	return (new_node);
 }

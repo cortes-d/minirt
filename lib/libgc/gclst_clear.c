@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gc_sweep.c                                         :+:      :+:    :+:   */
+/*   gclst_clear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 10:41:14 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 12:21:26 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/20 11:23:35 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/20 13:47:18 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gc.h"
 
-void	gc_sweep(void)
+void	gclst_clear(t_gclst **lst)
 {
-	gclst_clear(gc_get());
+	t_gclst	*node;
+	t_gclst	*next;
+
+	node = *lst;
+	while (node)
+	{
+		next = node->next;
+		gclst_free(node);
+		node = next;
+	}
+	*lst = NULL;
 }

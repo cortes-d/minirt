@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gc_sweep.c                                         :+:      :+:    :+:   */
+/*   gc_search_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 10:41:14 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 12:21:26 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/20 13:11:33 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/20 13:48:26 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gc.h"
 
-void	gc_sweep(void)
+t_gclst	**gc_search_node(t_gclst **lst, void *content)
 {
-	gclst_clear(gc_get());
+	t_gclst	*node;
+
+	if (*lst == NULL)
+		return (NULL);
+	if ((*lst)->content == content)
+		return (lst);
+	node = *lst;
+	while (node->next)
+	{
+		if (node->next->content == content)
+			return (&node->next);
+		node = node->next;
+	}
+	return (NULL);
 }

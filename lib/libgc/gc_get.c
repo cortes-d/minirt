@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   gc_get.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:41:19 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/19 16:02:16 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/20 11:30:16 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libgc.h"
+#include "gc.h"
 
-t_gc	**gc_get(void)
+t_gclst	**gc_get(void)
 {
-	static t_gc	*gc;
+	static t_gclst	*gc = NULL;
 
 	return (&gc);
 }

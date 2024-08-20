@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gc_sweep.c                                         :+:      :+:    :+:   */
+/*   gc_display.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 10:41:14 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 12:21:26 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/20 14:13:59 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/20 14:42:13 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gc.h"
 
-void	gc_sweep(void)
+void	gc_display(void)
 {
-	gclst_clear(gc_get());
+	t_gclst			*node;
+	unsigned int	i;
+
+	i = 0;
+	node = *gc_get();
+	while (node)
+	{
+		printf(" ________________________ \n");
+		printf("|Node: %-18u|\n", i);
+		printf("|Dimension: %-13hu|\n", node->dimension);
+		printf("|Content: %-15p|\n", node->content);
+		printf("|Next: %-18p|\n", node->next);
+		printf("|________________________|\n");
+		node = node->next;
+		i++;
+	}
 }

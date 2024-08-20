@@ -3,57 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   gc_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 10:41:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/19 16:14:00 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/20 13:20:51 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/20 13:48:19 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libgc.h"
-
-static void	gc_free_rec(void *ptr, size_t dimension)
-{
-	size_t	i;
-	void	**dptr;
-
-	if (dimension == 1)
-		free(ptr);
-	else
-	{
-		dptr = (void **)ptr;
-
-		i = 0;
-		while (dptr[i] != NULL)
-		{
-			gc_free_rec(dptr[i], dimension - 1);
-			i++;
-		}
-		free(dptr);
-	}
-}
+#include "gc.h"
 
 void	gc_free(void *ptr)
 {
-	t_gc		*gc;
-	t_gc_node	*current;
+	t_gclst	**found;
+	t_gclst	*to_free;
 
-	gc = *gc_get();
-	current = gc->ptr;
-	while (current)
-	{
-		if (current->content == ptr)
-		{
-			gc_free_rec(current->content, current->dimension);
-			if (current->prev)
-				current->prev->next = current->next;
-			else
-				gc->ptr = current->next;
-			if (current->next)
-				current->next->prev = current->prev;
-			free(current);
-			return ;
-		}
-		current = current->next;
-	}
+	if (ptr == NULL)
+		return ;
+	found = gc_search_node(gc_get(), ptr);
+	if (!found)
+		return ;
+	to_free = *found;
+	*found = (*found)->next;
+	gclst_free(to_free);
 }
