@@ -207,10 +207,12 @@ LIBLA_INC = -I $(LIBLA_DIR)
 LIBLA_LINK = -L$(LIBLA_DIR) -lla
 
 # --- mlx ---
-MLX_DIR = $(DIR_LIB)/minilibx_opengl
+#MLX_DIR = $(DIR_LIB)/minilibx_opengl
+MLX_DIR = $(DIR_LIB)/minilibx_linux
 MLX_LIB = $(MLX_DIR)/libmlx.a
 MLX_INC = -I $(MLX_DIR)
-MLX_LINK = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
+#MLX_LINK = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
+MLX_LINK = -Lmlx_linux -L/usr/lib -L$(MLX_DIR) -I$(MLX_DIR) -lXext -lX11 -lm -lz
 
 # --- Combine all library settings ---
 LIB = $(LIBFT_LIB) $(LIBLA_LIB) $(MLX_LIB)
