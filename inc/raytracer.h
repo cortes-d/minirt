@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 16:17:34 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/20 15:41:31 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # include "libft.h" // t_list
 # include "libla.h"
+# include "graphic.h" // t_image
 # include "scene.h"
 
 // =============================================================================
@@ -82,6 +83,7 @@ typedef struct s_intersection
 // --- Structure : Computation ---
 typedef struct s_computation
 {
+	t_object		object;
 	t_vec4			eyev;
 	t_vec4			normalv;
 	t_vec4			reflectv;
@@ -121,9 +123,15 @@ t_computation		prepare_computation(t_intersection intersection, \
 						t_ray ray, t_light_point lp);
 t_vec3				lighting(t_computation	c, \
 						t_light_point lp, t_light_ambient la, t_material m);
-// t_vec3				lighting(t_material material, t_light_point light, \
-// 						t_vec4 intersection_point, t_shading shading);
+/* t_vec3				lighting(t_material material, t_light_point light,
+						t_vec4 intersection_point, t_shading shading);*/
 t_vec4				normal_at(t_object object, t_vec4 world_point);
 t_vec4				reflect(t_vec4 in, t_vec4 normal);
+
+// --- Render ---
+t_ray				ray_for_pixel(t_camera camera, unsigned int px, unsigned int py);
+t_vec3				color_at(t_ray ray, t_scene scene);
+t_vec3				shade_hit(t_scene scene, t_computation comps);
+void				render(t_scene scene, t_image *image);
 
 #endif

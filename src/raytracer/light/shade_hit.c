@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gc_get.c                                           :+:      :+:    :+:   */
+/*   shade_hit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 10:41:19 by dcortes           #+#    #+#             */
-<<<<<<< Updated upstream
-/*   Updated: 2024/08/20 11:30:16 by achappui         ###   ########.fr       */
-=======
-/*   Updated: 2024/08/19 16:51:33 by dcortes          ###   ########.fr       */
->>>>>>> Stashed changes
+/*   Created: 2024/08/20 13:44:48 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/20 13:59:58 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gc.h"
+#include "raytracer.h"
 
-t_gclst	**gc_get(void)
+t_vec3	shade_hit(t_scene scene, t_computation comps)
 {
-	static t_gclst	*gc = NULL;
-
-	return (&gc);
+	return (lighting(\
+		comps, \
+		*scene.light_point, \
+		*scene.light_ambient, \
+		comps.object.material));
 }

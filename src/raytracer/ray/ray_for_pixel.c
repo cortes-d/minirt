@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_for_pixel.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:37:17 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:47:19 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/20 15:43:24 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

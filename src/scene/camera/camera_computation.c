@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   camera_computation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 16:25:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:42:50 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/20 15:27:59 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

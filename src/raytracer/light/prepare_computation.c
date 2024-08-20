@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:26:25 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:23:04 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/20 13:56:03 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_computation	prepare_computation(t_intersection intersection, \
 	t_vec4			hit_point;
 
 	hit_point = position(ray, intersection.t);
+	c.object = intersection.object;
 	c.eyev = vec4_inv(ray.v_direction);
 	c.lightv = vec4_normalize(vec4_sub(lp.p_origin, hit_point));
 	c.normalv = normal_at(intersection.object, hit_point);

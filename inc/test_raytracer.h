@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:05:00 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 15:57:39 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/20 15:43:36 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ int		test_raytracer_red_circle(void);
 t_ray	test_ray_for_pixel(unsigned int px, unsigned int py);
 int		test_raytracer_color_axe(void);
 int		test_raytracer_scene(void);
+int		test_raytracer_scene_camera(void);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:22:21 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:54:02 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:27:58 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(void)
 		##2## test_red_circle\n\
 		##3## test_color_axe\n\
 		##4## test_scene\n\
+		##5## test_scene_camera\n\
 		\n");
 	c = getchar();
 	if (c == '1')
@@ -30,6 +31,8 @@ int	main(void)
 	else if (c == '3')
 		test_raytracer_color_axe();
 	else if (c == '4')
-		test_raytracer_scene();		
+		test_raytracer_scene();
+	else if (c == '5')
+		test_raytracer_scene_camera();
 	return (0);
 }
