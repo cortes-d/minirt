@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer_scene_camera.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 11:00:33 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/21 14:30:00 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	test_raytracer_scene_camera(void)
 
 	// scene
     scene = scene_default();
-	scene.camera = malloc(sizeof(t_camera));
-	*scene.camera = camera_default();
 	render(scene, img);
 	mlx_put_image_to_window(mlx_ptr, mlx_win, img->img, 0, 0);
 	mlx_loop(mlx_ptr);
