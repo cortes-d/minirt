@@ -6,10 +6,11 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:20:48 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 15:45:26 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/21 08:57:52 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "raytracer.h"
 #include "graphic.h"
 

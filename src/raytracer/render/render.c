@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 11:52:40 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 15:48:50 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/21 10:55:45 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	render(t_scene scene, t_image *image)
 		x = 0;
 		while (x < scene.camera->hsize)
 		{
-			//printf("(%i, %i)\n", x, y);
 			r = ray_for_pixel(*scene.camera, x, y);
 			c = color_at(r, scene);
 			write_pixel(image, x, y, c);

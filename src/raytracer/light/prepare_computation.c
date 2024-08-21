@@ -6,10 +6,11 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:26:25 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/20 13:56:03 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/21 08:55:03 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "raytracer.h"
 
 t_computation	prepare_computation(t_intersection intersection, \
@@ -18,6 +19,7 @@ t_computation	prepare_computation(t_intersection intersection, \
 	t_computation	c;
 	t_vec4			hit_point;
 
+	//printf("prepare_computation\n");
 	hit_point = position(ray, intersection.t);
 	c.object = intersection.object;
 	c.eyev = vec4_inv(ray.v_direction);
