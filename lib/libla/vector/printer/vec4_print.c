@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vec4_print.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 15:22:08 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/06 17:16:49 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 09:34:03 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@ void	vec4_print(t_vec4 v)
 	int		i;
 
 	i = 0;
+	printf("(");
 	while (i < V4_SIZE)
 	{
-		printf("%6.4f\n", v.data[i]);
+		printf("%.2f", v.data[i]);
+		if (i != V4_SIZE - 1)
+			printf(", ");
 		i++;
 	}
+	printf(")");
+	printf("\n");
 }
