@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:55:18 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 15:41:01 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 15:52:40 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	test_minirt_beta(int argc, char **argv)
 	check_main_arguments(argv, argc);
 	scene = scene_empty();
 	parse_scene(argv[1], &scene);
+	test_print_scene(&scene);
 	mlx_data_init();
 	mlx = *mlx_data_get();
 	render(scene, &mlx->img);
