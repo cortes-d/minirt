@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cylinder_from_params.c                             :+:      :+:    :+:   */
+/*   cylinder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 12:44:30 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 14:38:28 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:25:28 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ t_vec4 v_axis, float diameter, float height)
 	theta_y = atan2(v_axis.data[X], v_axis.data[Z]);
 	theta_z = atan2(v_axis.data[Y], v_axis.data[X]);
 	c = cylinder_default();
-	add_transform(&c, mat4_translation(\
-		p_origin.data[X], \
-		p_origin.data[Y], \
-		p_origin.data[Z]));
+	add_transform(&c, \
+	mat4_translation(p_origin.data[X], p_origin.data[Y], p_origin.data[Z]));
 	add_transform(&c, mat4_scaling(diameter / 2, height, diameter / 2));
 	add_transform(&c, mat4_rotation_x(theta_x));
 	add_transform(&c, mat4_rotation_y(theta_y));
 	add_transform(&c, mat4_rotation_z(theta_z));
-	add_transform(&c, mat4_translation(\
-		p_origin.data[X], \
-		p_origin.data[Y], \
-		p_origin.data[Z]));
+	add_transform(&c, \
+	mat4_translation(p_origin.data[X], p_origin.data[Y], p_origin.data[Z]));
+	c.u_object.cylinder.p_origin = p_origin;
+	c.u_object.cylinder.v_axis = v_axis;
+	c.u_object.cylinder.diameter = diameter;
+	c.u_object.cylinder.height = height;
 	return (c);
 }

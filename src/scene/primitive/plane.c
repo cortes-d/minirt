@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:03:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 14:38:15 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:24:27 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ t_object	plane(t_vec4 p_point, t_vec4 v_normal)
 	add_transform(&p, mat4_rotation_x(theta_x));
 	add_transform(&p, mat4_rotation_y(theta_y));
 	add_transform(&p, mat4_rotation_z(theta_z));
-	add_transform(&p, mat4_translation(\
-		p_point.data[X], \
-		p_point.data[Y], \
-		p_point.data[Z]));
+	add_transform(&p, \
+	mat4_translation(p_point.data[X], p_point.data[Y], p_point.data[Z]));
+	p.u_object.plane.p_point = p_point;
+	p.u_object.plane.v_normal = v_normal;
 	return (p);
 }
