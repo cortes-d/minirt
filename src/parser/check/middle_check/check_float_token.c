@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   check_float_token.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:35:45 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 09:23:44 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:58:29 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	check_float_token(const char *str)
+void	check_float_token(const char *str)
 {
-	if (check_float(&str) == ERROR)
-		return (ERROR);
+	check_float(&str);
 	if (*str != '\0')
-		return (ERROR);
-	return (0);
+		exit_error("ERROR: check_float_token()\n");
 }

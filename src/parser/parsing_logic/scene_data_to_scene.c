@@ -1,16 +1,17 @@
 
 #include "parser.h"
 
-int	scene_data_to_scene(t_scene_data *scene_data, t_scene *scene)
+void	scene_data_to_scene(t_scene_data *scene_data, t_scene *scene)
 {
 	unsigned int	size;
 	unsigned int	i;
 	t_list			*current;
 
 	size = ft_lstsize(scene_data->objects);
-	scene->objects = (t_object **)malloc((size + 1) * sizeof(t_object *));
+	scene->objects = gc_add(\
+	(t_object **)malloc((size + 1) * sizeof(t_object *)), 2);
 	if (scene->objects == NULL)
-		return (ERROR);
+		exit_error("ERROR: scene_data_to_scene()\n");
 	scene->objects[size] = NULL;
 	current = scene_data->objects;
 	i = 0;
@@ -27,5 +28,4 @@ int	scene_data_to_scene(t_scene_data *scene_data, t_scene *scene)
 	scene_data->ambient_lights->content = NULL;
 	scene->light_point = scene_data->lights->content;
 	scene_data->lights->content = NULL;
-	return (0);
 }

@@ -3,37 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_loop.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 10:09:36 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/13 14:07:05 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:34:08 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	parsing_loop(t_scene_data *scene_data, int fd)
+void	parsing_loop(t_scene_data *scene_data, int fd)
 {
 	char	*line;
 
-	line = get_next_line(fd);
-	if (errno != 0)
-		return (ERROR);
+	line = gc_add(get_next_line(fd), 1);
+	if (line == (void *)-1)
+		exit_error("ERROR: parsing_loop()\n");
 	else if (line == NULL)
-		return (0);
+		return ;
 	while (line)
 	{
-		if (parse_line(scene_data, line) == ERROR)
-		{
-			free(line);
-			return (ERROR);
-		}
-		free(line);
-		line = get_next_line(fd);
-		if (errno != 0)
-			return (ERROR);
+		parse_line(scene_data, line);
+		gc_free(line);
+		line = gc_add(get_next_line(fd), 1);
+		if (line == (void *)-1)
+			exit_error("ERROR: parsing_loop()\n");
 		else if (line == NULL)
-			return (0);
+			return ;
 	}
-	return (0);
 }

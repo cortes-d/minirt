@@ -6,31 +6,27 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 07:35:19 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:50:48 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:31:06 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	create_sphere(char **tokens, t_list **objects)
+void	create_sphere(char **tokens, t_list **objects)
 {
 	t_object	*new_sphere;
 	t_list		*new_node;
 
-	new_sphere = (t_object *)malloc(sizeof(t_object));
+	new_sphere = gc_add((t_object *)malloc(sizeof(t_object)), 1);
 	if (new_sphere == NULL)
-		return (ERROR);
-	new_node = ft_lstnew(new_sphere);
+		exit_error("ERROR: create_sphere()\n");
+	new_node = gc_add(ft_lstnew(new_sphere), 1);
 	if (new_node == NULL)
-	{
-		free(new_sphere);
-		return (ERROR);
-	}
+		exit_error("ERROR: create_sphere()\n");
 	*new_sphere = \
 	sphere(\
 	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \
 	extract_float(tokens[2]));
 	set_object_color(new_sphere, extract_color(tokens[3]));
 	ft_lstadd_back(objects, new_node);
-	return (0);
 }

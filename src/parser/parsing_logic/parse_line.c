@@ -6,26 +6,24 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:06:06 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:53:11 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:06:37 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	parse_line(t_scene_data *scene_data, const char *line)
+void	parse_line(t_scene_data *scene_data, const char *line)
 {
 	char	**tokens;
 
-	tokens = ft_split(line, " \n");
+	tokens = gc_add(ft_split(line, " \n"), 2);
 	if (tokens == NULL)
-		return (ERROR);
+		exit_error("ERROR: parse_line()\n");
 	else if (*tokens == NULL)
 	{
-		ft_free_array2d((void **)tokens);
-		return (0);
+		gc_free(tokens);
+		return ;
 	}
-	if (type_interpreter(tokens, scene_data) == ERROR)
-		return (ERROR);
-	ft_free_array2d((void **)tokens);
-	return (0);
+	type_interpreter(tokens, scene_data);
+	gc_free(tokens);
 }

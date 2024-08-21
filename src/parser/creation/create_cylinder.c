@@ -6,26 +6,23 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:40:12 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 16:50:39 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:06:14 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	create_cylinder(char **tokens, t_list **objects)
+void	create_cylinder(char **tokens, t_list **objects)
 {
 	t_object	*new_cylinder;
 	t_list		*new_node;
 
-	new_cylinder = (t_object *)malloc(sizeof(t_object));
+	new_cylinder = gc_add((t_object *)malloc(sizeof(t_object)), 1);
 	if (new_cylinder == NULL)
-		return (ERROR);
-	new_node = ft_lstnew(new_cylinder);
+		exit_error("ERROR: create_cylinder()\n");
+	new_node = gc_add(ft_lstnew(new_cylinder), 1);
 	if (new_node == NULL)
-	{
-		free(new_cylinder);
-		return (ERROR);
-	}
+		exit_error("ERROR: create_cylinder()\n");
 	*new_cylinder = \
 	cylinder(\
 	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \
@@ -34,5 +31,4 @@ int	create_cylinder(char **tokens, t_list **objects)
 	extract_float(tokens[4]));
 	set_object_color(new_cylinder, extract_color(tokens[5]));
 	ft_lstadd_back(objects, new_node);
-	return (0);
 }

@@ -3,40 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   check_float.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:36:28 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 09:20:50 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:43:37 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	check_float(const char **str)
+void	check_float(const char **str)
 {
 	unsigned int	digit_number;
 
 	if (!((**str >= '0' && **str <= '9') || **str == '+' || **str == '-'))
-		return (ERROR);
-	(*str)++;
+		exit_error("ERROR: check_float()\n");
+	if (**str == '+' || **str == '-')
+		(*str)++;
 	if (!((**str >= '0' && **str <= '9') || **str == '.'))
-		return (ERROR);
+		exit_error("ERROR: check_float()\n");
 	while (**str == '0' && *(*str + 1) == '0')
 		(*str)++;
 	digit_number = 0;
 	while (**str >= '0' && **str <= '9')
 	{
 		if (++digit_number > MAX_FLOAT_DIGIT)
-			return (ERROR);
+			exit_error("ERROR: check_float()\n");
 		(*str)++;
 	}
 	if (**str != '.')
-		return (0);
+		return ;
+	(*str)++;
 	while (**str >= '0' && **str <= '9')
 	{
 		if (++digit_number > MAX_FLOAT_DIGIT)
-			return (ERROR);
+			exit_error("ERROR: check_float()\n");
 		(*str)++;
 	}
-	return (0);
 }

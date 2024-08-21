@@ -3,30 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   check_vec3_token.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:11:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 09:23:48 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:05:30 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	check_vec3_token(const char *str)
+void	check_vec3_token(const char *str)
 {
-	if (check_float(&str) == ERROR)
-		return (ERROR);
+	check_float(&str);
 	if (*str != ',')
-		return (ERROR);
+		exit_error("ERROR: check_vec3_token()\n");
 	str++;
-	if (check_float(&str) == ERROR)
-		return (ERROR);
+	check_float(&str);
 	if (*str != ',')
-		return (ERROR);
+		exit_error("ERROR: check_vec3_token()\n");
 	str++;
-	if (check_float(&str) == ERROR)
-		return (ERROR);
+	check_float(&str);
 	if (*str != '\0')
-		return (ERROR);
-	return (0);
+		exit_error("ERROR: check_vec3_token()\n");
 }

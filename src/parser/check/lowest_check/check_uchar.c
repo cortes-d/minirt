@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_uchar_check.c                                  :+:      :+:    :+:   */
+/*   check_uchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 13:39:54 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/12 13:58:47 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:55:36 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	check_uchar(const char **str)
+void	check_uchar(const char **str)
 {
 	unsigned int	size_test;
 
 	if (!((**str >= '0' && **str <= '9') || **str == '+'))
-		return (ERROR);
-	(*str)++;
+		exit_error("ERROR: check_uchar()\n");
+	if (**str == '+')
+		(*str)++;
 	if (!(**str >= '0' && **str <= '9'))
-		return (ERROR);
+		exit_error("ERROR: check_uchar()\n");
 	while (**str == '0' && *(*str + 1) == '0')
 		(*str)++;
 	size_test = 0;
@@ -29,8 +30,7 @@ int	check_uchar(const char **str)
 		size_test *= 10;
 		size_test += **str - 48;
 		if (size_test > 255)
-			return (ERROR);
+			exit_error("ERROR: check_uchar()\n");
 		(*str)++;
 	}
-	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 10:09:36 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:53:27 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:27:06 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-int	parse_scene(char *file_name, t_scene *scene)
+void	parse_scene(char *file_name, t_scene *scene)
 {
 	t_scene_data	scene_data;
 	int				fd;
@@ -20,17 +20,10 @@ int	parse_scene(char *file_name, t_scene *scene)
 	scene_data = scene_data_empty();
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
-		return (ERROR);
-	if (parsing_loop(&scene_data, fd) == ERROR)
-	{
-		if (close(fd) == -1)
-			return (ERROR);
-		return (ERROR);
-	}
+		exit_error("ERROR: parse_scene()\n");
+	parsing_loop(&scene_data, fd);
 	if (close(fd) == -1)
-		return (ERROR);
-	if (scene_data_to_scene(&scene_data, scene) == ERROR)
-		return (ERROR);
+		exit_error("ERROR: parse_scene()\n");
+	scene_data_to_scene(&scene_data, scene);
 	scene_data_free(&scene_data);
-	return (0);
 }

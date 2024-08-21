@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:56:58 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:51:04 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:52:47 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ const char	*elem_at_index_n(const char *str, unsigned int n)
 		i++;
 	}
 	if (comma_count > 0)
-		return (str + i + 1);
+		return (str + i);
 	return (str);
 }
