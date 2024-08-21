@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_mlx_data.c                                     :+:      :+:    :+:   */
+/*   mlx_data_get.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 16:31:23 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/20 16:50:18 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 09:28:34 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory_data.h"
+#include "memory.h"
 
-t_mlx_data	**get_mlx_data(void)
+t_mlx_data	**mlx_data_get(void)
 {
 	static t_mlx_data	*mlx_data = NULL;
 

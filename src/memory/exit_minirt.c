@@ -6,15 +6,15 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:45:23 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/20 16:48:00 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 11:09:00 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory_data.h"
+#include "memory.h"
 
 void	exit_minirt(void)
 {
 	gc_sweep();
-	free_mlx();
+	mlx_data_free();
 	exit(0);
 }
