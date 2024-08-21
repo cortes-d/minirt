@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:26:25 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 13:02:01 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/21 13:54:06 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_computation	prepare_computation(t_intersection intersection, \
 	t_computation	c;
 
 	c.point = position(ray, intersection.t);
-	c.point_over = vec4_mul(vec4_add(c.point, c.normalv), EPSILON);
 	c.object = intersection.object;
 	c.eyev = vec4_inv(ray.v_direction);
 	c.lightv = vec4_normalize(vec4_sub(lp.p_origin, c.point));
@@ -27,5 +26,6 @@ t_computation	prepare_computation(t_intersection intersection, \
 	c.reflectv = reflect(vec4_inv(c.lightv), c.normalv);
 	c.lightv_dot_normalv = vec4_dot_product(c.lightv, c.normalv);
 	c.reflectv_dot_eyev = vec4_dot_product(c.reflectv, c.eyev);
+	c.point_over = vec4_add(c.point, vec4_mul(c.normalv, EPSILON));
 	return (c);
 }
