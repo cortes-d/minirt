@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer_scene.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 12:54:11 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:10:43 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	test_raytracer_scene(void)
 				c = prepare_computation(*hitting, r, *scene.light_point);
 				//c.normalv = normal_at(hitting->object, pt);
 				//c.eyev = vec4_inv(r.v_direction);
-				color = lighting(c, *scene.light_point, light_ambient(1, color_rgb_f(1, 1, 1)), hitting->object.material);
+				color = lighting(c, *scene.light_point, light_ambient(1, color_rgb_f(1, 1, 1)), hitting->object.material, 0);
 				write_pixel(&img, x, y, color);
 				//printf("Hit at (%u, %u): color = (%f, %f, %f)\n", x, y, color.data[R], color.data[G], color.data[B]);
 			}

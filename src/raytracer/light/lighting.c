@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:20:37 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 13:50:13 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/21 11:51:42 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 #include "raytracer.h"
 #include "util.h"
 
-t_vec3	lighting(t_computation c, t_light_point lp, t_light_ambient la, t_material m)
+t_vec3	lighting(t_computation c, t_light_point lp, t_light_ambient la, t_material m, int in_shadow)
 {
 	t_vec3	ambient;
 	t_vec3	diffuse;
 	t_vec3	specular;
 	t_vec3	color;
 
+	if (in_shadow)
+		return (color_rgb_f(0.1, 0.1, 0.1));
 	ambient = vec3_mul(vec3_hadamard_product(m.color, \
 	vec3_mul(la.color, la.ratio)), m.ambient);
 	if (c.lightv_dot_normalv < 0)

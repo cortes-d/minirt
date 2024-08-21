@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 11:28:26 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 11:36:06 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/21 13:14:39 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_shadowed(t_scene scene, t_vec4 point, t_list **intersections)
 	direction = vec4_normalize(v);
 	r = ray(point, direction);
 	intersect_scene(r, scene, intersections);
-	h = hit(intersections);
+	h = hit(*intersections);
 	if (h && h->t < distance)
 		return (1);
 	return (0);

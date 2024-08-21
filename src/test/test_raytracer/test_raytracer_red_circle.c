@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer_red_circle.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 14:20:57 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 12:54:32 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:11:30 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

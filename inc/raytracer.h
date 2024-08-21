@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 12:55:15 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:04:57 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ typedef struct s_intersection
 typedef struct s_computation
 {
 	t_object		object;
+	t_vec4			point;
+	t_vec4			point_over;
 	t_vec4			eyev;
 	t_vec4			normalv;
 	t_vec4			reflectv;
@@ -122,17 +124,17 @@ t_intersection		*hit(t_list *intersections);
 // --- Light ---
 t_computation		prepare_computation(t_intersection intersection, \
 						t_ray ray, t_light_point lp);
-t_vec3				lighting(t_computation	c, \
-						t_light_point lp, t_light_ambient la, t_material m);
-/* t_vec3				lighting(t_material material, t_light_point light,
-						t_vec4 intersection_point, t_shading shading);*/
+t_vec3				lighting(t_computation c, t_light_point lp, \
+						t_light_ambient la, t_material m, int in_shadow);
 t_vec4				normal_at(t_object object, t_vec4 world_point);
 t_vec4				reflect(t_vec4 in, t_vec4 normal);
+int					is_shadowed(t_scene scene, t_vec4 point, \
+						t_list **intersections);
 
 // --- Render ---
 t_ray				ray_for_pixel(t_camera camera, unsigned int px, unsigned int py);
 t_vec3				color_at(t_ray ray, t_scene scene);
-t_vec3				shade_hit(t_scene scene, t_computation comps);
+t_vec3				shade_hit(t_scene scene, t_computation comps, t_list **intersections);
 void				render(t_scene scene, t_image *image);
 
 #endif

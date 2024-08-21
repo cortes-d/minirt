@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer_phong.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 12:54:42 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:11:26 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	test_raytracer_phong(void)
 			hitting = hit(intersections_list);
 			if (hitting)
 			{
-				color = lighting(prepare_computation(*hitting, r, my_light_point), my_light_point, my_light_ambient, hitting->object.material);
+				color = lighting(prepare_computation(*hitting, r, my_light_point), my_light_point, my_light_ambient, hitting->object.material, 0);
 				write_pixel(&img, x, y, color);
 				//printf("Hit at (%u, %u): color = (%f, %f, %f)\n", x, y, color.data[R], color.data[G], color.data[B]);
 			}

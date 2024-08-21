@@ -59,6 +59,7 @@ SRC_RAYTRACER =					intersection/intersect.c \
 								light/reflect.c \
 								light/color_at.c \
 								light/shade_hit.c \
+								light/is_shadowed.c \
 								ray/ray.c \
 								ray/ray_for_pixel.c \
 								ray/position.c \

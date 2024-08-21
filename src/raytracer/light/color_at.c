@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color_at.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:20:48 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 12:53:35 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:11:14 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_vec3	color_at(t_ray ray, t_scene scene)
 	if (!hitting)
 		return (vec3(0, 0, 0));
 	comps = prepare_computation(*hitting, ray, *scene.light_point);
-	color = shade_hit(scene, comps);
+	color = shade_hit(scene, comps, &intersections);
 	ft_lstclear_plus(&intersections, &gc_free, &gc_free);
 	return (color);
 }

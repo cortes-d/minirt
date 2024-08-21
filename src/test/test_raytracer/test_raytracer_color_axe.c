@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer_color_axe.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 12:53:57 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:11:23 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
