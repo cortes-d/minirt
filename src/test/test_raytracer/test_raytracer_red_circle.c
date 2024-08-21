@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 14:20:57 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 15:34:27 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:54:32 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	test_raytracer_red_circle(void)
 				write_pixel(&img, x, y, hitting->object.material.color);
 			else
 				write_pixel(&img, x, y, vec3(0, 0, 0));
-			ft_lstclear(&intersections_list, &free);
+			ft_lstclear_plus(&intersections_list, &gc_free, &gc_free);
 			intersections_list = NULL;
 			x++;
 		}

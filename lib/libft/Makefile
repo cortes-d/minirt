@@ -12,7 +12,7 @@ SRC_LIBFT	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 				ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 				ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 				ft_strequiv.c ft_strtof.c ft_array2d_size.c \
-				ft_free_array2d.c ft_deg_to_rad.c
+				ft_free_array2d.c ft_deg_to_rad.c ft_lstclear_plus.c
 
 SRC_PRINTF	= 	ft_printf/ft_printf.c ft_printf/ft_options.c \
 				ft_printf/ft_print_integers.c ft_printf/ft_print_letters.c

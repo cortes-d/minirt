@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:18:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 15:23:40 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:54:42 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	test_raytracer_phong(void)
 				write_pixel(&img, x, y, vec3(0, 0, 0));
 				//printf("No hit at (%u, %u)\n", x, y);
 			}
-			ft_lstclear(&intersections_list, &free);
+			ft_lstclear_plus(&intersections_list, &gc_free, &gc_free);
 			intersections_list = NULL;
 			x++;
 		}

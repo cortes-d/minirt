@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene_data_free.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear_plus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 12:53:02 by achappui         ###   ########.fr       */
+/*   Created: 2023/11/01 10:27:03 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/21 12:52:04 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "libft.h"
 
-void	scene_data_free(t_scene_data *scene_data)
+void	ft_lstclear_plus(t_list **lst, void (*del_content)(void *), \
+										void (*del_node)(void *))
 {
-	ft_lstclear_plus(&scene_data->objects, &gc_free, &gc_free);
-	ft_lstclear_plus(&scene_data->lights, &gc_free, &gc_free);
-	ft_lstclear_plus(&scene_data->ambient_lights, &gc_free, &gc_free);
-	ft_lstclear_plus(&scene_data->cameras, &gc_free, &gc_free);
+	t_list	*next;
+
+	while (*lst != NULL)
+	{
+		next = (*lst)->next;
+		del_content((*lst)->content);
+		del_node(*lst);
+		*lst = next;
+	}
+	*lst = NULL;
 }

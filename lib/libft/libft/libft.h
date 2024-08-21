@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:56:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:41:00 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:52:23 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+void	ft_lstclear_plus(t_list **lst, void (*del_content)(void *), \
+										void (*del_node)(void *));
 float	ft_deg_to_rad(float deg);
 void	ft_free_array2d(void **array_2d);
 int		ft_array2d_size(const void **array2d);

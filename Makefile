@@ -22,6 +22,7 @@ DIR_GRAPHIC = $(DIR_SRC)/graphic
 DIR_PARSER = $(DIR_SRC)/parser
 DIR_RAYTRACER = $(DIR_SRC)/raytracer
 DIR_SCENE = $(DIR_SRC)/scene
+DIR_MEMORY = $(DIR_SRC)/memory
 DIR_UTIL = $(DIR_SRC)/util
 DIR_TEST_RAYTRACER = $(DIR_SRC)/test/test_raytracer
 DIR_TEST_LIBLA = $(DIR_SRC)/test/test_libla
@@ -115,6 +116,12 @@ SRC_PARSER =					check/highest_check/check_light_ambient_tokens.c \
 								parsing_logic/scene_data_to_scene.c \
 								parsing_logic/type_interpreter.c
 
+SRC_MEMORY =					exit_error.c \
+								exit_minirt.c \
+								mlx_data_free.c \
+								mlx_data_get.c \
+								mlx_data_init.c
+
 SRC_UTIL = 						clamp.c \
 								swap.c
 
@@ -164,6 +171,7 @@ SRC_GRAPHIC := $(addprefix $(DIR_GRAPHIC)/, $(SRC_GRAPHIC))
 SRC_RAYTRACER := $(addprefix $(DIR_RAYTRACER)/, $(SRC_RAYTRACER))
 SRC_SCENE := $(addprefix $(DIR_SCENE)/, $(SRC_SCENE))
 SRC_PARSER := $(addprefix $(DIR_PARSER)/, $(SRC_PARSER))
+SRC_MEMORY := $(addprefix $(DIR_MEMORY)/, $(SRC_MEMORY))
 SRC_UTIL := $(addprefix $(DIR_UTIL)/, $(SRC_UTIL))
 SRC_TEST_RAYTRACER := $(addprefix $(DIR_TEST_RAYTRACER)/, $(SRC_TEST_RAYTRACER))
 SRC_TEST_LIBLA := $(addprefix $(DIR_TEST_LIBLA)/, $(SRC_TEST_LIBLA))
@@ -178,6 +186,7 @@ SRC = 							$(SRC_MAIN) \
 								$(SRC_RAYTRACER) \
 								$(SRC_SCENE) \
 								$(SRC_PARSER) \
+								$(SRC_MEMORY) \
 								$(SRC_UTIL)
 
 SRC_TEST_ALL = 					$(SRC) \
