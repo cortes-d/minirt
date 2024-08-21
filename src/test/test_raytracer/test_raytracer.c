@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   test_raytracer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:22:21 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/20 11:27:58 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/21 15:20:37 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_raytracer.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	char	c;
 
@@ -22,6 +22,7 @@ int	main(void)
 		##3## test_color_axe\n\
 		##4## test_scene\n\
 		##5## test_scene_camera\n\
+		##6## test_minirt_beta\n\
 		\n");
 	c = getchar();
 	if (c == '1')
@@ -34,5 +35,7 @@ int	main(void)
 		test_raytracer_scene();
 	else if (c == '5')
 		test_raytracer_scene_camera();
+	else if (c == '6')
+		test_minirt_beta(argc, argv);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 08:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 11:10:21 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 15:38:20 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ typedef struct s_mlx_data
 {
 	void	*ptr;
 	void	*win;
-	t_image	*img;
+	t_image	img;
 }	t_mlx_data;
-
 
 // =============================================================================
 // Section : Functions

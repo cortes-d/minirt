@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:05:00 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 12:55:29 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/21 15:20:04 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ t_ray	test_ray_for_pixel(unsigned int px, unsigned int py);
 int		test_raytracer_color_axe(void);
 int		test_raytracer_scene(void);
 int		test_raytracer_scene_camera(void);
+int		test_minirt_beta(int argc, char **argv);
 
 #endif
