@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cylinder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 12:44:30 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 12:25:28 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 09:32:02 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ t_vec4 v_axis, float diameter, float height)
 	c.u_object.cylinder.v_axis = v_axis;
 	c.u_object.cylinder.diameter = diameter;
 	c.u_object.cylinder.height = height;
+    c.u_object.cylinder.minimum = -height / 2;
+    c.u_object.cylinder.maximum = height / 2;
 	return (c);
 }
