@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 14:11:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/22 14:11:51 by dcortes          ###   ########.ch       */
+/*   Created: 2024/08/12 13:03:06 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/22 13:56:53 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ t_object	plane(t_vec4 p_point, t_vec4 v_normal)
 {
     t_object	object;
     float		theta_x;
-    float		theta_z;
+    float		theta_y;
     t_mat4		rotation_x;
-    t_mat4		rotation_z;
+    t_mat4		rotation_y;
     t_mat4		rotation;
 
     object = plane_default();
@@ -95,18 +95,18 @@ t_object	plane(t_vec4 p_point, t_vec4 v_normal)
     object.u_object.plane.v_normal = v_normal;
 
     // Calculate the rotation angles
-    theta_z = atan2f(v_normal.data[X], v_normal.data[Y]);
+    theta_y = atan2f(v_normal.data[X], v_normal.data[Y]);
     theta_x = -asinf(v_normal.data[Z]);
 
     // Create rotation matrices
-    rotation_z = mat4_rotation_z(theta_z);
+    rotation_y = mat4_rotation_y(theta_y);
     rotation_x = mat4_rotation_x(theta_x);
 
-    // Combine the rotations: rotation = rotation_z * rotation_x
-    rotation = mat4_mat4_mul(rotation_z, rotation_x);
+    // Combine the rotations: rotation = rotation_y * rotation_x
+    rotation = mat4_mat4_mul(rotation_y, rotation_x);
 
     // Apply the combined rotation and translation to the object's transform
-    object.transform = mat4_mat4_mul(rotation, mat4_translation(p_point.data[X], p_point.data[Y], p_point.data[Z]));
+    object.transform = mat4_mat4_mul(rotation, mat4_translation(p_point.data[X], p_point.data[Z], p_point.data[Y]));
 
     // Calculate the inverse of the transform matrix
     object.transform_inverse = mat4_inv(object.transform);
