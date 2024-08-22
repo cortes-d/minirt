@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 12:44:30 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/22 13:55:16 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/22 14:51:33 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,20 @@ t_vec4 v_axis, float diameter, float height)
     theta_y = atan2(v_axis.data[Y], v_axis.data[Z]);
     theta_z = atan2(v_axis.data[X], v_axis.data[Y]);
     c = cylinder_default();
+    
+    // Switch x and y for the translation
     add_transform(&c, \
-    mat4_translation(p_origin.data[Y], p_origin.data[X], p_origin.data[Z]));
+    mat4_translation(p_origin.data[X], p_origin.data[Y], p_origin.data[Z]));
+    
     add_transform(&c, mat4_scaling(diameter / 2, height, diameter / 2));
     add_transform(&c, mat4_rotation_x(theta_x));
     add_transform(&c, mat4_rotation_y(theta_y));
     add_transform(&c, mat4_rotation_z(theta_z));
+    
+    // Switch x and y for the translation
     add_transform(&c, \
-    mat4_translation(p_origin.data[Y], p_origin.data[X], p_origin.data[Z]));
+    mat4_translation(p_origin.data[X], p_origin.data[Y], p_origin.data[Z]));
+    
     c.transform_inverse = mat4_inv(c.transform);
     c.u_object.cylinder.p_origin = p_origin;
     c.u_object.cylinder.v_axis = v_axis;
