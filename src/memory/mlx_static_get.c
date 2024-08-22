@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_data_free.c                                    :+:      :+:    :+:   */
+/*   mlx_static_get.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 15:01:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 15:39:51 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/20 16:31:23 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/22 16:46:42 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "memory.h"
 
-void	mlx_data_free(void)
+t_mlx_static	**mlx_static_get(void)
 {
-	t_mlx_data	**mlx_data;
+	static t_mlx_static	*mlx_static = NULL;
 
-	mlx_data = mlx_data_get();
-	if (*mlx_data)
-	{
-		if ((*mlx_data)->img.img)
-			mlx_destroy_image((*mlx_data)->ptr, (*mlx_data)->img.img);
-		if ((*mlx_data)->win)
-			mlx_destroy_window((*mlx_data)->ptr, (*mlx_data)->win);
-		if ((*mlx_data)->ptr)
-			free((*mlx_data)->ptr); //il n'y a pas de fonction destroy pour ca je ne comprend pas
-	}
+	return (&mlx_static);
 }

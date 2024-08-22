@@ -1,60 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory.h                                           :+:      :+:    :+:   */
+/*   hook.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 08:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/22 17:01:09 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 17:05:45 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#ifndef HOOK_H
+# define HOOK_H
 
 // =============================================================================
 // Section : Includes
 // =============================================================================
 
-# include "libgc.h"
-# include "graphic.h"
-# include "libgc.h"
 # include "mlx.h"
-# include <stdlib.h>
-# include "scene.h"
-# include "minirt.h"
-# include "parser.h"
+# include "memory.h"
+# include "raytracer.h"
 
 // =============================================================================
 // Section : Type Definitions
 // =============================================================================
 
-typedef struct s_scene_static
-{
-	t_scene	scene;
-	char	*path;
-	int		fd;
-}	t_scene_static;
-
-typedef struct s_mlx_static
-{
-	void	*mlx_ptr;
-	void	*mlx_win;
-	t_image	*mlx_img;
-}	t_mlx_static;
+# define KEY_ESC	53
+# define KEY_R		15
 
 // =============================================================================
 // Section : Functions
 // =============================================================================
 
-void			exit_error(char *msg);
-void			exit_minirt(void);
-void			mlx_static_free(void);
-t_mlx_static	**mlx_static_get(void);
-void			mlx_static_init(void);
-void			scene_static_free(void);
-t_scene_static	**scene_static_get(void);
-void			scene_static_init(char *path);
+int	hook_cross_pressed(void *args);
+int	hook_key_released(int key, void *args);
+int	reload_scene(void);
+
 
 #endif

@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_error.c                                       :+:      :+:    :+:   */
+/*   hook_key_released.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 14:58:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/22 16:54:25 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/22 15:01:59 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/22 17:06:17 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
-
-void	exit_error(char *msg)
+#include "hook.h"
+#include "stdio.h"
+int	hook_key_released(int key, void *args)
 {
-	gc_sweep();
-	mlx_static_free();
-	scene_static_free();
-	printf("%s\n", msg);
-	exit(1);
+	(void)args;
+	if (key == KEY_ESC)
+	{
+		exit_minirt();
+		return (0);
+	}
+	else if (key == KEY_R)
+	{
+		reload_scene();
+		return (0);
+	}
+	return (0);
 }

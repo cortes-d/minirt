@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_data_get.c                                     :+:      :+:    :+:   */
+/*   hook_cross_pressed.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 16:31:23 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 09:28:34 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/21 16:20:56 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/22 17:04:29 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
+#include "hook.h"
 
-t_mlx_data	**mlx_data_get(void)
+int	hook_cross_pressed(void *args)
 {
-	static t_mlx_data	*mlx_data = NULL;
-
-	return (&mlx_data);
+	(void)args;
+	exit_minirt();
+	return (0);
 }

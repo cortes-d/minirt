@@ -23,6 +23,7 @@ DIR_PARSER = $(DIR_SRC)/parser
 DIR_RAYTRACER = $(DIR_SRC)/raytracer
 DIR_SCENE = $(DIR_SRC)/scene
 DIR_MEMORY = $(DIR_SRC)/memory
+DIR_HOOK = $(DIR_SRC)/hook
 DIR_UTIL = $(DIR_SRC)/util
 DIR_TEST_RAYTRACER = $(DIR_SRC)/test/test_raytracer
 DIR_TEST_LIBLA = $(DIR_SRC)/test/test_libla
@@ -68,7 +69,6 @@ SRC_RAYTRACER =					intersection/intersect.c \
 
 SRC_SCENE =						scene_empty.c \
 								scene_default.c \
-								scene_free.c \
 								camera/camera.c \
 								camera/camera_default.c \
 								camera/camera_computation.c \
@@ -119,9 +119,16 @@ SRC_PARSER =					check/highest_check/check_light_ambient_tokens.c \
 
 SRC_MEMORY =					exit_error.c \
 								exit_minirt.c \
-								mlx_data_free.c \
-								mlx_data_get.c \
-								mlx_data_init.c
+								mlx_static_get.c \
+								mlx_static_free.c \
+								mlx_static_init.c \
+								scene_static_get.c \
+								scene_static_free.c \
+								scene_static_init.c
+
+SRC_HOOK =						hook_cross_pressed.c \
+								hook_key_released.c \
+								reload_scene.c
 
 SRC_UTIL = 						clamp.c \
 								swap.c
@@ -175,6 +182,7 @@ SRC_RAYTRACER := $(addprefix $(DIR_RAYTRACER)/, $(SRC_RAYTRACER))
 SRC_SCENE := $(addprefix $(DIR_SCENE)/, $(SRC_SCENE))
 SRC_PARSER := $(addprefix $(DIR_PARSER)/, $(SRC_PARSER))
 SRC_MEMORY := $(addprefix $(DIR_MEMORY)/, $(SRC_MEMORY))
+SRC_HOOK := $(addprefix $(DIR_HOOK)/, $(SRC_HOOK))
 SRC_UTIL := $(addprefix $(DIR_UTIL)/, $(SRC_UTIL))
 SRC_TEST_RAYTRACER := $(addprefix $(DIR_TEST_RAYTRACER)/, $(SRC_TEST_RAYTRACER))
 SRC_TEST_LIBLA := $(addprefix $(DIR_TEST_LIBLA)/, $(SRC_TEST_LIBLA))
@@ -190,6 +198,7 @@ SRC = 							$(SRC_MAIN) \
 								$(SRC_SCENE) \
 								$(SRC_PARSER) \
 								$(SRC_MEMORY) \
+								$(SRC_HOOK) \
 								$(SRC_UTIL)
 
 SRC_TEST_ALL = 					$(SRC) \

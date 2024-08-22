@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_error.c                                       :+:      :+:    :+:   */
+/*   scene_static_get.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 14:58:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/22 16:54:25 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/22 15:44:35 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/22 16:46:08 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "memory.h"
 
-void	exit_error(char *msg)
+t_scene_static	**scene_static_get(void)
 {
-	gc_sweep();
-	mlx_static_free();
-	scene_static_free();
-	printf("%s\n", msg);
-	exit(1);
+	static t_scene_static	*scene_static;
+
+	return (&scene_static);
 }

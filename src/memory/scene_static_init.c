@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene_free.c                                       :+:      :+:    :+:   */
+/*   scene_static_init.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 11:48:04 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 15:19:16 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/22 15:57:24 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/22 17:07:59 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scene.h"
+#include "memory.h"
 
-void	scene_free(t_scene *scene)
+void	scene_static_init(char *path)
 {
-	if (scene->camera)
-		free(scene->camera);
-	if (scene->light_ambient)
-		free(scene->light_ambient);
-	if (scene->light_point)
-		free(scene->light_point);
-	if (scene->objects)
-		ft_free_array2d((void **)scene->objects);
+	t_scene_static	**true_d;
+	t_scene_static	*d;
+
+	true_d = scene_static_get();
+	*true_d = (t_scene_static *)malloc(sizeof(t_scene_static));
+	if (!*true_d)
+		exit_error("ERROR: scene_static_init()\n");
+	d = *true_d;
+	d->scene = scene_empty();
+	d->path = path;
+	d->fd = -1;
+	parse_scene(d->path, &d->scene);
 }
