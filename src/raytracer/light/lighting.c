@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lighting.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:20:37 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/22 11:37:31 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:50:28 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ t_vec3	lighting(t_computation c, t_light_point lp, t_light_ambient la, t_materia
 	t_vec3	specular;
 	t_vec3	color;
 
-	(void)in_shadow;
-	// if (in_shadow)
-	// 	return (color_rgb_f(0.1, 0.1, 0.1));
+	if (in_shadow)
+	 	return (color_rgb_f(0.1, 0.1, 0.1));
 	ambient = vec3_mul(vec3_hadamard_product(m.color, \
 	vec3_mul(la.color, la.ratio)), m.ambient);
 	// if(c.object.type == PLANE && c.object.u_object.plane.v_normal)
@@ -42,7 +41,7 @@ t_vec3	lighting(t_computation c, t_light_point lp, t_light_ambient la, t_materia
 		specular = color_rgb_f(0, 0, 0);
 	else
 		specular = vec3_mul(\
-		lp.color, m.specular * pow(c.reflectv_dot_eyev, m.shininess));
+		vec3_mul(lp.color, lp.ratio), m.specular * pow(c.reflectv_dot_eyev, m.shininess));
 	color = vec3_add(ambient, vec3_add(diffuse, specular));
 	color.data[X] = clamp(color.data[X], 1);
 	color.data[Y] = clamp(color.data[Y], 1);
