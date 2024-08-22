@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:45:53 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 11:05:55 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:02:54 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	create_camera(char **tokens, t_list **cameras)
 		exit_error("ERROR: create_camera()\n");
 	*new_camera = \
 	camera(\
-	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \
+	vec4_normalize(vec3_to_vec4(extract_vec3(tokens[1]), W_POINT)), \
 	vec3_to_vec4(extract_vec3(tokens[2]), W_VECTOR), \
 	extract_float(tokens[3]));
 	ft_lstadd_back(cameras, new_node);

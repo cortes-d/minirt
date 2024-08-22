@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:30:44 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 12:57:24 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:02:21 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	check_camera_tokens(char **tokens)
 {
-	t_vec3	vec_3_test;
+	// t_vec3	vec_3_test;
 	float	fov_test;
 
 	if (tokens == NULL)
@@ -25,13 +25,13 @@ void	check_camera_tokens(char **tokens)
 		exit_error("ERROR: check_camera_tokens()\n");
 	check_vec3_token(tokens[1]);
 	check_vec3_token(tokens[2]);
-	vec_3_test = extract_vec3(tokens[2]);
-	if (!equalf(vec3_magnitude(vec_3_test), 1))
-		exit_error("ERROR: check_camera_tokens()\n");
-	if (!(vec_3_test.data[X] >= -1 && vec_3_test.data[X] <= 1) || \
-		!(vec_3_test.data[Y] >= -1 && vec_3_test.data[Y] <= 1) || \
-		!(vec_3_test.data[Z] >= -1 && vec_3_test.data[Z] <= 1))
-		exit_error("ERROR: check_camera_tokens()\n");
+	// vec_3_test = extract_vec3(tokens[2]);
+	// if (!equalf(vec3_magnitude(vec_3_test), 1))
+	// 	exit_error("ERROR: check_camera_tokens()\n");
+	// if (!(vec_3_test.data[X] >= -1 && vec_3_test.data[X] <= 1) || \
+	// 	!(vec_3_test.data[Y] >= -1 && vec_3_test.data[Y] <= 1) || \
+	// 	!(vec_3_test.data[Z] >= -1 && vec_3_test.data[Z] <= 1))
+	// 	exit_error("ERROR: check_camera_tokens()\n");
 	check_float_token(tokens[3]);
 	fov_test = extract_float(tokens[3]);
 	if (!(fov_test >= 0 && fov_test <= 180))
