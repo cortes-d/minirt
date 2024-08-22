@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersect.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 13:39:02 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 11:08:21 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/22 13:17:52 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	intersect(t_ray ray, t_object object, \
 {
 	t_ray				ray_transformed;
 
-	ray_transformed = ray_transform(ray, mat4_inv(object.transform));
+	ray_transformed = ray_transform(ray, object.transform_inverse);
 	if (object.type == SPHERE)
 		return (intersect_sphere(ray_transformed, object, list_intersections));
 	else if (object.type == CYLINDER)

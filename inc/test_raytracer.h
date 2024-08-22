@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:05:00 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 15:52:17 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 10:29:34 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ int		test_raytracer_scene(void);
 int		test_raytracer_scene_camera(void);
 int		test_minirt_beta(int argc, char **argv);
 void	test_print_scene(t_scene *scene);
+int		test_minirt_beta_color_axe(int argc, char **argv);
 
 #endif

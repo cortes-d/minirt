@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cylinder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 12:44:30 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/22 09:32:02 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/22 13:17:12 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_vec4 v_axis, float diameter, float height)
 	add_transform(&c, mat4_rotation_z(theta_z));
 	add_transform(&c, \
 	mat4_translation(p_origin.data[X], p_origin.data[Y], p_origin.data[Z]));
+	c.transform_inverse = mat4_inv(c.transform);
 	c.u_object.cylinder.p_origin = p_origin;
 	c.u_object.cylinder.v_axis = v_axis;
 	c.u_object.cylinder.diameter = diameter;

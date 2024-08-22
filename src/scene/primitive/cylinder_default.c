@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:37:01 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 14:37:21 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:16:05 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_object	cylinder_default(void)
 	object.type = CYLINDER;
 	object.material = material_default();
 	object.transform = mat4_identity();
-	object.transform_inverse = mat4_inv(object.transform);
 	object.u_object.cylinder.p_origin = point(0, 0, 0);
 	object.u_object.cylinder.v_axis = vector(0, 1, 0);
 	object.u_object.cylinder.height = 1;

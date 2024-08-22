@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:20:37 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 15:50:13 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:37:31 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,19 @@ t_vec3	lighting(t_computation c, t_light_point lp, t_light_ambient la, t_materia
 	t_vec3	specular;
 	t_vec3	color;
 
-	if (in_shadow)
-		return (color_rgb_f(0.1, 0.1, 0.1));
+	(void)in_shadow;
+	// if (in_shadow)
+	// 	return (color_rgb_f(0.1, 0.1, 0.1));
 	ambient = vec3_mul(vec3_hadamard_product(m.color, \
 	vec3_mul(la.color, la.ratio)), m.ambient);
+	// if(c.object.type == PLANE && c.object.u_object.plane.v_normal)
+	// 	printf("YOO\n");
 	if (c.lightv_dot_normalv < 0)
+	{
+		// if(c.object.type == PLANE && c.object.material.color.data[R] == 173)
+		// 	printf("YOO\n");
 		diffuse = color_rgb_f(0, 0, 0);
+	}
 	else
 		diffuse = vec3_mul(\
 		vec3_hadamard_product(m.color, vec3_mul(lp.color, lp.ratio)), \

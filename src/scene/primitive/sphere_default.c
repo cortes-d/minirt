@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 14:18:35 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 14:36:38 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:16:26 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_object	sphere_default(void)
 	object.type = SPHERE;
 	object.material = material_default();
 	object.transform = mat4_identity();
-	object.transform_inverse = mat4_inv(object.transform);
 	object.u_object.sphere.p_origin = point(0, 0, 0);
 	object.u_object.sphere.radius = 1;
 	return (object);
