@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plane.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 13:03:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/22 13:16:59 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/22 14:11:51 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/22 14:11:51 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,35 +81,35 @@ t_object	plane(t_vec4 p_point, t_vec4 v_normal)
 
 t_object	plane(t_vec4 p_point, t_vec4 v_normal)
 {
-	t_object	object;
-	float		theta_x;
-	float		theta_y;
-	t_mat4		rotation_x;
-	t_mat4		rotation_y;
-	t_mat4		rotation;
+    t_object	object;
+    float		theta_x;
+    float		theta_z;
+    t_mat4		rotation_x;
+    t_mat4		rotation_z;
+    t_mat4		rotation;
 
-	object = plane_default();
+    object = plane_default();
 
-	// Modify the plane's point and normal
-	object.u_object.plane.p_point = p_point;
-	object.u_object.plane.v_normal = v_normal;
+    // Modify the plane's point and normal
+    object.u_object.plane.p_point = p_point;
+    object.u_object.plane.v_normal = v_normal;
 
-	// Calculate the rotation angles
-	theta_y = atan2f(v_normal.data[X], v_normal.data[Z]);
-	theta_x = -asinf(v_normal.data[Y]);
+    // Calculate the rotation angles
+    theta_z = atan2f(v_normal.data[X], v_normal.data[Y]);
+    theta_x = -asinf(v_normal.data[Z]);
 
-	// Create rotation matrices
-	rotation_y = mat4_rotation_y(theta_y);
-	rotation_x = mat4_rotation_x(theta_x);
+    // Create rotation matrices
+    rotation_z = mat4_rotation_z(theta_z);
+    rotation_x = mat4_rotation_x(theta_x);
 
-	// Combine the rotations: rotation = rotation_y * rotation_x
-	rotation = mat4_mat4_mul(rotation_y, rotation_x);
+    // Combine the rotations: rotation = rotation_z * rotation_x
+    rotation = mat4_mat4_mul(rotation_z, rotation_x);
 
-	// Apply the combined rotation and translation to the object's transform
-	object.transform = mat4_mat4_mul(rotation, mat4_translation(p_point.data[X], p_point.data[Y], p_point.data[Z]));
+    // Apply the combined rotation and translation to the object's transform
+    object.transform = mat4_mat4_mul(rotation, mat4_translation(p_point.data[X], p_point.data[Y], p_point.data[Z]));
 
-	// Calculate the inverse of the transform matrix
-	object.transform_inverse = mat4_inv(object.transform);
+    // Calculate the inverse of the transform matrix
+    object.transform_inverse = mat4_inv(object.transform);
 
-	return object;
+    return object;
 }
