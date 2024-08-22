@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:30:44 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/22 11:02:21 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:05:49 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	check_camera_tokens(char **tokens)
 	// vec_3_test = extract_vec3(tokens[2]);
 	// if (!equalf(vec3_magnitude(vec_3_test), 1))
 	// 	exit_error("ERROR: check_camera_tokens()\n");
-	// if (!(vec_3_test.data[X] >= -1 && vec_3_test.data[X] <= 1) || \
-	// 	!(vec_3_test.data[Y] >= -1 && vec_3_test.data[Y] <= 1) || \
+	// if (!(vec_3_test.data[X] >= -1 && vec_3_test.data[X] <= 1) || 
+	// 	!(vec_3_test.data[Y] >= -1 && vec_3_test.data[Y] <= 1) || 
 	// 	!(vec_3_test.data[Z] >= -1 && vec_3_test.data[Z] <= 1))
 	// 	exit_error("ERROR: check_camera_tokens()\n");
 	check_float_token(tokens[3]);
