@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:40:49 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 11:06:14 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:25:53 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	create_plane(char **tokens, t_list **objects)
 	t_object	*new_plane;
 	t_list		*new_node;
 
-	new_plane = gc_add((t_object *)malloc(sizeof(t_object)), 1);
+	new_plane = gc_add((t_object *)malloc(sizeof(t_object)), 0);
 	if (new_plane == NULL)
 		exit_error("ERROR: create_plane()\n");
-	new_node = gc_add(ft_lstnew(new_plane), 1);
+	new_node = gc_add(ft_lstnew(new_plane), 0);
 	if (new_node == NULL)
 		exit_error("ERROR: create_plane()\n");
 	*new_plane = \

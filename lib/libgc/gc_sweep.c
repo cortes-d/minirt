@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:41:14 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 12:21:26 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:20:13 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	gc_sweep(void)
 {
-	gclst_clear(gc_get());
+	ft_lstclear(gc_get(), &free);
 }

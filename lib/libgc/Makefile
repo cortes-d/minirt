@@ -9,15 +9,10 @@ NAME = libgc.a
 # =============================================================================
 
 SRC =	gc_add.c \
-		gc_free_dimension.c \
 		gc_free.c \
 		gc_get.c \
 		gc_search_node.c \
 		gc_sweep.c \
-		gclst_addfront.c \
-		gclst_clear.c \
-		gclst_free.c \
-		gclst_new.c \
 		gc_display.c
 
 # =============================================================================

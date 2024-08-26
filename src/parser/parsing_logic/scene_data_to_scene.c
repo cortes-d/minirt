@@ -9,7 +9,7 @@ void	scene_data_to_scene(t_scene_data *scene_data, t_scene *scene)
 
 	size = ft_lstsize(scene_data->objects);
 	scene->objects = gc_add(\
-	(t_object **)malloc((size + 1) * sizeof(t_object *)), 2);
+	(t_object **)malloc((size + 1) * sizeof(t_object *)), 1);
 	if (scene->objects == NULL)
 		exit_error("ERROR: scene_data_to_scene()\n");
 	scene->objects[size] = NULL;

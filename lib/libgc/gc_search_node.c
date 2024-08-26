@@ -6,15 +6,15 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:11:33 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/20 13:48:26 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:19:47 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gc.h"
 
-t_gclst	**gc_search_node(t_gclst **lst, void *content)
+t_list	**gc_search_node(t_list **lst, void *content)
 {
-	t_gclst	*node;
+	t_list	*node;
 
 	if (*lst == NULL)
 		return (NULL);

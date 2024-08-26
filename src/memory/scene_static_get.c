@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 15:44:35 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/22 16:46:08 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 09:27:42 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_scene_static	**scene_static_get(void)
 {
-	static t_scene_static	*scene_static;
+	static t_scene_static	*scene_static = NULL;
 
 	return (&scene_static);
 }

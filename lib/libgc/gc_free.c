@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:20:51 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/20 13:48:19 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:21:11 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	gc_free(void *ptr)
 {
-	t_gclst	**found;
-	t_gclst	*to_free;
+	t_list	**found;
+	t_list	*to_free;
 
 	if (ptr == NULL)
 		return ;
@@ -24,5 +24,6 @@ void	gc_free(void *ptr)
 		return ;
 	to_free = *found;
 	*found = (*found)->next;
-	gclst_free(to_free);
+	free(to_free->content);
+	free(to_free);
 }

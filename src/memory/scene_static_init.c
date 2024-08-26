@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 15:57:24 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/22 17:07:59 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:26:21 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	scene_static_init(char *path)
 	t_scene_static	*d;
 
 	true_d = scene_static_get();
-	*true_d = (t_scene_static *)malloc(sizeof(t_scene_static));
+	*true_d = gc_add((t_scene_static *)malloc(sizeof(t_scene_static)), 0);
 	if (!*true_d)
 		exit_error("ERROR: scene_static_init()\n");
 	d = *true_d;

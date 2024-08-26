@@ -6,15 +6,15 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:41:19 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 11:30:16 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:12:09 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gc.h"
 
-t_gclst	**gc_get(void)
+t_list	**gc_get(void)
 {
-	static t_gclst	*gc = NULL;
+	static t_list	*gc = NULL;
 
 	return (&gc);
 }

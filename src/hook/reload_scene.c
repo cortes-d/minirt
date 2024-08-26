@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 16:24:31 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/22 17:04:55 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:40:43 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ int	reload_scene(void)
 	t_mlx_static	*mlx_static;
 	char			*path;
 
-	scene_static = *scene_static_get();
 	mlx_static = *mlx_static_get();
-	path = scene_static->path;
+	path = (*scene_static_get())->path;
 	scene_static_free();
 	scene_static_init(path);
-
+	scene_static = *scene_static_get();
 	render(scene_static->scene, mlx_static->mlx_img);
 	mlx_put_image_to_window(mlx_static->mlx_ptr, mlx_static->mlx_win, mlx_static->mlx_img->img, 0, 0);
 	return (0);

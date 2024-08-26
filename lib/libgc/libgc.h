@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:41:56 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 15:07:39 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:28:06 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 // Section : Functions
 // =============================================================================
 
-void	*gc_add(void *ptr, unsigned short dimension);
+void	*gc_add(void *ptr, unsigned short depth_indicator);
 void	gc_free(void *ptr);
 void	gc_sweep(void);
 void	gc_display();

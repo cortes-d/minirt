@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:58:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/22 16:54:25 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:33:37 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	exit_error(char *msg)
 {
-	gc_sweep();
 	mlx_static_free();
 	scene_static_free();
+	gc_sweep();
 	printf("%s\n", msg);
 	exit(1);
 }
