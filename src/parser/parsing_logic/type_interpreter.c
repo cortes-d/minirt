@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:25:31 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 11:57:37 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 17:00:41 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ void	type_interpreter(char **tokens, t_scene_data *scene_data)
 		exit_error("ERROR: type_interpreter()\n"); // line with error in the rt file : we should display an error
 	if (ft_strequiv(tokens[0], "A") && tokens[0][1] == '\0')
 	{
-		if (ft_lstsize(scene_data->ambient_lights) > 0) //this if allows us to check if UPPERCASE object are unique
+		if (ft_lstsize(scene_data->light_ambients) > 0) //this if allows us to check if UPPERCASE object are unique
 			exit_error("ERROR: type_interpreter()\n");
 		check_light_ambient_tokens(tokens);
-		create_light_ambient(tokens, &scene_data->ambient_lights);
+		create_light_ambient(tokens, &scene_data->light_ambients);
 	}
 	else if (ft_strequiv(tokens[0], "L") && tokens[0][1] == '\0')
 	{
-		if (ft_lstsize(scene_data->lights) > 0) //this if allows us to check if UPPERCASE object are unique
+		if (ft_lstsize(scene_data->light_points) > 0) //this if allows us to check if UPPERCASE object are unique
 			exit_error("ERROR: type_interpreter()\n");
 		check_light_point_tokens(tokens);
-		create_light_point(tokens, &scene_data->lights);
+		create_light_point(tokens, &scene_data->light_points);
 	}
 	else if (ft_strequiv(tokens[0], "C") && tokens[0][1] == '\0')
 	{

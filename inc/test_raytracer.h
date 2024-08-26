@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:05:00 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/22 16:52:45 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:52:55 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include "mlx.h"
 # include "graphic.h"
 # include <math.h>
-# include "memory.h"
+# include "memory2.h"
 # include "hook.h"
 
 // =============================================================================

@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 15:12:34 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:52:55 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "libla.h"
 # include "graphic.h" // t_image
 # include "scene.h"
-# include "memory.h"
+# include "memory2.h"
 # include "parser.h"
 
 // =============================================================================
@@ -137,5 +137,6 @@ t_ray				ray_for_pixel(t_camera camera, unsigned int px, unsigned int py);
 t_vec3				color_at(t_ray ray, t_scene scene);
 t_vec3				shade_hit(t_scene scene, t_computation comps, t_list **intersections);
 void				render(t_scene scene, t_image *image);
+void				render_nothing(t_image *image);
 
 #endif

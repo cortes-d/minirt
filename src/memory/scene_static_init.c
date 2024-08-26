@@ -6,11 +6,29 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 15:57:24 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/26 14:26:21 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 17:04:00 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
+#include "memory2.h"
+
+static void	scene_add_black_light(t_scene_static *d)
+{
+	d->scene.light_point = \
+	gc_add((t_light_point *)malloc(sizeof(t_light_point)), 0);
+	if (!d->scene.light_point)
+		exit_error("ERROR: scene_static_init()\n");
+	*d->scene.light_point = light_point(point(0, 0, 0), 0, color_rgb_f(0, 0, 0));
+}
+
+static void	scene_add_black_ambient(t_scene_static *d)
+{
+	d->scene.light_ambient = \
+	gc_add((t_light_ambient *)malloc(sizeof(t_light_ambient)), 0);
+	if (!d->scene.light_ambient)
+		exit_error("ERROR: scene_static_init()\n");
+	*d->scene.light_ambient = light_ambient(0, color_rgb_f(0, 0, 0));
+}
 
 void	scene_static_init(char *path)
 {
@@ -25,5 +43,9 @@ void	scene_static_init(char *path)
 	d->scene = scene_empty();
 	d->path = path;
 	d->fd = -1;
-	parse_scene(d->path, &d->scene);
+	parse_scene();
+	if (d->scene.light_point == NULL)
+		scene_add_black_light(d);
+	if (d->scene.light_ambient == NULL)
+		scene_add_black_ambient(d);
 }

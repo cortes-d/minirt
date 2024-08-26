@@ -6,11 +6,11 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 15:44:35 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/26 09:27:42 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:53:03 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
+#include "memory2.h"
 
 t_scene_static	**scene_static_get(void)
 {

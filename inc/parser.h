@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:28:15 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 15:12:11 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 17:00:17 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "libla.h"
 # include "scene.h"
 # include "errno.h"
-# include "memory.h"
+# include "memory2.h"
 
 // =============================================================================
 // Section : Constants and Macros
@@ -44,9 +44,9 @@ typedef struct s_scene_data	t_scene_data;
 typedef struct s_scene_data
 {
 	t_list		*objects;
-	t_list		*lights;
+	t_list		*light_points;
 	t_list		*cameras;
-	t_list		*ambient_lights;
+	t_list		*light_ambients;
 }	t_scene_data;
 
 // =============================================================================
@@ -74,7 +74,7 @@ void				check_float(const char **str);
 void				check_uchar(const char **str);
 
 // --- Creation ---
-void				create_light_ambient(char **tokens, t_list **ambient_lights);
+void				create_light_ambient(char **tokens, t_list **light_ambients);
 void				create_camera(char **tokens, t_list **cameras);
 void				create_cylinder(char **tokens, t_list **objects);
 void				create_plane(char **tokens, t_list **objects);
@@ -91,9 +91,9 @@ const char		*elem_at_index_n(const char *str, unsigned int n);
 
 // --- Parsing logic ---
 void				parse_line(t_scene_data *scene_data, const char *line);
-void				parse_scene(char *file_name, t_scene *scene);
+void				parse_scene(void);
 void				parsing_loop(t_scene_data *scene_data, int fd);
-void				scene_data_to_scene(t_scene_data *scene_data, t_scene *scene);
+void				scene_data_to_scene(t_scene_data *scene_data);
 void				type_interpreter(char **tokens, t_scene_data *scene_data);
 
 // --- Utility ---

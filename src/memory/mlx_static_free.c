@@ -6,11 +6,11 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 15:01:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/26 14:32:51 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:52:55 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
+#include "memory2.h"
 
 void	mlx_static_free(void)
 {

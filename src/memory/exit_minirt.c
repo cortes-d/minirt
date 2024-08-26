@@ -6,11 +6,11 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 14:45:23 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/26 14:33:43 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:52:55 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
+#include "memory2.h"
 
 void	exit_minirt(void)
 {

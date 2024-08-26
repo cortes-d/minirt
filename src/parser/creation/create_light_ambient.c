@@ -6,13 +6,13 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:43:39 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 14:26:05 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:58:59 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-void	create_light_ambient(char **tokens, t_list **ambient_lights)
+void	create_light_ambient(char **tokens, t_list **light_ambients)
 {
 	t_light_ambient	*new_light_ambient;
 	t_list			*new_node;
@@ -27,5 +27,5 @@ void	create_light_ambient(char **tokens, t_list **ambient_lights)
 	light_ambient(\
 	extract_float(tokens[1]), \
 	extract_color(tokens[2]));
-	ft_lstadd_back(ambient_lights, new_node);
+	ft_lstadd_back(light_ambients, new_node);
 }

@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 11:52:40 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/22 10:23:19 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:48:08 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void	render(t_scene scene, t_image *image)
 	t_ray			r;
 	t_vec3			c;
 
+	if (scene.camera == NULL)
+	{
+		render_nothing(image);
+		return ;
+	}
 	y = 0;
 	while (y < scene.camera->vsize)
 	{

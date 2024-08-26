@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_error.c                                       :+:      :+:    :+:   */
+/*   render_nothing.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 14:58:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/26 16:52:55 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/26 15:35:25 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/26 15:39:31 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory2.h"
+#include "raytracer.h"
 
-void	exit_error(char *msg)
+void	render_nothing(t_image *image)
 {
-	mlx_static_free();
-	scene_static_free();
-	gc_sweep();
-	printf("%s\n", msg);
-	exit(1);
+	unsigned int	x;
+	unsigned int	y;
+	t_vec3			c;
+
+	c = color_rgb_f(0, 0, 0);
+	y = 0;
+	while (y < WIN_VSIZE)
+	{
+		x = 0;
+		while (x < WIN_HSIZE)
+		{
+			write_pixel(image, x, y, c);
+			x++;
+		}
+		y++;
+	}
 }
