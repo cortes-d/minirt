@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 13:03:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 14:38:41 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/27 10:16:29 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/27 10:22:20 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_object plane(t_vec4 p_point, t_vec4 v_normal)
 	float theta_z;
 
 	object = plane_default();
+	//object.u_object.plane.v_normal = v_normal;
+	//object.u_object.plane.p_point = p_point;
 	theta_z = atan2f(v_normal.data[X], v_normal.data[Y]);
 	theta_x = atan2f(v_normal.data[Z], sqrtf(v_normal.data[X] * v_normal.data[X] + v_normal.data[Y] * v_normal.data[Y]));
 	add_transform(&object, mat4_rotation_z(theta_z));

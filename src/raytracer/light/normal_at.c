@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/10 15:25:18 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 11:13:37 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/27 10:21:55 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/27 10:21:55 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ static t_vec4	normal_at_plane(t_object object, t_vec4 world_point)
 	(void) world_point;
 	return (vector(0, 1, 0));
 }
+
+/*static t_vec4	normal_at_plane(t_object object, t_vec4 world_point)
+{
+    (void) world_point;
+    return (vec4_normalize(mat4_vec4_mul(object.transform, object.u_object.plane.v_normal)));
+}*/
 
 static t_vec4	normal_at_cylinder(t_object object, t_vec4 world_point)
 {
