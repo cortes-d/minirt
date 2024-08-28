@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   intersect_plane.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 10:21:40 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/27 10:21:45 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/28 13:20:47 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-void	intersect_plane(t_ray ray, t_object object, \
+void	intersect_plane(t_ray ray, t_object *object, \
 	t_list **intersections)
 {
 	t_intersection_pair	pair;

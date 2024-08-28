@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   intersect_sphere.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:12:30 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 10:31:14 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/28 13:21:36 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-void	intersect_sphere(t_ray ray, t_object object, \
+void	intersect_sphere(t_ray ray, t_object *object, \
 	t_list **intersections)
 {
 	t_intersection_pair	pair;

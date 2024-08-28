@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prepare_computation.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:26:25 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/21 13:54:06 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/28 13:24:34 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

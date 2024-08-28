@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersection_pair_init.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:26:59 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 10:27:24 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/28 13:21:51 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

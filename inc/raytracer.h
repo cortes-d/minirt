@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:58:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 10:58:40 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/28 13:24:31 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ typedef struct s_intersection_pair
 typedef struct s_intersection
 {
 	float		t;
-	t_object	object;
+	t_object	*object;
 }	t_intersection;
 
 // ·············································································
@@ -85,7 +85,7 @@ typedef struct s_intersection
 // --- Structure : Computation ---
 typedef struct s_computation
 {
-	t_object		object;
+	t_object		*object;
 	t_vec4			point;
 	t_vec4			point_over;
 	t_vec4			eyev;
@@ -106,18 +106,18 @@ t_vec4				position(t_ray ray, float t);
 t_ray				ray_transform(t_ray ray, t_mat4 transformation);
 
 // --- Intersection ---
-void				intersect(t_ray ray, t_object object, \
+void				intersect(t_ray ray, t_object *object, \
 						t_list **intersections);
 void				intersect_scene(t_ray ray, t_scene scene, \
 						t_list **intersections);
-void				intersect_sphere(t_ray ray, t_object object, \
+void				intersect_sphere(t_ray ray, t_object *object, \
 						t_list **intersections);
-void				intersect_cylinder(t_ray ray, t_object object, \
+void				intersect_cylinder(t_ray ray, t_object *object, \
 						t_list **intersections);
-void				intersect_plane(t_ray ray, t_object object, \
+void				intersect_plane(t_ray ray, t_object *object, \
 						t_list **intersections);
 t_intersection_pair	init_intersection_pair(void);
-t_intersection		*intersection_create(float t, t_object object);
+t_intersection		*intersection_create(float t, t_object *object);
 void				intersection_add_to_list(t_list **intersections, \
 						t_intersection *intersection);
 t_intersection		*hit(t_list *intersections);
@@ -127,17 +127,16 @@ t_computation		prepare_computation(t_intersection intersection, \
 						t_ray ray, t_light_point lp);
 t_vec3				lighting(t_computation c, t_light_point lp, \
 						t_light_ambient la, t_material m, int in_shadow);
-t_vec4				normal_at(t_object object, t_vec4 world_point);
+t_vec4				normal_at(t_object *object, t_vec4 world_point);
 t_vec4				reflect(t_vec4 in, t_vec4 normal);
-int					is_shadowed(t_scene scene, t_vec4 point, \
-						t_list **intersections);
+int					is_shadowed(t_scene scene, t_computation *c);
 
 //float is_shadowed(t_scene scene, t_vec4 point, t_list **intersections);
 
 // --- Render ---
 t_ray				ray_for_pixel(t_camera camera, unsigned int px, unsigned int py);
 t_vec3				color_at(t_ray ray, t_scene scene);
-t_vec3				shade_hit(t_scene scene, t_computation comps, t_list **intersections);
+t_vec3				shade_hit(t_scene scene, t_computation comps);
 void				render(t_scene scene, t_image *image);
 void				render_nothing(t_image *image);
 

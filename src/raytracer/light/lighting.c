@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lighting.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:59:02 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 11:02:29 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/28 13:22:09 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,6 @@ t_vec3 lighting(t_computation c, t_light_point lp, t_light_ambient la, t_materia
     else
         specular = vec3_mul(vec3_mul(lp.color, lp.ratio), m.specular * pow(c.reflectv_dot_eyev, m.shininess));
 
-    // Combine components
-    color = vec3_add(ambient, vec3_add(diffuse, specular));
-
-    // Clamp color values
-    color.data[X] = clamp(color.data[X], 1);
-    color.data[Y] = clamp(color.data[Y], 1);
-    color.data[Z] = clamp(color.data[Z], 1);
-
     // Apply shadow to diffuse and specular components only if in shadow
     if (in_shadow)
     {
@@ -94,6 +86,13 @@ t_vec3 lighting(t_computation c, t_light_point lp, t_light_ambient la, t_materia
         specular = vec3_mul(specular, SHADOW_OPACITY);
         color = vec3_add(ambient, vec3_add(diffuse, specular));
     }
+	else
+		color = vec3_add(ambient, vec3_add(diffuse, specular));
+
+    // Clamp color values
+    color.data[X] = clamp(color.data[X], 1);
+    color.data[Y] = clamp(color.data[Y], 1);
+    color.data[Z] = clamp(color.data[Z], 1);
 
     return color;
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   settings.json                                      :+:      :+:    :+:   */
+/*   is_shadowed.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:48:18 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 10:57:50 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/28 13:22:06 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,29 @@
 #include "raytracer.h"
 #include "util.h"
 
+int	is_shadowed(t_scene scene, t_computation *c)
+{
+	t_vec4			v;
+	t_vec4			direction;
+	t_ray			r;
+	t_list			*intersections;
+	t_intersection	*h;
+
+	intersections = NULL;
+	v = vec4_sub(c->point, scene.light_point->p_origin);
+	direction = vec4_normalize(v);
+	r = ray(scene.light_point->p_origin, direction);
+	intersect_scene(r, scene, &intersections);
+	h = hit(intersections);
+	if (h && c->object != h->object)
+	{
+		ft_lstclear_plus(&intersections, &gc_free, &gc_free);
+		return (1);
+	}
+	ft_lstclear_plus(&intersections, &gc_free, &gc_free);
+	return (0);
+}
+/*
 int	is_shadowed(t_scene scene, t_vec4 point, t_list **intersections)
 {
 	t_vec4			v;
@@ -32,6 +55,7 @@ int	is_shadowed(t_scene scene, t_vec4 point, t_list **intersections)
 		return (1);
 	return (0);
 }
+*/
 /*#define SHADOW_FACTOR_SCALE 100.0f // Scale the shadow factor to increase its impact
 
 float is_shadowed(t_scene scene, t_vec4 point, t_list **intersections)

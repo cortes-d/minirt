@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersect_scene.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 15:52:59 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/15 16:28:13 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/28 13:21:31 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	intersect_scene(t_ray ray, t_scene scene, t_list **intersections)
 	i = 0;
 	while (scene.objects[i])
 	{
-		intersect(ray, *scene.objects[i], intersections);
+		intersect(ray, &(*scene.objects[i]), intersections);
 		i++;
 	}
 }

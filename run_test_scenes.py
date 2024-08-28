@@ -27,5 +27,5 @@ def run_scenes_concurrently(n):
 
 if __name__ == "__main__":
     # Set the number of scenes
-    number_of_scenes = 5  # Change this number to the total number of scenes
+    number_of_scenes = 8  # Change this number to the total number of scenes
     run_scenes_concurrently(number_of_scenes)
