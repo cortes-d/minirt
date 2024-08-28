@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mat4_submatrix.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 11:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/05 15:17:05 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:41:21 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:41:24 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 t_mat3	mat4_submatrix(t_mat4 m, unsigned short row, unsigned short col)
 {
-	t_mat3	submatrix;
+	t_mat3			submatrix;
 	unsigned short	i;
 	unsigned short	j;
 	unsigned short	sub_i;

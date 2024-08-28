@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   vec3.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 12:16:31 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/05 15:01:13 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:39:19 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:39:22 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_vec3  vec3(float a, float b, float c)
+t_vec3	vec3(float a, float b, float c)
 {
 	t_vec3	v;
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 14:49:19 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/02 14:49:19 by dcortes          ###   ########.ch       */
+/*   Created: 2024/08/28 11:38:04 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:38:04 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ typedef struct s_vec3
 // --- Structure : Matrix ---
 typedef struct s_row4
 {
-	float data[4];
+	float	data[4];
 }	t_row4;
 
 typedef struct s_mat4

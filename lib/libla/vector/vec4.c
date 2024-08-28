@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   vec4.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/03 12:16:31 by damian-cort       #+#    #+#             */
-/*   Updated: 2024/08/05 15:01:07 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:38:51 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:39:00 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libla.h"
 
-t_vec4  vec4(float a, float b, float c, float d)
+t_vec4	vec4(float a, float b, float c, float d)
 {
 	t_vec4	v;
 

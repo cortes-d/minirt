@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   equalf.c                                           :+:      :+:    :+:   */
+/*   vec4_div.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 15:38:47 by achappui          #+#    #+#             */
-/*   Updated: 2024/07/31 15:38:47 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:39:36 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:39:40 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libla.h"
+#include "libla.h"
 
 t_vec4	vec4_div(t_vec4 v, float scalar)
 {

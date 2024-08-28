@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   equalf.c                                           :+:      :+:    :+:   */
+/*   mat4_transpose.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/31 15:38:47 by achappui          #+#    #+#             */
-/*   Updated: 2024/07/31 15:38:47 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:44:18 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:44:18 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_mat4	mat4_transpose(t_mat4 a)
 {
-	t_mat4	res;
+	t_mat4			res;
 	unsigned short	r;
 	unsigned short	c;
 
