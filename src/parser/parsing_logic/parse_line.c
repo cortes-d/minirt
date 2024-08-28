@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:06:06 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/26 14:25:35 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:24:10 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	parse_line(t_scene_data *scene_data, const char *line)
 
 	tokens = gc_add(ft_split(line, " \n"), 2);
 	if (tokens == NULL)
-		exit_error("ERROR: parse_line()\n");
+		exit_error("split failed", "parse_line()");
 	else if (*tokens == NULL)
 	{
 		gc_free(tokens);
