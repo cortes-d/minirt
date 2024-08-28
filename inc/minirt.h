@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 08:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 09:34:53 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:50:18 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 // Section : Includes
 // =============================================================================
 
+# include "memory2.h"
+# include "raytracer.h"
+# include "hook.h"
 # define WIN_TITLE	"minirt"
 # define WIN_HSIZE	500
 # define WIN_VSIZE	500
