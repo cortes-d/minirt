@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 10:27:03 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:34:17 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:34:26 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	tab[11];
+	char			tab[11];
 	unsigned short	i;
 
 	i = sizeof(tab);

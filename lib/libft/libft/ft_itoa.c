@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 10:27:03 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:34:49 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:34:55 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_itoa(int n)
 {
-	long long	tab;
-	unsigned short		i;
+	long long		tab;
+	unsigned short	i;
 
 	tab = n;
 	i = 1;

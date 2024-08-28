@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_integers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 19:07:54 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:35:16 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:35:21 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	calcul_integer_options(char len, char prefix_len, t_options *o)
 int	ft_print_uint(unsigned long long n, const char *base, char blen, \
 					t_options *o)
 {
-	char	tab[MAX_OCTAL_LLLEN];
+	char			tab[MAX_OCTAL_LLLEN];
 	unsigned short	i;
 
 	i = sizeof(tab);

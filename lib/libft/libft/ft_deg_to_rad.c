@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_deg_to_rad.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 16:38:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:40:46 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:34:37 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:34:37 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 

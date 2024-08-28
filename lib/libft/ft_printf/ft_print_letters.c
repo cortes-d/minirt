@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_letters.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 11:57:05 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/02 16:13:09 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 11:35:41 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:35:44 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putchars(int n, char c)
 {
-	char	buffer[BUFFER_SIZE];
+	char			buffer[BUFFER_SIZE];
 	unsigned short	i;
 
 	if (n <= 0)
