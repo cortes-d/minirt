@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersection_create.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 16:53:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/14 10:24:49 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/08/28 11:41:45 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ t_intersection	*intersection_create(float t, t_object object)
 	t_intersection	*intersection;
 
 	intersection = malloc(sizeof(t_intersection));
+	if (intersection == NULL)
+		exit_error("malloc failed", "intersection_create()");
 	intersection->t = t;
 	intersection->object = object;
 	return (intersection);

@@ -48,7 +48,7 @@ typedef struct s_mlx_static
 // Section : Functions
 // =============================================================================
 
-void			exit_error(char *msg);
+void			exit_error(char *msg, char *function_name);
 void			exit_minirt(void);
 void			mlx_static_free(void);
 t_mlx_static	**mlx_static_get(void);
