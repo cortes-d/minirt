@@ -54,7 +54,7 @@ void	scene_data_to_scene(t_scene_data *scene_data)
 	scene_static->scene.objects = gc_add(\
 	(t_object **)malloc((size + 1) * sizeof(t_object *)), 1);
 	if (scene_static->scene.objects == NULL)
-		exit_error("ERROR: scene_data_to_scene()\n");
+		exit_error("malloc failed", "scene_data_to_scene()");
 	scene_static->scene.objects[size] = NULL;
 	move_objects(size, scene_data, &scene_static->scene);
 	move_camera(scene_data, &scene_static->scene);

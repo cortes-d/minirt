@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 07:35:19 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/26 14:25:44 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:25:44 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	create_sphere(char **tokens, t_list **objects)
 
 	new_sphere = gc_add((t_object *)malloc(sizeof(t_object)), 0);
 	if (new_sphere == NULL)
-		exit_error("ERROR: create_sphere()\n");
+		exit_error("gc_add failed", "create_sphere()");
 	new_node = gc_add(ft_lstnew(new_sphere), 0);
 	if (new_node == NULL)
-		exit_error("ERROR: create_sphere()\n");
+		exit_error("ft_lstnew failed", "create_sphere()");
 	*new_sphere = \
 	sphere(\
 	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \

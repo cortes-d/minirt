@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:45:53 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 14:26:16 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:25:33 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	create_camera(char **tokens, t_list **cameras)
 
 	new_camera = gc_add((t_camera *)malloc(sizeof(t_camera)), 0);
 	if (new_camera == NULL)
-		exit_error("ERROR: create_camera()\n");
+		exit_error("gc_add failed", "create_camera()");
 	new_node = gc_add(ft_lstnew(new_camera), 0);
 	if (new_node == NULL)
-		exit_error("ERROR: create_camera()\n");
+		exit_error("ft_lstnew failed", "create_camera()");
 	*new_camera = \
 	camera(\
 	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \

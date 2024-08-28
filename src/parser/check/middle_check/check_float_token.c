@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:35:45 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 11:58:29 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:16:59 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	check_float_token(const char *str)
 {
 	check_float(&str);
 	if (*str != '\0')
-		exit_error("ERROR: check_float_token()\n");
+		exit_error("invalid float format", "check_float_token()");
 }

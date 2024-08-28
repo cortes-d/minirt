@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 10:11:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 11:05:30 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:16:41 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void	check_vec3_token(const char *str)
 {
 	check_float(&str);
 	if (*str != ',')
-		exit_error("ERROR: check_vec3_token()\n");
+		exit_error("invalid vector format", "check_vec3_token()");
 	str++;
 	check_float(&str);
 	if (*str != ',')
-		exit_error("ERROR: check_vec3_token()\n");
+		exit_error("invalid vector format", "check_vec3_token()");
 	str++;
 	check_float(&str);
 	if (*str != '\0')
-		exit_error("ERROR: check_vec3_token()\n");
+		exit_error("invalid vector format", "check_vec3_token()");
 }

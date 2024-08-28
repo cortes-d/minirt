@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 11:40:12 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 14:26:10 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:30:15 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	create_cylinder(char **tokens, t_list **objects)
 
 	new_cylinder = gc_add((t_object *)malloc(sizeof(t_object)), 0);
 	if (new_cylinder == NULL)
-		exit_error("ERROR: create_cylinder()\n");
+		exit_error("gc_add failed", "create_cylinder()");
 	new_node = gc_add(ft_lstnew(new_cylinder), 0);
 	if (new_node == NULL)
-		exit_error("ERROR: create_cylinder()\n");
+		exit_error("ft_lstnew failed", "create_cylinder()");
 	*new_cylinder = \
 	cylinder(\
 	vec3_to_vec4(extract_vec3(tokens[1]), W_POINT), \
-	vec3_to_vec4(extract_vec3(tokens[2]), W_VECTOR), \
+	vec4_normalize(vec3_to_vec4(extract_vec3(tokens[2]), W_VECTOR)), \
 	extract_float(tokens[3]), \
 	extract_float(tokens[4]));
 	set_object_color(new_cylinder, extract_color(tokens[5]));
