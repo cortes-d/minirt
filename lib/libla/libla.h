@@ -123,6 +123,7 @@ t_vec4	vector(float x, float y, float z);
 // --- Specialized vector types : color ---
 t_vec3	color_rgb_f(float r, float g, float b);
 t_vec3	color_rgb_i(int r, int g, int b);
+t_vec3	color_mix(t_vec3 color1, t_vec3 color2, float weight);
 
 // --- Conversion ---
 t_vec4	vec3_to_vec4(t_vec3 v, float w);

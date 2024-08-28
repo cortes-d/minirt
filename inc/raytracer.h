@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/10 22:18:09 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 16:52:55 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/28 10:58:38 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 10:58:40 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,8 @@ t_vec4				normal_at(t_object object, t_vec4 world_point);
 t_vec4				reflect(t_vec4 in, t_vec4 normal);
 int					is_shadowed(t_scene scene, t_vec4 point, \
 						t_list **intersections);
+
+//float is_shadowed(t_scene scene, t_vec4 point, t_list **intersections);
 
 // --- Render ---
 t_ray				ray_for_pixel(t_camera camera, unsigned int px, unsigned int py);

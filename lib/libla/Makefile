@@ -35,6 +35,7 @@ SRC =	equalf.c \
 		$(DIR_VECTOR)/type/point.c \
 		$(DIR_VECTOR)/type/color_rgb_f.c \
 		$(DIR_VECTOR)/type/color_rgb_i.c \
+		$(DIR_VECTOR)/type/color_mix.c \
 		$(DIR_VECTOR)/vec3.c \
 		$(DIR_VECTOR)/vec4.c \
 		$(DIR_MATRIX)/cofactor/mat3_cofactor.c \
