@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 10:21:55 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/27 10:21:55 by dcortes          ###   ########.ch       */
+/*   Created: 2024/08/28 11:30:57 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/28 11:31:14 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@ static t_vec4	normal_at_plane(t_object object, t_vec4 world_point)
 	(void) world_point;
 	return (vector(0, 1, 0));
 }
-
-/*static t_vec4	normal_at_plane(t_object object, t_vec4 world_point)
-{
-    (void) world_point;
-    return (vec4_normalize(mat4_vec4_mul(object.transform, object.u_object.plane.v_normal)));
-}*/
 
 static t_vec4	normal_at_cylinder(t_object object, t_vec4 world_point)
 {
@@ -44,7 +38,7 @@ static t_vec4	normal_at_cylinder(t_object object, t_vec4 world_point)
 static t_vec4	normal_at_sphere(t_object object, t_vec4 object_point)
 {
 	(void) object;
-    return (vec4_sub(object_point, point(0, 0, 0)));
+	return (vec4_sub(object_point, point(0, 0, 0)));
 }
 
 t_vec4	normal_at(t_object object, t_vec4 world_point)
@@ -60,7 +54,8 @@ t_vec4	normal_at(t_object object, t_vec4 world_point)
 		object_normal = normal_at_cylinder(object, object_point);
 	else
 		object_normal = normal_at_plane(object, object_point);
-	world_normal = mat4_vec4_mul(mat4_transpose(object.transform_inverse), object_normal);
+	world_normal = mat4_vec4_mul(\
+		mat4_transpose(object.transform_inverse), object_normal);
 	world_normal.data[W] = 0;
 	return (vec4_normalize(world_normal));
 }
