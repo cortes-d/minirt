@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   intersect.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/10 13:39:02 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 13:21:42 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:27:57 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:27:57 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	intersect(t_ray ray, t_object *object, \
 	if (object->type == SPHERE)
 		return (intersect_sphere(ray_transformed, object, list_intersections));
 	else if (object->type == CYLINDER)
-		return (intersect_cylinder(ray_transformed, object, list_intersections));
+		return (intersect_cylinder(ray_transformed, object, \
+			list_intersections));
 	else
 		return (intersect_plane(ray_transformed, object, list_intersections));
 }

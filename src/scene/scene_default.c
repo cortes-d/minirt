@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene_default.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 15:14:56 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/21 14:30:05 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:28:39 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:28:39 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ t_scene	scene_default(void)
 	s2 = malloc(sizeof(t_object));
 	*s2 = sphere_default();
 	add_transform(s2, mat4_scaling(0.5, 0.5, 0.5));
-
 	scene.camera = my_camera;
 	scene.light_point = my_light_point;
 	scene.light_ambient = my_light_ambient;

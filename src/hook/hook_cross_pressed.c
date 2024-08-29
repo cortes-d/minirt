@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hook_cross_pressed.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 16:20:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/22 17:04:29 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:30:02 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:30:02 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 

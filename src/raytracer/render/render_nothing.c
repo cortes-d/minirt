@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_nothing.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 15:35:25 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/26 15:39:31 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:25:42 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:25:42 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 

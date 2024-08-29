@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   material_from_color.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/08 10:58:33 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 15:28:06 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:31:02 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:32:32 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 t_material	material_from_color(float r, float g, float b)
 {
-	(void)r;
-	(void)g;
-	(void)b;
 	t_material	m;
 
 	m = material_default();
-	//material_set_color(&m, r, g, b);
+	m.color = color_rgb_f(r, g, b);
 	return (m);
 }

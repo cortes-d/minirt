@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   camera_default.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 15:58:35 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/16 16:41:20 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:33:52 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:33:52 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 

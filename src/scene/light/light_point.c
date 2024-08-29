@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   light_point.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/08 10:32:27 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 12:09:15 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:32:50 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:32:50 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ t_light_point	light_point(t_vec4 position, float ratio, t_vec3 color)
 	new_light_point.color = color;
 	return (new_light_point);
 }
-

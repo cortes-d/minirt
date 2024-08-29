@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gc_add.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 10:41:25 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 14:29:00 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:28:21 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:28:31 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static void	gc_free_dimension(void *ptr, unsigned short dimension)
 	free(ptr);
 }
 
-static void	*gc_add_dimension(void *ptr, unsigned short dimension, t_list **new_nodes)
+static void	*gc_add_dimension(void *ptr, unsigned short dimension, \
+	t_list **new_nodes)
 {
 	t_list			*new_node;
 	unsigned int	i;
@@ -61,7 +62,7 @@ void	*gc_add(void *ptr, unsigned short depth_indicator)
 {
 	t_list	**gc;
 	t_list	*new_nodes;
-	
+
 	if (ptr == NULL)
 		return (NULL);
 	new_nodes = NULL;

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 16:25:56 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/20 15:27:59 by dcortes          ###   ########.fr       */
+/*   Created: 2024/08/29 08:33:40 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:33:40 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	camera_computation(t_camera *camera)
 	camera->hsize = CAMERA_HSIZE;
 	camera->vsize = CAMERA_VSIZE;
 	half_view = tan(camera->h_fov / 2);
-	aspect = camera->hsize / camera->vsize; //et si vsize est 0 ? est-ce possible
+	aspect = camera->hsize / camera->vsize;
 	if (aspect >= 1)
 	{
 		camera->half_width = half_view;
