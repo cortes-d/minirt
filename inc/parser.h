@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 11:28:15 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 17:00:17 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:58:00 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:58:20 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ void				check_float(const char **str);
 void				check_uchar(const char **str);
 
 // --- Creation ---
-void				create_light_ambient(char **tokens, t_list **light_ambients);
+void				create_light_ambient(char **tokens, \
+						t_list **light_ambients);
 void				create_camera(char **tokens, t_list **cameras);
 void				create_cylinder(char **tokens, t_list **objects);
 void				create_plane(char **tokens, t_list **objects);
@@ -82,12 +83,12 @@ void				create_light_point(char **tokens, t_list **lights);
 void				create_sphere(char **tokens, t_list **objects);
 
 // --- Extraction ---
-t_vec3			extract_color(const char *str);
-float			extract_float(const char *str);
-t_vec3			extract_vec3(const char *str);
+t_vec3				extract_color(const char *str);
+float				extract_float(const char *str);
+t_vec3				extract_vec3(const char *str);
 
 // --- Utility ---
-const char		*elem_at_index_n(const char *str, unsigned int n);
+const char			*elem_at_index_n(const char *str, unsigned int n);
 
 // --- Parsing logic ---
 void				parse_line(t_scene_data *scene_data, const char *line);
@@ -97,7 +98,7 @@ void				scene_data_to_scene(t_scene_data *scene_data);
 void				type_interpreter(char **tokens, t_scene_data *scene_data);
 
 // --- Utility ---
-t_scene_data	scene_data_empty(void);
-void			scene_data_free(t_scene_data *scene_data);
+t_scene_data		scene_data_empty(void);
+void				scene_data_free(t_scene_data *scene_data);
 
 #endif

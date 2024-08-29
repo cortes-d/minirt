@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libgc.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 10:41:56 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 14:28:06 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 09:00:18 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 09:00:18 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@
 void	*gc_add(void *ptr, unsigned short depth_indicator);
 void	gc_free(void *ptr);
 void	gc_sweep(void);
-void	gc_display();
+void	gc_display(void);
 
 #endif

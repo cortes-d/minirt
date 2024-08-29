@@ -134,7 +134,8 @@ int					is_shadowed(t_scene scene, t_computation *c);
 //float is_shadowed(t_scene scene, t_vec4 point, t_list **intersections);
 
 // --- Render ---
-t_ray				ray_for_pixel(t_camera camera, unsigned int px, unsigned int py);
+t_ray				ray_for_pixel(t_camera camera, \
+						unsigned int px, unsigned int py);
 t_vec3				color_at(t_ray ray, t_scene scene);
 t_vec3				shade_hit(t_scene scene, t_computation comps);
 void				render(t_scene scene, t_image *image);

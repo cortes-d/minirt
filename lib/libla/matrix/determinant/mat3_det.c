@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mat3_det.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/01 14:12:43 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/01 14:12:43 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:56:55 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:56:55 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,3 @@ float	mat3_det(const t_mat3 m)
 			m.data[0][1] * mat3_cofactor(m, 0, 1) + \
 			m.data[0][2] * mat3_cofactor(m, 0, 2));
 }
-

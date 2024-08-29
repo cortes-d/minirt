@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 13:31:06 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 13:34:46 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 09:00:01 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 09:00:01 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,10 +169,10 @@ typedef struct s_scene
 // =============================================================================
 
 // --- Camera ---
-t_camera	camera_default(void);
-t_camera	camera(t_vec4 p_origin, t_vec4 v_orientation, float h_fov);
-void		camera_computation(t_camera *camera);
-t_mat4		view_transform(t_vec4 p_origin, t_vec4 forward, t_vec4 up);
+t_camera			camera_default(void);
+t_camera			camera(t_vec4 p_origin, t_vec4 v_orientation, float h_fov);
+void				camera_computation(t_camera *camera);
+t_mat4				view_transform(t_vec4 p_origin, t_vec4 forward, t_vec4 up);
 
 
 // --- Material ---

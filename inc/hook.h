@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hook.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 08:59:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 16:52:55 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:58:40 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:58:40 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@
 int	hook_cross_pressed(void *args);
 int	hook_key_released(int key, void *args);
 int	reload_scene(void);
-
 
 #endif

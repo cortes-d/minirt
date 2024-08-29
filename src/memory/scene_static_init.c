@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene_static_init.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 15:57:24 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/28 11:03:37 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:56:18 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:56:18 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static void	scene_add_black_light(t_scene_static *d)
 	gc_add((t_light_point *)malloc(sizeof(t_light_point)), 0);
 	if (!d->scene.light_point)
 		exit_error("malloc failed", "scene_add_black_light()");
-	*d->scene.light_point = light_point(point(0, 0, 0), 0, color_rgb_f(0, 0, 0));
+	*d->scene.light_point = light_point(\
+		point(0, 0, 0), 0, color_rgb_f(0, 0, 0));
 }
 
 static void	scene_add_black_ambient(t_scene_static *d)

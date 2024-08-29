@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_static_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 15:01:41 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/26 16:52:55 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:56:32 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:56:32 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
