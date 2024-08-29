@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_line.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 14:06:06 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/28 11:24:10 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:50:19 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:50:19 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 

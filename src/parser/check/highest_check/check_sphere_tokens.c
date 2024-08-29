@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_sphere_tokens.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 14:44:29 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/28 11:08:36 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 08:48:56 by dcortes           #+#    #+#             */
+/*   Updated: 2024/08/29 08:48:56 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 

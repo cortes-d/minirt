@@ -1,7 +1,8 @@
 
 #include "parser.h"
 
-static void move_objects(unsigned int size, t_scene_data *scene_data, t_scene *scene)
+static void	move_objects(unsigned int size, \
+	t_scene_data *scene_data, t_scene *scene)
 {
 	unsigned int	i;
 	t_list			*current;
@@ -17,7 +18,7 @@ static void move_objects(unsigned int size, t_scene_data *scene_data, t_scene *s
 	}
 }
 
-static void move_camera(t_scene_data *scene_data, t_scene *scene)
+static void	move_camera(t_scene_data *scene_data, t_scene *scene)
 {
 	if (scene_data->cameras)
 	{
