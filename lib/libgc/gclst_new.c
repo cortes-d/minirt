@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ray_for_pixel.c                               :+:      :+:    :+:   */
+/*   gclst_new.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/14 16:20:31 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:21:31 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 13:39:45 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/29 13:40:52 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_raytracer.h"
+#include "gc.h"
 
-t_ray	test_ray_for_pixel(unsigned int px, unsigned int py)
+t_gclist	*gclst_new(void *content)
 {
-	t_vec4	origin;
-	float	world_x;
-	float	world_y;
+	t_gclist	*new_elem;
 
-	world_x = PIXEL_SIZE * HALF_WIDTH - (px + 0.5) * PIXEL_SIZE;
-	world_y = PIXEL_SIZE * HALF_HEIGHT - (py + 0.5) * PIXEL_SIZE;
-	origin = point(world_x, world_y, CANVA_Z_POS);
-	return (ray(origin, vector(0, 0, -1)));
+	new_elem = (t_gclist *)malloc(1 * sizeof(t_gclist));
+	if (new_elem == NULL)
+		return (NULL);
+	new_elem->content = content;
+	new_elem->next = NULL;
+	return (new_elem);
 }

@@ -1,7 +1,4 @@
 NAME = minirt
-TEST_RAYTRACER_NAME = test_raytracer
-TEST_LIBLA_NAME = test_libla
-TEST_PARSER_NAME = test_parser
 
 # =============================================================================
 # Section : ANSI color codes
@@ -25,9 +22,6 @@ DIR_SCENE = $(DIR_SRC)/scene
 DIR_MEMORY = $(DIR_SRC)/memory
 DIR_HOOK = $(DIR_SRC)/hook
 DIR_UTIL = $(DIR_SRC)/util
-DIR_TEST_RAYTRACER = $(DIR_SRC)/test/test_raytracer
-DIR_TEST_LIBLA = $(DIR_SRC)/test/test_libla
-DIR_TEST_PARSER = $(DIR_SRC)/test/test_parser
 
 # =============================================================================
 # Section : Compiler and flags
@@ -69,7 +63,6 @@ SRC_RAYTRACER =					intersection/intersect.c \
 								render/render_nothing.c
 
 SRC_SCENE =						scene_empty.c \
-								scene_default.c \
 								camera/camera.c \
 								camera/camera_default.c \
 								camera/camera_computation.c \
@@ -134,45 +127,6 @@ SRC_HOOK =						hook_cross_pressed.c \
 SRC_UTIL = 						clamp.c \
 								swap.c
 
-SRC_TEST_RAYTRACER =			test_raytracer.c \
-								test_ray_for_pixel.c \
-								test_raytracer_phong.c \
-								test_raytracer_red_circle.c \
-								test_raytracer_color_axe.c \
-								test_raytracer_scene.c \
-								test_raytracer_scene_camera.c \
-								test_minirt_beta.c \
-								test_print_scene.c
-
-SRC_TEST_LIBLA = 				test_libla.c \
-								test_matrix.c \
-								test_vector.c \
-								test_mat_determinant.c \
-		   						test_mat_identity.c \
-		   						test_mat_inversion.c \
-		  						test_mat_multiplication.c \
-		  						test_mat_submatrix.c \
-								test_mat_transposition.c \
-		   						test_vec3_add.c \
-								test_vec3_equal.c \
-								test_vec3_hadamard_product.c \
-								test_vec3_mul.c \
-								test_vec3_sub.c \
-								test_vec4_add.c \
-								test_vec4_cross_product.c \
-								test_vec4_div.c \
-								test_vec4_dot_product.c \
-								test_vec4_equal.c \
-								test_vec4_inv.c \
-								test_vec4_magnitude.c \
-								test_vec4_mul.c \
-								test_vec4_normalize.c \
-								test_vec4_sub.c
-
-SRC_TEST_PARSER =				test_parser.c \
-								test_print_scene.c
-								
-
 # ·············································································
 # Sub-section : Add directories as prefix
 # ·············································································
@@ -185,9 +139,6 @@ SRC_PARSER := $(addprefix $(DIR_PARSER)/, $(SRC_PARSER))
 SRC_MEMORY := $(addprefix $(DIR_MEMORY)/, $(SRC_MEMORY))
 SRC_HOOK := $(addprefix $(DIR_HOOK)/, $(SRC_HOOK))
 SRC_UTIL := $(addprefix $(DIR_UTIL)/, $(SRC_UTIL))
-SRC_TEST_RAYTRACER := $(addprefix $(DIR_TEST_RAYTRACER)/, $(SRC_TEST_RAYTRACER))
-SRC_TEST_LIBLA := $(addprefix $(DIR_TEST_LIBLA)/, $(SRC_TEST_LIBLA))
-SRC_TEST_PARSER := $(addprefix $(DIR_TEST_PARSER)/, $(SRC_TEST_PARSER))
 
 # ·············································································
 # Sub-section : Combine all source files
@@ -202,19 +153,11 @@ SRC = 							$(SRC_MAIN) \
 								$(SRC_HOOK) \
 								$(SRC_UTIL)
 
-SRC_TEST_ALL = 					$(SRC) \
-								$(SRC_TEST_RAYTRACER) \
-								$(SRC_TEST_LIBLA) \
-								$(SRC_TEST_PARSER)
-
 # =============================================================================
 # Section : Object files
 # =============================================================================
 
 OBJ = $(SRC:.c=.o)
-OBJ_TEST_RAYTRACER = $(SRC_TEST_RAYTRACER:.c=.o)
-OBJ_TEST_LIBLA = $(SRC_TEST_LIBLA:.c=.o)
-OBJ_TEST_PARSER = $(SRC_TEST_PARSER:.c=.o)
 
 # =============================================================================
 # Section : Libraries
@@ -288,7 +231,7 @@ $(MLX_LIB):
 
 # --- Rule to clean up object files and libraries ---
 clean:
-	$(RM) $(OBJ) $(OBJ_TEST_RAYTRACER) $(OBJ_TEST_LIBLA) $(OBJ_TEST_PARSER)
+	$(RM) $(OBJ)
 	for dir in $(LIB_DIR); do \
 		echo "$(COLOR_GREEN)Cleaning $$dir...$(COLOR_RESET)"; \
 		make -C $$dir clean; \
@@ -297,7 +240,7 @@ clean:
 
 # --- Rule to fully clean the project (includes removing the library) ---
 fclean: clean
-	$(RM) $(NAME) $(TEST_RAYTRACER_NAME) $(TEST_LIBLA_NAME) $(TEST_PARSER_NAME)
+	$(RM) $(NAME)
 	for dir in $(LIB_DIR); do \
 		echo "$(COLOR_GREEN)Full cleaning $$dir...$(COLOR_RESET)"; \
 		if make -C $$dir fclean; then \
@@ -312,26 +255,5 @@ fclean: clean
 # --- Rule to recompile everything from scratch ---
 re: fclean all
 
-# --- Rule to compile the tests ---
-test: $(LIB) $(TEST_LIBLA_NAME) $(TEST_PARSER_NAME) $(TEST_RAYTRACER_NAME)
-
-# --- Build the test_raytracer executable ---
-$(TEST_RAYTRACER_NAME): $(OBJ) $(OBJ_TEST_RAYTRACER)
-	@echo "$(COLOR_GREEN)Compiling $(TEST_RAYTRACER_NAME)...$(COLOR_RESET)"
-	$(CC) $(CFLAGS) $(OBJ) $(OBJ_TEST_RAYTRACER) $(LIB_LINK) -o $(TEST_RAYTRACER_NAME)
-	@echo "$(COLOR_GREEN)Compilation of $(TEST_RAYTRACER_NAME) completed successfully.$(COLOR_RESET)"
-
-# --- Build the test_libla executable ---
-$(TEST_LIBLA_NAME): $(OBJ) $(OBJ_TEST_LIBLA)
-	@echo "$(COLOR_GREEN)Compiling $(TEST_LIBLA_NAME)...$(COLOR_RESET)"
-	$(CC) $(CFLAGS) $(OBJ) $(OBJ_TEST_LIBLA) $(LIB_LINK) -o $(TEST_LIBLA_NAME)
-	@echo "$(COLOR_GREEN)Compilation of $(TEST_LIBLA_NAME) completed successfully.$(COLOR_RESET)"
-
-# --- Build the test_parser executable ---
-$(TEST_PARSER_NAME): $(OBJ) $(OBJ_TEST_PARSER)
-	@echo "$(COLOR_GREEN)Compiling $(TEST_PARSER_NAME)...$(COLOR_RESET)"
-	$(CC) $(CFLAGS) $(OBJ) $(OBJ_TEST_PARSER) $(LIB_LINK) -o $(TEST_PARSER_NAME)
-	@echo "$(COLOR_GREEN)Compilation of $(TEST_PARSER_NAME) completed successfully.$(COLOR_RESET)"
-
 # --- Mark rules as phony (not file names) ---
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

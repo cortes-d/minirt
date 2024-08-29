@@ -13,7 +13,10 @@ SRC =	gc_add.c \
 		gc_get.c \
 		gc_search_node.c \
 		gc_sweep.c \
-		gc_display.c
+		gc_display.c \
+		gclst_addback.c \
+		gclst_new.c \
+		gclst_clear.c
 
 # =============================================================================
 # Section : Object files

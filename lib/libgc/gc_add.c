@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gc_add.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:28:21 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:28:31 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/29 13:41:04 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ static void	gc_free_dimension(void *ptr, unsigned short dimension)
 }
 
 static void	*gc_add_dimension(void *ptr, unsigned short dimension, \
-	t_list **new_nodes)
+	t_gclist **new_nodes)
 {
-	t_list			*new_node;
+	t_gclist			*new_node;
 	unsigned int	i;
 	void			**dptr;
 
@@ -45,10 +45,10 @@ static void	*gc_add_dimension(void *ptr, unsigned short dimension, \
 			if (gc_add_dimension(dptr[i], dimension - 1, new_nodes) == NULL)
 				return (NULL);
 	}
-	new_node = ft_lstnew(ptr);
+	new_node = gclst_new(ptr);
 	if (new_node == NULL)
 		return (NULL);
-	ft_lstadd_back(new_nodes, new_node);
+	gclst_addback(new_nodes, new_node);
 	return (ptr);
 }
 
@@ -60,8 +60,8 @@ static void	free_nothing(void *ptr)
 
 void	*gc_add(void *ptr, unsigned short depth_indicator)
 {
-	t_list	**gc;
-	t_list	*new_nodes;
+	t_gclist	**gc;
+	t_gclist	*new_nodes;
 
 	if (ptr == NULL)
 		return (NULL);
@@ -69,10 +69,10 @@ void	*gc_add(void *ptr, unsigned short depth_indicator)
 	gc = gc_get();
 	if (gc_add_dimension(ptr, depth_indicator, &new_nodes) == NULL)
 	{
-		ft_lstclear(&new_nodes, &free_nothing);
+		gclst_clear(&new_nodes, &free_nothing);
 		gc_free_dimension(ptr, depth_indicator);
 		return (NULL);
 	}
-	ft_lstadd_back(gc, new_nodes);
+	gclst_addback(gc, new_nodes);
 	return (ptr);
 }

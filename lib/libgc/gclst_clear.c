@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_vec3_sub.c                                    :+:      :+:    :+:   */
+/*   gclst_clear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 15:20:24 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:14:03 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 13:36:47 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/29 13:38:32 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_libla.h"
+#include "gc.h"
 
-void	test_vec3_sub()
+void	gclst_clear(t_gclist **lst, void (*del)(void *))
 {
-	t_vec3	v_test1;
-	t_vec3	v_test2;
-	t_vec3	v_expected;
-	t_vec3	res;
+	t_gclist	*next;
 
-	v_test1 = vec3(1, 2, 3);
-	v_test2 = vec3(-2, 1, -2);
-	v_expected = vec3(3, 1, 5);
-	res = vec3_sub(v_test1, v_test2);
-	if (vec3_equal(res, v_expected))
-		ft_printf("vec3_sub: OK\n");
-	else
-		ft_printf("vec3_sub: KO\n");
+	while (*lst != NULL)
+	{
+		next = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = next;
+	}
+	*lst = NULL;
 }

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_vec4_magnitude.c                              :+:      :+:    :+:   */
+/*   gclst_addback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 15:20:24 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/14 16:13:14 by achappui         ###   ########.fr       */
+/*   Created: 2024/08/29 13:34:35 by achappui          #+#    #+#             */
+/*   Updated: 2024/08/29 13:38:29 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_libla.h"
+#include "gc.h"
 
-void	test_vec4_magnitude()
+void	gclst_addback(t_gclist **lst, t_gclist *new)
 {
-	t_vec4	v_test;
-	float	v_expected;
-	float	res;
+	t_gclist	*last;
 
-	v_test = vec4(1, -2, 3, 3.31662479036);
-	v_expected = 5;
-	res = vec4_magnitude(v_test);
-	if (equalf(res, v_expected))
-		ft_printf("vec4_magnitude: OK\n");
+	last = *lst;
+	if (!last)
+		*lst = new;
 	else
-		ft_printf("vec4_magnitude: KO\n");
+	{
+		while (last->next)
+			last = last->next;
+		last->next = new;
+	}
 }

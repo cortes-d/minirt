@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene_static_free.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:56:10 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:56:10 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/08/29 14:05:17 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

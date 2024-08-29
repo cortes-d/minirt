@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:41:56 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 14:28:23 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:41:33 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,32 @@
 // Section : Includes
 // =============================================================================
 
-# include "../libft/libft.h"
+# include <stdlib.h>
+# include <stdio.h>
 
 // =============================================================================
 // Section : Type Definitions
 // =============================================================================
 
 // ·············································································
-// Sub-section : Structure t_gc
+// Sub-section : Structure t_gclist
 // ·············································································
+
+typedef struct s_gclist
+{
+	void			*content;
+	struct s_gclist	*next;
+}	t_gclist;
 
 // =============================================================================
 // Section : Functions
 // =============================================================================
 
-void	gc_display(void);
-t_list	**gc_get(void);
-t_list	**gc_search_node(t_list **lst, void *content);
+void		gc_display(void);
+t_gclist	**gc_get(void);
+t_gclist	**gc_search_node(t_gclist **lst, void *content);
+void		gclst_addback(t_gclist **lst, t_gclist *new);
+void		gclst_clear(t_gclist **lst, void (*del)(void *));
+t_gclist	*gclst_new(void *content);
 
 #endif
