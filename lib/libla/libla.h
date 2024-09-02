@@ -107,6 +107,7 @@ typedef struct s_mat2
 // =============================================================================
 
 bool	equalf(float a, float b);
+float	clamp(float input, float max_value);
 
 // =============================================================================
 // Section : Vector
@@ -167,6 +168,9 @@ float	vec4_dot_product(t_vec4 v1, t_vec4 v2);
 
 // --- Cross Product ---
 t_vec4	vec4h_cross_product(t_vec4 v1, t_vec4 v2);
+
+// --- Clamping ---
+t_vec3	vec3_clamp(t_vec3 v, float max_value);
 
 // =============================================================================
 // Section : Matrix

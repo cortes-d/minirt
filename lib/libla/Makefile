@@ -31,6 +31,7 @@ SRC =	equalf.c \
 		$(DIR_VECTOR)/printer/vec4_print.c \
 		$(DIR_VECTOR)/subtraction/vec3_sub.c \
 		$(DIR_VECTOR)/subtraction/vec4_sub.c \
+		$(DIR_VECTOR)/clamping/vec3_clamp.c \
 		$(DIR_VECTOR)/type/vector.c \
 		$(DIR_VECTOR)/type/point.c \
 		$(DIR_VECTOR)/type/color_rgb_f.c \
