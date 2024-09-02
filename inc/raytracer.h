@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:58:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 13:03:29 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:07:46 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,29 @@ typedef struct s_intersection
 	float		t;
 	t_object	*object;
 }	t_intersection;
+
+// --- Structure : Context Intersect Sphere ---
+typedef struct s_context_intersect_sphere
+{
+	t_intersection_pair	pair;
+	t_vec4				object_to_ray;
+	float				discriminant;
+	float				a;
+	float				b;
+	float				c;
+}	t_context_intersect_sphere;
+
+// --- Structure : Context Intersect Cylinder ---
+typedef struct s_context_intersect_cylinder
+{
+	float				a;
+	float				b;
+	float				c;
+	float				discriminant;
+	t_intersection_pair	pair;
+	float				y0;
+	float				y1;
+}	t_context_intersect_cylinder;
 
 // ·············································································
 // Sub-section : Light

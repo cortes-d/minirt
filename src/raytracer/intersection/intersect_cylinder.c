@@ -6,22 +6,11 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:12:47 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 11:54:26 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/09/02 13:07:42 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
-
-typedef struct s_context_intersect_cylinder
-{
-	float				a;
-	float				b;
-	float				c;
-	float				discriminant;
-	t_intersection_pair	pair;
-	float				y0;
-	float				y1;
-}	t_context_intersect_cylinder;
 
 static int	check_cap(t_ray ray, float t)
 {

@@ -6,21 +6,11 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:12:30 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 11:45:19 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/09/02 13:07:47 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
-
-typedef struct s_context_intersect_sphere
-{
-	t_intersection_pair	pair;
-	t_vec4				object_to_ray;
-	float				discriminant;
-	float				a;
-	float				b;
-	float				c;
-}	t_context_intersect_sphere;
 
 void	intersect_sphere(t_ray ray, t_object *object, \
 	t_list **intersections)
