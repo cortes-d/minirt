@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lighting.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:35:12 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 10:12:13 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:50:41 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ t_vec3 lighting(t_computation c, t_light_point lp, t_light_ambient la, t_materia
 	}
 	else
 		color = vec3_add(ambient, vec3_add(diffuse, specular));
-	color.data[X] = clamp(color.data[X], 1);
-	color.data[Y] = clamp(color.data[Y], 1);
-	color.data[Z] = clamp(color.data[Z], 1);
+	color = vec3_clamp(color, 1);
 	return (color);
 }
