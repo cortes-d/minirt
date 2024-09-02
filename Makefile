@@ -251,8 +251,21 @@ fclean: clean
 	done
 	@echo "$(COLOR_GREEN)Full clean-up completed.$(COLOR_RESET)"
 
+# --- Rule to run norminette on all file except minilibx ones ---
+norminette:
+	@echo "$(COLOR_GREEN)Starting libft norminette.$(COLOR_RESET)"
+	@norminette $(LIBFT_DIR) || true
+	@echo "$(COLOR_GREEN)Starting libla norminette.$(COLOR_RESET)"
+	@norminette $(LIBLA_DIR) || true
+	@echo "$(COLOR_GREEN)Starting libgc norminette.$(COLOR_RESET)"
+	@norminette $(LIBGC_DIR) || true
+	@echo "$(COLOR_GREEN)Starting inc norminette.$(COLOR_RESET)"
+	@norminette $(DIR_INC) || true
+	@echo "$(COLOR_GREEN)Starting inc norminette.$(COLOR_RESET)"
+	@norminette $(DIR_SRC) || true
+
 # --- Rule to recompile everything from scratch ---
 re: fclean all
 
 # --- Mark rules as phony (not file names) ---
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re norminette
