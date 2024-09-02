@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   memory2.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:57:40 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 13:21:47 by achappui         ###   ########.fr       */
+/*   Updated: 2024/08/29 08:57:43 by dcortes          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 // Section : Includes
 // =============================================================================
 
-# include "scene.h"
+# include "libgc.h"
 # include "graphic.h"
+# include "libgc.h"
+# include "mlx.h"
+# include <stdlib.h>
+# include "scene.h"
 # include "minirt.h"
 # include "parser.h"
 

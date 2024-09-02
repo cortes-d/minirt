@@ -6,11 +6,13 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:26:10 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 10:13:54 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:34:41 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minirt.h"
+#include "memory2.h"
+#include "raytracer.h"
+#include "hook.h"
 
 int	main(int argc, char **argv)
 {

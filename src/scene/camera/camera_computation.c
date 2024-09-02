@@ -6,10 +6,11 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:33:40 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 13:16:58 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:33:58 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "minirt.h"
 #include "scene.h"
 
 void	camera_computation(t_camera *camera)
