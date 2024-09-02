@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 08:55:53 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:55:53 by dcortes          ###   ########.ch       */
+/*   Created: 2024/08/20 14:58:56 by achappui          #+#    #+#             */
+/*   Updated: 2024/09/02 11:13:38 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

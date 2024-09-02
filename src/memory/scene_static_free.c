@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:56:10 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 14:05:17 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 11:08:33 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ void	scene_static_free(void)
 	if (d)
 	{
 		if (d->fd != -1)
+		{
 			close(d->fd);
-		gc_free(*true_d);
+			d->fd = -1;
+		}
+		free(*true_d);
 		*true_d = NULL;
 	}
 }

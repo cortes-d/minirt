@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene_static_init.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:56:18 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:56:18 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 11:08:38 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	scene_static_init(char *path)
 	t_scene_static	*d;
 
 	true_d = scene_static_get();
-	*true_d = gc_add((t_scene_static *)malloc(sizeof(t_scene_static)), 0);
+	*true_d = (t_scene_static *)malloc(sizeof(t_scene_static));
 	if (!*true_d)
 		exit_error("malloc failed", "scene_static_init()");
 	d = *true_d;

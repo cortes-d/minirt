@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:33:46 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 10:12:08 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 11:35:27 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ t_vec3	color_at(t_ray ray, t_scene scene)
 	intersect_scene(ray, scene, &intersections);
 	hitting = hit(intersections);
 	if (!hitting)
+	{
+		ft_lstclear_plus(&intersections, &gc_free, &gc_free);
 		return (vec3(0, 0, 0));
+	}
 	comps = prepare_computation(*hitting, ray, *scene.light_point);
 	ft_lstclear_plus(&intersections, &gc_free, &gc_free);
 	intersections = NULL;

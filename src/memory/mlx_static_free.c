@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_static_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:56:32 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:56:32 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 11:07:12 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ void	mlx_static_free(void)
 		if (d->mlx_win)
 			mlx_destroy_window(d->mlx_ptr, d->mlx_win);
 		if (d->mlx_ptr)
+			mlx_destroy_display(d->mlx_ptr);
+		if (d->mlx_ptr)
 			free(d->mlx_ptr);
-		d->mlx_img = NULL;
-		d->mlx_win = NULL;
-		d->mlx_ptr = NULL;
 		free(*true_d);
 		*true_d = NULL;
 	}
