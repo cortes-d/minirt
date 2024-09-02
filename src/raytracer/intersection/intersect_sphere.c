@@ -3,42 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   intersect_sphere.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:12:30 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 13:21:36 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 11:36:42 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-void	intersect_sphere(t_ray ray, t_object *object, \
-	t_list **intersections)
+typedef struct s_context_intersect_sphere
 {
 	t_intersection_pair	pair;
 	t_vec4				object_to_ray;
+	float				discriminant;
 	float				a;
 	float				b;
 	float				c;
-	float				discriminant;
+}	t_intersect_context_intersect_sphere;
 
-	(void)object;
-	pair = init_intersection_pair();
-	object_to_ray = vec4_sub(ray.p_origin, point(0, 0, 0));
-	a = vec4_dot_product(ray.v_direction, ray.v_direction);
-	b = 2 * vec4_dot_product(ray.v_direction, object_to_ray);
-	c = vec4_dot_product(object_to_ray, object_to_ray) - 1;
-	discriminant = (b * b) - 4 * a * c;
-	if (discriminant >= 0)
+void	intersect_sphere(t_ray ray, t_object *object, \
+	t_list **intersections)
+{
+	t_intersect_context_intersect_sphere	ctx;
+
+	ctx.pair = init_intersection_pair();
+	ctx.object_to_ray = vec4_sub(ray.p_origin, point(0, 0, 0));
+	ctx.a = vec4_dot_product(ray.v_direction, ray.v_direction);
+	ctx.b = 2 * vec4_dot_product(ray.v_direction, ctx.object_to_ray);
+	ctx.c = vec4_dot_product(ctx.object_to_ray, ctx.object_to_ray) - 1;
+	ctx.discriminant = (ctx.b * ctx.b) - 4 * ctx.a * ctx.c;
+	if (ctx.discriminant >= 0)
 	{
-		pair.count = 2;
-		if (discriminant == 0)
-			pair.count = 1;
-		pair.t[0] = (-b - sqrt(discriminant)) / (2 * a);
-		pair.t[1] = (-b + sqrt(discriminant)) / (2 * a);
+		ctx.pair.count = 2;
+		if (ctx.discriminant == 0)
+			ctx.pair.count = 1;
+		ctx.pair.t[0] = (-ctx.b - sqrt(ctx.discriminant)) / (2 * ctx.a);
+		ctx.pair.t[1] = (-ctx.b + sqrt(ctx.discriminant)) / (2 * ctx.a);
 		intersection_add_to_list(intersections, \
-			intersection_create(pair.t[0], object));
+			intersection_create(ctx.pair.t[0], object));
 		intersection_add_to_list(intersections, \
-			intersection_create(pair.t[1], object));
+			intersection_create(ctx.pair.t[1], object));
 	}
 }
