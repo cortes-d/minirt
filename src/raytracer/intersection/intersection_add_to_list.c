@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:23:40 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 11:41:44 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 11:43:28 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	intersection_add_to_list(t_list **intersections, \
 {
 	t_list	*new;
 
-	new = ft_lstnew((void *) intersection);
+	new = gc_add(ft_lstnew((void *) intersection), 1);
 	if (new == NULL)
 		exit_error("ft_lstnew failed", "intersection_add_to_list()");
 	ft_lstadd_back(intersections, new);
