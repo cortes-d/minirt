@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:58:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 10:14:20 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:33:30 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ typedef struct s_ray				t_ray;
 typedef struct s_intersection_pair	t_intersection_pair;
 typedef struct s_intersection		t_intersection;
 
-typedef struct s_shading			t_shading;
-
 // ·············································································
 // Sub-section : Ray
 // ·············································································
@@ -78,13 +76,6 @@ typedef struct s_intersection
 // ·············································································
 // Sub-section : Light
 // ·············································································
-
-// // --- Structure : Shading ---
-// typedef struct s_shading
-// {
-// 	t_vec4	eyev;
-// 	t_vec4	normalv;
-// }	t_shading;
 
 // --- Structure : Computation ---
 typedef struct s_computation
@@ -134,8 +125,6 @@ t_vec3				lighting(t_computation c, t_light_point lp, \
 t_vec4				normal_at(t_object *object, t_vec4 world_point);
 t_vec4				reflect(t_vec4 in, t_vec4 normal);
 int					is_shadowed(t_scene scene, t_computation *c);
-
-//float is_shadowed(t_scene scene, t_vec4 point, t_list **intersections);
 
 // --- Render ---
 t_ray				ray_for_pixel(t_camera camera, \

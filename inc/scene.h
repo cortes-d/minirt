@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 09:00:01 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 10:13:08 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:33:44 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,6 @@ typedef struct s_object
 		t_cylinder	cylinder;
 		t_plane		plane;
 	}	u_object;
-
 }	t_object;
 
 // ·············································································
@@ -180,7 +179,6 @@ t_camera			camera_default(void);
 t_camera			camera(t_vec4 p_origin, t_vec4 v_orientation, float h_fov);
 void				camera_computation(t_camera *camera);
 t_mat4				view_transform(t_vec4 p_origin, t_vec4 forward, t_vec4 up);
-
 
 // --- Material ---
 t_material			material_default(void);
