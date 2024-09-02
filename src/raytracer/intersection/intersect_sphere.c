@@ -6,7 +6,7 @@
 /*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:12:30 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 11:36:42 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/09/02 11:45:19 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ typedef struct s_context_intersect_sphere
 	float				a;
 	float				b;
 	float				c;
-}	t_intersect_context_intersect_sphere;
+}	t_context_intersect_sphere;
 
 void	intersect_sphere(t_ray ray, t_object *object, \
 	t_list **intersections)
 {
-	t_intersect_context_intersect_sphere	ctx;
+	t_context_intersect_sphere	ctx;
 
 	ctx.pair = init_intersection_pair();
 	ctx.object_to_ray = vec4_sub(ray.p_origin, point(0, 0, 0));
