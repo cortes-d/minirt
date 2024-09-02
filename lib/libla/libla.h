@@ -35,7 +35,7 @@
 # define M3_SIZE 3
 # define M4_SIZE 4
 
-# define EPSILON 0.001f
+# define EPSILON 0.000001f
 
 // =============================================================================
 // Section : Type Definitions

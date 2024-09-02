@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_shadowed.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:34:14 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 12:51:27 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:50:42 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
