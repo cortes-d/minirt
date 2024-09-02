@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   camera.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:29:32 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:29:38 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 10:12:34 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "scene.h"
 
 t_camera	camera(t_vec4 p_origin, t_vec4 v_orientation, float h_fov)
 {

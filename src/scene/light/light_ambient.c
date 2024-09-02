@@ -6,11 +6,11 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 10:32:27 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/16 12:09:14 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:12:40 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "scene.h"
 
 t_light_ambient	light_ambient(float ratio, t_vec3 color)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 09:00:01 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 09:00:01 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 10:13:08 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@
 # define UP_VECTOR_X	0
 # define UP_VECTOR_Y	1
 # define UP_VECTOR_Z	0
+# define DEFAULT_COLOR_R 1
+# define DEFAULT_COLOR_G 1
+# define DEFAULT_COLOR_B 1
+# define DEFAULT_AMBIENT 0.1
+# define DEFAULT_DIFFUSE 0.9
+# define DEFAULT_SPECULAR 0.9
+# define DEFAULT_SHININESS 200.0
 
 // =============================================================================
 // Section : Type Definitions

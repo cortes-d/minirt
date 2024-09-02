@@ -6,11 +6,10 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:12:47 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 13:20:41 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:11:25 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "util.h"
 #include "raytracer.h"
 
 static int	check_cap(t_ray ray, float t)

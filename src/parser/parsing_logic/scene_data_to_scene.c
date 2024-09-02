@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   scene_data_to_scene.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 10:08:50 by achappui          #+#    #+#             */
+/*   Updated: 2024/09/02 10:09:21 by achappui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "parser.h"
 
@@ -27,7 +38,7 @@ static void	move_camera(t_scene_data *scene_data, t_scene *scene)
 	}
 }
 
-static void move_light_point(t_scene_data *scene_data, t_scene *scene)
+static void	move_light_point(t_scene_data *scene_data, t_scene *scene)
 {
 	if (scene_data->light_points)
 	{
@@ -36,7 +47,7 @@ static void move_light_point(t_scene_data *scene_data, t_scene *scene)
 	}
 }
 
-static void move_light_ambient(t_scene_data *scene_data, t_scene *scene)
+static void	move_light_ambient(t_scene_data *scene_data, t_scene *scene)
 {
 	if (scene_data->light_ambients)
 	{

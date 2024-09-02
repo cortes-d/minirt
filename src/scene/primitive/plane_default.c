@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   plane_default.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 11:45:31 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/22 13:32:54 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/09/02 10:13:37 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "scene.h"
 
 t_object	plane_default(void)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   view_transform.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:33:22 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:33:26 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 10:12:37 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "scene.h"
 
 t_mat4	view_transform(t_vec4 p_origin, t_vec4 forward, t_vec4 up)
 {

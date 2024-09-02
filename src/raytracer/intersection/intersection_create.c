@@ -6,11 +6,10 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 16:53:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 13:21:47 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:11:38 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "raytracer.h"
 
 /*

@@ -6,11 +6,11 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 15:23:20 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 11:51:46 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:13:35 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "scene.h"
 
 t_object	cylinder(t_vec4 p_origin, \
 t_vec4 v_axis, float diameter, float height)

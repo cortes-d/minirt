@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   hook_key_released.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:30:12 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:30:12 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 10:10:38 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hook.h"
-#include "stdio.h"
 
 int	hook_key_released(int key, void *args)
 {

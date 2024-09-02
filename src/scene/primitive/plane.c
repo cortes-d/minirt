@@ -6,11 +6,11 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 15:26:00 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 11:51:53 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:13:40 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "scene.h"
 
 t_object	plane(t_vec4 p_point, t_vec4 v_normal)
 {

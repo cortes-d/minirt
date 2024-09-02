@@ -6,14 +6,11 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:33:46 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 13:03:11 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:12:08 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "raytracer.h"
-#include "graphic.h"
-#include "libgc.h"
 
 t_vec3	color_at(t_ray ray, t_scene scene)
 {

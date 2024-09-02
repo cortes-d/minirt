@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:58:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 13:24:31 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:14:20 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,14 @@
 # include "scene.h"
 # include "memory2.h"
 # include "parser.h"
+# include "util.h"
 
 // =============================================================================
 // Section : Constants and Macros
 // =============================================================================
+
+# define SHADOW_OPACITY 0.4f
+# define NO_INTERSECTION -1
 
 // =============================================================================
 // Section : Type Definitions

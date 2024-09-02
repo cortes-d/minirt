@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   material_default.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:30:34 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:30:39 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 10:13:16 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
-
-#define DEFAULT_COLOR_R 1
-#define DEFAULT_COLOR_G 1
-#define DEFAULT_COLOR_B 1
-#define DEFAULT_AMBIENT 0.1
-#define DEFAULT_DIFFUSE 0.9
-#define DEFAULT_SPECULAR 0.9
-#define DEFAULT_SHININESS 200.0
+#include "scene.h"
 
 t_material	material_default(void)
 {

@@ -6,11 +6,10 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 11:52:40 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/26 16:48:08 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:12:27 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "graphic.h"
 #include "raytracer.h"
 
 void	render(t_scene scene, t_image *image)

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   set_transform.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 15:26:58 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/10 15:26:58 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 10:13:30 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "scene.h"
 
 void	set_transform(t_object *object, t_mat4 transformation)
 {

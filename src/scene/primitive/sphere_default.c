@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sphere_default.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 14:18:35 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/22 13:33:03 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/09/02 10:13:43 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raytracer.h"
+#include "scene.h"
 
 t_object	sphere_default(void)
 {

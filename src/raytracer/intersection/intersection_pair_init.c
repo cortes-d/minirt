@@ -6,12 +6,11 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 10:26:59 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/28 13:21:51 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:11:43 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
-#define NO_INTERSECTION -1
 
 t_intersection_pair	init_intersection_pair(void)
 {

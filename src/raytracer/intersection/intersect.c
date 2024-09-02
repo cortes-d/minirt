@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   intersect.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:27:57 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:27:57 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 10:11:35 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
-#include "util.h"
 
 void	intersect(t_ray ray, t_object *object, \
 	t_list **list_intersections)

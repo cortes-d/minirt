@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   hit.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:07:57 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/20 15:42:14 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/09/02 10:11:22 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "raytracer.h"
 
 /*

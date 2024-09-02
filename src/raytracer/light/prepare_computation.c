@@ -6,11 +6,10 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 16:26:25 by achappui          #+#    #+#             */
-/*   Updated: 2024/08/28 13:24:34 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:12:18 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "raytracer.h"
 
 t_computation	prepare_computation(t_intersection intersection, \
