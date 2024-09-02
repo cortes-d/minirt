@@ -6,13 +6,13 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:34:14 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 10:12:10 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 12:51:27 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raytracer.h"
 
-int	is_shadowed(t_scene scene, t_computation *c)
+bool	is_shadowed(t_scene scene, t_computation *c)
 {
 	t_vec4			v;
 	t_vec4			direction;

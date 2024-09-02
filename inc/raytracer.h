@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:58:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 10:33:30 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/09/02 13:03:29 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef struct s_ray				t_ray;
 
 typedef struct s_intersection_pair	t_intersection_pair;
 typedef struct s_intersection		t_intersection;
+
+typedef struct s_context_lighting	t_context_lighting;
 
 // ·············································································
 // Sub-section : Ray
@@ -89,7 +91,17 @@ typedef struct s_computation
 	t_vec4			lightv;
 	float			lightv_dot_normalv;
 	float			reflectv_dot_eyev;
+	bool			in_shadow;
 }	t_computation;
+
+// --- Structure : Context Lighting ---
+typedef struct s_context_lighting
+{
+	t_vec3	ambient;
+	t_vec3	diffuse;
+	t_vec3	specular;
+	t_vec3	color;
+}	t_context_lighting;
 
 // =============================================================================
 // Section : Functions
@@ -119,12 +131,12 @@ t_intersection		*hit(t_list *intersections);
 
 // --- Light ---
 t_computation		prepare_computation(t_intersection intersection, \
-						t_ray ray, t_light_point lp);
+										t_scene scene, t_ray ray);
 t_vec3				lighting(t_computation c, t_light_point lp, \
-						t_light_ambient la, t_material m, int in_shadow);
+						t_light_ambient la, t_material m);
 t_vec4				normal_at(t_object *object, t_vec4 world_point);
 t_vec4				reflect(t_vec4 in, t_vec4 normal);
-int					is_shadowed(t_scene scene, t_computation *c);
+bool				is_shadowed(t_scene scene, t_computation *c);
 
 // --- Render ---
 t_ray				ray_for_pixel(t_camera camera, \
