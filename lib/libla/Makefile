@@ -12,6 +12,7 @@ DIR_MATRIX = matrix
 # =============================================================================
 
 SRC =	equalf.c \
+		clamp.c \
 		$(DIR_VECTOR)/addition/vec3_add.c \
 		$(DIR_VECTOR)/addition/vec4_add.c \
 		$(DIR_VECTOR)/conversion/vec3_to_vec4.c \

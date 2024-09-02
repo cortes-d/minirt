@@ -124,8 +124,7 @@ SRC_HOOK =						hook_cross_pressed.c \
 								hook_key_released.c \
 								reload_scene.c
 
-SRC_UTIL = 						clamp.c \
-								swap.c
+SRC_UTIL = 						swap.c
 
 # ·············································································
 # Sub-section : Add directories as prefix
