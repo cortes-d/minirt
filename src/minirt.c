@@ -6,7 +6,7 @@
 /*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:26:10 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 13:34:41 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:48:05 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	render(scene_static->scene, mlx_static->mlx_img);
 	mlx_put_image_to_window(mlx_static->mlx_ptr, mlx_static->mlx_win, \
 		mlx_static->mlx_img->img, 0, 0);
-	mlx_hook(mlx_static->mlx_win, 2, 0, &hook_key_released, NULL);
+	mlx_key_hook(mlx_static->mlx_win, &hook_key_released, NULL);
 	mlx_hook(mlx_static->mlx_win, 17, 0, &hook_cross_pressed, NULL);
 	mlx_loop(mlx_static->mlx_ptr);
 	return (0);
