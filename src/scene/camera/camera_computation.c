@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   camera_computation.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:33:40 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:33:40 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 13:16:58 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	camera_computation(t_camera *camera)
 	float		aspect;
 	float		half_view;
 
-	camera->hsize = CAMERA_HSIZE;
-	camera->vsize = CAMERA_VSIZE;
+	camera->hsize = WIN_HSIZE;
+	camera->vsize = WIN_VSIZE;
 	half_view = tan(camera->h_fov / 2);
 	aspect = camera->hsize / camera->vsize;
 	if (aspect >= 1)

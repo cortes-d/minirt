@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   scene.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 09:00:01 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 10:33:44 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/09/02 13:22:22 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 
 # include "libla.h"
 # include "libft.h"
+# include "minirt.h"
 # include "math.h"
 
 // =============================================================================
 // Section : Constants and Macros
 // =============================================================================
 
-# define CAMERA_HSIZE	500
-# define CAMERA_VSIZE	500
 # define UP_VECTOR_X	0
 # define UP_VECTOR_Y	1
 # define UP_VECTOR_Z	0
@@ -204,7 +203,5 @@ void				add_transform(t_object *object, t_mat4 transformation);
 
 // --- Scene ---
 t_scene				scene_empty(void);
-t_scene				scene_default(void);
-void				scene_free(t_scene *scene);
 
 #endif

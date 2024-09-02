@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:58:53 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 08:58:53 by dcortes          ###   ########.ch       */
+/*   Updated: 2024/09/02 13:17:14 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,14 @@
 # include "memory2.h"
 # include "raytracer.h"
 # include "hook.h"
-# define WIN_TITLE	"minirt"
-# define WIN_HSIZE	500
-# define WIN_VSIZE	500
+
+// =============================================================================
+// Section : Constants and Macros
+// =============================================================================
+
+# define WIN_TITLE "minirt"
+# define WIN_HSIZE 500
+# define WIN_VSIZE 500
 
 // =============================================================================
 // Section : Type Definitions

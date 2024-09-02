@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raytracer.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:58:38 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 13:07:46 by dcortes          ###   ########.fr       */
+/*   Updated: 2024/09/02 13:19:01 by achappui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
