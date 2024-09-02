@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gc_add.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:28:21 by dcortes           #+#    #+#             */
-/*   Updated: 2024/08/29 13:41:04 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:36:52 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	gc_free_dimension(void *ptr, unsigned short dimension)
 static void	*gc_add_dimension(void *ptr, unsigned short dimension, \
 	t_gclist **new_nodes)
 {
-	t_gclist			*new_node;
+	t_gclist		*new_node;
 	unsigned int	i;
 	void			**dptr;
 
