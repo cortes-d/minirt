@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sphere.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 15:25:51 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 10:13:45 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:13:40 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_object	sphere(t_vec4 p_origin, float radius)
 	add_transform(&s, mat4_scaling(radius, radius, radius));
 	add_transform(&s, \
 		mat4_translation(p_origin.data[X], p_origin.data[Y], p_origin.data[Z]));
-	s.transform_inverse = mat4_inv(s.transform);
 	s.u_object.sphere.p_origin = p_origin;
 	s.u_object.sphere.radius = radius;
 	return (s);

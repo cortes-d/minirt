@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achappui <achappui@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: dcortes <dcortes@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 08:58:53 by dcortes           #+#    #+#             */
-/*   Updated: 2024/09/02 13:50:03 by achappui         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:58:16 by dcortes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 // =============================================================================
 
 # define WIN_TITLE	"minirt"
-# define WIN_HSIZE	300
-# define WIN_VSIZE	300
+# define WIN_HSIZE	750
+# define WIN_VSIZE	750
 
 // =============================================================================
 // Section : Type Definitions
